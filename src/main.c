@@ -109,9 +109,8 @@ void initADC()
 
 
 void main(void) {
-
-
-
+    OSCCON = 0x82;         // see datasheeet
+    OSCTUNEbits.PLLEN = 0;
 
     char c;
     signed char length;
@@ -143,6 +142,7 @@ void main(void) {
     // init the timer1 lthread
     init_timer1_lthread(&t1thread_data);
 
+    init_timer0_lthread(&t0thread_data);
     // initialize message queues before enabling any interrupts
     init_queues();
 
@@ -162,8 +162,8 @@ void main(void) {
      */
 
     // initialize Timers
-    //OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_128);
-    OpenTimer1(TIMER_INT_ON & T1_PS_1_8 & T1_16BIT_RW & T1_SOURCE_INT & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF);
+    OpenTimer0(TIMER_INT_ON & T0_8BIT & T0_SOURCE_INT & T0_PS_1_1);
+    //OpenTimer1(TIMER_INT_ON & T1_PS_1_1 & T1_16BIT_RW & T1_SOURCE_INT & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF);
 
     // Peripheral interrupts can have their priority set to high or low
     // enable high-priority interrupts and low-priority interrupts
@@ -179,6 +179,7 @@ void main(void) {
     IPR1bits.SSPIP = 1;
 
     IPR1bits.ADIP = 1;
+    
 
     // configure the hardware i2c device as a slave (0x9E -> 0x4F) or (0x9A -> 0x4D)
 #if 1
@@ -268,10 +269,10 @@ void main(void) {
                     switch (last_reg_recvd) {
                         case 0xaa:
                         {
-                            length = 2;
+                            length = 1;
                             //msgbuffer[0] = 0x55;
                             msgbuffer[0] = returnADCValue();
-                            msgbuffer[1] = 0xAA;
+                            //msgbuffer[1] = 0xAA;
                             break;
                         }
                         case 0xa8:

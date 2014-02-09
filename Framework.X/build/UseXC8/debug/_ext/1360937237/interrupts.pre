@@ -5998,7 +5998,8 @@ unsigned char i2c_master_send(unsigned char,unsigned char *);
 unsigned char i2c_master_recv(unsigned char);
 
 # 14 "../src/interrupts.c"
-int ADCValue = 2;
+int ADCValue = 0;
+
 
 int returnADCValue()
 {
@@ -6013,6 +6014,10 @@ void enable_interrupts() {
 RCONbits.IPEN = 1;
 INTCONbits.GIEH = 1;
 INTCONbits.GIEL = 1;
+
+INTCONbits.TMR0IE = 1;
+
+INTCON2bits.TMR0IP = 1;
 }
 
 int in_high_int() {
@@ -6041,10 +6046,10 @@ return (0);
 }
 }
 
-# 87
+# 92
 interrupt
 
-# 92
+# 97
 void InterruptHandlerHigh() {
 
 
@@ -6061,7 +6066,8 @@ i2c_int_handler();
 if (INTCONbits.TMR0IF) {
 INTCONbits.TMR0IF = 0;
 
-timer0_int_handler();
+
+ConvertADC();
 }
 
 
@@ -6078,22 +6084,27 @@ ADCValue = pureADCValue >> 2;
 
 }
 
-# 129
+# 135
 SleepIfOkay();
 }
 
-# 137
+# 143
 interrupt low_priority
 
-# 142
+# 148
 void InterruptHandlerLow() {
 
 if (PIR1bits.TMR1IF) {
 PIR1bits.TMR1IF = 0;
 ConvertADC();
-timer1_int_handler();
+
 }
 
+if (INTCONbits.TMR0IF) {
+INTCONbits.TMR0IF = 0;
+
+
+}
 
 if (PIR1bits.RCIF) {
 PIR1bits.RCIF = 0;

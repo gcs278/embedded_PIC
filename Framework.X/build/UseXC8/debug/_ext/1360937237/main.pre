@@ -6143,9 +6143,11 @@ int timer1_lthread(timer1_thread_struct *,int,int,unsigned char*);
 # 1 "../src/timer0_thread.h"
 typedef struct __timer0_thread_struct {
 
-int data;
+
+unsigned int msgcount;
 } timer0_thread_struct;
 
+void init_timer0_lthread(timer0_thread_struct *);
 int timer0_lthread(timer0_thread_struct *,int,int,unsigned char*);
 
 
@@ -6192,9 +6194,8 @@ ConvertADC();
 
 
 void main(void) {
-
-
-
+OSCCON = 0x82;
+OSCTUNEbits.PLLEN = 0;
 
 char c;
 signed char length;
@@ -6208,7 +6209,7 @@ uart_thread_struct uthread_data;
 timer1_thread_struct t1thread_data;
 timer0_thread_struct t0thread_data;
 
-# 133
+# 132
 OSCCON = 0x82;
 OSCTUNEbits.PLLEN = 0;
 
@@ -6222,6 +6223,7 @@ init_i2c(&ic);
 
 init_timer1_lthread(&t1thread_data);
 
+init_timer0_lthread(&t0thread_data);
 
 init_queues();
 
@@ -6231,8 +6233,9 @@ initADC();
 TRISB = 0x0;
 LATB = 0x0;
 
-# 166
-OpenTimer1(0b11111111 & 0b11111111 & 0b11111111 & 0b11111101 & 0b11110111 & 0b11111111);
+# 165
+OpenTimer0(0b11111111 & 0b11111111 & 0b11011111 & 0b11111111);
+
 
 
 
@@ -6249,24 +6252,24 @@ IPR1bits.SSPIP = 1;
 
 IPR1bits.ADIP = 1;
 
-# 190
+# 191
 i2c_configure_slave(0x9E);
 
-# 203
+# 204
 PIE1bits.SSPIE = 1;
 
 
 OpenUSART(0b01111111 & 0b11111111 & 0b11111110 & 0b11111101 &
 0b11111111 & 0b11101111, 0x19);
 
-# 227
+# 228
 while (1) {
 
 
 
 block_on_To_msgqueues();
 
-# 238
+# 239
 length = ToMainHigh_recvmsg(10, &msgtype, (void *) msgbuffer);
 if (length < 0) {
 
@@ -6291,14 +6294,14 @@ break;
 case 42:
 {
 
-# 268
+# 269
 switch (last_reg_recvd) {
 case 0xaa:
 {
-length = 2;
+length = 1;
 
 msgbuffer[0] = returnADCValue();
-msgbuffer[1] = 0xAA;
+
 break;
 }
 case 0xa8:

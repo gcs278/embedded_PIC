@@ -11,7 +11,8 @@
 //       priority interrupts, but this code is not setup for that and this nesting is not
 //       enabled.
 
-int ADCValue = 2;
+int ADCValue = 0;
+//int ADCArray[1024];
 
 int returnADCValue()
 {
@@ -26,6 +27,10 @@ void enable_interrupts() {
     RCONbits.IPEN = 1;
     INTCONbits.GIEH = 1;
     INTCONbits.GIEL = 1;
+
+    INTCONbits.TMR0IE = 1;
+    // Timer0 interrupt at high priority
+    INTCON2bits.TMR0IP = 1;
 }
 
 int in_high_int() {
@@ -105,7 +110,8 @@ void InterruptHandlerHigh() {
     if (INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
-        timer0_int_handler();
+        //timer0_int_handler();
+        ConvertADC();
     }
 
     // here is where you would check other interrupt flags.
@@ -144,9 +150,14 @@ void InterruptHandlerLow() {
     if (PIR1bits.TMR1IF) {
         PIR1bits.TMR1IF = 0; //clear interrupt flag
         ConvertADC();
-        timer1_int_handler();
+       // timer1_int_handler();
     }
 
+    if (INTCONbits.TMR0IF) {
+        INTCONbits.TMR0IF = 0; // clear this interrupt flag
+        // call whatever handler you want (this is "user" defined)
+        //timer0_int_handler();
+    }
     // check to see if we have an interrupt on USART RX
     if (PIR1bits.RCIF) {
         PIR1bits.RCIF = 0; //clear interrupt flag

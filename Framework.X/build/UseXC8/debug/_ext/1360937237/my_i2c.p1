@@ -5445,9 +5445,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;my_i2c.c: 265: msgbuffer[0] = returnADCValue();
 "265
 [e = *U + &U _msgbuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _msgbuffer `ui `ux -> ( _returnADCValue ..  `uc ]
-[; ;my_i2c.c: 266: msgbuffer[1] = 0xAA;
-"266
-[e = *U + &U _msgbuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _msgbuffer `ui `ux -> -> 170 `i `uc ]
 [; ;my_i2c.c: 292: start_i2c_slave_reply(length, msgbuffer);
 "292
 [e ( _start_i2c_slave_reply (2 , -> _length `uc &U _msgbuffer ]

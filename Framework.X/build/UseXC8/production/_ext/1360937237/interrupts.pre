@@ -6002,9 +6002,9 @@ int ADCValue = 2;
 
 int returnADCValue()
 {
-int temp = 0;
-temp = temp + 1;
-return ADCValue;
+int returnVal = ADCValue;
+ADCValue = 1;
+return returnVal;
 }
 
 void enable_interrupts() {

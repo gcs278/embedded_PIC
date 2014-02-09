@@ -4694,15 +4694,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _returnADCValue ]
 [f ]
 "18
-[v _temp `i ~T0 @X0 1 a ]
-[; ;interrupts.c: 18: int temp = 0;
-[e = _temp -> 0 `i ]
-[; ;interrupts.c: 19: temp = temp + 1;
+[v _returnVal `i ~T0 @X0 1 a ]
+[; ;interrupts.c: 18: int returnVal = ADCValue;
+[e = _returnVal _ADCValue ]
+[; ;interrupts.c: 19: ADCValue = 1;
 "19
-[e = _temp + _temp -> 1 `i ]
-[; ;interrupts.c: 20: return ADCValue;
+[e = _ADCValue -> 1 `i ]
+[; ;interrupts.c: 20: return returnVal;
 "20
-[e ) _ADCValue ]
+[e ) _returnVal ]
 [e $UE 585  ]
 [; ;interrupts.c: 21: }
 "21

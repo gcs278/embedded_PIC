@@ -11,109 +11,104 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgtYLDU5h.obj
+$/tmp/cgtZiCfQL.obj
 end_init CODE 0 BA BA 4 1
 reset_vec CODE 0 0 0 6 1
 config CONFIG 0 7FF8 7FF8 6 1
 $dist/UseXC8/debug/Framework.X.debug.obj
 intcodelo CODE 0 18 18 A2 1
 intcode CODE 0 8 8 C 1
-text58 CODE 0 1C90 1C90 A 1
-text57 CODE 0 1CA2 1CA2 6 1
-text56 CODE 0 1B84 1B84 24 1
-text55 CODE 0 1C84 1C84 C 1
-text54 CODE 0 1AB8 1AB8 2E 1
-text53 CODE 0 1700 1700 4E 1
-text52 CODE 0 1926 1926 40 1
-text51 CODE 0 10D8 10D8 AA 1
-text50 CODE 0 1B5E 1B5E 26 1
-text49 CODE 0 EAE EAE C8 1
-text48 CODE 0 1BE4 1BE4 1E 1
-text47 CODE 0 CE8 CE8 F4 1
-text46 CODE 0 BE BE 600 1
-text45 CODE 0 DDC DDC D2 1
-text44 CODE 0 1AE6 1AE6 2A 1
-text43 CODE 0 1C72 1C72 12 1
-text42 CODE 0 14DE 14DE 7A 1
-intcode_body CODE 0 F76 F76 B8 1
-text40 CODE 0 1C60 1C60 12 1
-text39 CODE 0 18E6 18E6 40 1
-text38 CODE 0 102E 102E AA 1
-text37 CODE 0 1B38 1B38 26 1
-text36 CODE 0 1C4E 1C4E 12 1
-text35 CODE 0 174E 174E 48 1
-text34 CODE 0 1BC6 1BC6 1E 1
-text33 CODE 0 1228 1228 9C 1
-text32 CODE 0 1CAC 1CAC 4 1
-text30 CODE 0 19E2 19E2 38 1
-text29 CODE 0 12C4 12C4 92 1
-text28 CODE 0 16A2 16A2 5E 1
-text27 CODE 0 9A0 9A0 136 1
-text26 CODE 0 18A4 18A4 42 1
-text25 CODE 0 1862 1862 42 1
-text24 CODE 0 1C02 1C02 16 1
-text23 CODE 0 1A50 1A50 36 1
-text22 CODE 0 1C3C 1C3C 12 1
-text21 CODE 0 1796 1796 46 1
-text20 CODE 0 17DC 17DC 44 1
-text19 CODE 0 1182 1182 A6 1
-text18 CODE 0 1C9A 1C9A 8 1
-text17 CODE 0 1B10 1B10 28 1
-text16 CODE 0 1CA8 1CA8 4 1
-text15 CODE 0 13E0 13E0 84 1
-text14 CODE 0 1820 1820 42 1
-text13 CODE 0 1638 1638 6A 1
-text12 CODE 0 1464 1464 7A 1
-text11 CODE 0 15CA 15CA 6E 1
-text10 CODE 0 1C2A 1C2A 12 1
-text9 CODE 0 1BA8 1BA8 1E 1
-text8 CODE 0 1A86 1A86 32 1
-text7 CODE 0 AD6 AD6 10E 1
-text6 CODE 0 1C18 1C18 12 1
-text5 CODE 0 BE4 BE4 104 1
-text4 CODE 0 1A1A 1A1A 36 1
-text3 CODE 0 1356 1356 8A 1
-text2 CODE 0 1558 1558 72 1
-text1 CODE 0 19A4 19A4 3E 1
-text0 CODE 0 6BE 6BE 2E2 1
-cstackCOMRAM COMRAM 1 1 1 4C 1
-cstackBANK0 BANK0 1 80 80 4D 1
+text53 CODE 0 1AFE 1AFE A 1
+text52 CODE 0 1B08 1B08 6 1
+text51 CODE 0 1A1C 1A1C 24 1
+text50 CODE 0 1AF2 1AF2 C 1
+text49 CODE 0 1950 1950 2E 1
+text48 CODE 0 1618 1618 4E 1
+text47 CODE 0 17F6 17F6 40 1
+text46 CODE 0 FF8 FF8 AA 1
+text45 CODE 0 19F6 19F6 26 1
+text44 CODE 0 DD2 DD2 C8 1
+text43 CODE 0 1A7C 1A7C 1E 1
+text42 CODE 0 CDE CDE F4 1
+text41 CODE 0 BE BE 5F4 1
+text40 CODE 0 1B16 1B16 4 1
+intcode_body CODE 0 E9A E9A B4 1
+text38 CODE 0 1A5E 1A5E 1E 1
+text37 CODE 0 17B6 17B6 40 1
+text36 CODE 0 F4E F4E AA 1
+text35 CODE 0 19D0 19D0 26 1
+text34 CODE 0 1148 1148 9C 1
+text33 CODE 0 1B12 1B12 4 1
+text31 CODE 0 197E 197E 2A 1
+text30 CODE 0 11E4 11E4 92 1
+text29 CODE 0 15BA 15BA 5E 1
+text28 CODE 0 996 996 136 1
+text27 CODE 0 1774 1774 42 1
+text26 CODE 0 1732 1732 42 1
+text25 CODE 0 1A9A 1A9A 16 1
+text24 CODE 0 18E8 18E8 36 1
+text23 CODE 0 1AD4 1AD4 12 1
+text22 CODE 0 1666 1666 46 1
+text21 CODE 0 16AC 16AC 44 1
+text20 CODE 0 10A2 10A2 A6 1
+text19 CODE 0 1AE6 1AE6 C 1
+text18 CODE 0 19A8 19A8 28 1
+text17 CODE 0 1B0E 1B0E 4 1
+text16 CODE 0 1300 1300 84 1
+text15 CODE 0 16F0 16F0 42 1
+text14 CODE 0 1550 1550 6A 1
+text13 CODE 0 1384 1384 7A 1
+text12 CODE 0 14E2 14E2 6E 1
+text11 CODE 0 1AC2 1AC2 12 1
+text10 CODE 0 1AB0 1AB0 12 1
+text9 CODE 0 1A40 1A40 1E 1
+text8 CODE 0 191E 191E 32 1
+text7 CODE 0 ACC ACC 10E 1
+text6 CODE 0 BDA BDA 104 1
+text5 CODE 0 18B2 18B2 36 1
+text4 CODE 0 1276 1276 8A 1
+text3 CODE 0 1470 1470 72 1
+text2 CODE 0 13FE 13FE 72 1
+text1 CODE 0 1874 1874 3E 1
+text0 CODE 0 6B2 6B2 2E4 1
+cstackCOMRAM COMRAM 1 1 1 4A 1
+cstackBANK0 BANK0 1 80 80 4B 1
 cstackBANK1 BANK1 1 1A2 1A2 35 1
 bssBANK2 BANK2 1 200 200 36 1
 bssBANK1 BANK1 1 100 100 A2 1
-dataBANK0 BANK0 1 CF CF 2 1
-bssCOMRAM COMRAM 1 4F 4F 2 1
-cinit CODE 0 1966 1966 3E 1
-nvBANK0 BANK0 1 CD CD 2 1
-nvCOMRAM COMRAM 1 4D 4D 2 1
-idataBANK0 CODE 0 1CB0 1CB0 2 1
+dataBANK0 BANK0 1 CD CD 2 1
+bssCOMRAM COMRAM 1 4D 4D 2 1
+cinit CODE 0 1836 1836 3E 1
+nvBANK0 BANK0 1 CB CB 2 1
+nvCOMRAM COMRAM 1 4B 4B 2 1
+idataBANK0 CODE 0 1B1A 1B1A 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-BANK0 000D1-000FF 1
+BANK0 000CF-000FF 1
 BANK1 001D7-001FF 1
 BANK2 00236-002FF 1
 BANK3 00300-003FF 1
-BIGRAM 00051-0007F 1
-BIGRAM 000D1-000FF 1
+BIGRAM 0004F-0007F 1
+BIGRAM 000CF-000FF 1
 BIGRAM 001D7-001FF 1
 BIGRAM 00236-003FF 1
 CODE 00006-00007 1
 CODE 00014-00017 1
-CODE 01CB2-07FF7 1
-COMRAM 00051-0007F 1
+CODE 01B1C-07FF7 1
+COMRAM 0004F-0007F 1
 CONST 00006-00007 1
 CONST 00014-00017 1
-CONST 01CB2-07FF7 1
-MEDIUMCONST 01CB2-07FF7 1
-RAM 000D1-000FF 1
+CONST 01B1C-07FF7 1
+MEDIUMCONST 01B1C-07FF7 1
+RAM 000CF-000FF 1
 RAM 001D7-001FF 1
 RAM 00236-003FF 1
 SFR 00F80-00FFC 1
-SMALLCONST 01CB2-07FF7 1
+SMALLCONST 01B1C-07FF7 1
 STACK 00236-003FF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -129,634 +124,596 @@ STACK 00236-003FF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/UseXC8/debug/Framework.X.debug.obj
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":92 8 intcode CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":23 8 intcode CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":142 18 intcodelo CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":36 18 intcodelo CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":144 5C intcodelo CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":145 60 intcodelo CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":146 62 intcodelo CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":147 66 intcodelo CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":151 6A intcodelo CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":152 6E intcodelo CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":153 70 intcodelo CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":155 74 intcodelo CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":100 BE text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":102 BE text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":103 CA text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":104 D6 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":105 E2 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":106 EE text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":110 FA text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":111 FE text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":115 100 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":116 116 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":117 122 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":118 136 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":121 14C text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":122 150 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":123 154 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":129 160 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":131 16A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":134 16A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":135 16E text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":137 178 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":138 190 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":139 19C text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":144 1A8 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":147 1A8 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":150 1AC text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":151 1C0 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":152 1CA text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":153 1CE text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":154 1DA text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":155 1DC text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":156 1F0 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":158 206 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":160 208 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":161 212 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":162 226 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":163 22A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":164 22E text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":166 244 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":172 25C text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":173 270 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":174 286 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":181 29C text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":182 2CC text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":183 306 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":184 31A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":187 326 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":191 32A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":194 32A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":196 32E text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":197 342 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":198 34C text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":199 350 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":200 384 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":203 39A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":204 3AE text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":205 3C4 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":208 3DC text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":210 3E8 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":211 3EA text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":212 3F4 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":213 408 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":214 40C text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":215 440 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":216 454 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":217 456 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":218 45A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":219 470 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":220 47C text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":222 488 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":223 494 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":225 496 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":226 496 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":130 4AC text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":233 4D8 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":236 4D8 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":238 4EA text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":239 4EC text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":244 4EE text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":245 50E text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":246 524 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":247 538 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":250 54E text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":251 558 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":252 59C text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":253 5CC text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":254 5D4 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":255 5EC text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":256 606 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":257 620 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":258 63A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":259 654 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":261 66A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":264 674 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":265 682 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":266 68E text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":292 69A text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":293 6B0 text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":111 6BE text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":133 6BE text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":295 6BE text46 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":134 6C2 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":138 6C4 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":141 6DC text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":144 6F4 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":147 70C text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":149 710 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":152 714 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":153 718 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":166 71C text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":170 722 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":175 726 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":177 728 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":179 72A text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":181 72C text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":190 72E text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":203 734 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":207 736 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":231 74A text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":238 74E text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":239 782 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":248 78C text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":249 7DC text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":252 7DE text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":256 7DE text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":257 7E2 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":271 7E4 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":273 7F4 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":274 804 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":275 814 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":279 816 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":281 826 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":286 82C text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":288 83C text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":289 84C text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":268 84E text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":292 866 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":293 884 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":245 886 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":304 8A4 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":305 8D8 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":314 8E2 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":315 932 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":320 934 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":321 984 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":311 986 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":332 9A0 text0 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":63 9A0 text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":72 9A0 text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":73 9BA text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":74 9DC text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":76 9EA text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":77 A08 text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":80 A0C text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":81 A32 text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":87 A6E text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":89 AA0 text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":91 ABE text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":92 ACA text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":94 AD2 text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":96 AD6 text27 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":53 AD6 text7 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":55 ADA text7 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":56 AF2 text7 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":55 B62 text7 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":58 B9C text7 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":59 BB4 text7 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":62 BCA text7 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":65 BE0 text7 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":67 BE2 text7 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":24 BE4 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":28 BE4 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":38 BF2 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":39 C0C text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":41 C2E text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":42 C3C text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":46 C40 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":47 C58 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":55 C70 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":56 CA6 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":59 CD8 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":60 CE4 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":61 CE8 text5 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":53 CE8 text47 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":55 CEC text47 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":56 D04 text47 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":55 D64 text47 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":58 D96 text47 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":59 DAC text47 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":62 DC2 text47 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":65 DD8 text47 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":67 DDA text47 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":63 DDC text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":72 DDC text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":73 DEC text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":74 DFC text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":76 E0A text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":77 E1E text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":80 E22 text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":81 E38 text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":87 E60 text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":89 E82 text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":91 E9A text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":92 EA6 text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":94 EAA text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":96 EAE text45 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":71 EAE text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":72 EB2 text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":73 EC8 text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":75 EDE text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":76 EE4 text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":79 EE8 text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":80 EFE text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":81 F12 text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":82 F28 text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":83 F2A text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":84 F2E text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":85 F44 text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":86 F46 text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":90 F5E text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":92 F76 intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":92 F76 text49 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":97 FA6 intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":99 FAA intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":101 FAC intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":105 FB0 intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":106 FB4 intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":108 FB6 intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":114 FBA intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":118 FBE intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":119 FC0 intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":120 FCC intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":129 FF0 intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":130 FF4 intcode_body CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":24 102E text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":28 102E text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":38 1034 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":39 1044 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":41 1054 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":42 1062 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":46 1066 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":47 1076 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":55 1086 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":56 10A6 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":59 10C8 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":60 10D4 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":24 10D8 text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":28 10D8 text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":61 10D8 text38 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":38 10DE text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":39 10EE text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":41 10FE text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":42 110C text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":46 1110 text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":47 1120 text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":55 1130 text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":56 1150 text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":59 1172 text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":60 117E text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":61 1182 text51 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":258 1182 text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":259 1182 text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":262 1194 text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":263 1196 text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":265 11A2 text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":266 11C0 text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":267 11CC text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":270 11D0 text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":271 11EE text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":272 11FA text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":275 11FE text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":276 1204 text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":278 1228 text19 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":11 1228 text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":12 1228 text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":13 122C text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":14 1252 text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":16 1260 text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":17 1272 text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":18 1294 text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":21 12A4 text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":24 12A8 text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":25 12AA text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":26 12AC text33 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":28 12C4 text33 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":73 12C4 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":75 12C8 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":76 12CC text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":78 12D0 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":79 12D6 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":81 12D8 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":83 12E0 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":84 12E2 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":87 12E4 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":88 12EA text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":90 12EC text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":91 12F4 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":92 12F8 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":93 12F8 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":95 12FA text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":96 1300 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":98 1302 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":100 1304 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":101 130A text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":103 130C text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":104 1314 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":105 1318 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":106 1318 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":108 131A text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":110 131C text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":111 1324 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":112 1328 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":113 1328 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":115 132A text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":116 132E text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":118 1342 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":119 1344 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":137 1346 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":138 134A text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":139 1352 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":8 1356 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":13 1356 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":143 1356 text29 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":14 1362 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":15 1372 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":16 1374 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":17 1380 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":15 1386 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":20 138E text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":21 13AA text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":22 13C2 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":23 13CE text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":24 13D6 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":25 13D6 text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":26 13DE text3 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":68 13E0 text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":72 13E4 text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":73 13E8 text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":75 13EC text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":77 13F8 text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":80 1418 text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":82 1452 text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":84 145A text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":85 145C text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":86 145E text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":87 1460 text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":88 1460 text15 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":89 1462 text15 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":14 1464 text12 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":17 1464 text12 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":18 147A text12 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":19 1490 text12 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":20 14AC text12 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":19 14CC text12 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":22 14DE text12 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":16 14DE text42 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":21 14DE text42 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":23 14F4 text42 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":25 1500 text42 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":26 152E text42 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":27 153C text42 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":14 1558 text2 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":17 1558 text2 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":29 1558 text42 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":20 1566 text2 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":21 159C text2 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":194 15CA text11 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":195 15CA text11 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":26 15CA text2 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":196 15D6 text11 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":197 15EE text11 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":198 1606 text11 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":199 161E text11 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":200 1636 text11 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":300 1638 text13 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":301 1638 text13 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":302 1648 text13 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":303 165E text13 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":304 1674 text13 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":305 168A text13 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":306 16A0 text13 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":11 16A2 text28 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":24 16A2 text28 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":25 16B2 text28 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 16C2 text28 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":27 16C4 text28 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 16E8 text28 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 16FC text28 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 16FE text28 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":228 1700 text53 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":230 1700 text53 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1700 text28 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":235 1706 text53 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":240 1712 text53 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":247 171E text53 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":250 1734 text53 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":253 1748 text53 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":254 174C text53 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":34 174E text35 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":38 174E text35 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":39 1766 text35 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":40 1772 text35 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":43 1788 text35 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":44 1794 text35 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":39 1796 text21 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":40 1796 text21 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":41 179A text21 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":42 17AA text21 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":43 17BC text21 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":45 17CC text21 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":47 17DC text21 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":49 17DC text20 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":50 17DC text20 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":51 1800 text20 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":53 1810 text20 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":55 1820 text20 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":98 1820 text14 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":100 1820 text14 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":102 182E text14 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":103 1854 text14 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":104 185A text14 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":105 185C text14 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":107 1860 text14 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":112 1862 text25 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":118 1866 text25 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":119 18A4 text25 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":135 18A4 text26 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":141 18A8 text26 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":142 18E6 text26 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":11 18E6 text39 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":24 18E6 text39 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":25 18EE text39 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 18F6 text39 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":27 18F8 text39 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1914 text39 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1922 text39 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1924 text39 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":11 1926 text52 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":24 1926 text52 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1926 text39 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":25 192E text52 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1936 text52 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":27 1938 text52 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1954 text52 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1962 text52 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1964 text52 CODE
-"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1966 text52 CODE
-"/tmp/cgtyl67PE":2921 1966 cinit CODE
-"/tmp/cgtyl67PE":2923 1966 cinit CODE
-"/tmp/cgtyl67PE":2926 1966 cinit CODE
-"/tmp/cgtyl67PE":2962 1966 cinit CODE
-"/tmp/cgtyl67PE":2963 196A cinit CODE
-"/tmp/cgtyl67PE":2964 196C cinit CODE
-"/tmp/cgtyl67PE":2965 196C cinit CODE
-"/tmp/cgtyl67PE":2966 196E cinit CODE
-"/tmp/cgtyl67PE":2967 1970 cinit CODE
-"/tmp/cgtyl67PE":2970 1972 cinit CODE
-"/tmp/cgtyl67PE":2971 1976 cinit CODE
-"/tmp/cgtyl67PE":2972 1978 cinit CODE
-"/tmp/cgtyl67PE":2973 1978 cinit CODE
-"/tmp/cgtyl67PE":2974 197A cinit CODE
-"/tmp/cgtyl67PE":2975 197C cinit CODE
-"/tmp/cgtyl67PE":2978 197E cinit CODE
-"/tmp/cgtyl67PE":2979 1980 cinit CODE
-"/tmp/cgtyl67PE":2984 1982 cinit CODE
-"/tmp/cgtyl67PE":2985 1984 cinit CODE
-"/tmp/cgtyl67PE":2986 1986 cinit CODE
-"/tmp/cgtyl67PE":2987 1988 cinit CODE
-"/tmp/cgtyl67PE":2988 198A cinit CODE
-"/tmp/cgtyl67PE":2989 198C cinit CODE
-"/tmp/cgtyl67PE":2990 198E cinit CODE
-"/tmp/cgtyl67PE":2991 1990 cinit CODE
-"/tmp/cgtyl67PE":2992 1994 cinit CODE
-"/tmp/cgtyl67PE":2993 1996 cinit CODE
-"/tmp/cgtyl67PE":2999 199A cinit CODE
-"/tmp/cgtyl67PE":3000 199A cinit CODE
-"/tmp/cgtyl67PE":3001 199A cinit CODE
-"/tmp/cgtyl67PE":3002 199C cinit CODE
-"/tmp/cgtyl67PE":3003 199E cinit CODE
-"/tmp/cgtyl67PE":3004 19A0 cinit CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":9 19A4 text1 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":10 19A4 text1 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":11 19B2 text1 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":14 19C0 text1 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":17 19E2 text1 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":16 19E2 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":18 19E6 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":21 19F0 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":22 19F8 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":23 19FC text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":24 19FC text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":26 19FE text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":27 1A02 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":28 1A06 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":30 1A08 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":31 1A10 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":32 1A14 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":33 1A14 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":35 1A16 text30 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1open.c":36 1A18 text30 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":174 1A1A text4 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":180 1A1E text4 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":181 1A50 text4 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":222 1A50 text23 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":223 1A50 text23 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":16 1A86 text8 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":18 1A86 text8 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":224 1A86 text23 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":19 1A94 text8 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":20 1AAE text8 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":21 1AB8 text8 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":39 1AB8 text54 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":40 1AB8 text54 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":41 1ABC text54 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":42 1AC6 text54 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":43 1AD2 text54 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":45 1ADC text54 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":47 1AE6 text54 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":183 1AE6 text44 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":189 1AEA text44 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":190 1B10 text44 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":311 1B10 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":314 1B14 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":315 1B16 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":317 1B18 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":319 1B1C text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":320 1B20 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":321 1B24 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":322 1B28 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":323 1B2C text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":325 1B2E text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":326 1B30 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":336 1B32 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":337 1B34 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":339 1B36 text17 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":103 1B38 text37 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":109 1B3C text37 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":110 1B5E text37 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":126 1B5E text50 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":132 1B62 text50 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":133 1B84 text50 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":222 1B84 text56 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":223 1B84 text56 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":224 1BA8 text56 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":30 1BA8 text9 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":31 1BA8 text9 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":32 1BB4 text9 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":33 1BC4 text9 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":15 1BC6 text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":19 1BC6 text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":21 1BCA text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":23 1BCE text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":24 1BD0 text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":25 1BD2 text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":26 1BD4 text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":28 1BD4 text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":29 1BD6 text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":31 1BD8 text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":32 1BDA text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":34 1BDC text34 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":36 1BE0 text34 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":16 1BE4 text48 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":18 1BE4 text48 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":37 1BE4 text34 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":19 1BEC text48 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":20 1BF8 text48 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":21 1C02 text48 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":8 1C02 text24 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":10 1C06 text24 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":11 1C06 text24 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":12 1C0E text24 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":9 1C18 text6 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":12 1C18 text6 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":13 1C18 text24 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":16 1C28 text6 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":6 1C2A text10 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":7 1C2A text10 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":8 1C3A text10 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":31 1C3C text22 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":32 1C3C text22 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":33 1C4E text22 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":14 1C4E text36 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":18 1C4E text36 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":20 1C56 text36 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":21 1C5A text36 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":22 1C5E text36 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":15 1C60 text40 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":19 1C60 text40 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":20 1C64 text40 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":22 1C68 text40 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":23 1C70 text40 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":16 1C72 text43 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":20 1C72 text43 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":22 1C7A text43 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":23 1C7E text43 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":24 1C82 text43 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":31 1C84 text55 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":32 1C84 text55 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":33 1C90 text55 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c":24 1C90 text58 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c":26 1C90 text58 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":23 1C9A text18 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":26 1C9A text18 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c":27 1C9A text58 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":27 1C9C text18 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":28 1C9E text18 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":29 1CA0 text18 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":202 1CA2 text57 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":204 1CA2 text57 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":213 1CA4 text57 CODE
-"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":218 1CA6 text57 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":22 1CA8 text16 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":24 1CA8 text16 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":25 1CAA text16 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":22 1CAC text32 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":24 1CAC text32 CODE
-"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":25 1CAE text32 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":97 8 intcode CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":37 8 intcode CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":148 18 intcodelo CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":31 18 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":150 5C intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":151 60 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":152 62 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":156 66 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":157 68 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":162 6A intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":163 6E intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":164 70 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":166 74 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":100 BE text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":102 BE text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":103 CA text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":104 D6 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":105 E2 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":106 EE text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":110 FA text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":111 FE text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":115 100 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":116 116 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":117 122 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":118 136 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":121 14C text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":122 150 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":123 154 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":129 160 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":131 16A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":134 16A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":135 16E text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":137 178 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":138 190 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":139 19C text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":144 1A8 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":147 1A8 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":150 1AC text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":151 1C0 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":152 1CA text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":153 1CE text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":154 1DA text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":155 1DC text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":156 1F0 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":158 206 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":160 208 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":161 212 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":162 226 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":163 22A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":164 22E text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":166 244 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":172 25C text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":173 270 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":174 286 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":181 29C text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":182 2CC text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":183 306 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":184 31A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":187 326 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":191 32A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":194 32A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":196 32E text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":197 342 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":198 34C text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":199 350 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":200 384 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":203 39A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":204 3AE text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":205 3C4 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":208 3DC text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":210 3E8 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":211 3EA text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":212 3F4 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":213 408 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":214 40C text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":215 440 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":216 454 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":217 456 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":218 45A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":219 470 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":220 47C text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":222 488 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":223 494 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":225 496 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":226 496 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":130 4AC text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":233 4D8 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":236 4D8 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":238 4EA text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":239 4EC text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":244 4EE text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":245 50E text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":246 524 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":247 538 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":250 54E text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":251 558 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":252 59C text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":253 5CC text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":254 5D4 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":255 5EC text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":256 606 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":257 620 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":258 63A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":259 654 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":261 66A text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":264 674 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":265 682 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":292 68E text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":293 6A4 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":111 6B2 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":112 6B2 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":295 6B2 text41 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":113 6B6 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":132 6B8 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":133 6BC text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":137 6BE text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":140 6D6 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":143 6EE text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":145 706 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":147 71E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":149 722 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":152 726 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":153 72A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":165 72E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":170 734 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":175 738 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":177 73A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":179 73C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":181 73E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":191 740 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":204 746 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":208 748 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":232 75C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":239 760 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":240 794 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":249 79E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":250 7EE text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":253 7F0 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":257 7F0 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":258 7F4 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":272 7F6 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":274 806 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":280 80C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":282 81C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":287 822 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":289 832 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":290 842 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":269 844 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":293 85C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":294 87A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":246 87C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":305 89A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":306 8CE text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":315 8D8 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":316 928 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":321 92A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":322 97A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":312 97C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":333 996 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":63 996 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":72 996 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":73 9B0 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":74 9D2 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":76 9E0 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":77 9FE text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":80 A02 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":81 A28 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":87 A64 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":89 A96 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":91 AB4 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":92 AC0 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":94 AC8 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":96 ACC text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":53 ACC text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":55 AD0 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":56 AE8 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":55 B58 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":58 B92 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":59 BAA text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":62 BC0 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":65 BD6 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":67 BD8 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":24 BDA text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":28 BDA text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":38 BE8 text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":39 C02 text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":41 C24 text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":42 C32 text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":46 C36 text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":47 C4E text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":55 C66 text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":56 C9C text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":59 CCE text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":60 CDA text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":61 CDE text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":53 CDE text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":55 CE2 text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":56 CFA text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":55 D5A text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":58 D8C text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":59 DA2 text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":62 DB8 text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":65 DCE text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":67 DD0 text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":71 DD2 text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":72 DD6 text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":73 DEC text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":75 E02 text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":76 E08 text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":79 E0C text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":80 E22 text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":81 E36 text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":82 E4C text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":83 E4E text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":84 E52 text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":85 E68 text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":86 E6A text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":90 E82 text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":97 E9A intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":92 E9A text44 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":102 ECA intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":104 ECE intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":106 ED0 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":110 ED4 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":111 ED8 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":114 EDA intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":120 EDE intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":124 EE2 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":125 EE4 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":126 EF0 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":135 F10 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":136 F14 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":24 F4E text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":28 F4E text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":38 F54 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":39 F64 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":41 F74 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":42 F82 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":46 F86 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":47 F96 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":55 FA6 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":56 FC6 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":59 FE8 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":60 FF4 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":24 FF8 text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":28 FF8 text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":61 FF8 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":38 FFE text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":39 100E text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":41 101E text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":42 102C text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":46 1030 text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":47 1040 text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":55 1050 text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":56 1070 text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":59 1092 text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":60 109E text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":61 10A2 text46 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":258 10A2 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":259 10A2 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":262 10B4 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":263 10B6 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":265 10C2 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":266 10E0 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":267 10EC text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":270 10F0 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":271 110E text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":272 111A text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":275 111E text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":276 1124 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":278 1148 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":11 1148 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":12 1148 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":13 114C text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":14 1172 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":16 1180 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":17 1192 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":18 11B4 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":21 11C4 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":24 11C8 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":25 11CA text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":26 11CC text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":28 11E4 text34 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":73 11E4 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":75 11E8 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":76 11EC text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":78 11F0 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":79 11F6 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":81 11F8 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":83 1200 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":84 1202 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":87 1204 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":88 120A text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":90 120C text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":91 1214 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":92 1218 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":93 1218 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":95 121A text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":96 1220 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":98 1222 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":100 1224 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":101 122A text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":103 122C text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":104 1234 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":105 1238 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":106 1238 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":108 123A text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":110 123C text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":111 1244 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":112 1248 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":113 1248 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":115 124A text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":116 124E text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":118 1262 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":119 1264 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":137 1266 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":138 126A text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":139 1272 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":8 1276 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":13 1276 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":143 1276 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":14 1282 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":15 1292 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":16 1294 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":17 12A0 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":15 12A6 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":20 12AE text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":21 12CA text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":22 12E2 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":23 12EE text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":24 12F6 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":25 12F6 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":26 12FE text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":68 1300 text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":72 1304 text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":73 1308 text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":75 130C text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":77 1318 text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":80 1338 text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":82 1372 text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":84 137A text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":85 137C text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":86 137E text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":87 1380 text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":88 1380 text16 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":89 1382 text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":14 1384 text13 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":17 1384 text13 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":18 139A text13 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":19 13B0 text13 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":20 13CC text13 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":19 13EC text13 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":22 13FE text13 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":14 13FE text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":17 13FE text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":20 140C text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":21 1442 text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":14 1470 text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":21 1470 text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":26 1470 text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":24 147E text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":25 14B4 text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":194 14E2 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":195 14E2 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":31 14E2 text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":196 14EE text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":197 1506 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":198 151E text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":199 1536 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":200 154E text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":300 1550 text14 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":301 1550 text14 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":302 1560 text14 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":303 1576 text14 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":304 158C text14 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":305 15A2 text14 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":306 15B8 text14 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":11 15BA text29 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":24 15BA text29 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":25 15CA text29 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 15DA text29 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":27 15DC text29 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1600 text29 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1614 text29 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1616 text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":228 1618 text48 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":230 1618 text48 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1618 text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":235 161E text48 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":240 162A text48 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":247 1636 text48 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":250 164C text48 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":253 1660 text48 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":254 1664 text48 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":44 1666 text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":45 1666 text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":46 166A text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":47 167A text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":48 168C text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":50 169C text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":52 16AC text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":54 16AC text21 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":55 16AC text21 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":56 16D0 text21 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":58 16E0 text21 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":60 16F0 text21 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":98 16F0 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":100 16F0 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":102 16FE text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":103 1724 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":104 172A text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":105 172C text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":107 1730 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":112 1732 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":118 1736 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":119 1774 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":135 1774 text27 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":141 1778 text27 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":142 17B6 text27 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":11 17B6 text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":24 17B6 text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":25 17BE text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 17C6 text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":27 17C8 text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 17E4 text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 17F2 text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 17F4 text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":11 17F6 text47 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":24 17F6 text47 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 17F6 text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":25 17FE text47 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1806 text47 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":27 1808 text47 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1824 text47 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1832 text47 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1834 text47 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1836 text47 CODE
+"/tmp/cgticxiaM":2917 1836 cinit CODE
+"/tmp/cgticxiaM":2919 1836 cinit CODE
+"/tmp/cgticxiaM":2922 1836 cinit CODE
+"/tmp/cgticxiaM":2958 1836 cinit CODE
+"/tmp/cgticxiaM":2959 183A cinit CODE
+"/tmp/cgticxiaM":2960 183C cinit CODE
+"/tmp/cgticxiaM":2961 183C cinit CODE
+"/tmp/cgticxiaM":2962 183E cinit CODE
+"/tmp/cgticxiaM":2963 1840 cinit CODE
+"/tmp/cgticxiaM":2966 1842 cinit CODE
+"/tmp/cgticxiaM":2967 1846 cinit CODE
+"/tmp/cgticxiaM":2968 1848 cinit CODE
+"/tmp/cgticxiaM":2969 1848 cinit CODE
+"/tmp/cgticxiaM":2970 184A cinit CODE
+"/tmp/cgticxiaM":2971 184C cinit CODE
+"/tmp/cgticxiaM":2974 184E cinit CODE
+"/tmp/cgticxiaM":2975 1850 cinit CODE
+"/tmp/cgticxiaM":2980 1852 cinit CODE
+"/tmp/cgticxiaM":2981 1854 cinit CODE
+"/tmp/cgticxiaM":2982 1856 cinit CODE
+"/tmp/cgticxiaM":2983 1858 cinit CODE
+"/tmp/cgticxiaM":2984 185A cinit CODE
+"/tmp/cgticxiaM":2985 185C cinit CODE
+"/tmp/cgticxiaM":2986 185E cinit CODE
+"/tmp/cgticxiaM":2987 1860 cinit CODE
+"/tmp/cgticxiaM":2988 1864 cinit CODE
+"/tmp/cgticxiaM":2989 1866 cinit CODE
+"/tmp/cgticxiaM":2995 186A cinit CODE
+"/tmp/cgticxiaM":2996 186A cinit CODE
+"/tmp/cgticxiaM":2997 186A cinit CODE
+"/tmp/cgticxiaM":2998 186C cinit CODE
+"/tmp/cgticxiaM":2999 186E cinit CODE
+"/tmp/cgticxiaM":3000 1870 cinit CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":9 1874 text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":10 1874 text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":11 1882 text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":14 1890 text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":174 18B2 text5 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":17 18B2 text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":180 18B6 text5 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":181 18E8 text5 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":222 18E8 text24 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":223 18E8 text24 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":17 191E text8 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":19 191E text8 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":224 191E text24 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":20 192C text8 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":21 1946 text8 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":22 1950 text8 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":44 1950 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":45 1950 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":46 1954 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":47 195E text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":48 196A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":50 1974 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":52 197E text49 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":18 197E text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":20 1982 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":21 198C text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":22 1990 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":23 1994 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":25 1996 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":26 199E text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":27 19A2 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":28 19A2 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":30 19A4 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":31 19A6 text31 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":311 19A8 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":314 19AC text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":315 19AE text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":317 19B0 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":319 19B4 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":320 19B8 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":321 19BC text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":322 19C0 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":323 19C4 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":325 19C6 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":326 19C8 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":336 19CA text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":337 19CC text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":339 19CE text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":103 19D0 text35 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":109 19D4 text35 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":110 19F6 text35 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":126 19F6 text45 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":132 19FA text45 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":133 1A1C text45 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":222 1A1C text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":223 1A1C text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":224 1A40 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":30 1A40 text9 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":31 1A40 text9 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":32 1A4C text9 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":33 1A5C text9 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":15 1A5E text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":19 1A5E text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":21 1A62 text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":23 1A66 text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":24 1A68 text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":25 1A6A text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":26 1A6C text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":28 1A6C text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":29 1A6E text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":31 1A70 text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":32 1A72 text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":34 1A74 text38 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":36 1A78 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":17 1A7C text43 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":19 1A7C text43 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":37 1A7C text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":20 1A84 text43 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":21 1A90 text43 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":22 1A9A text43 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":8 1A9A text25 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":10 1A9E text25 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":11 1A9E text25 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":12 1AA6 text25 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":6 1AB0 text10 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":7 1AB0 text10 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":13 1AB0 text25 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":8 1AC0 text10 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":10 1AC2 text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":11 1AC2 text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":12 1AD2 text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":36 1AD4 text23 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":37 1AD4 text23 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":24 1AE6 text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":27 1AE6 text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":38 1AE6 text23 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":28 1AE8 text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":29 1AEA text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":31 1AEC text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":33 1AEE text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":34 1AF0 text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":36 1AF2 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":37 1AF2 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":38 1AFE text50 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c":24 1AFE text53 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c":26 1AFE text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":202 1B08 text52 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":204 1B08 text52 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c":27 1B08 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":213 1B0A text52 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":218 1B0C text52 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":22 1B0E text17 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":24 1B0E text17 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":25 1B10 text17 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":22 1B12 text33 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":24 1B12 text33 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":25 1B14 text33 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":22 1B16 text40 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":24 1B16 text40 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":25 1B18 text40 CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -769,58 +726,50 @@ $dist/UseXC8/debug/Framework.X.debug.obj
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-ReadTimer1@timer 3 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_ToMainHigh_sendmsg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_XINST$OFF 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-i2recv_msg@maxlength 3B 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi1_send_msg 10D8 0 CODE 0 text38 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi1_send_msg FF8 0 CODE 0 text36 dist/UseXC8/debug/Framework.X.debug.obj
 i1send_msg@tlength 12 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2send_msg@tlength 40 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2send_msg@tlength 3E 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 _ToMainHigh_MQ 136 0 BANK1 1 bssBANK1 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_OpenUSART 1356 0 CODE 0 text29 dist/UseXC8/debug/Framework.X.debug.obj
-i2_start_i2c_slave_reply CE8 0 CODE 0 text47 dist/UseXC8/debug/Framework.X.debug.obj
-start_i2c_slave_reply@length AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-i2recv_msg@tlength 43 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_OpenUSART 1276 0 CODE 0 text30 dist/UseXC8/debug/Framework.X.debug.obj
+i2_start_i2c_slave_reply CDE 0 CODE 0 text42 dist/UseXC8/debug/Framework.X.debug.obj
+start_i2c_slave_reply@length AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __S0 7FFE 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __S1 236 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __S2 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi2_send_msg 1182 0 CODE 0 text51 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_start_i2c_slave_reply BE4 0 CODE 0 text7 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi2_send_msg 10A2 0 CODE 0 text46 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_start_i2c_slave_reply BDA 0 CODE 0 text7 dist/UseXC8/debug/Framework.X.debug.obj
 __Hintentry 0 0 ABS 0 intentry dist/UseXC8/debug/Framework.X.debug.obj
 __Lintentry 0 0 ABS 0 intentry dist/UseXC8/debug/Framework.X.debug.obj
-ToMainLow_recvmsg@maxlength C4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+ToMainLow_recvmsg@maxlength C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 i1memcpy@d 7 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2memcpy@d 35 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2memcpy@d 33 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_init_i2c 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_ToMainHigh_sendmsg 1B84 0 CODE 0 text50 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_timer1_lthread 15CA 0 CODE 0 text2 dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi2_returnADCValue 1C02 0 CODE 0 text48 dist/UseXC8/debug/Framework.X.debug.obj
-_init_timer1_lthread 1C2A 0 CODE 0 text10 dist/UseXC8/debug/Framework.X.debug.obj
-timer1_int_handler@result 1C 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_ToMainHigh_sendmsg 1A1C 0 CODE 0 text45 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_timer1_lthread 1470 0 CODE 0 text2 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi2_returnADCValue 1A9A 0 CODE 0 text43 dist/UseXC8/debug/Framework.X.debug.obj
+_init_timer1_lthread 1AB0 0 CODE 0 text10 dist/UseXC8/debug/Framework.X.debug.obj
 _LATB F8A 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_ToMainHigh_recvmsg 18E6 0 CODE 0 text26 dist/UseXC8/debug/Framework.X.debug.obj
-__size_of_FromMainHigh_recvmsg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_ToMainHigh_recvmsg 17B6 0 CODE 0 text27 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_ToMainHigh_recvmsg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_main 6BE 0 CODE 0 text0 dist/UseXC8/debug/Framework.X.debug.obj
-___sp 0 0 STACK 2 stack /tmp/cgtYLDU5h.obj
-_timer0_int_handler 14DE 0 CODE 0 text42 dist/UseXC8/debug/Framework.X.debug.obj
-InterruptHandlerHigh@pureADCValue A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_main 6B2 0 CODE 0 text0 dist/UseXC8/debug/Framework.X.debug.obj
+___sp 0 0 STACK 2 stack /tmp/cgtZiCfQL.obj
+InterruptHandlerHigh@pureADCValue 49 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 i2c_int_handler@overrun_error 91 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-init_i2c@ic A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+init_i2c@ic A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 i2c_int_handler@data_written 90 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-_timer1_int_handler 174E 0 CODE 0 text35 dist/UseXC8/debug/Framework.X.debug.obj
-start BA 0 CODE 0 init /tmp/cgtYLDU5h.obj
-_MQ_Main_Willing_to_block 4F 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-_start_i2c_slave_reply AD6 0 CODE 0 text7 dist/UseXC8/debug/Framework.X.debug.obj
+start BA 0 CODE 0 init /tmp/cgtZiCfQL.obj
+_MQ_Main_Willing_to_block 4D 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+_start_i2c_slave_reply ACC 0 CODE 0 text7 dist/UseXC8/debug/Framework.X.debug.obj
 i1memcpy@d1 1 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2memcpy@d1 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2memcpy@d1 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 _FromMainHigh_MQ 200 0 BANK2 1 bssBANK2 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_timer0_int_handler 1558 0 CODE 0 text42 dist/UseXC8/debug/Framework.X.debug.obj
 _TMR0H FD7 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _TMR1H FCF 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _TMR0L FD6 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _TMR1L FCE 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-?_in_high_int A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+?_in_high_int A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 _RCREG FAE 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _RCSTA FAB 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _TRISB F93 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
@@ -830,78 +779,73 @@ _TXSTA FAC 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Lirdata 0 0 CODE 0 irdata dist/UseXC8/debug/Framework.X.debug.obj
 __HRAM 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __LRAM 1 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_T1CON FCD 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
+_T0CON FD5 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 i1send_msg@qmsg 15 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2send_msg@qmsg 43 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2c_configure_slave@addr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+i2send_msg@qmsg 41 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2c_configure_slave@addr A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+OpenTimer0@config A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 i1send_msg@msgtype E 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2send_msg@msgtype 3C 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2recv_msg@qmsg 45 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2send_msg@msgtype 3A 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_WDTPS$32768 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Hconfig 7FFE 0 CONFIG 0 config dist/UseXC8/debug/Framework.X.debug.obj
 __Lconfig 7FF8 0 CONFIG 0 config dist/UseXC8/debug/Framework.X.debug.obj
-i2recv_msg@msgtype 3C 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-timer1_lthread@retval CB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-OpenTimer1@config A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-_ADCValue CF 0 BANK0 1 dataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-_ConvertADC 1CA8 0 CODE 0 text16 dist/UseXC8/debug/Framework.X.debug.obj
-?___lwmod A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-WriteTimer0@timer 31 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+timer0_lthread@retval C9 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+timer1_lthread@retval C9 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_ADCValue CD 0 BANK0 1 dataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_ConvertADC 1B0E 0 CODE 0 text17 dist/UseXC8/debug/Framework.X.debug.obj
+?___lwmod A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hbigram 0 0 ABS 0 bigram dist/UseXC8/debug/Framework.X.debug.obj
-WriteTimer0@timer0 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __Lbigram 0 0 ABS 0 bigram dist/UseXC8/debug/Framework.X.debug.obj
 __Hrparam 0 0 ABS 0 rparam dist/UseXC8/debug/Framework.X.debug.obj
 __Lrparam 0 0 ABS 0 rparam dist/UseXC8/debug/Framework.X.debug.obj
 i1memcpy@n 5 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2memcpy@n 33 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2_check_msg 1B84 0 CODE 0 text56 dist/UseXC8/debug/Framework.X.debug.obj
-timer0_int_handler@msgtype 82 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-_enter_sleep_mode 1CA2 0 CODE 0 text57 dist/UseXC8/debug/Framework.X.debug.obj
+i2memcpy@n 31 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2_check_msg 1A1C 0 CODE 0 text51 dist/UseXC8/debug/Framework.X.debug.obj
+_enter_sleep_mode 1B08 0 CODE 0 text52 dist/UseXC8/debug/Framework.X.debug.obj
 __Hram 0 0 ABS 0 ram dist/UseXC8/debug/Framework.X.debug.obj
 __Lram 0 0 ABS 0 ram dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_ReadUSART 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Hcomram 0 0 ABS 0 comram dist/UseXC8/debug/Framework.X.debug.obj
 __Lcomram 0 0 ABS 0 comram dist/UseXC8/debug/Framework.X.debug.obj
-_send_msg BE4 0 CODE 0 text5 dist/UseXC8/debug/Framework.X.debug.obj
-?_in_main AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_send_msg BDA 0 CODE 0 text6 dist/UseXC8/debug/Framework.X.debug.obj
+?_in_main AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hsfr 0 0 ABS 0 sfr dist/UseXC8/debug/Framework.X.debug.obj
 __Lsfr 0 0 ABS 0 sfr dist/UseXC8/debug/Framework.X.debug.obj
 __Hbss 0 0 RAM 1 bss dist/UseXC8/debug/Framework.X.debug.obj
-_recv_msg 9A0 0 CODE 0 text27 dist/UseXC8/debug/Framework.X.debug.obj
+_recv_msg 996 0 CODE 0 text28 dist/UseXC8/debug/Framework.X.debug.obj
 __Lbss 0 0 RAM 1 bss dist/UseXC8/debug/Framework.X.debug.obj
 i1send_msg@length D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2send_msg@length 3B 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2send_msg@length 39 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/UseXC8/debug/Framework.X.debug.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/UseXC8/debug/Framework.X.debug.obj
-WriteTimer1@timer 3 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-__size_of_timer1_int_handler 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-WriteTimer1@timer1 1 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi1_ConvertADC 1CB0 0 CODE 0 text32 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi1_ConvertADC 1B16 0 CODE 0 text33 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_enter_sleep_mode 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _ADCON0 FC2 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _ADCON1 FC1 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _ADCON2 FC0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi2_in_high_int 1C90 0 CODE 0 text55 dist/UseXC8/debug/Framework.X.debug.obj
-uart_lthread@length AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi2_ConvertADC 1B1A 0 CODE 0 text40 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi2_in_high_int 1AFE 0 CODE 0 text50 dist/UseXC8/debug/Framework.X.debug.obj
+uart_lthread@length AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 _PIE1bits F9D 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-init_queue@i AB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_init_timer1_lthread 1C3C 0 CODE 0 text10 dist/UseXC8/debug/Framework.X.debug.obj
+init_queue@i A9 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_init_timer0_lthread 1AD4 0 CODE 0 text11 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_init_timer1_lthread 1AC2 0 CODE 0 text10 dist/UseXC8/debug/Framework.X.debug.obj
 i2c_int_handler@msg_to_send 93 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 _PIR1bits F9E 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _IPR1bits F9F 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-timer0_lthread@msgbuffer AE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+timer0_lthread@msgbuffer C6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 _LATBbits F8A 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-timer1_lthread@msgbuffer C8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+timer1_lthread@msgbuffer C6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/UseXC8/debug/Framework.X.debug.obj
 _SSPADD FC8 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/UseXC8/debug/Framework.X.debug.obj
 _RCONbits FD0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 i1memcpy@s 9 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2memcpy@s 37 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2memcpy@s 35 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/UseXC8/debug/Framework.X.debug.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/UseXC8/debug/Framework.X.debug.obj
 __Hintret 0 0 ABS 0 intret dist/UseXC8/debug/Framework.X.debug.obj
-i2_in_high_int 1C84 0 CODE 0 text55 dist/UseXC8/debug/Framework.X.debug.obj
+i2_in_high_int 1AF2 0 CODE 0 text50 dist/UseXC8/debug/Framework.X.debug.obj
 __Lintret 0 0 ABS 0 intret dist/UseXC8/debug/Framework.X.debug.obj
 __Hramtop 400 0 RAM 0 ramtop dist/UseXC8/debug/Framework.X.debug.obj
 __Lramtop 400 0 RAM 0 ramtop dist/UseXC8/debug/Framework.X.debug.obj
@@ -915,12 +859,12 @@ _SPBRGH FB0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/UseXC8/debug/Framework.X.debug.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/UseXC8/debug/Framework.X.debug.obj
 main@uthread_data 1AD 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
-i2_in_low_int 1AB8 0 CODE 0 text54 dist/UseXC8/debug/Framework.X.debug.obj
-_timer0_lthread 1C18 0 CODE 0 text6 dist/UseXC8/debug/Framework.X.debug.obj
+i2_in_low_int 1950 0 CODE 0 text49 dist/UseXC8/debug/Framework.X.debug.obj
+_timer0_lthread 1470 0 CODE 0 text3 dist/UseXC8/debug/Framework.X.debug.obj
 __Hintcode 14 0 CODE 0 intcode dist/UseXC8/debug/Framework.X.debug.obj
 _SSPBUF FC9 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Lintcode 8 0 CODE 0 intcode dist/UseXC8/debug/Framework.X.debug.obj
-_timer1_lthread 1558 0 CODE 0 text2 dist/UseXC8/debug/Framework.X.debug.obj
+_timer1_lthread 13FE 0 CODE 0 text2 dist/UseXC8/debug/Framework.X.debug.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/UseXC8/debug/Framework.X.debug.obj
 _ADRESH FC4 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/UseXC8/debug/Framework.X.debug.obj
@@ -932,43 +876,42 @@ _ADRESL FC3 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 main@msgbuffer 1A2 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __size_ofi2_returnADCValue 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/UseXC8/debug/Framework.X.debug.obj
-send_msg@slot BB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+send_msg@slot B9 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/UseXC8/debug/Framework.X.debug.obj
-FromMainHigh_sendmsg@data BF 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-recv_msg@slot BB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-i1_memcpy 18E6 0 CODE 0 text39 dist/UseXC8/debug/Framework.X.debug.obj
-i2_memcpy 1926 0 CODE 0 text52 dist/UseXC8/debug/Framework.X.debug.obj
-OpenADC@portconfig A9 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+FromMainHigh_sendmsg@data BD 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+recv_msg@slot B9 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+i1_memcpy 17B6 0 CODE 0 text37 dist/UseXC8/debug/Framework.X.debug.obj
+i2_memcpy 17F6 0 CODE 0 text47 dist/UseXC8/debug/Framework.X.debug.obj
+OpenADC@portconfig A7 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-__pnvCOMRAM 4D 0 COMRAM 1 nvCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-initADC@ADCValue AF 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__pnvCOMRAM 4B 0 COMRAM 1 nvCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+initADC@ADCValue AD 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 main@msgtype 1B9 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_in_high_int 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_block_on_To_msgqueues 1182 0 CODE 0 text19 dist/UseXC8/debug/Framework.X.debug.obj
+_block_on_To_msgqueues 10A2 0 CODE 0 text20 dist/UseXC8/debug/Framework.X.debug.obj
 i1memcpy@s1 3 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2memcpy@s1 31 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2memcpy@s1 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_initADC 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_Delay1KTCYx 1C18 0 CODE 0 text24 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_enable_interrupts 1CA2 0 CODE 0 text18 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_Delay1KTCYx 1AB0 0 CODE 0 text25 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_enable_interrupts 1AF2 0 CODE 0 text19 dist/UseXC8/debug/Framework.X.debug.obj
 main@ic 1BB 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 i2c_int_handler@i2c_data 92 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 main@uc 1B4 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __Hdata 0 0 ABS 0 data dist/UseXC8/debug/Framework.X.debug.obj
 __Ldata 0 0 ABS 0 data dist/UseXC8/debug/Framework.X.debug.obj
-send_msg@qmsg BC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-recv_msg@qmsg BE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_block_on_To_msgqueues 1228 0 CODE 0 text19 dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi2_recv_msg EAE 0 CODE 0 text45 dist/UseXC8/debug/Framework.X.debug.obj
-stackhi 3FF 0 ABS 0 - /tmp/cgtYLDU5h.obj
-_check_msg 1A50 0 CODE 0 text23 dist/UseXC8/debug/Framework.X.debug.obj
+send_msg@qmsg BA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+recv_msg@qmsg BC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_block_on_To_msgqueues 1148 0 CODE 0 text20 dist/UseXC8/debug/Framework.X.debug.obj
+stackhi 3FF 0 ABS 0 - /tmp/cgtZiCfQL.obj
+_check_msg 18E8 0 CODE 0 text24 dist/UseXC8/debug/Framework.X.debug.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __pcstackBANK0 80 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_send_msg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Htemp 0 0 COMRAM 1 temp dist/UseXC8/debug/Framework.X.debug.obj
 __Ltemp 0 0 COMRAM 1 temp dist/UseXC8/debug/Framework.X.debug.obj
-stacklo 236 0 ABS 0 - /tmp/cgtYLDU5h.obj
+stacklo 236 0 ABS 0 - /tmp/cgtZiCfQL.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/UseXC8/debug/Framework.X.debug.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/UseXC8/debug/Framework.X.debug.obj
 __Hinit BA 0 CODE 0 init dist/UseXC8/debug/Framework.X.debug.obj
@@ -976,72 +919,70 @@ __Linit BA 0 CODE 0 init dist/UseXC8/debug/Framework.X.debug.obj
 __Hintcodelo BA 0 CODE 0 intcodelo dist/UseXC8/debug/Framework.X.debug.obj
 __Lintcodelo 18 0 CODE 0 intcodelo dist/UseXC8/debug/Framework.X.debug.obj
 __Hrbss 0 0 COMRAM 1 rbss dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_main 9A0 0 CODE 0 text0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_main 996 0 CODE 0 text0 dist/UseXC8/debug/Framework.X.debug.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/UseXC8/debug/Framework.X.debug.obj
 __pintcodelo 18 0 CODE 0 intcodelo dist/UseXC8/debug/Framework.X.debug.obj
-_ic_ptr CD 0 BANK0 1 nvBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-FromMainHigh_recvmsg@maxlength 4B 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-_uc_ptr 4D 0 COMRAM 1 nvCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_check_msg 1A86 0 CODE 0 text23 dist/UseXC8/debug/Framework.X.debug.obj
+_ic_ptr CB 0 BANK0 1 nvBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_uc_ptr 4B 0 COMRAM 1 nvCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_check_msg 191E 0 CODE 0 text24 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_ConvertADC 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Htext 0 0 ABS 0 text dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext 0 0 ABS 0 text dist/UseXC8/debug/Framework.X.debug.obj
-_memcpy 16A2 0 CODE 0 text28 dist/UseXC8/debug/Framework.X.debug.obj
+_memcpy 15BA 0 CODE 0 text29 dist/UseXC8/debug/Framework.X.debug.obj
 __HdataBANK0 0 0 ABS 0 dataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __LdataBANK0 0 0 ABS 0 dataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_Delay1KTCYx 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 i1send_msg@qptr B 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2send_msg@qptr 39 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-__pdataBANK0 CF 0 BANK0 1 dataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+i2send_msg@qptr 37 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+__pdataBANK0 CD 0 BANK0 1 dataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __size_ofi1_send_msg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-end_of_initialization 199A 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
-ToMainHigh_sendmsg@length 48 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-init_queue@qptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-OpenUSART@spbrg A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-_uart_lthread 19A4 0 CODE 0 text1 dist/UseXC8/debug/Framework.X.debug.obj
-i2recv_msg@qptr 39 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-send_msg@qptr B2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-recv_msg@qptr B2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+end_of_initialization 186A 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
+ToMainHigh_sendmsg@length 46 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+init_queue@qptr A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+OpenUSART@spbrg A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_uart_lthread 1874 0 CODE 0 text1 dist/UseXC8/debug/Framework.X.debug.obj
+send_msg@qptr B0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+recv_msg@qptr B0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __HnvBANK0 0 0 ABS 0 nvBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __LnvBANK0 0 0 ABS 0 nvBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_in_low_int 17DC 0 CODE 0 text21 dist/UseXC8/debug/Framework.X.debug.obj
-__pnvBANK0 CD 0 BANK0 1 nvBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_in_low_int 16AC 0 CODE 0 text22 dist/UseXC8/debug/Framework.X.debug.obj
+__pnvBANK0 CB 0 BANK0 1 nvBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __size_ofi2_send_msg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _SSPCON1 FC6 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _SSPCON2 FC5 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-init_uart_recv@uc A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-_ToMainLow_sendmsg 1B38 0 CODE 0 text37 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_handle_start F76 0 CODE 0 text49 dist/UseXC8/debug/Framework.X.debug.obj
+init_uart_recv@uc A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_ToMainLow_sendmsg 19D0 0 CODE 0 text35 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_handle_start E9A 0 CODE 0 text44 dist/UseXC8/debug/Framework.X.debug.obj
 __size_ofi1_ConvertADC 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_timer1_lthread 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_handle_start EAE 0 CODE 0 text49 dist/UseXC8/debug/Framework.X.debug.obj
+_handle_start DD2 0 CODE 0 text44 dist/UseXC8/debug/Framework.X.debug.obj
+_OpenTimer0 197E 0 CODE 0 text31 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_i2c_int_handler 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-uart_lthread@msgtype AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-FromMainHigh_sendmsg@msgtype BE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+uart_lthread@msgtype A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+FromMainHigh_sendmsg@msgtype BC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 _RCSTAbits FAB 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _TRISCbits F94 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _TXSTAbits FAC 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_T1CONbits FCD 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_ReadTimer1 1C60 0 CODE 0 text40 dist/UseXC8/debug/Framework.X.debug.obj
-_SleepIfOkay 1700 0 CODE 0 text53 dist/UseXC8/debug/Framework.X.debug.obj
-_ReadADC 1C90 0 CODE 0 text58 dist/UseXC8/debug/Framework.X.debug.obj
-_ToMainHigh_sendmsg 1B5E 0 CODE 0 text50 dist/UseXC8/debug/Framework.X.debug.obj
-_OpenTimer1 19E2 0 CODE 0 text30 dist/UseXC8/debug/Framework.X.debug.obj
-_i2c_int_handler BE 0 CODE 0 text46 dist/UseXC8/debug/Framework.X.debug.obj
+_T0CONbits FD5 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
+__size_ofi2_ConvertADC 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
+_SleepIfOkay 1618 0 CODE 0 text48 dist/UseXC8/debug/Framework.X.debug.obj
+_ReadADC 1AFE 0 CODE 0 text53 dist/UseXC8/debug/Framework.X.debug.obj
+_ToMainHigh_sendmsg 19F6 0 CODE 0 text45 dist/UseXC8/debug/Framework.X.debug.obj
+_i2c_int_handler BE 0 CODE 0 text41 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_uart_recv_int_handler 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_OpenADC 13E0 0 CODE 0 text15 dist/UseXC8/debug/Framework.X.debug.obj
-?i2_in_high_int 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-_initADC 1820 0 CODE 0 text14 dist/UseXC8/debug/Framework.X.debug.obj
+_OpenADC 1300 0 CODE 0 text16 dist/UseXC8/debug/Framework.X.debug.obj
+?i2_in_high_int 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+_initADC 16F0 0 CODE 0 text15 dist/UseXC8/debug/Framework.X.debug.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/UseXC8/debug/Framework.X.debug.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/UseXC8/debug/Framework.X.debug.obj
-?i2_in_low_int 31 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2start_i2c_slave_reply@msg 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+?i2_in_low_int 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2start_i2c_slave_reply@msg 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_InterruptHandlerLow 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_OpenADC 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-send_msg@data B6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+send_msg@data B4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hifardata 0 0 CODE 0 ifardata dist/UseXC8/debug/Framework.X.debug.obj
 __Lifardata 0 0 CODE 0 ifardata dist/UseXC8/debug/Framework.X.debug.obj
-recv_msg@data B7 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+recv_msg@data B5 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hbank0 0 0 ABS 0 bank0 dist/UseXC8/debug/Framework.X.debug.obj
 __Lbank0 0 0 ABS 0 bank0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hbank1 0 0 ABS 0 bank1 dist/UseXC8/debug/Framework.X.debug.obj
@@ -1049,7 +990,7 @@ __Lbank1 0 0 ABS 0 bank1 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_ToMainLow_sendmsg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Hbank2 0 0 ABS 0 bank2 dist/UseXC8/debug/Framework.X.debug.obj
 __Lbank2 0 0 ABS 0 bank2 dist/UseXC8/debug/Framework.X.debug.obj
-__size_of_OpenTimer1 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
+__size_of_OpenTimer0 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Hbank3 0 0 ABS 0 bank3 dist/UseXC8/debug/Framework.X.debug.obj
 __Lbank3 0 0 ABS 0 bank3 dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_FOSC2$ON 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
@@ -1058,429 +999,397 @@ ToMainLow_sendmsg@data 18 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.
 __Hpowerup BA 0 CODE 0 powerup dist/UseXC8/debug/Framework.X.debug.obj
 _SSPSTAT FC7 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Lpowerup BA 0 CODE 0 powerup dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_timer1_int_handler 1796 0 CODE 0 text35 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext0 0 0 ABS 0 text0 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext0 0 0 ABS 0 text0 dist/UseXC8/debug/Framework.X.debug.obj
 _SSPCON1bits FC6 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Htext1 0 0 ABS 0 text1 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext1 0 0 ABS 0 text1 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext0 6BE 0 CODE 0 text0 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext0 6B2 0 CODE 0 text0 dist/UseXC8/debug/Framework.X.debug.obj
+_INTCON2bits FF1 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 _SSPCON2bits FC5 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Htext2 0 0 ABS 0 text2 dist/UseXC8/debug/Framework.X.debug.obj
-timer0_lthread@tptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+timer0_lthread@tptr C0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext2 0 0 ABS 0 text2 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext1 19A4 0 CODE 0 text1 dist/UseXC8/debug/Framework.X.debug.obj
-timer1_lthread@tptr C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext1 1874 0 CODE 0 text1 dist/UseXC8/debug/Framework.X.debug.obj
+timer1_lthread@tptr C0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext3 0 0 ABS 0 text3 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext3 0 0 ABS 0 text3 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext2 1558 0 CODE 0 text2 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext2 13FE 0 CODE 0 text2 dist/UseXC8/debug/Framework.X.debug.obj
 ToMainLow_sendmsg@msgtype 17 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-ToMainHigh_sendmsg@data 46 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+ToMainHigh_sendmsg@data 44 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __Htext4 0 0 ABS 0 text4 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext4 0 0 ABS 0 text4 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext3 1356 0 CODE 0 text3 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext3 1470 0 CODE 0 text3 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_ToMainLow_recvmsg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Htext5 0 0 ABS 0 text5 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_SleepIfOkay 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext5 0 0 ABS 0 text5 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext4 1A1A 0 CODE 0 text4 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext4 1276 0 CODE 0 text4 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext6 0 0 ABS 0 text6 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext6 0 0 ABS 0 text6 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext5 BE4 0 CODE 0 text5 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext5 18B2 0 CODE 0 text5 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext7 0 0 ABS 0 text7 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext7 0 0 ABS 0 text7 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext6 1C18 0 CODE 0 text6 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext6 BDA 0 CODE 0 text6 dist/UseXC8/debug/Framework.X.debug.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-OpenUSART@config AD 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_ConvertADC 1CAC 0 CODE 0 text16 dist/UseXC8/debug/Framework.X.debug.obj
+OpenUSART@config AB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_ConvertADC 1B12 0 CODE 0 text17 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext8 0 0 ABS 0 text8 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext8 0 0 ABS 0 text8 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext7 AD6 0 CODE 0 text7 dist/UseXC8/debug/Framework.X.debug.obj
-send_msg@tlength B9 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__pbssCOMRAM 4F 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+__ptext7 ACC 0 CODE 0 text7 dist/UseXC8/debug/Framework.X.debug.obj
+send_msg@tlength B7 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__pbssCOMRAM 4D 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __Htext9 0 0 ABS 0 text9 dist/UseXC8/debug/Framework.X.debug.obj
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext9 0 0 ABS 0 text9 dist/UseXC8/debug/Framework.X.debug.obj
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext8 1A86 0 CODE 0 text8 dist/UseXC8/debug/Framework.X.debug.obj
-recv_msg@tlength BC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_ReadTimer1 1C72 0 CODE 0 text40 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext9 1BA8 0 CODE 0 text9 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext8 191E 0 CODE 0 text8 dist/UseXC8/debug/Framework.X.debug.obj
+recv_msg@tlength BA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext9 1A40 0 CODE 0 text9 dist/UseXC8/debug/Framework.X.debug.obj
 __pcstackBANK1 1A2 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/UseXC8/debug/Framework.X.debug.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/UseXC8/debug/Framework.X.debug.obj
-__size_of_timer0_int_handler 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-?_returnADCValue A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_WriteTimer0 1C84 0 CODE 0 text43 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_WriteTimer1 1C60 0 CODE 0 text36 dist/UseXC8/debug/Framework.X.debug.obj
-uart_lthread@msgbuffer AE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__size_of_WriteTimer0 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__size_of_WriteTimer1 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-ToMainHigh_sendmsg@msgtype 45 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-FromMainHigh_recvmsg@data 49 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+?_returnADCValue A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+uart_lthread@msgbuffer AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+ToMainHigh_sendmsg@msgtype 43 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_returnADCValue 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __size_ofi2_in_low_int 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_ToMainLow_sendmsg 1B5E 0 CODE 0 text37 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_ToMainLow_sendmsg 19F6 0 CODE 0 text35 dist/UseXC8/debug/Framework.X.debug.obj
 _OSCTUNEbits F9B 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_memcpy 1700 0 CODE 0 text28 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of__initialization 199A 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_in_main 1820 0 CODE 0 text20 dist/UseXC8/debug/Framework.X.debug.obj
-_i2c_configure_slave 1B10 0 CODE 0 text17 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_memcpy 1618 0 CODE 0 text29 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of__initialization 186A 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_in_main 16F0 0 CODE 0 text21 dist/UseXC8/debug/Framework.X.debug.obj
+_i2c_configure_slave 19A8 0 CODE 0 text18 dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_CCP2MX$DEFAULT 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_ToMainLow_recvmsg 18A4 0 CODE 0 text25 dist/UseXC8/debug/Framework.X.debug.obj
-memcpy@d AE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-i1_ConvertADC 1CAC 0 CODE 0 text32 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_ToMainLow_recvmsg 1774 0 CODE 0 text26 dist/UseXC8/debug/Framework.X.debug.obj
+memcpy@d AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+i1_ConvertADC 1B12 0 CODE 0 text33 dist/UseXC8/debug/Framework.X.debug.obj
+i2_ConvertADC 1B16 0 CODE 0 text40 dist/UseXC8/debug/Framework.X.debug.obj
+init_timer0_lthread@tptr A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 _InterruptHandlerLow 18 0 CODE 0 intcodelo dist/UseXC8/debug/Framework.X.debug.obj
 _SSPSTATbits FC7 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_init_queues 15CA 0 CODE 0 text11 dist/UseXC8/debug/Framework.X.debug.obj
-init_timer1_lthread@tptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-memcpy@n AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-i2returnADCValue@temp 31 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-_USART_Status 50 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+_init_queues 14E2 0 CODE 0 text12 dist/UseXC8/debug/Framework.X.debug.obj
+init_timer1_lthread@tptr A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+memcpy@n AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+i2returnADCValue@temp 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+_USART_Status 4E 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 ReadUSART@data 1 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 _InterruptHandlerHigh 8 0 CODE 0 intcode dist/UseXC8/debug/Framework.X.debug.obj
 __Hidata 0 0 CODE 0 idata dist/UseXC8/debug/Framework.X.debug.obj
 __Lidata 0 0 CODE 0 idata dist/UseXC8/debug/Framework.X.debug.obj
-memcpy@s B0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+memcpy@s AE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hrdata 0 0 COMRAM 1 rdata dist/UseXC8/debug/Framework.X.debug.obj
 __Lrdata 0 0 COMRAM 1 rdata dist/UseXC8/debug/Framework.X.debug.obj
-_in_high_int 1C3C 0 CODE 0 text22 dist/UseXC8/debug/Framework.X.debug.obj
-ToMainLow_recvmsg@data C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_in_high_int 1AD4 0 CODE 0 text23 dist/UseXC8/debug/Framework.X.debug.obj
+ToMainLow_recvmsg@data C0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hidloc 0 0 IDLOC 0 idloc dist/UseXC8/debug/Framework.X.debug.obj
 __Lidloc 0 0 IDLOC 0 idloc dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_STVREN$OFF 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_ReadADC 1C9A 0 CODE 0 text58 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_ReadADC 1B08 0 CODE 0 text53 dist/UseXC8/debug/Framework.X.debug.obj
 __Hstack 0 0 STACK 2 stack dist/UseXC8/debug/Framework.X.debug.obj
 __Lstack 0 0 STACK 2 stack dist/UseXC8/debug/Framework.X.debug.obj
-int_func F76 0 CODE 0 intcode_body dist/UseXC8/debug/Framework.X.debug.obj
-send_msg@length B4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+int_func E9A 0 CODE 0 intcode_body dist/UseXC8/debug/Framework.X.debug.obj
+send_msg@length B2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_init_queue 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-___lwmod 1356 0 CODE 0 text3 dist/UseXC8/debug/Framework.X.debug.obj
+___lwmod 1276 0 CODE 0 text4 dist/UseXC8/debug/Framework.X.debug.obj
 __Hparam 0 0 ABS 0 rparam dist/UseXC8/debug/Framework.X.debug.obj
 __Lparam 0 0 ABS 0 rparam dist/UseXC8/debug/Framework.X.debug.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i1_send_msg 102E 0 CODE 0 text38 dist/UseXC8/debug/Framework.X.debug.obj
-i2_send_msg 10D8 0 CODE 0 text51 dist/UseXC8/debug/Framework.X.debug.obj
+i1_send_msg F4E 0 CODE 0 text36 dist/UseXC8/debug/Framework.X.debug.obj
+i2_send_msg FF8 0 CODE 0 text46 dist/UseXC8/debug/Framework.X.debug.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_InterruptHandlerHigh 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-ToMainLow_recvmsg@msgtype C0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+ToMainLow_recvmsg@msgtype BE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_IESO$ON 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-_in_main 17DC 0 CODE 0 text20 dist/UseXC8/debug/Framework.X.debug.obj
-_init_queue 1464 0 CODE 0 text12 dist/UseXC8/debug/Framework.X.debug.obj
+_in_main 16AC 0 CODE 0 text21 dist/UseXC8/debug/Framework.X.debug.obj
+_init_queue 1384 0 CODE 0 text13 dist/UseXC8/debug/Framework.X.debug.obj
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/UseXC8/debug/Framework.X.debug.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/UseXC8/debug/Framework.X.debug.obj
-i2_recv_msg DDC 0 CODE 0 text45 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_start_i2c_slave_reply 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-OpenADC@config AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+OpenADC@config AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hnvbit 0 0 COMRAM 1 nvbit dist/UseXC8/debug/Framework.X.debug.obj
 __Lnvbit 0 0 COMRAM 1 nvbit dist/UseXC8/debug/Framework.X.debug.obj
 __Hcinit 0 0 ABS 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
 __Lcinit 0 0 ABS 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
-__pcinit 1966 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
+__pcinit 1836 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
 main@length 1BA 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
-__ramtop 400 0 RAM 0 ramtop /tmp/cgtYLDU5h.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtYLDU5h.obj
-?_in_low_int AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__ramtop 400 0 RAM 0 ramtop /tmp/cgtZiCfQL.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtZiCfQL.obj
+?_in_low_int A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_init_queues 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_main 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi2_in_low_int 1AE6 0 CODE 0 text54 dist/UseXC8/debug/Framework.X.debug.obj
-_ToMainLow_recvmsg 1862 0 CODE 0 text25 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi2_in_low_int 197E 0 CODE 0 text49 dist/UseXC8/debug/Framework.X.debug.obj
+_ToMainLow_recvmsg 1732 0 CODE 0 text26 dist/UseXC8/debug/Framework.X.debug.obj
 __Hconst 0 0 CODE 0 const dist/UseXC8/debug/Framework.X.debug.obj
 __Lconst 0 0 CODE 0 const dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_OpenUSART 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 i1send_msg@data F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2send_msg@data 3D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-uart_lthread@uptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-i2recv_msg@data 3E 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2send_msg@data 3B 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+uart_lthread@uptr A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __LidataBANK0 0 0 ABS 0 idataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-FromMainHigh_recvmsg@msgtype 47 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-__pidataBANK0 1CB0 0 CODE 0 idataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_FromMainHigh_sendmsg 1A50 0 CODE 0 text4 dist/UseXC8/debug/Framework.X.debug.obj
-i2check_msg@qptr 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+__pidataBANK0 1B1A 0 CODE 0 idataBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_FromMainHigh_sendmsg 18E8 0 CODE 0 text5 dist/UseXC8/debug/Framework.X.debug.obj
+i2check_msg@qptr 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_check_msg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_FromMainHigh_recvmsg 1AE6 0 CODE 0 text44 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_uart_lthread 19E2 0 CODE 0 text1 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_uart_lthread 18B2 0 CODE 0 text1 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_in_main 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-ToMainHigh_recvmsg@maxlength C4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-check_msg@qptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-_Delay1KTCYx 1C02 0 CODE 0 text24 dist/UseXC8/debug/Framework.X.debug.obj
-_init_uart_recv 1BA8 0 CODE 0 text9 dist/UseXC8/debug/Framework.X.debug.obj
+ToMainHigh_recvmsg@maxlength C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+check_msg@qptr A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_Delay1KTCYx 1A9A 0 CODE 0 text25 dist/UseXC8/debug/Framework.X.debug.obj
+_init_uart_recv 1A40 0 CODE 0 text9 dist/UseXC8/debug/Framework.X.debug.obj
 __size_ofi2_start_i2c_slave_reply 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_in_high_int 1C4E 0 CODE 0 text22 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_init_uart_recv 1BC6 0 CODE 0 text9 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_i2c_configure_slave 1B38 0 CODE 0 text17 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_in_high_int 1AE6 0 CODE 0 text23 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_init_uart_recv 1A5E 0 CODE 0 text9 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_i2c_configure_slave 19D0 0 CODE 0 text18 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_timer0_lthread 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_uart_recv_int_handler 12C4 0 CODE 0 text33 dist/UseXC8/debug/Framework.X.debug.obj
-timer0_lthread@msgval B0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_uart_recv_int_handler 11E4 0 CODE 0 text34 dist/UseXC8/debug/Framework.X.debug.obj
 _ToMainLow_MQ 16C 0 BANK1 1 bssBANK1 dist/UseXC8/debug/Framework.X.debug.obj
-i2start_i2c_slave_reply@length 33 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2start_i2c_slave_reply@length 31 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __HbssBANK1 0 0 ABS 0 bssBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __LbssBANK1 0 0 ABS 0 bssBANK1 dist/UseXC8/debug/Framework.X.debug.obj
-handle_start@data_read 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_timer0_lthread 1C2A 0 CODE 0 text6 dist/UseXC8/debug/Framework.X.debug.obj
+handle_start@data_read 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_timer0_lthread 14E2 0 CODE 0 text3 dist/UseXC8/debug/Framework.X.debug.obj
 __end_of_InterruptHandlerLow BA 0 CODE 0 intcodelo dist/UseXC8/debug/Framework.X.debug.obj
 __pbssBANK1 100 0 BANK1 1 bssBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext10 0 0 ABS 0 text10 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext10 0 0 ABS 0 text10 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_OpenTimer1 1A1A 0 CODE 0 text30 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_enter_sleep_mode 1CA8 0 CODE 0 text57 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_OpenTimer0 19A8 0 CODE 0 text31 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_enter_sleep_mode 1B0E 0 CODE 0 text52 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_uart_lthread 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Htext20 0 0 ABS 0 text20 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext20 0 0 ABS 0 text20 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext10 1C2A 0 CODE 0 text10 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext10 1AB0 0 CODE 0 text10 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext30 0 0 ABS 0 text30 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext11 0 0 ABS 0 text11 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext30 0 0 ABS 0 text30 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext11 0 0 ABS 0 text11 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext20 17DC 0 CODE 0 text20 dist/UseXC8/debug/Framework.X.debug.obj
-ToMainHigh_recvmsg@data C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext20 10A2 0 CODE 0 text20 dist/UseXC8/debug/Framework.X.debug.obj
+ToMainHigh_recvmsg@data C0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext40 0 0 ABS 0 text40 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext21 0 0 ABS 0 text21 dist/UseXC8/debug/Framework.X.debug.obj
-recv_msg@maxlength B4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+recv_msg@maxlength B2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext40 0 0 ABS 0 text40 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext21 0 0 ABS 0 text21 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext11 15CA 0 CODE 0 text11 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext30 19E2 0 CODE 0 text30 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext11 1AC2 0 CODE 0 text11 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext30 11E4 0 CODE 0 text30 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext50 0 0 ABS 0 text50 dist/UseXC8/debug/Framework.X.debug.obj
+__Htext31 0 0 ABS 0 text31 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext12 0 0 ABS 0 text12 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext50 0 0 ABS 0 text50 dist/UseXC8/debug/Framework.X.debug.obj
+__Ltext31 0 0 ABS 0 text31 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext12 0 0 ABS 0 text12 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext21 1796 0 CODE 0 text21 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext40 1C60 0 CODE 0 text40 dist/UseXC8/debug/Framework.X.debug.obj
-returnADCValue@temp AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-_uart_recv_int_handler 1228 0 CODE 0 text33 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext21 16AC 0 CODE 0 text21 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext40 1B16 0 CODE 0 text40 dist/UseXC8/debug/Framework.X.debug.obj
+returnADCValue@temp A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_uart_recv_int_handler 1148 0 CODE 0 text34 dist/UseXC8/debug/Framework.X.debug.obj
+__Htext41 0 0 ABS 0 text41 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext22 0 0 ABS 0 text22 dist/UseXC8/debug/Framework.X.debug.obj
+__Ltext41 0 0 ABS 0 text41 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext22 0 0 ABS 0 text22 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext12 1464 0 CODE 0 text12 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext50 1B5E 0 CODE 0 text50 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext12 14E2 0 CODE 0 text12 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext31 197E 0 CODE 0 text31 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext50 1AF2 0 CODE 0 text50 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext51 0 0 ABS 0 text51 dist/UseXC8/debug/Framework.X.debug.obj
-__Htext32 0 0 ABS 0 text32 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext13 0 0 ABS 0 text13 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext51 0 0 ABS 0 text51 dist/UseXC8/debug/Framework.X.debug.obj
-__Ltext32 0 0 ABS 0 text32 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext13 0 0 ABS 0 text13 dist/UseXC8/debug/Framework.X.debug.obj
 __HbssBANK2 0 0 ABS 0 bssBANK2 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext22 1C3C 0 CODE 0 text22 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext22 1666 0 CODE 0 text22 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext41 BE 0 CODE 0 text41 dist/UseXC8/debug/Framework.X.debug.obj
 __LbssBANK2 0 0 ABS 0 bssBANK2 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext42 0 0 ABS 0 text42 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext23 0 0 ABS 0 text23 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext42 0 0 ABS 0 text42 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext23 0 0 ABS 0 text23 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext13 1638 0 CODE 0 text13 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext32 1CAC 0 CODE 0 text32 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext51 10D8 0 CODE 0 text51 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext13 1384 0 CODE 0 text13 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext51 1A1C 0 CODE 0 text51 dist/UseXC8/debug/Framework.X.debug.obj
 __pbssBANK2 200 0 BANK2 1 bssBANK2 dist/UseXC8/debug/Framework.X.debug.obj
 _ADCON0bits FC2 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Htext52 0 0 ABS 0 text52 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext33 0 0 ABS 0 text33 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext14 0 0 ABS 0 text14 dist/UseXC8/debug/Framework.X.debug.obj
-___extmem_base 20000 0 ABS 0 - /tmp/cgtYLDU5h.obj
+___extmem_base 20000 0 ABS 0 - /tmp/cgtZiCfQL.obj
 __Ltext52 0 0 ABS 0 text52 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext33 0 0 ABS 0 text33 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext14 0 0 ABS 0 text14 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext23 1A50 0 CODE 0 text23 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext42 14DE 0 CODE 0 text42 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_initADC 1862 0 CODE 0 text14 dist/UseXC8/debug/Framework.X.debug.obj
-main@t0thread_data 1AF 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext23 1AD4 0 CODE 0 text23 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext42 CDE 0 CODE 0 text42 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_initADC 1732 0 CODE 0 text15 dist/UseXC8/debug/Framework.X.debug.obj
+main@t0thread_data 1B2 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext43 0 0 ABS 0 text43 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext24 0 0 ABS 0 text24 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext43 0 0 ABS 0 text43 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext24 0 0 ABS 0 text24 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext14 1820 0 CODE 0 text14 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext33 1228 0 CODE 0 text33 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext52 1926 0 CODE 0 text52 dist/UseXC8/debug/Framework.X.debug.obj
-main@t1thread_data 1B2 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext14 1550 0 CODE 0 text14 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext33 1B12 0 CODE 0 text33 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext52 1B08 0 CODE 0 text52 dist/UseXC8/debug/Framework.X.debug.obj
+main@t1thread_data 1B0 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext53 0 0 ABS 0 text53 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext34 0 0 ABS 0 text34 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext15 0 0 ABS 0 text15 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext53 0 0 ABS 0 text53 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext34 0 0 ABS 0 text34 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext15 0 0 ABS 0 text15 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext24 1C02 0 CODE 0 text24 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext43 1C72 0 CODE 0 text43 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext24 18E8 0 CODE 0 text24 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext43 1A7C 0 CODE 0 text43 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext44 0 0 ABS 0 text44 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext25 0 0 ABS 0 text25 dist/UseXC8/debug/Framework.X.debug.obj
-_WriteTimer0 1C72 0 CODE 0 text43 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext44 0 0 ABS 0 text44 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext25 0 0 ABS 0 text25 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext15 13E0 0 CODE 0 text15 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext34 1BC6 0 CODE 0 text34 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext53 1700 0 CODE 0 text53 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext15 16F0 0 CODE 0 text15 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext34 1148 0 CODE 0 text34 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext53 1AFE 0 CODE 0 text53 dist/UseXC8/debug/Framework.X.debug.obj
 _FromMainLow_MQ 100 0 BANK1 1 bssBANK1 dist/UseXC8/debug/Framework.X.debug.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/cgtYLDU5h.obj
-__Htext54 0 0 ABS 0 text54 dist/UseXC8/debug/Framework.X.debug.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/cgtZiCfQL.obj
 __Htext35 0 0 ABS 0 text35 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext16 0 0 ABS 0 text16 dist/UseXC8/debug/Framework.X.debug.obj
-__Ltext54 0 0 ABS 0 text54 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext35 0 0 ABS 0 text35 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext16 0 0 ABS 0 text16 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext25 1862 0 CODE 0 text25 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext44 1AE6 0 CODE 0 text44 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext25 1A9A 0 CODE 0 text25 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext44 DD2 0 CODE 0 text44 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext45 0 0 ABS 0 text45 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext26 0 0 ABS 0 text26 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext45 0 0 ABS 0 text45 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext26 0 0 ABS 0 text26 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext16 1CA8 0 CODE 0 text16 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext35 174E 0 CODE 0 text35 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext54 1AB8 0 CODE 0 text54 dist/UseXC8/debug/Framework.X.debug.obj
-__Htext55 0 0 ABS 0 text55 dist/UseXC8/debug/Framework.X.debug.obj
-__size_ofi2_check_msg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
+__ptext16 1300 0 CODE 0 text16 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext35 19D0 0 CODE 0 text35 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext36 0 0 ABS 0 text36 dist/UseXC8/debug/Framework.X.debug.obj
+__size_ofi2_check_msg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Htext17 0 0 ABS 0 text17 dist/UseXC8/debug/Framework.X.debug.obj
-__Ltext55 0 0 ABS 0 text55 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext36 0 0 ABS 0 text36 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext17 0 0 ABS 0 text17 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext26 18A4 0 CODE 0 text26 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext45 DDC 0 CODE 0 text45 dist/UseXC8/debug/Framework.X.debug.obj
-FromMainHigh_sendmsg@length C1 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext26 1732 0 CODE 0 text26 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext45 19F6 0 CODE 0 text45 dist/UseXC8/debug/Framework.X.debug.obj
+FromMainHigh_sendmsg@length BF 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext46 0 0 ABS 0 text46 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext27 0 0 ABS 0 text27 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext46 0 0 ABS 0 text46 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext27 0 0 ABS 0 text27 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext17 1B10 0 CODE 0 text17 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext36 1C4E 0 CODE 0 text36 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext55 1C84 0 CODE 0 text55 dist/UseXC8/debug/Framework.X.debug.obj
-_returnADCValue 1A86 0 CODE 0 text8 dist/UseXC8/debug/Framework.X.debug.obj
-__Htext56 0 0 ABS 0 text56 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext17 1B0E 0 CODE 0 text17 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext36 F4E 0 CODE 0 text36 dist/UseXC8/debug/Framework.X.debug.obj
+_returnADCValue 191E 0 CODE 0 text8 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext37 0 0 ABS 0 text37 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext18 0 0 ABS 0 text18 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of___lwmod 13E0 0 CODE 0 text3 dist/UseXC8/debug/Framework.X.debug.obj
-__Ltext56 0 0 ABS 0 text56 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of___lwmod 1300 0 CODE 0 text4 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext37 0 0 ABS 0 text37 dist/UseXC8/debug/Framework.X.debug.obj
-ToMainHigh_recvmsg@msgtype C0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext18 0 0 ABS 0 text18 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext27 9A0 0 CODE 0 text27 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext46 BE 0 CODE 0 text46 dist/UseXC8/debug/Framework.X.debug.obj
-___lwmod@divisor AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+ToMainHigh_recvmsg@msgtype BE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext27 1774 0 CODE 0 text27 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext46 FF8 0 CODE 0 text46 dist/UseXC8/debug/Framework.X.debug.obj
+___lwmod@divisor A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext47 0 0 ABS 0 text47 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext28 0 0 ABS 0 text28 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext47 0 0 ABS 0 text47 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext28 0 0 ABS 0 text28 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext18 1C9A 0 CODE 0 text18 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext37 1B38 0 CODE 0 text37 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext56 1B84 0 CODE 0 text56 dist/UseXC8/debug/Framework.X.debug.obj
-__Htext57 0 0 ABS 0 text57 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext18 19A8 0 CODE 0 text18 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext37 17B6 0 CODE 0 text37 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext38 0 0 ABS 0 text38 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext19 0 0 ABS 0 text19 dist/UseXC8/debug/Framework.X.debug.obj
-__Ltext57 0 0 ABS 0 text57 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext38 0 0 ABS 0 text38 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext19 0 0 ABS 0 text19 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext28 16A2 0 CODE 0 text28 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext47 CE8 0 CODE 0 text47 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext28 996 0 CODE 0 text28 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext47 17F6 0 CODE 0 text47 dist/UseXC8/debug/Framework.X.debug.obj
 __size_ofi1_memcpy 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Htext48 0 0 ABS 0 text48 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext29 0 0 ABS 0 text29 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext48 0 0 ABS 0 text48 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext29 0 0 ABS 0 text29 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext19 1182 0 CODE 0 text19 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext38 102E 0 CODE 0 text38 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext57 1CA2 0 CODE 0 text57 dist/UseXC8/debug/Framework.X.debug.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/cgtYLDU5h.obj
-__Htext58 0 0 ABS 0 text58 dist/UseXC8/debug/Framework.X.debug.obj
-__Htext39 0 0 ABS 0 text39 dist/UseXC8/debug/Framework.X.debug.obj
-__Ltext58 0 0 ABS 0 text58 dist/UseXC8/debug/Framework.X.debug.obj
-__Ltext39 0 0 ABS 0 text39 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext29 12C4 0 CODE 0 text29 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext48 1BE4 0 CODE 0 text48 dist/UseXC8/debug/Framework.X.debug.obj
-timer0_lthread@msgtype AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-timer1_lthread@msgtype C4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext19 1AE6 0 CODE 0 text19 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext38 1A5E 0 CODE 0 text38 dist/UseXC8/debug/Framework.X.debug.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/cgtZiCfQL.obj
+__ptext29 15BA 0 CODE 0 text29 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext48 1618 0 CODE 0 text48 dist/UseXC8/debug/Framework.X.debug.obj
+timer0_lthread@msgtype C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+timer1_lthread@msgtype C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Htext49 0 0 ABS 0 text49 dist/UseXC8/debug/Framework.X.debug.obj
 __Ltext49 0 0 ABS 0 text49 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext39 18E6 0 CODE 0 text39 dist/UseXC8/debug/Framework.X.debug.obj
-__ptext58 1C90 0 CODE 0 text58 dist/UseXC8/debug/Framework.X.debug.obj
-_ReadUSART 1BC6 0 CODE 0 text34 dist/UseXC8/debug/Framework.X.debug.obj
+_ReadUSART 1A5E 0 CODE 0 text38 dist/UseXC8/debug/Framework.X.debug.obj
 _OSCCONbits FD3 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__ptext49 EAE 0 CODE 0 text49 dist/UseXC8/debug/Framework.X.debug.obj
+__ptext49 1950 0 CODE 0 text49 dist/UseXC8/debug/Framework.X.debug.obj
 _INTCONbits FF2 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-?_ReadTimer1 1 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-_OpenUSART 12C4 0 CODE 0 text29 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_send_msg CE8 0 CODE 0 text5 dist/UseXC8/debug/Framework.X.debug.obj
+_OpenUSART 11E4 0 CODE 0 text30 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_send_msg CDE 0 CODE 0 text6 dist/UseXC8/debug/Framework.X.debug.obj
 __Hend_init BE 0 CODE 0 end_init dist/UseXC8/debug/Framework.X.debug.obj
 __Lend_init BA 0 CODE 0 end_init dist/UseXC8/debug/Framework.X.debug.obj
-?_ReadADC 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+?_ReadADC 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 __size_ofi2_memcpy 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_WriteTimer1 1C4E 0 CODE 0 text36 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_FromMainHigh_recvmsg 1B10 0 CODE 0 text44 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_init_queue 14DE 0 CODE 0 text12 dist/UseXC8/debug/Framework.X.debug.obj
-memcpy@d1 A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_InterruptHandlerHigh 102E 0 CODE 0 intcode_body dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_init_queue 13FE 0 CODE 0 text13 dist/UseXC8/debug/Framework.X.debug.obj
+memcpy@d1 A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_InterruptHandlerHigh F4E 0 CODE 0 intcode_body dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_FOSC$HSPLL 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __Hjflash_buffer 7800 0 CODE 0 jflash_buffer dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_ReadUSART 1BE4 0 CODE 0 text34 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_ReadUSART 1A7C 0 CODE 0 text38 dist/UseXC8/debug/Framework.X.debug.obj
 __Ljflash_buffer 7800 0 CODE 0 jflash_buffer dist/UseXC8/debug/Framework.X.debug.obj
-OpenADC@config2 A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-send_msg@msgtype B5 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_init_queues 1638 0 CODE 0 text11 dist/UseXC8/debug/Framework.X.debug.obj
-recv_msg@msgtype B5 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+OpenADC@config2 A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+send_msg@msgtype B3 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_init_queues 1550 0 CODE 0 text12 dist/UseXC8/debug/Framework.X.debug.obj
+recv_msg@msgtype B3 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/cgtYLDU5h.obj
-__end_of_OpenADC 1464 0 CODE 0 text15 dist/UseXC8/debug/Framework.X.debug.obj
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/cgtZiCfQL.obj
+__end_of_OpenADC 1384 0 CODE 0 text16 dist/UseXC8/debug/Framework.X.debug.obj
 i2c_int_handler@data_read 95 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __Hreset_vec 6 0 CODE 0 reset_vec dist/UseXC8/debug/Framework.X.debug.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/UseXC8/debug/Framework.X.debug.obj
-_in_low_int 1796 0 CODE 0 text21 dist/UseXC8/debug/Framework.X.debug.obj
+_in_low_int 1666 0 CODE 0 text22 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_FromMainHigh_sendmsg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_enable_interrupts 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-memcpy@s1 AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__accesstop 80 0 ABS 0 - /tmp/cgtYLDU5h.obj
-__end_of_recv_msg AD6 0 CODE 0 text27 dist/UseXC8/debug/Framework.X.debug.obj
+memcpy@s1 A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__accesstop 80 0 ABS 0 - /tmp/cgtZiCfQL.obj
+__end_of_recv_msg ACC 0 CODE 0 text28 dist/UseXC8/debug/Framework.X.debug.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/UseXC8/debug/Framework.X.debug.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/UseXC8/debug/Framework.X.debug.obj
-__pintcode_body F76 0 CODE 0 intcode_body dist/UseXC8/debug/Framework.X.debug.obj
-_enable_interrupts 1C9A 0 CODE 0 text18 dist/UseXC8/debug/Framework.X.debug.obj
-intlevel0 0 0 CODE 0 text /tmp/cgtYLDU5h.obj
+__pintcode_body E9A 0 CODE 0 intcode_body dist/UseXC8/debug/Framework.X.debug.obj
+_enable_interrupts 1AE6 0 CODE 0 text19 dist/UseXC8/debug/Framework.X.debug.obj
+intlevel0 0 0 CODE 0 text /tmp/cgtZiCfQL.obj
 __size_of_block_on_To_msgqueues 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-intlevel1 0 0 CODE 0 text /tmp/cgtYLDU5h.obj
-intlevel2 0 0 CODE 0 text /tmp/cgtYLDU5h.obj
-intlevel3 0 0 CODE 0 text /tmp/cgtYLDU5h.obj
-__size_ofi2_recv_msg 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
+intlevel1 0 0 CODE 0 text /tmp/cgtZiCfQL.obj
+intlevel2 0 0 CODE 0 text /tmp/cgtZiCfQL.obj
+intlevel3 0 0 CODE 0 text /tmp/cgtZiCfQL.obj
 i2c_int_handler@error_buf 8D 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 ToMainLow_sendmsg@length 1A 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
 i2c_int_handler@length 8B 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_init_uart_recv 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi2_start_i2c_slave_reply DDC 0 CODE 0 text47 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi2_start_i2c_slave_reply DD2 0 CODE 0 text42 dist/UseXC8/debug/Framework.X.debug.obj
 __size_ofi2_in_high_int 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 i2c_int_handler@msgbuffer 80 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of___lwmod 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 i1send_msg@slot 14 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-i2send_msg@slot 42 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+i2send_msg@slot 40 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+__size_of_init_timer0_lthread 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_init_timer1_lthread 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_SleepIfOkay 174E 0 CODE 0 text53 dist/UseXC8/debug/Framework.X.debug.obj
-i2recv_msg@slot 42 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-_ToMainHigh_recvmsg 18A4 0 CODE 0 text26 dist/UseXC8/debug/Framework.X.debug.obj
-start_initialization 1966 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_SleepIfOkay 1666 0 CODE 0 text48 dist/UseXC8/debug/Framework.X.debug.obj
+_ToMainHigh_recvmsg 1774 0 CODE 0 text27 dist/UseXC8/debug/Framework.X.debug.obj
+start_initialization 1836 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
 i2c_int_handler@msg_ready 94 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_init_i2c 16A2 0 CODE 0 text13 dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi1_memcpy 1926 0 CODE 0 text39 dist/UseXC8/debug/Framework.X.debug.obj
-main@last_reg_recvd 1B1 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_init_i2c 15BA 0 CODE 0 text14 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi1_memcpy 17F6 0 CODE 0 text37 dist/UseXC8/debug/Framework.X.debug.obj
+main@last_reg_recvd 1AF 0 BANK1 1 cstackBANK1 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_ReadADC 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi2_memcpy 1966 0 CODE 0 text52 dist/UseXC8/debug/Framework.X.debug.obj
-__size_of_ReadTimer1 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_init_i2c 1638 0 CODE 0 text13 dist/UseXC8/debug/Framework.X.debug.obj
-__initialization 1966 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
-start_i2c_slave_reply@msg A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-?i2_returnADCValue 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_returnADCValue 1AB8 0 CODE 0 text8 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi2_memcpy 1836 0 CODE 0 text47 dist/UseXC8/debug/Framework.X.debug.obj
+_init_i2c 1550 0 CODE 0 text14 dist/UseXC8/debug/Framework.X.debug.obj
+__initialization 1836 0 CODE 0 cinit dist/UseXC8/debug/Framework.X.debug.obj
+start_i2c_slave_reply@msg A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+?i2_returnADCValue 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_returnADCValue 1950 0 CODE 0 text8 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_in_low_int 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-timer0_int_handler@val 84 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-___lwmod@dividend A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-i2_returnADCValue 1BE4 0 CODE 0 text48 dist/UseXC8/debug/Framework.X.debug.obj
+___lwmod@dividend A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+i2_returnADCValue 1A7C 0 CODE 0 text43 dist/UseXC8/debug/Framework.X.debug.obj
 __activetblptr 2 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-__end_ofi2_check_msg 1BA8 0 CODE 0 text56 dist/UseXC8/debug/Framework.X.debug.obj
-___lwmod@counter AD 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+__end_ofi2_check_msg 1A40 0 CODE 0 text51 dist/UseXC8/debug/Framework.X.debug.obj
+___lwmod@counter AB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-timer0_int_handler@length 80 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-__end_of_i2c_int_handler 6BE 0 CODE 0 text46 dist/UseXC8/debug/Framework.X.debug.obj
+__end_of_i2c_int_handler 6B2 0 CODE 0 text41 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_i2c_configure_slave 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
-_FromMainHigh_sendmsg 1A1A 0 CODE 0 text4 dist/UseXC8/debug/Framework.X.debug.obj
-timer0_lthread@length AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-timer1_lthread@length C6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
-Delay1KTCYx@unit A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+_FromMainHigh_sendmsg 18B2 0 CODE 0 text5 dist/UseXC8/debug/Framework.X.debug.obj
+timer0_lthread@length C4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+timer1_lthread@length C4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
+Delay1KTCYx@unit A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_handle_start 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
+_init_timer0_lthread 1AC2 0 CODE 0 text11 dist/UseXC8/debug/Framework.X.debug.obj
 __size_of_memcpy 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -1508,9 +1417,9 @@ __size_of_memcpy 0 0 ABS 0 - dist/UseXC8/debug/Framework.X.debug.obj
 %SEGMENTS
 reset_vec 0 0 0 6 1
 intcode 0 8 8 C 1
-intcodelo 0 18 18 1C9A 1
+intcodelo 0 18 18 1B04 1
 config 0 7FF8 7FF8 6 1
-cstackCOMRAM 1 1 1 50 1
-cstackBANK0 1 80 80 51 1
+cstackCOMRAM 1 1 1 4E 1
+cstackBANK0 1 80 80 4F 1
 bssBANK1 1 100 100 D7 1
 bssBANK2 1 200 200 36 1

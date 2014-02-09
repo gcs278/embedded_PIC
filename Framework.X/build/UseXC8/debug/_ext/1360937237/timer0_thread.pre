@@ -5970,17 +5970,74 @@ extern int printf(const char *, ...);
 # 1 "../src/timer0_thread.h"
 typedef struct __timer0_thread_struct {
 
-int data;
+
+unsigned int msgcount;
 } timer0_thread_struct;
 
+void init_timer0_lthread(timer0_thread_struct *);
 int timer0_lthread(timer0_thread_struct *,int,int,unsigned char*);
 
-# 9 "../src/timer0_thread.c"
+# 10 "../src/messages.h"
+typedef struct __msg {
+unsigned char full;
+unsigned char length;
+unsigned char msgtype;
+unsigned char data[10];
+} msg;
+
+typedef struct __msg_queue {
+msg queue[4];
+unsigned char cur_write_ind;
+unsigned char cur_read_ind;
+} msg_queue;
+
+# 43
+void init_queues(void);
+
+
+
+void SleepIfOkay(void);
+
+
+
+void block_on_To_msgqueues(void);
+
+# 57
+signed char ToMainLow_sendmsg(unsigned char,unsigned char,void *);
+signed char ToMainLow_recvmsg(unsigned char,unsigned char *,void *);
+
+# 64
+signed char ToMainHigh_sendmsg(unsigned char,unsigned char,void *);
+signed char ToMainHigh_recvmsg(unsigned char,unsigned char *,void *);
+
+# 71
+signed char FromMainLow_sendmsg(unsigned char,unsigned char,void *);
+signed char FromMainLow_recvmsg(unsigned char,unsigned char *,void *);
+
+# 78
+signed char FromMainHigh_sendmsg(unsigned char,unsigned char,void *);
+signed char FromMainHigh_recvmsg(unsigned char,unsigned char *,void *);
+
+# 10 "../src/timer0_thread.c"
+void init_timer0_lthread(timer0_thread_struct *tptr) {
+tptr->msgcount = 0;
+}
+
 int timer0_lthread(timer0_thread_struct *tptr, int msgtype, int length, unsigned char *msgbuffer) {
-unsigned int *msgval;
-
-msgval = (unsigned int *) msgbuffer;
 
 
+
+
+signed char retval;
+
+tptr->msgcount++;
+
+
+if ((tptr->msgcount % 10) == 9) {
+retval = FromMainHigh_sendmsg(sizeof (tptr->msgcount), 20, (void *) &(tptr->msgcount));
+if (retval < 0) {
+
+}
+}
 
 }

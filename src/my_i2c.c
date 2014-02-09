@@ -263,7 +263,7 @@ void i2c_int_handler() {
         unsigned char msgbuffer[MSGLEN + 1];
         length = 2;
         msgbuffer[0] = returnADCValue();
-        msgbuffer[1] = 0xAA;
+        //msgbuffer[1] = 0x04;
                         
 //        switch (ic_ptr->buflen) {
 //                        case 0xaa:
