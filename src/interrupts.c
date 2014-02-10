@@ -11,14 +11,23 @@
 //       priority interrupts, but this code is not setup for that and this nesting is not
 //       enabled.
 
-int ADCValue = 0;
-//int ADCArray[1024];
+char ADCValue;
+char ADCArray[200];
+int responding = 0;
+int arrayPlaceHolder = 0;
 
-int returnADCValue()
+void setStateResponding()
 {
-    int temp = 0;
-    temp = temp + 1;
-    return ADCValue;
+    responding = 1;
+}
+
+void setStateReading()
+{
+    responding = 0;
+}
+char returnADCValue(int place)
+{
+    return ADCArray[place];
 }
 
 void enable_interrupts() {
@@ -103,6 +112,7 @@ void InterruptHandlerHigh() {
         // clear the interrupt flag
         PIR1bits.SSPIF = 0;
         // call the handler
+        setStateResponding();
         i2c_int_handler();
     }
 
@@ -124,6 +134,13 @@ void InterruptHandlerHigh() {
         PIR1bits.ADIF = 0;
         int pureADCValue = ReadADC();
         ADCValue = pureADCValue >> 2;
+        if(responding == 0)
+        {
+            if(arrayPlaceHolder == 200)
+                arrayPlaceHolder = 0;
+            ADCArray[arrayPlaceHolder] = ADCValue;
+            arrayPlaceHolder++;
+        }
         
         //ConvertADC();
     }
@@ -149,15 +166,9 @@ void InterruptHandlerLow() {
     // check to see if we have an interrupt on timer 1
     if (PIR1bits.TMR1IF) {
         PIR1bits.TMR1IF = 0; //clear interrupt flag
-        ConvertADC();
        // timer1_int_handler();
     }
 
-    if (INTCONbits.TMR0IF) {
-        INTCONbits.TMR0IF = 0; // clear this interrupt flag
-        // call whatever handler you want (this is "user" defined)
-        //timer0_int_handler();
-    }
     // check to see if we have an interrupt on USART RX
     if (PIR1bits.RCIF) {
         PIR1bits.RCIF = 0; //clear interrupt flag

@@ -85,7 +85,7 @@
 #endif
 #endif
 
-int ADCValue = 2;
+
 
 /*
 void readMyADC()
@@ -97,6 +97,7 @@ void readMyADC()
 
 void initADC()
 {
+    TRISB7 = 0;
     int ADCValue = 0;
     //Configure ADC
     OpenADC(ADC_FOSC_2 & ADC_RIGHT_JUST & ADC_20_TAD, ADC_CH0 & ADC_INT_ON & ADC_VREFPLUS_VDD & ADC_VREFMINUS_VSS, ADC_0ANA);
@@ -271,7 +272,7 @@ void main(void) {
                         {
                             length = 1;
                             //msgbuffer[0] = 0x55;
-                            msgbuffer[0] = returnADCValue();
+                            //msgbuffer[0] = returnADCValue();
                             //msgbuffer[1] = 0xAA;
                             break;
                         }
@@ -279,14 +280,14 @@ void main(void) {
                         {
                             length = 1;
                             //msgbuffer[0] = 0x3A;
-                            msgbuffer[0] = returnADCValue();
+                            //msgbuffer[0] = returnADCValue();
                             break;
                         }
                         case 0xa9:
                         {
                             length = 1;
                             //msgbuffer[0] = 0xA3;
-                            msgbuffer[0] = returnADCValue();
+                            //msgbuffer[0] = returnADCValue();
                             break;
                         }
                     };

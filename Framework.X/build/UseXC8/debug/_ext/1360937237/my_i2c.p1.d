@@ -3,4 +3,5 @@
  ../src/my_i2c.c  \
 ../src/my_i2c.h  \
 ../src/maindefs.h  \
-../src/messages.h 
+../src/messages.h  \
+../src/interrupts.h 
