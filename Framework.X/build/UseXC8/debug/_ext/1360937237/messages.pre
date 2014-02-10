@@ -5905,7 +5905,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 extern __nonreentrant void _delay3(unsigned char);
 
 # 10 "../src/interrupts.h"
-char returnADCValue(int place);
+char returnADCValue(void);
 void setStateResponding(void);
 void setStateReading(void);
 

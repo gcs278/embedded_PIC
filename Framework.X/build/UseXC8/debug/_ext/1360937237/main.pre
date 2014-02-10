@@ -6036,7 +6036,7 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
 # 10 "../src/interrupts.h"
-char returnADCValue(int place);
+char returnADCValue(void);
 void setStateResponding(void);
 void setStateReading(void);
 
@@ -6181,7 +6181,8 @@ int timer0_lthread(timer0_thread_struct *,int,int,unsigned char*);
 # 98
 void initADC()
 {
-TRISB7 = 0;
+TRISBbits.TRISB7 = 0;
+LATBbits.LATB7 = !LATBbits.LATB7;
 int ADCValue = 0;
 
 OpenADC(0b10001111 & 0b11111111 & 0b11111111, 0b10000111 & 0b11111111 & 0b11111110 & 0b11111101, 0b11111111);
@@ -6209,7 +6210,7 @@ uart_thread_struct uthread_data;
 timer1_thread_struct t1thread_data;
 timer0_thread_struct t0thread_data;
 
-# 133
+# 134
 OSCCON = 0x82;
 OSCTUNEbits.PLLEN = 0;
 
@@ -6233,7 +6234,7 @@ initADC();
 TRISB = 0x0;
 LATB = 0x0;
 
-# 166
+# 167
 OpenTimer0(0b11111111 & 0b11111111 & 0b11011111 & 0b11111111);
 
 
@@ -6252,24 +6253,24 @@ IPR1bits.SSPIP = 1;
 
 IPR1bits.ADIP = 1;
 
-# 192
+# 193
 i2c_configure_slave(0x9E);
 
-# 205
+# 206
 PIE1bits.SSPIE = 1;
 
 
 OpenUSART(0b01111111 & 0b11111111 & 0b11111110 & 0b11111101 &
 0b11111111 & 0b11101111, 0x19);
 
-# 229
+# 230
 while (1) {
 
 
 
 block_on_To_msgqueues();
 
-# 240
+# 241
 length = ToMainHigh_recvmsg(10, &msgtype, (void *) msgbuffer);
 if (length < 0) {
 
@@ -6294,7 +6295,7 @@ break;
 case 42:
 {
 
-# 270
+# 271
 switch (last_reg_recvd) {
 case 0xaa:
 {

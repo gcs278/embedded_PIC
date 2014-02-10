@@ -97,7 +97,8 @@ void readMyADC()
 
 void initADC()
 {
-    TRISB7 = 0;
+    TRISBbits.TRISB7 = 0;
+    LATBbits.LATB7 = !LATBbits.LATB7;
     int ADCValue = 0;
     //Configure ADC
     OpenADC(ADC_FOSC_2 & ADC_RIGHT_JUST & ADC_20_TAD, ADC_CH0 & ADC_INT_ON & ADC_VREFPLUS_VDD & ADC_VREFMINUS_VSS, ADC_0ANA);

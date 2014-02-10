@@ -12,9 +12,10 @@
 //       enabled.
 
 char ADCValue;
-char ADCArray[200];
+char ADCArray[237];
 int responding = 0;
 int arrayPlaceHolder = 0;
+int sendingPlaceHolder = 237;
 
 void setStateResponding()
 {
@@ -25,9 +26,16 @@ void setStateReading()
 {
     responding = 0;
 }
-char returnADCValue(int place)
+char returnADCValue()
 {
-    return ADCArray[place];
+    if(sendingPlaceHolder == 237)
+    {
+        responding = 0;
+        sendingPlaceHolder = 0;
+    }
+    else
+        sendingPlaceHolder++;
+    return ADCArray[sendingPlaceHolder];
 }
 
 void enable_interrupts() {
@@ -112,7 +120,6 @@ void InterruptHandlerHigh() {
         // clear the interrupt flag
         PIR1bits.SSPIF = 0;
         // call the handler
-        setStateResponding();
         i2c_int_handler();
     }
 
@@ -121,6 +128,7 @@ void InterruptHandlerHigh() {
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
         //timer0_int_handler();
+        LATBbits.LATB7 = !LATBbits.LATB7;
         ConvertADC();
     }
 
@@ -136,10 +144,16 @@ void InterruptHandlerHigh() {
         ADCValue = pureADCValue >> 2;
         if(responding == 0)
         {
-            if(arrayPlaceHolder == 200)
+            if(arrayPlaceHolder == 237)
+            {
+                responding = 1;
                 arrayPlaceHolder = 0;
-            ADCArray[arrayPlaceHolder] = ADCValue;
-            arrayPlaceHolder++;
+            }
+            else
+            {
+                ADCArray[arrayPlaceHolder] = ADCValue;
+                arrayPlaceHolder++;
+            }
         }
         
         //ConvertADC();

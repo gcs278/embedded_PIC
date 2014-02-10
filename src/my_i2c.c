@@ -185,7 +185,6 @@ void i2c_int_handler() {
                     data_written = 1;
                 } else {
                     // we have nothing left to send
-                    setStateReading();
                     ic_ptr->status = I2C_IDLE;
                 }
                 break;
@@ -262,14 +261,11 @@ void i2c_int_handler() {
     }
     if (msg_to_send) {
         int length;
-        unsigned char msgbuffer[3];
-        length = 3;
-        msgbuffer[0] = 0x0;
-        msgbuffer[1] = 0x1;
-        msgbuffer[2] = 0x2;
+        unsigned char msgbuffer[MSGLEN + 1];
+        length = 2;
         //for(int i = 0; i <3; i++)
-          //  msgbuffer[i] = returnADCValue(i);
-        //msgbuffer[1] = 0x04;
+        msgbuffer[0] = returnADCValue();
+        //msgbuffer[0] = 0x04;
                         
 //        switch (ic_ptr->buflen) {
 //                        case 0xaa:

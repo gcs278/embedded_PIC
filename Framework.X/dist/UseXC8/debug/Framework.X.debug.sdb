@@ -3,33 +3,33 @@
 [d edition pro ]
 [d chip 18F45J10 ]
 [d frameptr 4065 ]
-"19 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"20 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _setStateResponding setStateResponding `(v  1 e 0 0 ]
-"24
+"25
 [v _setStateReading setStateReading `(v  1 e 0 0 ]
-"28
+"29
 [v _returnADCValue returnADCValue `(uc  1 e 1 0 ]
-"33
+"41
 [v _enable_interrupts enable_interrupts `(v  1 e 0 0 ]
-"45
+"53
 [v _in_high_int in_high_int `(i  1 e 2 0 ]
 [v i2_in_high_int in_high_int `(i  1 e 2 0 ]
 [v i2_in_high_int in_high_int `(i  1 e 2 0 ]
-"49
+"57
 [v _low_int_active low_int_active `(i  1 e 2 0 ]
-"53
+"61
 [v _in_low_int in_low_int `(i  1 e 2 0 ]
 [v i2_in_low_int in_low_int `(i  1 e 2 0 ]
 [v i2_in_low_int in_low_int `(i  1 e 2 0 ]
-"63
+"71
 [v _in_main in_main `(i  1 e 2 0 ]
-"106
+"114
 [v _InterruptHandlerHigh InterruptHandlerHigh `II(v  1 e 0 0 ]
-"165
+"179
 [v _InterruptHandlerLow InterruptHandlerLow `IIL(v  1 e 0 0 ]
 "98 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c
 [v _initADC initADC `(v  1 e 0 0 ]
-"112
+"113
 [v _main main `(v  1 e 0 0 ]
 "14 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
 [v _init_queue init_queue `(v  1 e 0 0 ]
@@ -83,9 +83,9 @@
 [v _handle_start handle_start `(v  1 e 0 0 ]
 "101
 [v _i2c_int_handler i2c_int_handler `(v  1 e 0 0 ]
-"306
+"302
 [v _init_i2c init_i2c `(v  1 e 0 0 ]
-"317
+"313
 [v _i2c_configure_slave i2c_configure_slave `(v  1 e 0 0 ]
 "11 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c
 [v _uart_recv_int_handler uart_recv_int_handler `(v  1 e 0 0 ]
@@ -258,11 +258,13 @@
 "14 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _ADCValue ADCValue `uc  1 e 1 0 ]
 "15
-[v _ADCArray ADCArray `[200]uc  1 e 200 0 ]
+[v _ADCArray ADCArray `[237]uc  1 e 237 0 ]
 "16
 [v _responding responding `i  1 e 2 0 ]
 "17
 [v _arrayPlaceHolder arrayPlaceHolder `i  1 e 2 0 ]
+"18
+[v _sendingPlaceHolder sendingPlaceHolder `i  1 e 2 0 ]
 [s S933 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
 "101 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
 [s S938 __msg_queue 54 `[4]S933 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
@@ -329,7 +331,7 @@
 `uc 1 TRISC6 1 0 :1:6 
 `uc 1 TRISC7 1 0 :1:7 
 ]
-"2975
+"2754
 [s S683 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
@@ -340,13 +342,15 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 [u S692 . 1 `S674 1 . 1 0 `S683 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES692  1 e 1 @3987 ]
+"2975
 [v _TRISCbits TRISCbits `VES692  1 e 1 @3988 ]
-[s S1288 . 1 `uc 1 . 1 0 :6:0 
+[s S1370 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PLLEN 1 0 :1:6 
 ]
 "3559
-[u S1291 . 1 `S1288 1 . 1 0 ]
-[v _OSCTUNEbits OSCTUNEbits `VES1291  1 e 1 @3995 ]
+[u S1373 . 1 `S1370 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES1373  1 e 1 @3995 ]
 [s S188 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -411,7 +415,7 @@
 [v _RCSTAbits RCSTAbits `VES278  1 e 1 @4011 ]
 "4417
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
-[s S2020 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S2153 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -421,17 +425,17 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "4462
-[s S2029 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S2162 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S2033 . 1 `uc 1 . 1 0 :6:0 
+[s S2166 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 NOT_TX8 1 0 :1:6 
 ]
-[s S2036 . 1 `uc 1 . 1 0 :6:0 
+[s S2169 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S2039 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S2172 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -440,8 +444,8 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[u S2048 . 1 `S2020 1 . 1 0 `S2029 1 . 1 0 `S2033 1 . 1 0 `S2036 1 . 1 0 `S2039 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES2048  1 e 1 @4012 ]
+[u S2181 . 1 `S2153 1 . 1 0 `S2162 1 . 1 0 `S2166 1 . 1 0 `S2169 1 . 1 0 `S2172 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES2181  1 e 1 @4012 ]
 "4715
 [v _RCREG RCREG `VEuc  1 e 1 @4014 ]
 "4726
@@ -454,15 +458,15 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "5736
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S1672 . 1 `uc 1 . 1 0 :1:0 
+[s S1805 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "5786
-[s S1675 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1808 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S1682 . 1 `uc 1 . 1 0 :1:0 
+[s S1815 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -471,23 +475,23 @@
 `uc 1 . 1 0 :1:6 
 `uc 1 ADCAL 1 0 :1:7 
 ]
-[s S1691 . 1 `uc 1 . 1 0 :1:0 
+[s S1824 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S1694 . 1 `uc 1 . 1 0 :1:0 
+[s S1827 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S1697 . 1 `uc 1 . 1 0 :1:0 
+[s S1830 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S1700 . 1 `uc 1 . 1 0 :1:0 
+[s S1833 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S1703 . 1 `uc 1 . 1 0 :1:0 
+[s S1836 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S1706 . 1 `S1672 1 . 1 0 `S1675 1 . 1 0 `S1672 1 . 1 0 `S1682 1 . 1 0 `S1691 1 . 1 0 `S1694 1 . 1 0 `S1697 1 . 1 0 `S1700 1 . 1 0 `S1703 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES1706  1 e 1 @4034 ]
+[u S1839 . 1 `S1805 1 . 1 0 `S1808 1 . 1 0 `S1805 1 . 1 0 `S1815 1 . 1 0 `S1824 1 . 1 0 `S1827 1 . 1 0 `S1830 1 . 1 0 `S1833 1 . 1 0 `S1836 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1839  1 e 1 @4034 ]
 "5871
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "5877
@@ -704,22 +708,22 @@
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
 "7931
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
-[s S1442 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S1532 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "7979
-[s S1444 . 1 `uc 1 . 1 0 :1:0 
+[s S1534 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S1447 . 1 `uc 1 . 1 0 :2:0 
+[s S1537 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S1450 . 1 `uc 1 . 1 0 :3:0 
+[s S1540 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S1453 . 1 `uc 1 . 1 0 :4:0 
+[s S1543 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S1456 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S1546 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -727,14 +731,14 @@
 `uc 1 . 1 0 :2:5 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S1464 . 1 `uc 1 BOR 1 0 :1:0 
+[s S1554 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
-[u S1470 . 1 `S1442 1 . 1 0 `S1444 1 . 1 0 `S1447 1 . 1 0 `S1450 1 . 1 0 `S1453 1 . 1 0 `S1456 1 . 1 0 `S1464 1 . 1 0 ]
-[v _RCONbits RCONbits `VES1470  1 e 1 @4048 ]
+[u S1560 . 1 `S1532 1 . 1 0 `S1534 1 . 1 0 `S1537 1 . 1 0 `S1540 1 . 1 0 `S1543 1 . 1 0 `S1546 1 . 1 0 `S1554 1 . 1 0 ]
+[v _RCONbits RCONbits `VES1560  1 e 1 @4048 ]
 "8090
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 [s S949 . 1 `uc 1 SCS 1 0 :2:0 
@@ -751,7 +755,7 @@
 [v _OSCCONbits OSCCONbits `VES958  1 e 1 @4051 ]
 "8137
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S1945 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S2078 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -759,21 +763,21 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "8157
-[s S1952 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S2085 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 ]
-[u S1956 . 1 `S1945 1 . 1 0 `S1952 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES1956  1 e 1 @4053 ]
+[u S2089 . 1 `S2078 1 . 1 0 `S2085 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES2089  1 e 1 @4053 ]
 "8212
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "8218
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S1554 . 1 `uc 1 . 1 0 :7:0 
+[s S1644 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "8576
-[s S1557 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S1647 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -782,14 +786,14 @@
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S1566 . 1 `uc 1 . 1 0 :2:0 
+[s S1656 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IP 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S1571 . 1 `S1554 1 . 1 0 `S1557 1 . 1 0 `S1566 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES1571  1 e 1 @4081 ]
-[s S1164 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S1661 . 1 `S1644 1 . 1 0 `S1647 1 . 1 0 `S1656 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES1661  1 e 1 @4081 ]
+[s S1246 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -799,7 +803,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "8677
-[s S1173 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S1255 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -808,7 +812,7 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S1182 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S1264 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -817,7 +821,7 @@
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[s S1191 . 1 `uc 1 . 1 0 :1:0 
+[s S1273 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -826,14 +830,12 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S1200 . 1 `uc 1 . 1 0 :6:0 
+[s S1282 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S1204 . 1 `S1164 1 . 1 0 `S1173 1 . 1 0 `S1182 1 . 1 0 `S1191 1 . 1 0 `S1200 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1204  1 e 1 @4082 ]
-"10147
-[v _TRISB7 TRISB7 `VEb  1 e 0 @31903 ]
+[u S1286 . 1 `S1246 1 . 1 0 `S1255 1 . 1 0 `S1264 1 . 1 0 `S1273 1 . 1 0 `S1282 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1286  1 e 1 @4082 ]
 [s S225 . 1 `uc 1 RX_NINE 1 0 :1:0 
 `uc 1 TX_NINE 1 0 :1:1 
 `uc 1 FRAME_ERROR 1 0 :1:2 
@@ -843,78 +845,78 @@
 "5 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\udefs.c
 [u S231 USART 1 `uc 1 val 1 0 `S225 1 . 1 0 ]
 [v _USART_Status USART_Status `S231  1 e 1 0 ]
-"112 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c
+"113 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c
 [v _main main `(v  1 e 0 0 ]
 {
 [s S350 __i2c_comm 28 `[10]uc 1 buffer 10 0 `uc 1 buflen 1 10 `uc 1 event_count 1 11 `uc 1 status 1 12 `uc 1 error_code 1 13 `uc 1 error_count 1 14 `[10]uc 1 outbuffer 10 15 `uc 1 outbuflen 1 25 `uc 1 outbufind 1 26 `uc 1 slave_addr 1 27 ]
-"121
-[v main@ic ic `S350  1 a 28 50 ]
 "122
-[v main@msgbuffer msgbuffer `[11]uc  1 a 11 25 ]
+[v main@ic ic `S350  1 a 28 25 ]
+"123
+[v main@msgbuffer msgbuffer `[11]uc  1 a 11 0 ]
 [s S185 __uart_comm 5 `[4]uc 1 buffer 4 0 `uc 1 buflen 1 4 ]
-"120
-[v main@uc uc `S185  1 a 5 39 ]
+"121
+[v main@uc uc `S185  1 a 5 18 ]
 [s S172 __timer0_thread_struct 2 `ui 1 msgcount 2 0 ]
-"126
-[v main@t0thread_data t0thread_data `S172  1 a 2 46 ]
+"127
+[v main@t0thread_data t0thread_data `S172  1 a 2 16 ]
 [s S153 __timer1_thread_struct 2 `ui 1 msgcount 2 0 ]
-"125
-[v main@t1thread_data t1thread_data `S153  1 a 2 44 ]
+"126
+[v main@t1thread_data t1thread_data `S153  1 a 2 14 ]
 [s S146 __uart_thread_struct 2 `i 1 data 2 0 ]
-"124
-[v main@uthread_data uthread_data `S146  1 a 2 36 ]
-"117
-[v main@length length `c  1 a 1 49 ]
+"125
+[v main@uthread_data uthread_data `S146  1 a 2 11 ]
 "118
-[v main@msgtype msgtype `uc  1 a 1 48 ]
+[v main@length length `c  1 a 1 24 ]
 "119
-[v main@last_reg_recvd last_reg_recvd `uc  1 a 1 38 ]
-"334
+[v main@msgtype msgtype `uc  1 a 1 23 ]
+"120
+[v main@last_reg_recvd last_reg_recvd `uc  1 a 1 13 ]
+"335
 } 0
 "9 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c
 [v _uart_lthread uart_lthread `(i  1 e 2 0 ]
 {
 [s S146 __uart_thread_struct 2 `i 1 data 2 0 ]
-[v uart_lthread@uptr uptr `*.39S146  1 p 2 30 ]
-[v uart_lthread@msgtype msgtype `i  1 p 2 32 ]
-[v uart_lthread@length length `i  1 p 2 34 ]
-[v uart_lthread@msgbuffer msgbuffer `*.39uc  1 p 2 36 ]
+[v uart_lthread@uptr uptr `*.39S146  1 p 2 40 ]
+[v uart_lthread@msgtype msgtype `i  1 p 2 42 ]
+[v uart_lthread@length length `i  1 p 2 44 ]
+[v uart_lthread@msgbuffer msgbuffer `*.39uc  1 p 2 46 ]
 "17
 } 0
 "14 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c
 [v _timer1_lthread timer1_lthread `(i  1 e 2 0 ]
 {
 "15
-[v timer1_lthread@retval retval `c  1 a 1 23 ]
+[v timer1_lthread@retval retval `c  1 a 1 75 ]
 [s S153 __timer1_thread_struct 2 `ui 1 msgcount 2 0 ]
 "14
-[v timer1_lthread@tptr tptr `*.39S153  1 p 2 14 ]
-[v timer1_lthread@msgtype msgtype `i  1 p 2 16 ]
-[v timer1_lthread@length length `i  1 p 2 18 ]
-[v timer1_lthread@msgbuffer msgbuffer `*.39uc  1 p 2 20 ]
+[v timer1_lthread@tptr tptr `*.39S153  1 p 2 66 ]
+[v timer1_lthread@msgtype msgtype `i  1 p 2 68 ]
+[v timer1_lthread@length length `i  1 p 2 70 ]
+[v timer1_lthread@msgbuffer msgbuffer `*.39uc  1 p 2 72 ]
 "26
 } 0
 "14 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c
 [v _timer0_lthread timer0_lthread `(i  1 e 2 0 ]
 {
 "19
-[v timer0_lthread@retval retval `c  1 a 1 23 ]
+[v timer0_lthread@retval retval `c  1 a 1 75 ]
 [s S172 __timer0_thread_struct 2 `ui 1 msgcount 2 0 ]
 "14
-[v timer0_lthread@tptr tptr `*.39S172  1 p 2 14 ]
-[v timer0_lthread@msgtype msgtype `i  1 p 2 16 ]
-[v timer0_lthread@length length `i  1 p 2 18 ]
-[v timer0_lthread@msgbuffer msgbuffer `*.39uc  1 p 2 20 ]
+[v timer0_lthread@tptr tptr `*.39S172  1 p 2 66 ]
+[v timer0_lthread@msgtype msgtype `i  1 p 2 68 ]
+[v timer0_lthread@length length `i  1 p 2 70 ]
+[v timer0_lthread@msgbuffer msgbuffer `*.39uc  1 p 2 72 ]
 "31
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 {
 "11
-[v ___lwmod@counter counter `uc  1 a 1 35 ]
+[v ___lwmod@counter counter `uc  1 a 1 45 ]
 "8
-[v ___lwmod@dividend dividend `ui  1 p 2 30 ]
-[v ___lwmod@divisor divisor `ui  1 p 2 32 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 40 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 42 ]
 "26
 } 0
 "174 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
@@ -922,10 +924,10 @@
 {
 [v FromMainHigh_sendmsg@length length `uc  1 a 1 wreg ]
 [v FromMainHigh_sendmsg@length length `uc  1 a 1 wreg ]
-[v FromMainHigh_sendmsg@msgtype msgtype `uc  1 p 1 11 ]
-[v FromMainHigh_sendmsg@data data `*.39v  1 p 2 12 ]
+[v FromMainHigh_sendmsg@msgtype msgtype `uc  1 p 1 62 ]
+[v FromMainHigh_sendmsg@data data `*.39v  1 p 2 63 ]
 "180
-[v FromMainHigh_sendmsg@length length `uc  1 a 1 41 ]
+[v FromMainHigh_sendmsg@length length `uc  1 a 1 65 ]
 "181
 } 0
 "24
@@ -933,17 +935,17 @@
 {
 [s S933 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
 "27
-[v send_msg@qmsg qmsg `*.39S933  1 a 2 9 ]
+[v send_msg@qmsg qmsg `*.39S933  1 a 2 60 ]
 "28
-[v send_msg@tlength tlength `ui  1 a 2 6 ]
+[v send_msg@tlength tlength `ui  1 a 2 57 ]
 "25
-[v send_msg@slot slot `uc  1 a 1 8 ]
+[v send_msg@slot slot `uc  1 a 1 59 ]
 "24
 [s S938 __msg_queue 54 `[4]S933 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
-[v send_msg@qptr qptr `*.39S938  1 p 2 0 ]
-[v send_msg@length length `uc  1 p 1 2 ]
-[v send_msg@msgtype msgtype `uc  1 p 1 3 ]
-[v send_msg@data data `*.39v  1 p 2 4 ]
+[v send_msg@qptr qptr `*.39S938  1 p 2 50 ]
+[v send_msg@length length `uc  1 p 1 52 ]
+[v send_msg@msgtype msgtype `uc  1 p 1 53 ]
+[v send_msg@data data `*.39v  1 p 2 54 ]
 "61
 } 0
 "54 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c
@@ -951,30 +953,30 @@
 {
 [v start_i2c_slave_reply@length length `uc  1 a 1 wreg ]
 [v start_i2c_slave_reply@length length `uc  1 a 1 wreg ]
-[v start_i2c_slave_reply@msg msg `*.39uc  1 p 2 30 ]
+[v start_i2c_slave_reply@msg msg `*.39uc  1 p 2 40 ]
 "56
-[v start_i2c_slave_reply@length length `uc  1 a 1 34 ]
+[v start_i2c_slave_reply@length length `uc  1 a 1 44 ]
 "68
 } 0
 "30 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c
 [v _init_uart_recv init_uart_recv `(v  1 e 0 0 ]
 {
 [s S185 __uart_comm 5 `[4]uc 1 buffer 4 0 `uc 1 buflen 1 4 ]
-[v init_uart_recv@uc uc `*.39S185  1 p 2 30 ]
+[v init_uart_recv@uc uc `*.39S185  1 p 2 40 ]
 "33
 } 0
 "6 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c
 [v _init_timer1_lthread init_timer1_lthread `(v  1 e 0 0 ]
 {
 [s S153 __timer1_thread_struct 2 `ui 1 msgcount 2 0 ]
-[v init_timer1_lthread@tptr tptr `*.39S153  1 p 2 30 ]
+[v init_timer1_lthread@tptr tptr `*.39S153  1 p 2 40 ]
 "8
 } 0
 "10 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c
 [v _init_timer0_lthread init_timer0_lthread `(v  1 e 0 0 ]
 {
 [s S172 __timer0_thread_struct 2 `ui 1 msgcount 2 0 ]
-[v init_timer0_lthread@tptr tptr `*.39S172  1 p 2 30 ]
+[v init_timer0_lthread@tptr tptr `*.39S172  1 p 2 40 ]
 "12
 } 0
 "194 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
@@ -986,26 +988,26 @@
 [v _init_queue init_queue `(v  1 e 0 0 ]
 {
 "15
-[v init_queue@i i `uc  1 a 1 33 ]
+[v init_queue@i i `uc  1 a 1 43 ]
 [s S933 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
 "14
 [s S938 __msg_queue 54 `[4]S933 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
-[v init_queue@qptr qptr `*.39S938  1 p 2 30 ]
+[v init_queue@qptr qptr `*.39S938  1 p 2 40 ]
 "22
 } 0
-"306 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c
+"302 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c
 [v _init_i2c init_i2c `(v  1 e 0 0 ]
 {
 [s S350 __i2c_comm 28 `[10]uc 1 buffer 10 0 `uc 1 buflen 1 10 `uc 1 event_count 1 11 `uc 1 status 1 12 `uc 1 error_code 1 13 `uc 1 error_count 1 14 `[10]uc 1 outbuffer 10 15 `uc 1 outbuflen 1 25 `uc 1 outbufind 1 26 `uc 1 slave_addr 1 27 ]
-[v init_i2c@ic ic `*.39S350  1 p 2 30 ]
-"312
+[v init_i2c@ic ic `*.39S350  1 p 2 40 ]
+"308
 } 0
 "98 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c
 [v _initADC initADC `(v  1 e 0 0 ]
 {
-"101
-[v initADC@ADCValue ADCValue `i  1 a 2 37 ]
-"108
+"102
+[v initADC@ADCValue ADCValue `i  1 a 2 47 ]
+"109
 } 0
 "68 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c
 [v _OpenADC OpenADC `(v  1 e 0 0 ]
@@ -1013,11 +1015,11 @@
 [v OpenADC@config config `uc  1 a 1 wreg ]
 [v OpenADC@config config `uc  1 a 1 wreg ]
 "69
-[v OpenADC@config2 config2 `uc  1 p 1 30 ]
+[v OpenADC@config2 config2 `uc  1 p 1 40 ]
 "70
-[v OpenADC@portconfig portconfig `uc  1 p 1 31 ]
+[v OpenADC@portconfig portconfig `uc  1 p 1 41 ]
 "72
-[v OpenADC@config config `uc  1 a 1 34 ]
+[v OpenADC@config config `uc  1 a 1 44 ]
 "89
 } 0
 "22 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c
@@ -1025,46 +1027,46 @@
 {
 "25
 } 0
-"317 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c
+"313 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c
 [v _i2c_configure_slave i2c_configure_slave `(v  1 e 0 0 ]
 {
 [v i2c_configure_slave@addr addr `uc  1 a 1 wreg ]
 [v i2c_configure_slave@addr addr `uc  1 a 1 wreg ]
-"320
-[v i2c_configure_slave@addr addr `uc  1 a 1 30 ]
-"345
+"316
+[v i2c_configure_slave@addr addr `uc  1 a 1 40 ]
+"341
 } 0
-"33 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"41 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _enable_interrupts enable_interrupts `(v  1 e 0 0 ]
 {
-"43
+"51
 } 0
 "258 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
 [v _block_on_To_msgqueues block_on_To_msgqueues `(v  1 e 0 0 ]
 {
 "278
 } 0
-"63 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"71 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _in_main in_main `(i  1 e 2 0 ]
+{
+"77
+} 0
+"61
+[v _in_low_int in_low_int `(i  1 e 2 0 ]
 {
 "69
 } 0
 "53
-[v _in_low_int in_low_int `(i  1 e 2 0 ]
-{
-"61
-} 0
-"45
 [v _in_high_int in_high_int `(i  1 e 2 0 ]
 {
-"47
+"55
 } 0
 "222 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
 [v _check_msg check_msg `(uc  1 e 1 0 ]
 {
 [s S933 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
 [s S938 __msg_queue 54 `[4]S933 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
-[v check_msg@qptr qptr `*.39S938  1 p 2 30 ]
+[v check_msg@qptr qptr `*.39S938  1 p 2 40 ]
 "224
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c
@@ -1072,7 +1074,7 @@
 {
 [v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
 [v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
-[v Delay1KTCYx@unit unit `uc  1 a 1 30 ]
+[v Delay1KTCYx@unit unit `uc  1 a 1 40 ]
 "13
 } 0
 "112 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
@@ -1080,10 +1082,10 @@
 {
 [v ToMainLow_recvmsg@maxlength maxlength `uc  1 a 1 wreg ]
 [v ToMainLow_recvmsg@maxlength maxlength `uc  1 a 1 wreg ]
-[v ToMainLow_recvmsg@msgtype msgtype `*.39uc  1 p 2 12 ]
-[v ToMainLow_recvmsg@data data `*.39v  1 p 2 14 ]
+[v ToMainLow_recvmsg@msgtype msgtype `*.39uc  1 p 2 64 ]
+[v ToMainLow_recvmsg@data data `*.39v  1 p 2 66 ]
 "118
-[v ToMainLow_recvmsg@maxlength maxlength `uc  1 a 1 16 ]
+[v ToMainLow_recvmsg@maxlength maxlength `uc  1 a 1 68 ]
 "119
 } 0
 "135
@@ -1091,10 +1093,10 @@
 {
 [v ToMainHigh_recvmsg@maxlength maxlength `uc  1 a 1 wreg ]
 [v ToMainHigh_recvmsg@maxlength maxlength `uc  1 a 1 wreg ]
-[v ToMainHigh_recvmsg@msgtype msgtype `*.39uc  1 p 2 12 ]
-[v ToMainHigh_recvmsg@data data `*.39v  1 p 2 14 ]
+[v ToMainHigh_recvmsg@msgtype msgtype `*.39uc  1 p 2 64 ]
+[v ToMainHigh_recvmsg@data data `*.39v  1 p 2 66 ]
 "141
-[v ToMainHigh_recvmsg@maxlength maxlength `uc  1 a 1 16 ]
+[v ToMainHigh_recvmsg@maxlength maxlength `uc  1 a 1 68 ]
 "142
 } 0
 "63
@@ -1102,30 +1104,30 @@
 {
 [s S933 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
 "68
-[v recv_msg@qmsg qmsg `*.39S933  1 a 2 10 ]
+[v recv_msg@qmsg qmsg `*.39S933  1 a 2 62 ]
 "69
-[v recv_msg@tlength tlength `ui  1 a 2 8 ]
+[v recv_msg@tlength tlength `ui  1 a 2 60 ]
 "64
-[v recv_msg@slot slot `uc  1 a 1 7 ]
+[v recv_msg@slot slot `uc  1 a 1 59 ]
 "63
 [s S938 __msg_queue 54 `[4]S933 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
-[v recv_msg@qptr qptr `*.39S938  1 p 2 0 ]
-[v recv_msg@maxlength maxlength `uc  1 p 1 2 ]
-[v recv_msg@msgtype msgtype `*.39uc  1 p 2 3 ]
-[v recv_msg@data data `*.39v  1 p 2 5 ]
+[v recv_msg@qptr qptr `*.39S938  1 p 2 50 ]
+[v recv_msg@maxlength maxlength `uc  1 p 1 52 ]
+[v recv_msg@msgtype msgtype `*.39uc  1 p 2 53 ]
+[v recv_msg@data data `*.39v  1 p 2 55 ]
 "96
 } 0
 "11 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c
 [v _memcpy memcpy `(*.39v  1 e 2 0 ]
 {
 "20
-[v memcpy@s s `*.39Cuc  1 a 2 38 ]
+[v memcpy@s s `*.39Cuc  1 a 2 48 ]
 "18
-[v memcpy@d d `*.39uc  1 a 2 36 ]
+[v memcpy@d d `*.39uc  1 a 2 46 ]
 "11
-[v memcpy@d1 d1 `*.39v  1 p 2 30 ]
-[v memcpy@s1 s1 `*.39Cv  1 p 2 32 ]
-[v memcpy@n n `ui  1 p 2 34 ]
+[v memcpy@d1 d1 `*.39v  1 p 2 40 ]
+[v memcpy@s1 s1 `*.39Cv  1 p 2 42 ]
+[v memcpy@n n `ui  1 p 2 44 ]
 "32
 } 0
 "73 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c
@@ -1133,9 +1135,9 @@
 {
 [v OpenUSART@config config `uc  1 a 1 wreg ]
 [v OpenUSART@config config `uc  1 a 1 wreg ]
-[v OpenUSART@spbrg spbrg `ui  1 p 2 30 ]
+[v OpenUSART@spbrg spbrg `ui  1 p 2 40 ]
 "75
-[v OpenUSART@config config `uc  1 a 1 35 ]
+[v OpenUSART@config config `uc  1 a 1 45 ]
 "143
 } 0
 "18 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c
@@ -1144,13 +1146,13 @@
 [v OpenTimer0@config config `uc  1 a 1 wreg ]
 [v OpenTimer0@config config `uc  1 a 1 wreg ]
 "20
-[v OpenTimer0@config config `uc  1 a 1 30 ]
+[v OpenTimer0@config config `uc  1 a 1 40 ]
 "31
 } 0
-"165 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"179 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _InterruptHandlerLow InterruptHandlerLow `IIL(v  1 e 0 0 ]
 {
-"177
+"191
 } 0
 "11 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c
 [v _uart_recv_int_handler uart_recv_int_handler `(v  1 e 0 0 ]
@@ -1199,45 +1201,40 @@
 [v ReadUSART@data data `uc  1 a 1 0 ]
 "37
 } 0
-"106 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"114 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _InterruptHandlerHigh InterruptHandlerHigh `II(v  1 e 0 0 ]
 {
-"135
-[v InterruptHandlerHigh@pureADCValue pureADCValue `i  1 a 2 72 ]
-"153
+"143
+[v InterruptHandlerHigh@pureADCValue pureADCValue `i  1 a 2 38 ]
+"167
 } 0
 "22 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c
 [v i2_ConvertADC ConvertADC `(v  1 e 0 0 ]
 {
 "25
 } 0
-"19 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
-[v _setStateResponding setStateResponding `(v  1 e 0 0 ]
-{
-"22
-} 0
 "101 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c
 [v _i2c_int_handler i2c_int_handler `(v  1 e 0 0 ]
 {
-"265
-[v i2c_int_handler@msgbuffer msgbuffer `[3]uc  1 a 3 2 ]
 "264
-[v i2c_int_handler@length length `i  1 a 2 0 ]
+[v i2c_int_handler@msgbuffer msgbuffer `[11]uc  1 a 11 0 ]
+"263
+[v i2c_int_handler@length length `i  1 a 2 11 ]
 "108
-[v i2c_int_handler@error_buf error_buf `[3]uc  1 a 3 5 ]
+[v i2c_int_handler@error_buf error_buf `[3]uc  1 a 3 13 ]
 "103
-[v i2c_int_handler@data_read data_read `uc  1 a 1 13 ]
+[v i2c_int_handler@data_read data_read `uc  1 a 1 21 ]
 "105
-[v i2c_int_handler@msg_ready msg_ready `uc  1 a 1 12 ]
+[v i2c_int_handler@msg_ready msg_ready `uc  1 a 1 20 ]
 "106
-[v i2c_int_handler@msg_to_send msg_to_send `uc  1 a 1 11 ]
+[v i2c_int_handler@msg_to_send msg_to_send `uc  1 a 1 19 ]
 "102
-[v i2c_int_handler@i2c_data i2c_data `uc  1 a 1 10 ]
+[v i2c_int_handler@i2c_data i2c_data `uc  1 a 1 18 ]
 "107
-[v i2c_int_handler@overrun_error overrun_error `uc  1 a 1 9 ]
+[v i2c_int_handler@overrun_error overrun_error `uc  1 a 1 17 ]
 "104
-[v i2c_int_handler@data_written data_written `uc  1 a 1 8 ]
-"301
+[v i2c_int_handler@data_written data_written `uc  1 a 1 16 ]
+"297
 } 0
 "54
 [v i2_start_i2c_slave_reply start_i2c_slave_reply `(v  1 e 0 0 ]
@@ -1249,10 +1246,10 @@
 [v i2start_i2c_slave_reply@length length `uc  1 a 1 48 ]
 "68
 } 0
-"24 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
-[v _setStateReading setStateReading `(v  1 e 0 0 ]
+"29 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+[v _returnADCValue returnADCValue `(uc  1 e 1 0 ]
 {
-"27
+"39
 } 0
 "72 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c
 [v _handle_start handle_start `(v  1 e 0 0 ]
@@ -1302,15 +1299,15 @@
 {
 "254
 } 0
-"53 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"61 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v i2_in_low_int in_low_int `(i  1 e 2 0 ]
 {
-"61
+"69
 } 0
-"45
+"53
 [v i2_in_high_int in_high_int `(i  1 e 2 0 ]
 {
-"47
+"55
 } 0
 "222 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
 [v i2_check_msg check_msg `(uc  1 e 1 0 ]

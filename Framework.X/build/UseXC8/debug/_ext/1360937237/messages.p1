@@ -4616,7 +4616,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
-[; ;interrupts.h: 10: char returnADCValue(int place);
+[; ;interrupts.h: 10: char returnADCValue(void);
 [; ;interrupts.h: 11: void setStateResponding(void);
 [; ;interrupts.h: 12: void setStateReading(void);
 [; ;interrupts.h: 15: void enable_interrupts(void);

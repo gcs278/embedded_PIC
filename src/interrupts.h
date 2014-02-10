@@ -7,7 +7,7 @@
 //       done with the call SleepIfOkay() which is defined in
 //       messages.h -- init_queues() MUST be called prior to
 //       enabling interrupts if SleepIfOkay() is called!
-char returnADCValue(int place);
+char returnADCValue(void);
 void setStateResponding(void);
 void setStateReading(void);
 

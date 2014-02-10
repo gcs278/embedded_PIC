@@ -5969,7 +5969,7 @@ unsigned char i2c_master_send(unsigned char,unsigned char *);
 unsigned char i2c_master_recv(unsigned char);
 
 # 10 "../src/interrupts.h"
-char returnADCValue(int place);
+char returnADCValue(void);
 void setStateResponding(void);
 void setStateReading(void);
 
@@ -6136,7 +6136,6 @@ ic_ptr->outbufind++;
 data_written = 1;
 } else {
 
-setStateReading();
 ic_ptr->status = 0x5;
 }
 break;
@@ -6213,13 +6212,12 @@ ic_ptr->error_count = 0;
 }
 if (msg_to_send) {
 int length;
-unsigned char msgbuffer[3];
-length = 3;
-msgbuffer[0] = 0x0;
-msgbuffer[1] = 0x1;
-msgbuffer[2] = 0x2;
+unsigned char msgbuffer[10 + 1];
+length = 2;
 
-# 298
+msgbuffer[0] = returnADCValue();
+
+# 294
 start_i2c_slave_reply(length, msgbuffer);
 msg_to_send = 0;
 }
@@ -6256,7 +6254,7 @@ SSPSTAT |= 0b10000000;
 TRISCbits.TRISC3 = 1;
 TRISCbits.TRISC4 = 1;
 
-# 342
+# 338
 SSPCON2bits.SEN = 1;
 SSPCON1 |= 0b00100000;
 
