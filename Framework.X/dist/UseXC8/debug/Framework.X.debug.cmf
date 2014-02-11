@@ -11,106 +11,99 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+$C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 end_init CODE 0 B0 B0 4 1
 reset_vec CODE 0 0 0 6 1
 config CONFIG 0 7FF8 7FF8 6 1
 $dist/UseXC8/debug\Framework.X.debug.obj
 intcodelo CODE 0 18 18 98 1
 intcode CODE 0 8 8 C 1
-text51 CODE 0 1B2E 1B2E A 1
-text50 CODE 0 1B38 1B38 6 1
-text49 CODE 0 1A6A 1A6A 24 1
-text48 CODE 0 1B22 1B22 C 1
-text47 CODE 0 199E 199E 2E 1
-text46 CODE 0 16E4 16E4 4E 1
-text45 CODE 0 1880 1880 40 1
-text44 CODE 0 100E 100E AA 1
-text43 CODE 0 1A44 1A44 26 1
-text42 CODE 0 E9C E9C C8 1
-text41 CODE 0 196A 196A 34 1
-text40 CODE 0 DA8 DA8 F4 1
+text46 CODE 0 1A9A 1A9A A 1
+text45 CODE 0 184C 184C 40 1
+text44 CODE 0 10DC 10DC AA 1
+text43 CODE 0 19E0 19E0 26 1
+text42 CODE 0 EB8 EB8 C8 1
+text41 CODE 0 1936 1936 32 1
+text40 CODE 0 DC4 DC4 F4 1
 text39 CODE 0 B4 B4 5F2 1
-text38 CODE 0 1B42 1B42 4 1
-intcode_body CODE 0 A84 A84 112 1
-text36 CODE 0 1AAC 1AAC 1E 1
-text35 CODE 0 1840 1840 40 1
-text34 CODE 0 F64 F64 AA 1
-text33 CODE 0 1A1E 1A1E 26 1
-text32 CODE 0 115E 115E 9C 1
-text30 CODE 0 19CC 19CC 2A 1
-text29 CODE 0 11FA 11FA 92 1
-text28 CODE 0 1634 1634 5E 1
+text38 CODE 0 1AA8 1AA8 4 1
+intcode_body CODE 0 A84 A84 12E 1
+text36 CODE 0 1A24 1A24 1E 1
+text35 CODE 0 180C 180C 40 1
+text34 CODE 0 1032 1032 AA 1
+text33 CODE 0 19BA 19BA 26 1
+text32 CODE 0 1186 1186 9C 1
+text30 CODE 0 1968 1968 2A 1
+text29 CODE 0 1222 1222 92 1
+text28 CODE 0 165A 165A 5E 1
 text27 CODE 0 94E 94E 136 1
-text26 CODE 0 17FE 17FE 42 1
-text25 CODE 0 17BC 17BC 42 1
-text24 CODE 0 1ACA 1ACA 16 1
-text23 CODE 0 1934 1934 36 1
-text22 CODE 0 1B04 1B04 12 1
-text21 CODE 0 1732 1732 46 1
-text20 CODE 0 1778 1778 44 1
-text19 CODE 0 10B8 10B8 A6 1
-text18 CODE 0 1B16 1B16 C 1
-text17 CODE 0 19F6 19F6 28 1
-text16 CODE 0 1B3E 1B3E 4 1
-text15 CODE 0 1316 1316 84 1
-text14 CODE 0 15D0 15D0 64 1
-text13 CODE 0 1566 1566 6A 1
-text12 CODE 0 139A 139A 7A 1
-text11 CODE 0 14F8 14F8 6E 1
-text10 CODE 0 1AF2 1AF2 12 1
-text9 CODE 0 1AE0 1AE0 12 1
-text8 CODE 0 1A8E 1A8E 1E 1
-text7 CODE 0 B96 B96 10E 1
-text6 CODE 0 CA4 CA4 104 1
-text5 CODE 0 18FE 18FE 36 1
-text4 CODE 0 128C 128C 8A 1
-text3 CODE 0 1486 1486 72 1
-text2 CODE 0 1414 1414 72 1
-text1 CODE 0 18C0 18C0 3E 1
+text26 CODE 0 17CA 17CA 42 1
+text25 CODE 0 1788 1788 42 1
+text24 CODE 0 1A42 1A42 16 1
+text23 CODE 0 1900 1900 36 1
+text22 CODE 0 1A7C 1A7C 12 1
+text21 CODE 0 16FE 16FE 46 1
+text20 CODE 0 1744 1744 44 1
+text19 CODE 0 F80 F80 B2 1
+text18 CODE 0 1A8E 1A8E C 1
+text17 CODE 0 1992 1992 28 1
+text16 CODE 0 1AA4 1AA4 4 1
+text15 CODE 0 133E 133E 84 1
+text14 CODE 0 16B8 16B8 46 1
+text13 CODE 0 1592 1592 6A 1
+text12 CODE 0 13C2 13C2 7A 1
+text11 CODE 0 1520 1520 72 1
+text10 CODE 0 1A6A 1A6A 12 1
+text9 CODE 0 1A58 1A58 12 1
+text8 CODE 0 1A06 1A06 1E 1
+text7 CODE 0 BB2 BB2 10E 1
+text6 CODE 0 CC0 CC0 104 1
+text5 CODE 0 18CA 18CA 36 1
+text4 CODE 0 12B4 12B4 8A 1
+text3 CODE 0 14AE 14AE 72 1
+text2 CODE 0 143C 143C 72 1
+text1 CODE 0 188C 188C 3E 1
 text0 CODE 0 6A6 6A6 2A8 1
 cstackCOMRAM COMRAM 1 1 1 48 1
 cstackBANK0 BANK0 1 80 80 4D 1
 cstackBANK1 BANK1 1 1A2 1A2 35 1
-bssBANK3 BANK3 1 300 300 ED 1
+bssBIGRAM BIGRAM 1 236 236 15E 1
 bssBANK2 BANK2 1 200 200 36 1
 bssBANK1 BANK1 1 100 100 A2 1
-dataCOMRAM COMRAM 1 52 52 2 1
-bssCOMRAM COMRAM 1 49 49 7 1
-cinit CODE 0 1692 1692 52 1
+bssBANK0 BANK0 1 CF CF 1 1
+dataCOMRAM COMRAM 1 51 51 2 1
+bssCOMRAM COMRAM 1 49 49 6 1
+cinit CODE 0 15FC 15FC 5E 1
 nvBANK0 BANK0 1 CD CD 2 1
-nvCOMRAM COMRAM 1 50 50 2 1
-idataCOMRAM CODE 0 1B46 1B46 2 1
+nvCOMRAM COMRAM 1 4F 4F 2 1
+idataCOMRAM CODE 0 1AAC 1AAC 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-BANK0 000CF-000FF 1
+BANK0 000D0-000FF 1
 BANK1 001D7-001FF 1
-BANK2 00236-002FF 1
-BANK3 003ED-003FF 1
-BIGRAM 00054-0007F 1
-BIGRAM 000CF-000FF 1
+BANK3 00394-003FF 1
+BIGRAM 00053-0007F 1
+BIGRAM 000D0-000FF 1
 BIGRAM 001D7-001FF 1
-BIGRAM 00236-002FF 1
-BIGRAM 003ED-003FF 1
+BIGRAM 00394-003FF 1
 CODE 00006-00007 1
 CODE 00014-00017 1
-CODE 01B48-07FF7 1
-COMRAM 00054-0007F 1
+CODE 01AAE-07FF7 1
+COMRAM 00053-0007F 1
 CONST 00006-00007 1
 CONST 00014-00017 1
-CONST 01B48-07FF7 1
-MEDIUMCONST 01B48-07FF7 1
-RAM 000CF-000FF 1
+CONST 01AAE-07FF7 1
+MEDIUMCONST 01AAE-07FF7 1
+RAM 000D0-000FF 1
 RAM 001D7-001FF 1
-RAM 00236-002FF 1
-RAM 003ED-003FF 1
+RAM 00394-003FF 1
 SFR 00F80-00FFC 1
-SMALLCONST 01B48-07FF7 1
-STACK 00236-002FF 1
+SMALLCONST 01AAE-07FF7 1
+STACK 00394-003FF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -127,14 +120,14 @@ STACK 00236-002FF 1
 $dist/UseXC8/debug\Framework.X.debug.obj
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":114 8 intcode CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":37 8 intcode CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":179 18 intcodelo CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":180 18 intcodelo CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":31 18 intcodelo CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":181 5C intcodelo CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":182 5E intcodelo CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":187 60 intcodelo CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":188 64 intcodelo CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":189 66 intcodelo CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":191 6A intcodelo CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":182 5C intcodelo CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":183 5E intcodelo CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":188 60 intcodelo CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":189 64 intcodelo CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":190 66 intcodelo CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":192 6A intcodelo CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":101 B4 text39 CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":103 B4 text39 CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":104 C0 text39 CODE
@@ -231,51 +224,51 @@ $dist/UseXC8/debug\Framework.X.debug.obj
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":267 678 text39 CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":294 682 text39 CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":295 698 text39 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":113 6A6 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":114 6A6 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":116 6A6 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":117 6A6 text0 CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":297 6A6 text39 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":115 6AA text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":134 6AC text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":135 6B0 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":139 6B2 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":142 6CA text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":145 6E2 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":147 6FA text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":149 712 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":151 716 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":154 71A text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":155 71E text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":167 722 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":172 728 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":177 72C text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":179 72E text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":181 730 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":183 732 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":193 734 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":206 73A text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":210 73C text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":234 750 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":241 754 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":242 788 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":251 792 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":252 7E2 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":255 7E4 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":259 7E4 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":260 7E8 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":289 7EA text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":292 7FA text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":271 7FC text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":295 814 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":296 832 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":248 834 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":307 852 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":308 886 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":317 890 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":318 8E0 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":323 8E2 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":324 932 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":314 934 text0 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":335 94E text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":118 6AA text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":137 6AC text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":138 6B0 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":142 6B2 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":145 6CA text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":148 6E2 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":150 6FA text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":152 712 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":154 716 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":157 71A text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":158 71E text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":170 722 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":175 728 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":180 72C text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":182 72E text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":184 730 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":186 732 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":196 734 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":209 73A text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":213 73C text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":237 750 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":244 754 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":245 788 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":254 792 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":255 7E2 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":258 7E4 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":262 7E4 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":263 7E8 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":292 7EA text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":295 7FA text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":274 7FC text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":298 814 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":299 832 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":251 834 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":310 852 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":311 886 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":320 890 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":321 8E0 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":326 8E2 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":327 932 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":317 934 text0 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":338 94E text0 CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":63 94E text27 CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":72 94E text27 CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":73 968 text27 CODE
@@ -301,427 +294,407 @@ $dist/UseXC8/debug\Framework.X.debug.obj
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":138 AE8 intcode_body CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":142 AEC intcode_body CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":143 AEE intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":144 AFA intcode_body CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":144 B10 intcode_body CODE
 "C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":145 B1C intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":147 B24 intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":149 B2E intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":150 B36 intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":151 B3E intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":154 B40 intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":155 B54 intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":166 B58 intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":167 B5C intcode_body CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":54 B96 text7 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":56 B9A text7 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":57 BB2 text7 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":56 C22 text7 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":59 C5C text7 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":60 C74 text7 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":63 C8A text7 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":66 CA0 text7 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":68 CA2 text7 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":24 CA4 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":28 CA4 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":38 CB2 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":39 CCC text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":41 CEE text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":42 CFC text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":46 D00 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":47 D18 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":55 D30 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":56 D66 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":59 D98 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":60 DA4 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":61 DA8 text6 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":54 DA8 text40 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":56 DAC text40 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":57 DC4 text40 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":56 E24 text40 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":59 E56 text40 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":60 E6C text40 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":63 E82 text40 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":66 E98 text40 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":68 E9A text40 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":72 E9C text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":73 EA0 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":74 EB6 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":76 ECC text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":77 ED2 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":80 ED6 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":81 EEC text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":82 F00 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":83 F16 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":84 F18 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":85 F1C text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":86 F32 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":87 F34 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":91 F4C text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":24 F64 text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":28 F64 text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":93 F64 text42 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":38 F6A text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":39 F7A text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":41 F8A text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":42 F98 text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":46 F9C text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":47 FAC text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":55 FBC text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":56 FDC text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":59 FFE text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":60 100A text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":24 100E text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":28 100E text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":61 100E text34 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":38 1014 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":39 1024 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":41 1034 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":42 1042 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":46 1046 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":47 1056 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":55 1066 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":56 1086 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":59 10A8 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":60 10B4 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":61 10B8 text44 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":258 10B8 text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":259 10B8 text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":262 10CA text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":263 10CC text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":265 10D8 text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":266 10F6 text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":267 1102 text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":270 1106 text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":271 1124 text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":272 1130 text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":275 1134 text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":276 113A text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":278 115E text19 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":11 115E text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":12 115E text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":13 1162 text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":14 1188 text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":16 1196 text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":17 11A8 text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":18 11CA text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":21 11DA text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":24 11DE text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":25 11E0 text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":26 11E2 text32 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":28 11FA text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":73 11FA text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":75 11FE text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":76 1202 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":78 1206 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":79 120C text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":81 120E text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":83 1216 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":84 1218 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":87 121A text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":88 1220 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":90 1222 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":91 122A text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":92 122E text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":93 122E text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":95 1230 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":96 1236 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":98 1238 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":100 123A text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":101 1240 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":103 1242 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":104 124A text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":105 124E text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":106 124E text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":108 1250 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":110 1252 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":111 125A text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":112 125E text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":113 125E text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":115 1260 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":116 1264 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":118 1278 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":119 127A text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":137 127C text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":138 1280 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":139 1288 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":8 128C text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":13 128C text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":143 128C text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":14 1298 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":15 12A8 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":16 12AA text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":17 12B6 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":15 12BC text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":20 12C4 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":21 12E0 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":22 12F8 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":23 1304 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":24 130C text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":25 130C text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":26 1314 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":68 1316 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":72 131A text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":73 131E text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":75 1322 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":77 132E text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":80 134E text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":82 1388 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":84 1390 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":85 1392 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":86 1394 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":87 1396 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":88 1396 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":89 1398 text15 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":14 139A text12 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":17 139A text12 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":18 13B0 text12 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":19 13C6 text12 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":20 13E2 text12 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":19 1402 text12 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":22 1414 text12 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":14 1414 text2 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":17 1414 text2 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":20 1422 text2 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":21 1458 text2 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":14 1486 text3 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":21 1486 text3 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":26 1486 text2 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":24 1494 text3 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":25 14CA text3 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":194 14F8 text11 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":195 14F8 text11 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":31 14F8 text3 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":196 1504 text11 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":197 151C text11 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":198 1534 text11 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":199 154C text11 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":200 1564 text11 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":302 1566 text13 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":303 1566 text13 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":304 1576 text13 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":305 158C text13 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":306 15A2 text13 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":307 15B8 text13 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":308 15CE text13 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":98 15D0 text14 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":100 15D0 text14 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":101 15D2 text14 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":102 15F2 text14 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":104 1600 text14 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":105 1626 text14 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":106 162C text14 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":107 162E text14 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":109 1632 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":11 1634 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":24 1634 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":25 1644 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 1654 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":27 1656 text28 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":146 B3E intcode_body CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":148 B46 intcode_body CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":150 B52 intcode_body CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":151 B5A intcode_body CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":152 B62 intcode_body CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":155 B64 intcode_body CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":156 B74 intcode_body CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":168 B78 intcode_body CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":54 BB2 text7 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":56 BB6 text7 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":57 BCE text7 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":56 C3E text7 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":59 C78 text7 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":60 C90 text7 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":63 CA6 text7 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":66 CBC text7 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":68 CBE text7 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":24 CC0 text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":28 CC0 text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":38 CCE text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":39 CE8 text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":41 D0A text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":42 D18 text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":46 D1C text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":47 D34 text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":55 D4C text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":56 D82 text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":59 DB4 text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":60 DC0 text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":61 DC4 text6 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":54 DC4 text40 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":56 DC8 text40 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":57 DE0 text40 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":56 E40 text40 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":59 E72 text40 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":60 E88 text40 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":63 E9E text40 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":66 EB4 text40 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":68 EB6 text40 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":72 EB8 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":73 EBC text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":74 ED2 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":76 EE8 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":77 EEE text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":80 EF2 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":81 F08 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":82 F1C text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":83 F32 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":84 F34 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":85 F38 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":86 F4E text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":87 F50 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":91 F68 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":258 F80 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":259 F80 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":93 F80 text42 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":262 F92 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":263 F94 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":265 FA4 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":266 FC2 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":267 FD2 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":270 FD6 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":271 FF4 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":272 1004 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":275 1008 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":276 100E text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":24 1032 text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":28 1032 text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":278 1032 text19 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":38 1038 text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":39 1048 text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":41 1058 text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":42 1066 text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":46 106A text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":47 107A text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":55 108A text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":56 10AA text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":59 10CC text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":60 10D8 text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":24 10DC text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":28 10DC text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":61 10DC text34 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":38 10E2 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":39 10F2 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":41 1102 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":42 1110 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":46 1114 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":47 1124 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":55 1134 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":56 1154 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":59 1176 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":60 1182 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":61 1186 text44 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":11 1186 text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":12 1186 text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":13 118A text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":14 11B0 text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":16 11BE text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":17 11D0 text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":18 11F2 text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":21 1202 text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":24 1206 text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":25 1208 text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":26 120A text32 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":28 1222 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":73 1222 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":75 1226 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":76 122A text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":78 122E text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":79 1234 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":81 1236 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":83 123E text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":84 1240 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":87 1242 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":88 1248 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":90 124A text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":91 1252 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":92 1256 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":93 1256 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":95 1258 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":96 125E text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":98 1260 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":100 1262 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":101 1268 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":103 126A text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":104 1272 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":105 1276 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":106 1276 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":108 1278 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":110 127A text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":111 1282 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":112 1286 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":113 1286 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":115 1288 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":116 128C text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":118 12A0 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":119 12A2 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":137 12A4 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":138 12A8 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":139 12B0 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":8 12B4 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":13 12B4 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uopen.c":143 12B4 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":14 12C0 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":15 12D0 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":16 12D2 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":17 12DE text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":15 12E4 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":20 12EC text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":21 1308 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":22 1320 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":23 132C text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":24 1334 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":25 1334 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c":26 133C text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":68 133E text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":72 1342 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":73 1346 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":75 134A text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":77 1356 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":80 1376 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":82 13B0 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":84 13B8 text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":85 13BA text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":86 13BC text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":87 13BE text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":88 13BE text15 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcopen.c":89 13C0 text15 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":14 13C2 text12 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":17 13C2 text12 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":18 13D8 text12 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":19 13EE text12 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":20 140A text12 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":19 142A text12 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":22 143C text12 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":14 143C text2 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":17 143C text2 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":20 144A text2 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":21 1480 text2 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":14 14AE text3 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":21 14AE text3 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":26 14AE text2 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":24 14BC text3 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":25 14F2 text3 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":194 1520 text11 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":195 1520 text11 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":31 1520 text3 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":196 1530 text11 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":197 1548 text11 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":198 1560 text11 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":199 1578 text11 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":200 1590 text11 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":302 1592 text13 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":303 1592 text13 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":304 15A2 text13 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":305 15B8 text13 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":306 15CE text13 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":307 15E4 text13 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":308 15FA text13 CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2917 15FC cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2919 15FC cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2922 15FC cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2976 15FC cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2977 1600 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2978 1604 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2979 1604 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2980 1606 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2981 1608 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2982 160A cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2983 160C cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2984 160E cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2987 1610 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2988 1614 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2989 1616 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2990 1616 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2991 1618 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2992 161A cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2995 161C cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2996 1620 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2997 1622 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2998 1622 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":2999 1624 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3000 1626 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3003 1628 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3004 162A cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3007 162C cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3008 162E cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3009 1630 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3010 1632 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3011 1634 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3012 1636 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3017 1638 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3018 163A cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3019 163C cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3020 163E cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3021 1640 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3022 1642 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3023 1644 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3024 1646 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3025 164A cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3026 164C cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3032 1650 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3033 1650 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3034 1650 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3035 1652 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3036 1654 cinit CODE
+"C:\Users\TaylorM7\AppData\Local\Temp\s72c.":3037 1656 cinit CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":11 165A text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":24 165A text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":25 166A text28 CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 167A text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 168E text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 1690 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 1692 text28 CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2921 1692 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2923 1692 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2926 1692 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2977 1692 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2978 1696 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2979 1698 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2980 1698 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2981 169A cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2982 169C cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2985 169E cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2986 16A2 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2987 16A4 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2988 16A4 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2989 16A6 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2990 16A8 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2993 16AA cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2994 16AE cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2995 16B0 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2996 16B0 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2997 16B2 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":2998 16B4 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3001 16B6 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3002 16BA cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3003 16BC cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3004 16BC cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3005 16BE cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3006 16C0 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3011 16C2 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3012 16C4 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3013 16C6 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3014 16C8 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3015 16CA cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3016 16CC cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3017 16CE cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3018 16D0 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3019 16D4 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3020 16D6 cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3026 16DA cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3027 16DA cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3028 16DA cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3029 16DC cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3030 16DE cinit CODE
-"C:\Users\TaylorM7\AppData\Local\Temp\s7q4.":3031 16E0 cinit CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":228 16E4 text46 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":230 16E4 text46 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":235 16EA text46 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":240 16F6 text46 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":247 1702 text46 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":250 1718 text46 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":253 172C text46 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":254 1730 text46 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":61 1732 text21 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":62 1732 text21 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":63 1736 text21 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":64 1746 text21 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":65 1758 text21 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":67 1768 text21 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":69 1778 text21 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":71 1778 text20 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":72 1778 text20 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":73 179C text20 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":75 17AC text20 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":77 17BC text20 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":112 17BC text25 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":118 17C0 text25 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":119 17FE text25 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":135 17FE text26 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":141 1802 text26 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":142 1840 text26 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":11 1840 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":24 1840 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":25 1848 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 1850 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":27 1852 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 186E text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 187C text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 187E text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":11 1880 text45 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":24 1880 text45 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 1880 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":25 1888 text45 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 1890 text45 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":27 1892 text45 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 18AE text45 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 18BC text45 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 18BE text45 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":9 18C0 text1 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":10 18C0 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 18C0 text45 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":11 18CE text1 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":14 18DC text1 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":174 18FE text5 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":17 18FE text1 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":180 1902 text5 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":181 1934 text5 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":222 1934 text23 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":223 1934 text23 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":29 196A text41 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":31 196A text41 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":224 196A text23 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":33 1974 text41 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":34 197C text41 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":35 1984 text41 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":37 1986 text41 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":38 198A text41 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":39 199E text41 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":61 199E text47 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":62 199E text47 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":63 19A2 text47 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":64 19AC text47 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":65 19B8 text47 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":67 19C2 text47 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":69 19CC text47 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":18 19CC text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":20 19D0 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":21 19DA text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":22 19DE text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":23 19E2 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":25 19E4 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":26 19EC text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":27 19F0 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":28 19F0 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":30 19F2 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":31 19F4 text30 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":313 19F6 text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":316 19FA text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":317 19FC text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":319 19FE text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":321 1A02 text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":322 1A06 text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":323 1A0A text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":324 1A0E text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":325 1A12 text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":327 1A14 text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":328 1A16 text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":338 1A18 text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":339 1A1A text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":341 1A1C text17 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":103 1A1E text33 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":109 1A22 text33 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":110 1A44 text33 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":126 1A44 text43 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":132 1A48 text43 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":133 1A6A text43 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":222 1A6A text49 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":223 1A6A text49 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":224 1A8E text49 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":30 1A8E text8 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":31 1A8E text8 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":32 1A9A text8 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":33 1AAA text8 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":15 1AAC text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":19 1AAC text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":21 1AB0 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":23 1AB4 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":24 1AB6 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":25 1AB8 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":26 1ABA text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":28 1ABA text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":29 1ABC text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":31 1ABE text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":32 1AC0 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":34 1AC2 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":36 1AC6 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":8 1ACA text24 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":37 1ACA text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":10 1ACE text24 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":11 1ACE text24 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":12 1AD6 text24 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":6 1AE0 text9 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":7 1AE0 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":13 1AE0 text24 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":8 1AF0 text9 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":10 1AF2 text10 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":11 1AF2 text10 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":12 1B02 text10 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":53 1B04 text22 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":54 1B04 text22 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":41 1B16 text18 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":44 1B16 text18 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":55 1B16 text22 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":45 1B18 text18 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":46 1B1A text18 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":48 1B1C text18 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":50 1B1E text18 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":51 1B20 text18 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":53 1B22 text48 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":54 1B22 text48 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":55 1B2E text48 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcread.c":24 1B2E text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcread.c":26 1B2E text51 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":202 1B38 text50 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":204 1B38 text50 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcread.c":27 1B38 text51 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":213 1B3A text50 CODE
-"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":218 1B3C text50 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":22 1B3E text16 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":24 1B3E text16 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":25 1B40 text16 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":22 1B42 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":24 1B42 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":25 1B44 text38 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":27 167C text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 16A0 text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 16B4 text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 16B6 text28 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":99 16B8 text14 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":101 16B8 text14 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 16B8 text28 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":102 16BA text14 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":105 16BC text14 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":107 16CA text14 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":108 16F0 text14 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":109 16F6 text14 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":110 16F8 text14 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c":112 16FC text14 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":61 16FE text21 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":62 16FE text21 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":63 1702 text21 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":64 1712 text21 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":65 1724 text21 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":67 1734 text21 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":69 1744 text21 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":71 1744 text20 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":72 1744 text20 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":73 1768 text20 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":75 1778 text20 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":77 1788 text20 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":112 1788 text25 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":118 178C text25 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":119 17CA text25 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":135 17CA text26 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":141 17CE text26 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":142 180C text26 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":11 180C text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":24 180C text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":25 1814 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 181C text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":27 181E text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 183A text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 1848 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 184A text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":11 184C text45 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":24 184C text45 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 184C text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":25 1854 text45 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 185C text45 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":27 185E text45 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 187A text45 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 1888 text45 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":26 188A text45 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":9 188C text1 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":10 188C text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\memcpy.c":32 188C text45 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":11 189A text1 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":14 18A8 text1 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":174 18CA text5 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/uart_thread.c":17 18CA text1 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":180 18CE text5 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":181 1900 text5 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":222 1900 text23 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":223 1900 text23 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":29 1936 text41 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":31 1936 text41 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":224 1936 text23 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":33 1942 text41 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":34 194A text41 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":35 1952 text41 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":37 1954 text41 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":38 1958 text41 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":39 1968 text41 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":18 1968 text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":20 196C text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":21 1976 text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":22 197A text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":23 197E text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":25 1980 text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":26 1988 text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":27 198C text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":28 198C text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":30 198E text30 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\Timers\t0open.c":31 1990 text30 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":313 1992 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":316 1996 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":317 1998 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":319 199A text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":321 199E text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":322 19A2 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":323 19A6 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":324 19AA text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":325 19AE text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":327 19B0 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":328 19B2 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":338 19B4 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":339 19B6 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c":341 19B8 text17 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":103 19BA text33 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":109 19BE text33 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":110 19E0 text33 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":126 19E0 text43 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":132 19E4 text43 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c":133 1A06 text43 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":30 1A06 text8 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":31 1A06 text8 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":32 1A12 text8 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c":33 1A22 text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":15 1A24 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":19 1A24 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":21 1A28 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":23 1A2C text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":24 1A2E text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":25 1A30 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":26 1A32 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":28 1A32 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":29 1A34 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":31 1A36 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":32 1A38 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":34 1A3A text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":36 1A3E text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":8 1A42 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\USART\uread.c":37 1A42 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":10 1A46 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":11 1A46 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":12 1A4E text24 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":6 1A58 text9 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":7 1A58 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\d1ktcyx.c":13 1A58 text24 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer1_thread.c":8 1A68 text9 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":10 1A6A text10 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":11 1A6A text10 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/timer0_thread.c":12 1A7A text10 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":53 1A7C text22 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":54 1A7C text22 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":41 1A8E text18 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":44 1A8E text18 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":55 1A8E text22 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":45 1A90 text18 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":46 1A92 text18 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":48 1A94 text18 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":50 1A96 text18 CODE
+"C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c":51 1A98 text18 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcread.c":24 1A9A text46 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcread.c":26 1A9A text46 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":22 1AA4 text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":24 1AA4 text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcread.c":27 1AA4 text46 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":25 1AA6 text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":22 1AA8 text38 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":24 1AA8 text38 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c":25 1AAA text38 CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -736,40 +709,40 @@ $dist/UseXC8/debug\Framework.X.debug.obj
 %SYMTAB
 __size_of_ToMainHigh_sendmsg 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __CFG_XINST$OFF 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_ofi1_send_msg 100E 0 CODE 0 text34 dist/UseXC8/debug\Framework.X.debug.obj
+__end_ofi1_send_msg 10DC 0 CODE 0 text34 dist/UseXC8/debug\Framework.X.debug.obj
 i1send_msg@tlength 12 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2send_msg@tlength 3E 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 _ToMainHigh_MQ 136 0 BANK1 1 bssBANK1 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_OpenUSART 128C 0 CODE 0 text29 dist/UseXC8/debug\Framework.X.debug.obj
-i2_start_i2c_slave_reply DA8 0 CODE 0 text40 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_OpenUSART 12B4 0 CODE 0 text29 dist/UseXC8/debug\Framework.X.debug.obj
+i2_start_i2c_slave_reply DC4 0 CODE 0 text40 dist/UseXC8/debug\Framework.X.debug.obj
 start_i2c_slave_reply@length AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __S0 7FFE 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__S1 3ED 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
+__S1 394 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __S2 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_ofi2_send_msg 10B8 0 CODE 0 text44 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_start_i2c_slave_reply CA4 0 CODE 0 text7 dist/UseXC8/debug\Framework.X.debug.obj
+__end_ofi2_send_msg 1186 0 CODE 0 text44 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_start_i2c_slave_reply CC0 0 CODE 0 text7 dist/UseXC8/debug\Framework.X.debug.obj
 __Hintentry 0 0 ABS 0 intentry dist/UseXC8/debug\Framework.X.debug.obj
 __Lintentry 0 0 ABS 0 intentry dist/UseXC8/debug\Framework.X.debug.obj
 ToMainLow_recvmsg@maxlength C4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 i1memcpy@d 7 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2memcpy@d 33 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_init_i2c 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_ToMainHigh_sendmsg 1A6A 0 CODE 0 text43 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_timer1_lthread 1486 0 CODE 0 text2 dist/UseXC8/debug\Framework.X.debug.obj
-_init_timer1_lthread 1AE0 0 CODE 0 text9 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_ToMainHigh_sendmsg 1A06 0 CODE 0 text43 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_timer1_lthread 14AE 0 CODE 0 text2 dist/UseXC8/debug\Framework.X.debug.obj
+_init_timer1_lthread 1A58 0 CODE 0 text9 dist/UseXC8/debug\Framework.X.debug.obj
 _LATB F8A 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_ToMainHigh_recvmsg 1840 0 CODE 0 text26 dist/UseXC8/debug\Framework.X.debug.obj
-_sendingPlaceHolder 52 0 COMRAM 1 dataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_ToMainHigh_recvmsg 180C 0 CODE 0 text26 dist/UseXC8/debug\Framework.X.debug.obj
+_sendingPlaceHolder 51 0 COMRAM 1 dataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_ToMainHigh_recvmsg 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _main 6A6 0 CODE 0 text0 dist/UseXC8/debug\Framework.X.debug.obj
-___sp 0 0 STACK 2 stack C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+___sp 0 0 STACK 2 stack C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 InterruptHandlerHigh@pureADCValue A6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 i2c_int_handler@overrun_error 91 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 init_i2c@ic A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 i2c_int_handler@data_written 90 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-start B0 0 CODE 0 init C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
-_MQ_Main_Willing_to_block 4E 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-_start_i2c_slave_reply B96 0 CODE 0 text7 dist/UseXC8/debug\Framework.X.debug.obj
+start B0 0 CODE 0 init C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
+_MQ_Main_Willing_to_block CF 0 BANK0 1 bssBANK0 dist/UseXC8/debug\Framework.X.debug.obj
+_start_i2c_slave_reply BB2 0 CODE 0 text7 dist/UseXC8/debug\Framework.X.debug.obj
 i1memcpy@d1 1 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2memcpy@d1 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 _FromMainHigh_MQ 200 0 BANK2 1 bssBANK2 dist/UseXC8/debug\Framework.X.debug.obj
@@ -800,7 +773,7 @@ __Lconfig 7FF8 0 CONFIG 0 config dist/UseXC8/debug\Framework.X.debug.obj
 timer0_lthread@retval CB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 timer1_lthread@retval CB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 _ADCValue 4D 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-_ConvertADC 1B3E 0 CODE 0 text16 dist/UseXC8/debug\Framework.X.debug.obj
+_ConvertADC 1AA4 0 CODE 0 text16 dist/UseXC8/debug\Framework.X.debug.obj
 ?___lwmod A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Hbigram 0 0 ABS 0 bigram dist/UseXC8/debug\Framework.X.debug.obj
 __Lbigram 0 0 ABS 0 bigram dist/UseXC8/debug\Framework.X.debug.obj
@@ -808,14 +781,12 @@ __Hrparam 0 0 ABS 0 rparam dist/UseXC8/debug\Framework.X.debug.obj
 __Lrparam 0 0 ABS 0 rparam dist/UseXC8/debug\Framework.X.debug.obj
 i1memcpy@n 5 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2memcpy@n 31 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-i2_check_msg 1A6A 0 CODE 0 text49 dist/UseXC8/debug\Framework.X.debug.obj
-_enter_sleep_mode 1B38 0 CODE 0 text50 dist/UseXC8/debug\Framework.X.debug.obj
 __Hram 0 0 ABS 0 ram dist/UseXC8/debug\Framework.X.debug.obj
 __Lram 0 0 ABS 0 ram dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_ReadUSART 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Hcomram 0 0 ABS 0 comram dist/UseXC8/debug\Framework.X.debug.obj
 __Lcomram 0 0 ABS 0 comram dist/UseXC8/debug\Framework.X.debug.obj
-_send_msg CA4 0 CODE 0 text6 dist/UseXC8/debug\Framework.X.debug.obj
+_send_msg CC0 0 CODE 0 text6 dist/UseXC8/debug\Framework.X.debug.obj
 ?_in_main AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Hsfr 0 0 ABS 0 sfr dist/UseXC8/debug\Framework.X.debug.obj
 __Lsfr 0 0 ABS 0 sfr dist/UseXC8/debug\Framework.X.debug.obj
@@ -826,24 +797,23 @@ i1send_msg@length D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.
 i2send_msg@length 39 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/UseXC8/debug\Framework.X.debug.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/UseXC8/debug\Framework.X.debug.obj
-__size_of_enter_sleep_mode 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _ADCON0 FC2 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _ADCON1 FC1 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _ADCON2 FC0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_ofi2_ConvertADC 1B46 0 CODE 0 text38 dist/UseXC8/debug\Framework.X.debug.obj
-__end_ofi2_in_high_int 1B2E 0 CODE 0 text48 dist/UseXC8/debug\Framework.X.debug.obj
+__end_ofi2_ConvertADC 1AAC 0 CODE 0 text38 dist/UseXC8/debug\Framework.X.debug.obj
 uart_lthread@length AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 _PIE1bits F9D 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 init_queue@i AB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_init_timer0_lthread 1B04 0 CODE 0 text10 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_init_timer1_lthread 1AF2 0 CODE 0 text9 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_init_timer0_lthread 1A7C 0 CODE 0 text10 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_init_timer1_lthread 1A6A 0 CODE 0 text9 dist/UseXC8/debug\Framework.X.debug.obj
 i2c_int_handler@msg_to_send 93 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 _PIR1bits F9E 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _IPR1bits F9F 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 timer0_lthread@msgbuffer C8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 _LATBbits F8A 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 timer1_lthread@msgbuffer C8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-_ADCArray 300 0 BANK3 1 bssBANK3 dist/UseXC8/debug\Framework.X.debug.obj
+_ADCArray 236 0 BIGRAM 1 bssBIGRAM dist/UseXC8/debug\Framework.X.debug.obj
+_LATDbits F8C 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/UseXC8/debug\Framework.X.debug.obj
 _SSPADD FC8 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/UseXC8/debug\Framework.X.debug.obj
@@ -853,7 +823,6 @@ i2memcpy@s 35 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/UseXC8/debug\Framework.X.debug.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/UseXC8/debug\Framework.X.debug.obj
 __Hintret 0 0 ABS 0 intret dist/UseXC8/debug\Framework.X.debug.obj
-i2_in_high_int 1B22 0 CODE 0 text48 dist/UseXC8/debug\Framework.X.debug.obj
 __Lintret 0 0 ABS 0 intret dist/UseXC8/debug\Framework.X.debug.obj
 __Hramtop 400 0 RAM 0 ramtop dist/UseXC8/debug\Framework.X.debug.obj
 __Lramtop 400 0 RAM 0 ramtop dist/UseXC8/debug\Framework.X.debug.obj
@@ -867,12 +836,11 @@ _SPBRGH FB0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/UseXC8/debug\Framework.X.debug.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/UseXC8/debug\Framework.X.debug.obj
 main@uthread_data 1AD 0 BANK1 1 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
-i2_in_low_int 199E 0 CODE 0 text47 dist/UseXC8/debug\Framework.X.debug.obj
-_timer0_lthread 1486 0 CODE 0 text3 dist/UseXC8/debug\Framework.X.debug.obj
+_timer0_lthread 14AE 0 CODE 0 text3 dist/UseXC8/debug\Framework.X.debug.obj
 __Hintcode 14 0 CODE 0 intcode dist/UseXC8/debug\Framework.X.debug.obj
 _SSPBUF FC9 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Lintcode 8 0 CODE 0 intcode dist/UseXC8/debug\Framework.X.debug.obj
-_timer1_lthread 1414 0 CODE 0 text2 dist/UseXC8/debug\Framework.X.debug.obj
+_timer1_lthread 143C 0 CODE 0 text2 dist/UseXC8/debug\Framework.X.debug.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/UseXC8/debug\Framework.X.debug.obj
 _ADRESH FC4 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/UseXC8/debug\Framework.X.debug.obj
@@ -887,21 +855,21 @@ send_msg@slot BB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/UseXC8/debug\Framework.X.debug.obj
 FromMainHigh_sendmsg@data BF 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 recv_msg@slot BB 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-i1_memcpy 1840 0 CODE 0 text35 dist/UseXC8/debug\Framework.X.debug.obj
-i2_memcpy 1880 0 CODE 0 text45 dist/UseXC8/debug\Framework.X.debug.obj
+i1_memcpy 180C 0 CODE 0 text35 dist/UseXC8/debug\Framework.X.debug.obj
+i2_memcpy 184C 0 CODE 0 text45 dist/UseXC8/debug\Framework.X.debug.obj
 OpenADC@portconfig A9 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-__pnvCOMRAM 50 0 COMRAM 1 nvCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
+__pnvCOMRAM 4F 0 COMRAM 1 nvCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 initADC@ADCValue AF 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 main@msgtype 1B9 0 BANK1 1 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_in_high_int 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-_block_on_To_msgqueues 10B8 0 CODE 0 text19 dist/UseXC8/debug\Framework.X.debug.obj
+_block_on_To_msgqueues F80 0 CODE 0 text19 dist/UseXC8/debug\Framework.X.debug.obj
 i1memcpy@s1 3 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2memcpy@s1 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_initADC 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_Delay1KTCYx 1AE0 0 CODE 0 text24 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_enable_interrupts 1B22 0 CODE 0 text18 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_Delay1KTCYx 1A58 0 CODE 0 text24 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_enable_interrupts 1A9A 0 CODE 0 text18 dist/UseXC8/debug\Framework.X.debug.obj
 main@ic 1BB 0 BANK1 1 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 i2c_int_handler@i2c_data 92 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 main@uc 1B4 0 BANK1 1 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
@@ -909,16 +877,16 @@ __Hdata 0 0 ABS 0 data dist/UseXC8/debug\Framework.X.debug.obj
 __Ldata 0 0 ABS 0 data dist/UseXC8/debug\Framework.X.debug.obj
 send_msg@qmsg BC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 recv_msg@qmsg BE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_block_on_To_msgqueues 115E 0 CODE 0 text19 dist/UseXC8/debug\Framework.X.debug.obj
-stackhi 2FF 0 ABS 0 - C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
-_check_msg 1934 0 CODE 0 text23 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_block_on_To_msgqueues 1032 0 CODE 0 text19 dist/UseXC8/debug\Framework.X.debug.obj
+stackhi 3FF 0 ABS 0 - C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
+_check_msg 1900 0 CODE 0 text23 dist/UseXC8/debug\Framework.X.debug.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __pcstackBANK0 80 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_send_msg 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Htemp 0 0 COMRAM 1 temp dist/UseXC8/debug\Framework.X.debug.obj
 __Ltemp 0 0 COMRAM 1 temp dist/UseXC8/debug\Framework.X.debug.obj
-stacklo 236 0 ABS 0 - C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+stacklo 394 0 ABS 0 - C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/UseXC8/debug\Framework.X.debug.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/UseXC8/debug\Framework.X.debug.obj
 __Hinit B0 0 CODE 0 init dist/UseXC8/debug\Framework.X.debug.obj
@@ -930,60 +898,60 @@ __end_of_main 94E 0 CODE 0 text0 dist/UseXC8/debug\Framework.X.debug.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/UseXC8/debug\Framework.X.debug.obj
 __pintcodelo 18 0 CODE 0 intcodelo dist/UseXC8/debug\Framework.X.debug.obj
 _ic_ptr CD 0 BANK0 1 nvBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-_uc_ptr 50 0 COMRAM 1 nvCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_check_msg 196A 0 CODE 0 text23 dist/UseXC8/debug\Framework.X.debug.obj
+_uc_ptr 4F 0 COMRAM 1 nvCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_check_msg 1936 0 CODE 0 text23 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_ConvertADC 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Htext 0 0 ABS 0 text dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext 0 0 ABS 0 text dist/UseXC8/debug\Framework.X.debug.obj
-_memcpy 1634 0 CODE 0 text28 dist/UseXC8/debug\Framework.X.debug.obj
+_memcpy 165A 0 CODE 0 text28 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_Delay1KTCYx 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 i1send_msg@qptr B 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2send_msg@qptr 37 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_ofi1_send_msg 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-end_of_initialization 16DA 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
+end_of_initialization 1650 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
 ToMainHigh_sendmsg@length 46 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 init_queue@qptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 OpenUSART@spbrg A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-_uart_lthread 18C0 0 CODE 0 text1 dist/UseXC8/debug\Framework.X.debug.obj
+_uart_lthread 188C 0 CODE 0 text1 dist/UseXC8/debug\Framework.X.debug.obj
 send_msg@qptr B2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 recv_msg@qptr B2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __HnvBANK0 0 0 ABS 0 nvBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __LnvBANK0 0 0 ABS 0 nvBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_in_low_int 1778 0 CODE 0 text21 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_in_low_int 1744 0 CODE 0 text21 dist/UseXC8/debug\Framework.X.debug.obj
 __pnvBANK0 CD 0 BANK0 1 nvBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __size_ofi2_send_msg 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _SSPCON1 FC6 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _SSPCON2 FC5 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 init_uart_recv@uc A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-_ToMainLow_sendmsg 1A1E 0 CODE 0 text33 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_handle_start F64 0 CODE 0 text42 dist/UseXC8/debug\Framework.X.debug.obj
+_ToMainLow_sendmsg 19BA 0 CODE 0 text33 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_handle_start F80 0 CODE 0 text42 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_timer1_lthread 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-_handle_start E9C 0 CODE 0 text42 dist/UseXC8/debug\Framework.X.debug.obj
-_OpenTimer0 19CC 0 CODE 0 text30 dist/UseXC8/debug\Framework.X.debug.obj
+_handle_start EB8 0 CODE 0 text42 dist/UseXC8/debug\Framework.X.debug.obj
+_OpenTimer0 1968 0 CODE 0 text30 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_i2c_int_handler 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 uart_lthread@msgtype AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 FromMainHigh_sendmsg@msgtype BE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 _RCSTAbits FAB 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-_TRISBbits F93 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _TRISCbits F94 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
+_TRISDbits F95 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _TXSTAbits FAC 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 _T0CONbits FD5 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __size_ofi2_ConvertADC 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-_SleepIfOkay 16E4 0 CODE 0 text46 dist/UseXC8/debug\Framework.X.debug.obj
-_ReadADC 1B2E 0 CODE 0 text51 dist/UseXC8/debug\Framework.X.debug.obj
-_ToMainHigh_sendmsg 1A44 0 CODE 0 text43 dist/UseXC8/debug\Framework.X.debug.obj
+_ReadADC 1A9A 0 CODE 0 text46 dist/UseXC8/debug\Framework.X.debug.obj
+_ToMainHigh_sendmsg 19E0 0 CODE 0 text43 dist/UseXC8/debug\Framework.X.debug.obj
 _i2c_int_handler B4 0 CODE 0 text39 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_uart_recv_int_handler 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-_OpenADC 1316 0 CODE 0 text15 dist/UseXC8/debug\Framework.X.debug.obj
-?i2_in_high_int 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-_initADC 15D0 0 CODE 0 text14 dist/UseXC8/debug\Framework.X.debug.obj
+_OpenADC 133E 0 CODE 0 text15 dist/UseXC8/debug\Framework.X.debug.obj
+_initADC 16B8 0 CODE 0 text14 dist/UseXC8/debug\Framework.X.debug.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/UseXC8/debug\Framework.X.debug.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/UseXC8/debug\Framework.X.debug.obj
-?i2_in_low_int 2F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2start_i2c_slave_reply@msg 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_InterruptHandlerLow 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
+__HbssBIGRAM 0 0 ABS 0 bssBIGRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_OpenADC 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
+__LbssBIGRAM 0 0 ABS 0 bssBIGRAM dist/UseXC8/debug\Framework.X.debug.obj
 send_msg@data B6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
+__pbssBIGRAM 236 0 BIGRAM 1 bssBIGRAM dist/UseXC8/debug\Framework.X.debug.obj
 __Hifardata 0 0 CODE 0 ifardata dist/UseXC8/debug\Framework.X.debug.obj
 __Lifardata 0 0 CODE 0 ifardata dist/UseXC8/debug\Framework.X.debug.obj
 recv_msg@data B7 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
@@ -1015,68 +983,66 @@ _SSPCON2bits FC5 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Htext2 0 0 ABS 0 text2 dist/UseXC8/debug\Framework.X.debug.obj
 timer0_lthread@tptr C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext2 0 0 ABS 0 text2 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext1 18C0 0 CODE 0 text1 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext1 188C 0 CODE 0 text1 dist/UseXC8/debug\Framework.X.debug.obj
 timer1_lthread@tptr C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext3 0 0 ABS 0 text3 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext3 0 0 ABS 0 text3 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext2 1414 0 CODE 0 text2 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext2 143C 0 CODE 0 text2 dist/UseXC8/debug\Framework.X.debug.obj
 ToMainLow_sendmsg@msgtype 17 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 ToMainHigh_sendmsg@data 44 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __Htext4 0 0 ABS 0 text4 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext4 0 0 ABS 0 text4 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext3 1486 0 CODE 0 text3 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext3 14AE 0 CODE 0 text3 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_ToMainLow_recvmsg 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Htext5 0 0 ABS 0 text5 dist/UseXC8/debug\Framework.X.debug.obj
-__size_of_SleepIfOkay 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext5 0 0 ABS 0 text5 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext4 128C 0 CODE 0 text4 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext4 12B4 0 CODE 0 text4 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext6 0 0 ABS 0 text6 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext6 0 0 ABS 0 text6 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext5 18FE 0 CODE 0 text5 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext5 18CA 0 CODE 0 text5 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext7 0 0 ABS 0 text7 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext7 0 0 ABS 0 text7 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext6 CA4 0 CODE 0 text6 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext6 CC0 0 CODE 0 text6 dist/UseXC8/debug\Framework.X.debug.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 OpenUSART@config AD 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_ConvertADC 1B42 0 CODE 0 text16 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_ConvertADC 1AA8 0 CODE 0 text16 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext8 0 0 ABS 0 text8 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext8 0 0 ABS 0 text8 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext7 B96 0 CODE 0 text7 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext7 BB2 0 CODE 0 text7 dist/UseXC8/debug\Framework.X.debug.obj
 send_msg@tlength B9 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __pbssCOMRAM 49 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __Htext9 0 0 ABS 0 text9 dist/UseXC8/debug\Framework.X.debug.obj
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext9 0 0 ABS 0 text9 dist/UseXC8/debug\Framework.X.debug.obj
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext8 1A8E 0 CODE 0 text8 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext8 1A06 0 CODE 0 text8 dist/UseXC8/debug\Framework.X.debug.obj
 recv_msg@tlength BC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext9 1AE0 0 CODE 0 text9 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext9 1A58 0 CODE 0 text9 dist/UseXC8/debug\Framework.X.debug.obj
 __pcstackBANK1 1A2 0 BANK1 1 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/UseXC8/debug\Framework.X.debug.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/UseXC8/debug\Framework.X.debug.obj
 uart_lthread@msgbuffer AE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 ToMainHigh_sendmsg@msgtype 43 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_returnADCValue 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__size_ofi2_in_low_int 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_ToMainLow_sendmsg 1A44 0 CODE 0 text33 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_ToMainLow_sendmsg 19E0 0 CODE 0 text33 dist/UseXC8/debug\Framework.X.debug.obj
 _OSCTUNEbits F9B 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_memcpy 1692 0 CODE 0 text28 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of__initialization 16DA 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_in_main 17BC 0 CODE 0 text20 dist/UseXC8/debug\Framework.X.debug.obj
-_i2c_configure_slave 19F6 0 CODE 0 text17 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_memcpy 16B8 0 CODE 0 text28 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of__initialization 1650 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_in_main 1788 0 CODE 0 text20 dist/UseXC8/debug\Framework.X.debug.obj
+_i2c_configure_slave 1992 0 CODE 0 text17 dist/UseXC8/debug\Framework.X.debug.obj
 __CFG_CCP2MX$DEFAULT 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_ToMainLow_recvmsg 17FE 0 CODE 0 text25 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_ToMainLow_recvmsg 17CA 0 CODE 0 text25 dist/UseXC8/debug\Framework.X.debug.obj
 memcpy@d AE 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-i2_ConvertADC 1B42 0 CODE 0 text38 dist/UseXC8/debug\Framework.X.debug.obj
+i2_ConvertADC 1AA8 0 CODE 0 text38 dist/UseXC8/debug\Framework.X.debug.obj
 init_timer0_lthread@tptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 _InterruptHandlerLow 18 0 CODE 0 intcodelo dist/UseXC8/debug\Framework.X.debug.obj
 _SSPSTATbits FC7 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-_init_queues 14F8 0 CODE 0 text11 dist/UseXC8/debug\Framework.X.debug.obj
+_init_queues 1520 0 CODE 0 text11 dist/UseXC8/debug\Framework.X.debug.obj
 _responding 4B 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 init_timer1_lthread@tptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 memcpy@n AC 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-_USART_Status 4F 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
+_USART_Status 4E 0 COMRAM 1 bssCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 ReadUSART@data 1 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 _InterruptHandlerHigh 8 0 CODE 0 intcode dist/UseXC8/debug\Framework.X.debug.obj
 __Hidata 0 0 CODE 0 idata dist/UseXC8/debug\Framework.X.debug.obj
@@ -1084,30 +1050,30 @@ __Lidata 0 0 CODE 0 idata dist/UseXC8/debug\Framework.X.debug.obj
 memcpy@s B0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Hrdata 0 0 COMRAM 1 rdata dist/UseXC8/debug\Framework.X.debug.obj
 __Lrdata 0 0 COMRAM 1 rdata dist/UseXC8/debug\Framework.X.debug.obj
-_in_high_int 1B04 0 CODE 0 text22 dist/UseXC8/debug\Framework.X.debug.obj
+_in_high_int 1A7C 0 CODE 0 text22 dist/UseXC8/debug\Framework.X.debug.obj
 ToMainLow_recvmsg@data C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Hidloc 0 0 IDLOC 0 idloc dist/UseXC8/debug\Framework.X.debug.obj
 __Lidloc 0 0 IDLOC 0 idloc dist/UseXC8/debug\Framework.X.debug.obj
 __CFG_STVREN$OFF 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_ReadADC 1B38 0 CODE 0 text51 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_ReadADC 1AA4 0 CODE 0 text46 dist/UseXC8/debug\Framework.X.debug.obj
 __Hstack 0 0 STACK 2 stack dist/UseXC8/debug\Framework.X.debug.obj
 __Lstack 0 0 STACK 2 stack dist/UseXC8/debug\Framework.X.debug.obj
 int_func A84 0 CODE 0 intcode_body dist/UseXC8/debug\Framework.X.debug.obj
 send_msg@length B4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_init_queue 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-___lwmod 128C 0 CODE 0 text4 dist/UseXC8/debug\Framework.X.debug.obj
+___lwmod 12B4 0 CODE 0 text4 dist/UseXC8/debug\Framework.X.debug.obj
 __Hparam 0 0 ABS 0 rparam dist/UseXC8/debug\Framework.X.debug.obj
 __Lparam 0 0 ABS 0 rparam dist/UseXC8/debug\Framework.X.debug.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-i1_send_msg F64 0 CODE 0 text34 dist/UseXC8/debug\Framework.X.debug.obj
-i2_send_msg 100E 0 CODE 0 text44 dist/UseXC8/debug\Framework.X.debug.obj
+i1_send_msg 1032 0 CODE 0 text34 dist/UseXC8/debug\Framework.X.debug.obj
+i2_send_msg 10DC 0 CODE 0 text44 dist/UseXC8/debug\Framework.X.debug.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_InterruptHandlerHigh 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 ToMainLow_recvmsg@msgtype C0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __CFG_IESO$ON 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-_in_main 1778 0 CODE 0 text20 dist/UseXC8/debug\Framework.X.debug.obj
-_init_queue 139A 0 CODE 0 text12 dist/UseXC8/debug\Framework.X.debug.obj
+_in_main 1744 0 CODE 0 text20 dist/UseXC8/debug\Framework.X.debug.obj
+_init_queue 13C2 0 CODE 0 text12 dist/UseXC8/debug\Framework.X.debug.obj
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/UseXC8/debug\Framework.X.debug.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_start_i2c_slave_reply 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
@@ -1116,280 +1082,258 @@ __Hnvbit 0 0 COMRAM 1 nvbit dist/UseXC8/debug\Framework.X.debug.obj
 __Lnvbit 0 0 COMRAM 1 nvbit dist/UseXC8/debug\Framework.X.debug.obj
 __Hcinit 0 0 ABS 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
 __Lcinit 0 0 ABS 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
-__pcinit 1692 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
+__pcinit 15FC 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
 main@length 1BA 0 BANK1 1 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
-__ramtop 400 0 RAM 0 ramtop C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+__ramtop 400 0 RAM 0 ramtop C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 ?_in_low_int AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_init_queues 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_main 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_ofi2_in_low_int 19CC 0 CODE 0 text47 dist/UseXC8/debug\Framework.X.debug.obj
-_ToMainLow_recvmsg 17BC 0 CODE 0 text25 dist/UseXC8/debug\Framework.X.debug.obj
+_ToMainLow_recvmsg 1788 0 CODE 0 text25 dist/UseXC8/debug\Framework.X.debug.obj
 __Hconst 0 0 CODE 0 const dist/UseXC8/debug\Framework.X.debug.obj
 __Lconst 0 0 CODE 0 const dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_OpenUSART 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 i1send_msg@data F 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2send_msg@data 3B 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 uart_lthread@uptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_FromMainHigh_sendmsg 1934 0 CODE 0 text5 dist/UseXC8/debug\Framework.X.debug.obj
-i2check_msg@qptr 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_FromMainHigh_sendmsg 1900 0 CODE 0 text5 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_check_msg 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_uart_lthread 18FE 0 CODE 0 text1 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_uart_lthread 18CA 0 CODE 0 text1 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_in_main 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 ToMainHigh_recvmsg@maxlength C4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 check_msg@qptr A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-_Delay1KTCYx 1ACA 0 CODE 0 text24 dist/UseXC8/debug\Framework.X.debug.obj
-_init_uart_recv 1A8E 0 CODE 0 text8 dist/UseXC8/debug\Framework.X.debug.obj
+_Delay1KTCYx 1A42 0 CODE 0 text24 dist/UseXC8/debug\Framework.X.debug.obj
+_init_uart_recv 1A06 0 CODE 0 text8 dist/UseXC8/debug\Framework.X.debug.obj
 __size_ofi2_start_i2c_slave_reply 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_in_high_int 1B16 0 CODE 0 text22 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_init_uart_recv 1AAC 0 CODE 0 text8 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_i2c_configure_slave 1A1E 0 CODE 0 text17 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_in_high_int 1A8E 0 CODE 0 text22 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_init_uart_recv 1A24 0 CODE 0 text8 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_i2c_configure_slave 19BA 0 CODE 0 text17 dist/UseXC8/debug\Framework.X.debug.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/UseXC8/debug\Framework.X.debug.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/UseXC8/debug\Framework.X.debug.obj
+__pbssBANK0 CF 0 BANK0 1 bssBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_timer0_lthread 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_uart_recv_int_handler 11FA 0 CODE 0 text32 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_uart_recv_int_handler 1222 0 CODE 0 text32 dist/UseXC8/debug\Framework.X.debug.obj
 _ToMainLow_MQ 16C 0 BANK1 1 bssBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 i2start_i2c_slave_reply@length 31 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __HbssBANK1 0 0 ABS 0 bssBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 __LbssBANK1 0 0 ABS 0 bssBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 handle_start@data_read 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_timer0_lthread 14F8 0 CODE 0 text3 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_timer0_lthread 1520 0 CODE 0 text3 dist/UseXC8/debug\Framework.X.debug.obj
 __end_of_InterruptHandlerLow B0 0 CODE 0 intcodelo dist/UseXC8/debug\Framework.X.debug.obj
 __pbssBANK1 100 0 BANK1 1 bssBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext10 0 0 ABS 0 text10 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext10 0 0 ABS 0 text10 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_OpenTimer0 19F6 0 CODE 0 text30 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_enter_sleep_mode 1B3E 0 CODE 0 text50 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_OpenTimer0 1992 0 CODE 0 text30 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_uart_lthread 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Htext20 0 0 ABS 0 text20 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext20 0 0 ABS 0 text20 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext10 1AF2 0 CODE 0 text10 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext10 1A6A 0 CODE 0 text10 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext30 0 0 ABS 0 text30 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext11 0 0 ABS 0 text11 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext30 0 0 ABS 0 text30 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext11 0 0 ABS 0 text11 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext20 1778 0 CODE 0 text20 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext20 1744 0 CODE 0 text20 dist/UseXC8/debug\Framework.X.debug.obj
 ToMainHigh_recvmsg@data C2 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext40 0 0 ABS 0 text40 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext21 0 0 ABS 0 text21 dist/UseXC8/debug\Framework.X.debug.obj
 recv_msg@maxlength B4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext40 0 0 ABS 0 text40 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext21 0 0 ABS 0 text21 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext11 14F8 0 CODE 0 text11 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext30 19CC 0 CODE 0 text30 dist/UseXC8/debug\Framework.X.debug.obj
-__Htext50 0 0 ABS 0 text50 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext11 1520 0 CODE 0 text11 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext30 1968 0 CODE 0 text30 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext12 0 0 ABS 0 text12 dist/UseXC8/debug\Framework.X.debug.obj
-__Ltext50 0 0 ABS 0 text50 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext12 0 0 ABS 0 text12 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext21 1732 0 CODE 0 text21 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext40 DA8 0 CODE 0 text40 dist/UseXC8/debug\Framework.X.debug.obj
-_uart_recv_int_handler 115E 0 CODE 0 text32 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext21 16FE 0 CODE 0 text21 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext40 DC4 0 CODE 0 text40 dist/UseXC8/debug\Framework.X.debug.obj
+_uart_recv_int_handler 1186 0 CODE 0 text32 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext41 0 0 ABS 0 text41 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext22 0 0 ABS 0 text22 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext41 0 0 ABS 0 text41 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext22 0 0 ABS 0 text22 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext12 139A 0 CODE 0 text12 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext50 1B38 0 CODE 0 text50 dist/UseXC8/debug\Framework.X.debug.obj
-__Htext51 0 0 ABS 0 text51 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext12 13C2 0 CODE 0 text12 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext32 0 0 ABS 0 text32 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext13 0 0 ABS 0 text13 dist/UseXC8/debug\Framework.X.debug.obj
-__Ltext51 0 0 ABS 0 text51 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext32 0 0 ABS 0 text32 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext13 0 0 ABS 0 text13 dist/UseXC8/debug\Framework.X.debug.obj
 __HbssBANK2 0 0 ABS 0 bssBANK2 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext22 1B04 0 CODE 0 text22 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext41 196A 0 CODE 0 text41 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext22 1A7C 0 CODE 0 text22 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext41 1936 0 CODE 0 text41 dist/UseXC8/debug\Framework.X.debug.obj
 __LbssBANK2 0 0 ABS 0 bssBANK2 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext42 0 0 ABS 0 text42 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext23 0 0 ABS 0 text23 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext42 0 0 ABS 0 text42 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext23 0 0 ABS 0 text23 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext13 1566 0 CODE 0 text13 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext32 115E 0 CODE 0 text32 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext51 1B2E 0 CODE 0 text51 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext13 1592 0 CODE 0 text13 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext32 1186 0 CODE 0 text32 dist/UseXC8/debug\Framework.X.debug.obj
 __pbssBANK2 200 0 BANK2 1 bssBANK2 dist/UseXC8/debug\Framework.X.debug.obj
 _ADCON0bits FC2 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Htext33 0 0 ABS 0 text33 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext14 0 0 ABS 0 text14 dist/UseXC8/debug\Framework.X.debug.obj
-___extmem_base 20000 0 ABS 0 - C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+___extmem_base 20000 0 ABS 0 - C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 __Ltext33 0 0 ABS 0 text33 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext14 0 0 ABS 0 text14 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext23 1934 0 CODE 0 text23 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext42 E9C 0 CODE 0 text42 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_initADC 1634 0 CODE 0 text14 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext23 1900 0 CODE 0 text23 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext42 EB8 0 CODE 0 text42 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_initADC 16FE 0 CODE 0 text14 dist/UseXC8/debug\Framework.X.debug.obj
 main@t0thread_data 1B2 0 BANK1 1 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext43 0 0 ABS 0 text43 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext24 0 0 ABS 0 text24 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext43 0 0 ABS 0 text43 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext24 0 0 ABS 0 text24 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext14 15D0 0 CODE 0 text14 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext33 1A1E 0 CODE 0 text33 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext14 16B8 0 CODE 0 text14 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext33 19BA 0 CODE 0 text33 dist/UseXC8/debug\Framework.X.debug.obj
 main@t1thread_data 1B0 0 BANK1 1 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext34 0 0 ABS 0 text34 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext15 0 0 ABS 0 text15 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext34 0 0 ABS 0 text34 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext15 0 0 ABS 0 text15 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext24 1ACA 0 CODE 0 text24 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext43 1A44 0 CODE 0 text43 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext24 1A42 0 CODE 0 text24 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext43 19E0 0 CODE 0 text43 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext44 0 0 ABS 0 text44 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext25 0 0 ABS 0 text25 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext44 0 0 ABS 0 text44 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext25 0 0 ABS 0 text25 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext15 1316 0 CODE 0 text15 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext34 F64 0 CODE 0 text34 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext15 133E 0 CODE 0 text15 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext34 1032 0 CODE 0 text34 dist/UseXC8/debug\Framework.X.debug.obj
 _FromMainLow_MQ 100 0 BANK1 1 bssBANK1 dist/UseXC8/debug\Framework.X.debug.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 __Htext35 0 0 ABS 0 text35 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext16 0 0 ABS 0 text16 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext35 0 0 ABS 0 text35 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext16 0 0 ABS 0 text16 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext25 17BC 0 CODE 0 text25 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext44 100E 0 CODE 0 text44 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext25 1788 0 CODE 0 text25 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext44 10DC 0 CODE 0 text44 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext45 0 0 ABS 0 text45 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext26 0 0 ABS 0 text26 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext45 0 0 ABS 0 text45 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext26 0 0 ABS 0 text26 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext16 1B3E 0 CODE 0 text16 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext35 1840 0 CODE 0 text35 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext16 1AA4 0 CODE 0 text16 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext35 180C 0 CODE 0 text35 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext36 0 0 ABS 0 text36 dist/UseXC8/debug\Framework.X.debug.obj
-__size_ofi2_check_msg 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Htext17 0 0 ABS 0 text17 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext36 0 0 ABS 0 text36 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext17 0 0 ABS 0 text17 dist/UseXC8/debug\Framework.X.debug.obj
-__HbssBANK3 0 0 ABS 0 bssBANK3 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext26 17FE 0 CODE 0 text26 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext45 1880 0 CODE 0 text45 dist/UseXC8/debug\Framework.X.debug.obj
-__LbssBANK3 0 0 ABS 0 bssBANK3 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext26 17CA 0 CODE 0 text26 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext45 184C 0 CODE 0 text45 dist/UseXC8/debug\Framework.X.debug.obj
 FromMainHigh_sendmsg@length C1 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext46 0 0 ABS 0 text46 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext27 0 0 ABS 0 text27 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext46 0 0 ABS 0 text46 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext27 0 0 ABS 0 text27 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext17 19F6 0 CODE 0 text17 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext36 1AAC 0 CODE 0 text36 dist/UseXC8/debug\Framework.X.debug.obj
-__pbssBANK3 300 0 BANK3 1 bssBANK3 dist/UseXC8/debug\Framework.X.debug.obj
-_returnADCValue 196A 0 CODE 0 text41 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext17 1992 0 CODE 0 text17 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext36 1A24 0 CODE 0 text36 dist/UseXC8/debug\Framework.X.debug.obj
+_returnADCValue 1936 0 CODE 0 text41 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext18 0 0 ABS 0 text18 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of___lwmod 1316 0 CODE 0 text4 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of___lwmod 133E 0 CODE 0 text4 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext18 0 0 ABS 0 text18 dist/UseXC8/debug\Framework.X.debug.obj
 ToMainHigh_recvmsg@msgtype C0 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __ptext27 94E 0 CODE 0 text27 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext46 16E4 0 CODE 0 text46 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext46 1A9A 0 CODE 0 text46 dist/UseXC8/debug\Framework.X.debug.obj
 ___lwmod@divisor AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__Htext47 0 0 ABS 0 text47 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext28 0 0 ABS 0 text28 dist/UseXC8/debug\Framework.X.debug.obj
-__Ltext47 0 0 ABS 0 text47 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext28 0 0 ABS 0 text28 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext18 1B16 0 CODE 0 text18 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext18 1A8E 0 CODE 0 text18 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext38 0 0 ABS 0 text38 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext19 0 0 ABS 0 text19 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext38 0 0 ABS 0 text38 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext19 0 0 ABS 0 text19 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext28 1634 0 CODE 0 text28 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext47 199E 0 CODE 0 text47 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext28 165A 0 CODE 0 text28 dist/UseXC8/debug\Framework.X.debug.obj
 __size_ofi1_memcpy 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__Htext48 0 0 ABS 0 text48 dist/UseXC8/debug\Framework.X.debug.obj
 __Htext29 0 0 ABS 0 text29 dist/UseXC8/debug\Framework.X.debug.obj
-__Ltext48 0 0 ABS 0 text48 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext29 0 0 ABS 0 text29 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext19 10B8 0 CODE 0 text19 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext38 1B42 0 CODE 0 text38 dist/UseXC8/debug\Framework.X.debug.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+__ptext19 F80 0 CODE 0 text19 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext38 1AA8 0 CODE 0 text38 dist/UseXC8/debug\Framework.X.debug.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 __Htext39 0 0 ABS 0 text39 dist/UseXC8/debug\Framework.X.debug.obj
 __Ltext39 0 0 ABS 0 text39 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext29 11FA 0 CODE 0 text29 dist/UseXC8/debug\Framework.X.debug.obj
-__ptext48 1B22 0 CODE 0 text48 dist/UseXC8/debug\Framework.X.debug.obj
+__ptext29 1222 0 CODE 0 text29 dist/UseXC8/debug\Framework.X.debug.obj
 timer0_lthread@msgtype C4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 timer1_lthread@msgtype C4 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__Htext49 0 0 ABS 0 text49 dist/UseXC8/debug\Framework.X.debug.obj
-__Ltext49 0 0 ABS 0 text49 dist/UseXC8/debug\Framework.X.debug.obj
 __ptext39 B4 0 CODE 0 text39 dist/UseXC8/debug\Framework.X.debug.obj
-_ReadUSART 1AAC 0 CODE 0 text36 dist/UseXC8/debug\Framework.X.debug.obj
+_ReadUSART 1A24 0 CODE 0 text36 dist/UseXC8/debug\Framework.X.debug.obj
 _OSCCONbits FD3 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__ptext49 1A6A 0 CODE 0 text49 dist/UseXC8/debug\Framework.X.debug.obj
 _INTCONbits FF2 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-_OpenUSART 11FA 0 CODE 0 text29 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_send_msg DA8 0 CODE 0 text6 dist/UseXC8/debug\Framework.X.debug.obj
+_OpenUSART 1222 0 CODE 0 text29 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_send_msg DC4 0 CODE 0 text6 dist/UseXC8/debug\Framework.X.debug.obj
 __Hend_init B4 0 CODE 0 end_init dist/UseXC8/debug\Framework.X.debug.obj
 __Lend_init B0 0 CODE 0 end_init dist/UseXC8/debug\Framework.X.debug.obj
 ?_ReadADC 2D 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_ofi2_memcpy 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_init_queue 1414 0 CODE 0 text12 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_init_queue 143C 0 CODE 0 text12 dist/UseXC8/debug\Framework.X.debug.obj
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 memcpy@d1 A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_InterruptHandlerHigh B96 0 CODE 0 intcode_body dist/UseXC8/debug\Framework.X.debug.obj
-__pidataCOMRAM 1B46 0 CODE 0 idataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_InterruptHandlerHigh BB2 0 CODE 0 intcode_body dist/UseXC8/debug\Framework.X.debug.obj
+__pidataCOMRAM 1AAC 0 CODE 0 idataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __CFG_FOSC$HSPLL 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __Hjflash_buffer 7800 0 CODE 0 jflash_buffer dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_ReadUSART 1ACA 0 CODE 0 text36 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_ReadUSART 1A42 0 CODE 0 text36 dist/UseXC8/debug\Framework.X.debug.obj
 __Ljflash_buffer 7800 0 CODE 0 jflash_buffer dist/UseXC8/debug\Framework.X.debug.obj
 OpenADC@config2 A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 send_msg@msgtype B5 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_init_queues 1566 0 CODE 0 text11 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_init_queues 1592 0 CODE 0 text11 dist/UseXC8/debug\Framework.X.debug.obj
 recv_msg@msgtype B5 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
-__end_of_OpenADC 139A 0 CODE 0 text15 dist/UseXC8/debug\Framework.X.debug.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
+__end_of_OpenADC 13C2 0 CODE 0 text15 dist/UseXC8/debug\Framework.X.debug.obj
 i2c_int_handler@data_read 95 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __Hreset_vec 6 0 CODE 0 reset_vec dist/UseXC8/debug\Framework.X.debug.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/UseXC8/debug\Framework.X.debug.obj
-_in_low_int 1732 0 CODE 0 text21 dist/UseXC8/debug\Framework.X.debug.obj
+_in_low_int 16FE 0 CODE 0 text21 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_FromMainHigh_sendmsg 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_enable_interrupts 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 memcpy@s1 AA 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__accesstop 80 0 ABS 0 - C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+__accesstop 80 0 ABS 0 - C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 __end_of_recv_msg A84 0 CODE 0 text27 dist/UseXC8/debug\Framework.X.debug.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/UseXC8/debug\Framework.X.debug.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/UseXC8/debug\Framework.X.debug.obj
 __pintcode_body A84 0 CODE 0 intcode_body dist/UseXC8/debug\Framework.X.debug.obj
-_enable_interrupts 1B16 0 CODE 0 text18 dist/UseXC8/debug\Framework.X.debug.obj
-intlevel0 0 0 CODE 0 text C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+_enable_interrupts 1A8E 0 CODE 0 text18 dist/UseXC8/debug\Framework.X.debug.obj
+intlevel0 0 0 CODE 0 text C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 __size_of_block_on_To_msgqueues 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-intlevel1 0 0 CODE 0 text C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
-intlevel2 0 0 CODE 0 text C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
-intlevel3 0 0 CODE 0 text C:\Users\TaylorM7\AppData\Local\Temp\s7q4.obj
+intlevel1 0 0 CODE 0 text C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
+intlevel2 0 0 CODE 0 text C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
+intlevel3 0 0 CODE 0 text C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
 i2c_int_handler@error_buf 8D 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 ToMainLow_sendmsg@length 1A 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2c_int_handler@length 8B 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_init_uart_recv 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_ofi2_start_i2c_slave_reply E9C 0 CODE 0 text40 dist/UseXC8/debug\Framework.X.debug.obj
-__size_ofi2_in_high_int 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
+__end_ofi2_start_i2c_slave_reply EB8 0 CODE 0 text40 dist/UseXC8/debug\Framework.X.debug.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2c_int_handler@msgbuffer 80 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of___lwmod 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 i1send_msg@slot 14 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 i2send_msg@slot 40 0 COMRAM 1 cstackCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
-__pdataCOMRAM 52 0 COMRAM 1 dataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
+__pdataCOMRAM 51 0 COMRAM 1 dataCOMRAM dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_init_timer0_lthread 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_init_timer1_lthread 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_SleepIfOkay 1732 0 CODE 0 text46 dist/UseXC8/debug\Framework.X.debug.obj
-_ToMainHigh_recvmsg 17FE 0 CODE 0 text26 dist/UseXC8/debug\Framework.X.debug.obj
-start_initialization 1692 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
+_ToMainHigh_recvmsg 17CA 0 CODE 0 text26 dist/UseXC8/debug\Framework.X.debug.obj
+start_initialization 15FC 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
 i2c_int_handler@msg_ready 94 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_init_i2c 15D0 0 CODE 0 text13 dist/UseXC8/debug\Framework.X.debug.obj
-__end_ofi1_memcpy 1880 0 CODE 0 text35 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_init_i2c 15FC 0 CODE 0 text13 dist/UseXC8/debug\Framework.X.debug.obj
+__end_ofi1_memcpy 184C 0 CODE 0 text35 dist/UseXC8/debug\Framework.X.debug.obj
 main@last_reg_recvd 1AF 0 BANK1 1 cstackBANK1 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_ReadADC 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_ofi2_memcpy 18C0 0 CODE 0 text45 dist/UseXC8/debug\Framework.X.debug.obj
-_init_i2c 1566 0 CODE 0 text13 dist/UseXC8/debug\Framework.X.debug.obj
-__initialization 1692 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
+__end_ofi2_memcpy 188C 0 CODE 0 text45 dist/UseXC8/debug\Framework.X.debug.obj
+_init_i2c 1592 0 CODE 0 text13 dist/UseXC8/debug\Framework.X.debug.obj
+__initialization 15FC 0 CODE 0 cinit dist/UseXC8/debug\Framework.X.debug.obj
 start_i2c_slave_reply@msg A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
-__end_of_returnADCValue 199E 0 CODE 0 text41 dist/UseXC8/debug\Framework.X.debug.obj
+__end_of_returnADCValue 1968 0 CODE 0 text41 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_in_low_int 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 ___lwmod@dividend A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __activetblptr 2 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-__end_ofi2_check_msg 1A8E 0 CODE 0 text49 dist/UseXC8/debug\Framework.X.debug.obj
 ___lwmod@counter AD 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 __end_of_i2c_int_handler 6A6 0 CODE 0 text39 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_i2c_configure_slave 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-_FromMainHigh_sendmsg 18FE 0 CODE 0 text5 dist/UseXC8/debug\Framework.X.debug.obj
+_FromMainHigh_sendmsg 18CA 0 CODE 0 text5 dist/UseXC8/debug\Framework.X.debug.obj
 timer0_lthread@length C6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 timer1_lthread@length C6 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 Delay1KTCYx@unit A8 0 BANK0 1 cstackBANK0 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_handle_start 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
-_init_timer0_lthread 1AF2 0 CODE 0 text10 dist/UseXC8/debug\Framework.X.debug.obj
+_init_timer0_lthread 1A6A 0 CODE 0 text10 dist/UseXC8/debug\Framework.X.debug.obj
 __size_of_memcpy 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -1417,10 +1361,10 @@ __size_of_memcpy 0 0 ABS 0 - dist/UseXC8/debug\Framework.X.debug.obj
 %SEGMENTS
 reset_vec 0 0 0 6 1
 intcode 0 8 8 C 1
-intcodelo 0 18 18 1B30 1
+intcodelo 0 18 18 1A96 1
 config 0 7FF8 7FF8 6 1
-cstackCOMRAM 1 1 1 53 1
-cstackBANK0 1 80 80 4F 1
-bssBANK3 1 300 300 ED 1
+cstackCOMRAM 1 1 1 52 1
+cstackBANK0 1 80 80 50 1
 bssBANK1 1 100 100 D7 1
 bssBANK2 1 200 200 36 1
+bssBIGRAM 1 236 236 15E 1

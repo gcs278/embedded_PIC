@@ -6153,7 +6153,7 @@ void init_timer0_lthread(timer0_thread_struct *);
 int timer0_lthread(timer0_thread_struct *,int,int,unsigned char*);
 
 
-# 31 "../src/main.c"
+# 32 "../src/main.c"
 #pragma config WDTEN = OFF
 #pragma config STVREN = OFF
 
@@ -6178,11 +6178,13 @@ int timer0_lthread(timer0_thread_struct *,int,int,unsigned char*);
 
 #pragma config CCP2MX = DEFAULT
 
-# 98
+# 99
 void initADC()
 {
-TRISBbits.TRISB7 = 0;
-LATBbits.LATB7 = !LATBbits.LATB7;
+TRISDbits.TRISD7 = 0;
+TRISDbits.TRISD6 = 0;
+
+
 int ADCValue = 0;
 
 OpenADC(0b10001111 & 0b11111111 & 0b11111111, 0b10000111 & 0b11111111 & 0b11111110 & 0b11111101, 0b11111111);
@@ -6210,7 +6212,7 @@ uart_thread_struct uthread_data;
 timer1_thread_struct t1thread_data;
 timer0_thread_struct t0thread_data;
 
-# 134
+# 137
 OSCCON = 0x82;
 OSCTUNEbits.PLLEN = 0;
 
@@ -6234,7 +6236,7 @@ initADC();
 TRISB = 0x0;
 LATB = 0x0;
 
-# 167
+# 170
 OpenTimer0(0b11111111 & 0b11111111 & 0b11011111 & 0b11111111);
 
 
@@ -6253,24 +6255,24 @@ IPR1bits.SSPIP = 1;
 
 IPR1bits.ADIP = 1;
 
-# 193
+# 196
 i2c_configure_slave(0x9E);
 
-# 206
+# 209
 PIE1bits.SSPIE = 1;
 
 
 OpenUSART(0b01111111 & 0b11111111 & 0b11111110 & 0b11111101 &
 0b11111111 & 0b11101111, 0x19);
 
-# 230
+# 233
 while (1) {
 
 
 
 block_on_To_msgqueues();
 
-# 241
+# 244
 length = ToMainHigh_recvmsg(10, &msgtype, (void *) msgbuffer);
 if (length < 0) {
 
@@ -6295,7 +6297,7 @@ break;
 case 42:
 {
 
-# 271
+# 274
 switch (last_reg_recvd) {
 case 0xaa:
 {

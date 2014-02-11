@@ -1,6 +1,7 @@
 //#include <plib.h>
 #include <xc.h>
 #include <stdlib.h>
+#include <pic18f45j10.h>
 //#include "config.h"
 #include <plib/timers.h>
 #include <plib/usart.h>
@@ -97,8 +98,10 @@ void readMyADC()
 
 void initADC()
 {
-    TRISBbits.TRISB7 = 0;
-    LATBbits.LATB7 = !LATBbits.LATB7;
+    TRISDbits.TRISD7 = 0;
+    TRISDbits.TRISD6 = 0;
+    //LATBbits.LATB7 = !LATBbits.LATB7;
+    //LATBbits.LATB6 = !LATBbits.LATB6;
     int ADCValue = 0;
     //Configure ADC
     OpenADC(ADC_FOSC_2 & ADC_RIGHT_JUST & ADC_20_TAD, ADC_CH0 & ADC_INT_ON & ADC_VREFPLUS_VDD & ADC_VREFMINUS_VSS, ADC_0ANA);

@@ -12,10 +12,10 @@
 //       enabled.
 
 char ADCValue;
-char ADCArray[237];
+char ADCArray[350];
 int responding = 0;
 int arrayPlaceHolder = 0;
-int sendingPlaceHolder = 237;
+int sendingPlaceHolder = 350;
 
 void setStateResponding()
 {
@@ -28,7 +28,7 @@ void setStateReading()
 }
 char returnADCValue()
 {
-    if(sendingPlaceHolder == 237)
+    if(sendingPlaceHolder == 350)
     {
         responding = 0;
         sendingPlaceHolder = 0;
@@ -128,7 +128,7 @@ void InterruptHandlerHigh() {
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
         //timer0_int_handler();
-        LATBbits.LATB7 = !LATBbits.LATB7;
+        LATDbits.LATD7 = !LATDbits.LATD7;
         ConvertADC();
     }
 
@@ -140,11 +140,12 @@ void InterruptHandlerHigh() {
         //ADCValue = ReadADC();
         //Reset interrupt flag and start conversion again
         PIR1bits.ADIF = 0;
+        LATDbits.LATD6 = !LATDbits.LATD6;
         int pureADCValue = ReadADC();
         ADCValue = pureADCValue >> 2;
         if(responding == 0)
         {
-            if(arrayPlaceHolder == 237)
+            if(arrayPlaceHolder == 350)
             {
                 responding = 1;
                 arrayPlaceHolder = 0;
@@ -163,7 +164,7 @@ void InterruptHandlerHigh() {
     // This code *DEPENDS* on the code in messages.c being
     // initialized using "init_queues()" -- if you aren't using
     // this, then you shouldn't have this call here
-    SleepIfOkay();
+    //SleepIfOkay();
 }
 
 //----------------------------------------------------------------------------
