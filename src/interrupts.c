@@ -12,10 +12,10 @@
 //       enabled.
 
 char ADCValue;
-char ADCArray[350];
+char ADCArray[299];
 int responding = 0;
 int arrayPlaceHolder = 0;
-int sendingPlaceHolder = 350;
+int sendingPlaceHolder = 299;
 
 void setStateResponding()
 {
@@ -28,14 +28,17 @@ void setStateReading()
 }
 char returnADCValue()
 {
-    if(sendingPlaceHolder == 350)
+    if(sendingPlaceHolder == 299)
     {
         responding = 0;
         sendingPlaceHolder = 0;
     }
     else
         sendingPlaceHolder++;
-    return ADCArray[sendingPlaceHolder];
+    //if(sendingPlaceHolder == 0)
+        //return 0xFF;
+    //else
+        return ADCArray[sendingPlaceHolder];
 }
 
 void enable_interrupts() {
@@ -145,7 +148,7 @@ void InterruptHandlerHigh() {
         ADCValue = pureADCValue >> 2;
         if(responding == 0)
         {
-            if(arrayPlaceHolder == 350)
+            if(arrayPlaceHolder == 299)
             {
                 responding = 1;
                 arrayPlaceHolder = 0;

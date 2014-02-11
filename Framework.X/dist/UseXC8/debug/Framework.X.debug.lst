@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.30 build 55553 
-                                                                                               Mon Feb 10 20:03:24 2014
+                                                                                               Mon Feb 10 20:20:57 2014
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 55553
      1                           	processor	18F45J10
@@ -77,7 +77,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
     71                           	opt stack 0
     72                           
     73                           ;initializer for _sendingPlaceHolder
-    74  001AAC  015E               	dw	350
+    74  001AAC  012B               	dw	299
     75  0000                     _ADCON0	set	4034
     76  0000                     _ADCON0bits	set	4034
     77  0000                     _ADCON1	set	4033
@@ -145,9 +145,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    139  0015FC                     __initialization:
    140                           	opt stack 0
    141                           
-   142                           ; Clear objects allocated to BIGRAM (350 bytes)
+   142                           ; Clear objects allocated to BIGRAM (299 bytes)
    143  0015FC  EE02  F036         	lfsr	0,__pbssBIGRAM
-   144  001600  EE11 F05E          	lfsr	1,350
+   144  001600  EE11 F02B          	lfsr	1,299
    145  001604                     clear_0:
    146  001604  6AEE               	clrf	postinc0,c
    147  001606  50E5               	movf	postdec1,w,c
@@ -314,7 +314,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    308                           	opt stack 0
    309  000236                     _ADCArray:
    310                           	opt stack 0
-   311  000236                     	ds	350
+   311  000236                     	ds	299
    312                           tblptru	equ	0xFF8
    313                           tblptrh	equ	0xFF7
    314                           tblptrl	equ	0xFF6
@@ -3425,7 +3425,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3407                           
   3408 ;; *************** function _enable_interrupts *****************
   3409 ;; Defined at:
-  3410 ;;		line 41 in file "../src/interrupts.c"
+  3410 ;;		line 44 in file "../src/interrupts.c"
   3411 ;; Parameters:    Size  Location     Type
   3412 ;;		None
   3413 ;; Auto vars:     Size  Location     Type
@@ -3459,21 +3459,21 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3441  001A8E                     _enable_interrupts:
   3442                           	opt stack 19
   3443                           
-  3444                           ;interrupts.c: 44: RCONbits.IPEN = 1;
+  3444                           ;interrupts.c: 47: RCONbits.IPEN = 1;
   3445                           
   3446                           ;incstack = 0
   3447  001A8E  8ED0               	bsf	4048,7,c	;volatile
   3448                           
-  3449                           ;interrupts.c: 45: INTCONbits.GIEH = 1;
+  3449                           ;interrupts.c: 48: INTCONbits.GIEH = 1;
   3450  001A90  8EF2               	bsf	intcon,7,c	;volatile
   3451                           
-  3452                           ;interrupts.c: 46: INTCONbits.GIEL = 1;
+  3452                           ;interrupts.c: 49: INTCONbits.GIEL = 1;
   3453  001A92  8CF2               	bsf	intcon,6,c	;volatile
   3454                           
-  3455                           ;interrupts.c: 48: INTCONbits.TMR0IE = 1;
+  3455                           ;interrupts.c: 51: INTCONbits.TMR0IE = 1;
   3456  001A94  8AF2               	bsf	intcon,5,c	;volatile
   3457                           
-  3458                           ;interrupts.c: 50: INTCON2bits.TMR0IP = 1;
+  3458                           ;interrupts.c: 53: INTCON2bits.TMR0IP = 1;
   3459  001A96  84F1               	bsf	intcon2,2,c	;volatile
   3460  001A98  0012               	return	
   3461  001A9A                     __end_of_enable_interrupts:
@@ -3688,7 +3688,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3668                           
   3669 ;; *************** function _in_main *****************
   3670 ;; Defined at:
-  3671 ;;		line 71 in file "../src/interrupts.c"
+  3671 ;;		line 74 in file "../src/interrupts.c"
   3672 ;; Parameters:    Size  Location     Type
   3673 ;;		None
   3674 ;; Auto vars:     Size  Location     Type
@@ -3723,7 +3723,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3703  001744                     _in_main:
   3704                           	opt stack 16
   3705                           
-  3706                           ;interrupts.c: 72: if ((!in_low_int()) && (!in_high_int())) {
+  3706                           ;interrupts.c: 75: if ((!in_low_int()) && (!in_high_int())) {
   3707                           
   3708                           ; BSR set to: 0
   3709                           ;incstack = 0
@@ -3747,7 +3747,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3727  001766  D008               	goto	l2571
   3728                           
   3729                           ; BSR set to: 0
-  3730                           ;interrupts.c: 73: return (1);
+  3730                           ;interrupts.c: 76: return (1);
   3731  001768  0E00               	movlw	0
   3732  00176A  0100               	movlb	0	; () banked
   3733  00176C  0100               	movlb	0	; () banked
@@ -3759,7 +3759,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3739  001778                     l2571:
   3740                           
   3741                           ; BSR set to: 0
-  3742                           ;interrupts.c: 75: return (0);
+  3742                           ;interrupts.c: 78: return (0);
   3743  001778  0E00               	movlw	0
   3744  00177A  0100               	movlb	0	; () banked
   3745  00177C  0100               	movlb	0	; () banked
@@ -3793,7 +3793,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3773                           
   3774 ;; *************** function _in_low_int *****************
   3775 ;; Defined at:
-  3776 ;;		line 61 in file "../src/interrupts.c"
+  3776 ;;		line 64 in file "../src/interrupts.c"
   3777 ;; Parameters:    Size  Location     Type
   3778 ;;		None
   3779 ;; Auto vars:     Size  Location     Type
@@ -3828,14 +3828,14 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3808  0016FE                     _in_low_int:
   3809                           	opt stack 16
   3810                           
-  3811                           ;interrupts.c: 62: if (INTCONbits.GIEL == 1) {
+  3811                           ;interrupts.c: 65: if (INTCONbits.GIEL == 1) {
   3812                           
   3813                           ; BSR set to: 0
   3814                           ;incstack = 0
   3815  0016FE  ACF2               	btfss	intcon,6,c	;volatile
   3816  001700  D008               	goto	l2519
   3817                           
-  3818                           ;interrupts.c: 63: return (0);
+  3818                           ;interrupts.c: 66: return (0);
   3819  001702  0E00               	movlw	0
   3820  001704  0100               	movlb	0	; () banked
   3821  001706  0100               	movlb	0	; () banked
@@ -3855,7 +3855,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3835  001722  D008               	goto	l2527
   3836                           
   3837                           ; BSR set to: 0
-  3838                           ;interrupts.c: 65: return (0);
+  3838                           ;interrupts.c: 68: return (0);
   3839  001724  0E00               	movlw	0
   3840  001726  0100               	movlb	0	; () banked
   3841  001728  0100               	movlb	0	; () banked
@@ -3867,7 +3867,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3847  001734                     l2527:
   3848                           
   3849                           ; BSR set to: 0
-  3850                           ;interrupts.c: 67: return (1);
+  3850                           ;interrupts.c: 70: return (1);
   3851  001734  0E00               	movlw	0
   3852  001736  0100               	movlb	0	; () banked
   3853  001738  0100               	movlb	0	; () banked
@@ -3901,7 +3901,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3881                           
   3882 ;; *************** function _in_high_int *****************
   3883 ;; Defined at:
-  3884 ;;		line 53 in file "../src/interrupts.c"
+  3884 ;;		line 56 in file "../src/interrupts.c"
   3885 ;; Parameters:    Size  Location     Type
   3886 ;;		None
   3887 ;; Auto vars:     Size  Location     Type
@@ -3937,7 +3937,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   3917  001A7C                     _in_high_int:
   3918                           	opt stack 16
   3919                           
-  3920                           ;interrupts.c: 54: return (!INTCONbits.GIEH);
+  3920                           ;interrupts.c: 57: return (!INTCONbits.GIEH);
   3921                           
   3922                           ; BSR set to: 0
   3923                           ;incstack = 0
@@ -5014,7 +5014,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   4992                           
   4993 ;; *************** function _InterruptHandlerLow *****************
   4994 ;; Defined at:
-  4995 ;;		line 180 in file "../src/interrupts.c"
+  4995 ;;		line 183 in file "../src/interrupts.c"
   4996 ;; Parameters:    Size  Location     Type
   4997 ;;		None
   4998 ;; Auto vars:     Size  Location     Type
@@ -5068,21 +5068,21 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   5046  000054  CFF8 F02B          	movff	tblptru,??_InterruptHandlerLow+15
   5047  000058  CFF5 F02C          	movff	tablat,??_InterruptHandlerLow+16
   5048                           
-  5049                           ;interrupts.c: 182: if (PIR1bits.TMR1IF) {
+  5049                           ;interrupts.c: 185: if (PIR1bits.TMR1IF) {
   5050  00005C  B09E               	btfsc	3998,0,c	;volatile
   5051                           
-  5052                           ;interrupts.c: 183: PIR1bits.TMR1IF = 0;
+  5052                           ;interrupts.c: 186: PIR1bits.TMR1IF = 0;
   5053  00005E  909E               	bcf	3998,0,c	;volatile
   5054                           
-  5055                           ;interrupts.c: 185: }
-  5056                           ;interrupts.c: 188: if (PIR1bits.RCIF) {
+  5055                           ;interrupts.c: 188: }
+  5056                           ;interrupts.c: 191: if (PIR1bits.RCIF) {
   5057  000060  AA9E               	btfss	3998,5,c	;volatile
   5058  000062  D003               	goto	i1l418
   5059                           
-  5060                           ;interrupts.c: 189: PIR1bits.RCIF = 0;
+  5060                           ;interrupts.c: 192: PIR1bits.RCIF = 0;
   5061  000064  9A9E               	bcf	3998,5,c	;volatile
   5062                           
-  5063                           ;interrupts.c: 190: uart_recv_int_handler();
+  5063                           ;interrupts.c: 193: uart_recv_int_handler();
   5064  000066  ECC3  F008         	call	_uart_recv_int_handler	;wreg free
   5065  00006A                     i1l418:
   5066  00006A  C02C  FFF5         	movff	??_InterruptHandlerLow+16,tablat
@@ -5738,7 +5738,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   5714                           
   5715 ;; *************** function _InterruptHandlerHigh *****************
   5716 ;; Defined at:
-  5717 ;;		line 114 in file "../src/interrupts.c"
+  5717 ;;		line 117 in file "../src/interrupts.c"
   5718 ;; Parameters:    Size  Location     Type
   5719 ;;		None
   5720 ;; Auto vars:     Size  Location     Type
@@ -5822,26 +5822,26 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   5798  000AAC  CFF8 F0A4          	movff	tblptru,??_InterruptHandlerHigh+14
   5799  000AB0  CFF5 F0A5          	movff	tablat,??_InterruptHandlerHigh+15
   5800                           
-  5801                           ;interrupts.c: 119: if (PIR1bits.SSPIF) {
+  5801                           ;interrupts.c: 122: if (PIR1bits.SSPIF) {
   5802  000AB4  A69E               	btfss	3998,3,c	;volatile
   5803  000AB6  D003               	goto	i2l3103
   5804                           
-  5805                           ;interrupts.c: 121: PIR1bits.SSPIF = 0;
+  5805                           ;interrupts.c: 124: PIR1bits.SSPIF = 0;
   5806  000AB8  969E               	bcf	3998,3,c	;volatile
   5807                           
-  5808                           ;interrupts.c: 123: i2c_int_handler();
+  5808                           ;interrupts.c: 126: i2c_int_handler();
   5809  000ABA  EC5A  F000         	call	_i2c_int_handler	;wreg free
   5810  000ABE                     i2l3103:
   5811                           
-  5812                           ;interrupts.c: 124: }
-  5813                           ;interrupts.c: 127: if (INTCONbits.TMR0IF) {
+  5812                           ;interrupts.c: 127: }
+  5813                           ;interrupts.c: 130: if (INTCONbits.TMR0IF) {
   5814  000ABE  A4F2               	btfss	intcon,2,c	;volatile
   5815  000AC0  D013               	goto	i2l3111
   5816                           
-  5817                           ;interrupts.c: 128: INTCONbits.TMR0IF = 0;
+  5817                           ;interrupts.c: 131: INTCONbits.TMR0IF = 0;
   5818  000AC2  94F2               	bcf	intcon,2,c	;volatile
   5819                           
-  5820                           ;interrupts.c: 131: LATDbits.LATD7 = !LATDbits.LATD7;
+  5820                           ;interrupts.c: 134: LATDbits.LATD7 = !LATDbits.LATD7;
   5821  000AC4  BE8C               	btfsc	3980,7,c	;volatile
   5822  000AC6  D002               	goto	i2u230_40
   5823  000AC8  0E01               	movlw	1
@@ -5862,20 +5862,20 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   5838  000AE2  6E8C               	movwf	3980,c	;volatile
   5839                           
   5840                           ; BSR set to: 0
-  5841                           ;interrupts.c: 132: ConvertADC();
+  5841                           ;interrupts.c: 135: ConvertADC();
   5842  000AE4  EC54  F00D         	call	i2_ConvertADC	;wreg free
   5843  000AE8                     i2l3111:
   5844                           
-  5845                           ;interrupts.c: 133: }
-  5846                           ;interrupts.c: 138: if(PIR1bits.ADIF == 1)
+  5845                           ;interrupts.c: 136: }
+  5846                           ;interrupts.c: 141: if(PIR1bits.ADIF == 1)
   5847  000AE8  AC9E               	btfss	3998,6,c	;volatile
   5848  000AEA  D046               	goto	i2l413
   5849                           
-  5850                           ;interrupts.c: 139: {
-  5851                           ;interrupts.c: 142: PIR1bits.ADIF = 0;
+  5850                           ;interrupts.c: 142: {
+  5851                           ;interrupts.c: 145: PIR1bits.ADIF = 0;
   5852  000AEC  9C9E               	bcf	3998,6,c	;volatile
   5853                           
-  5854                           ;interrupts.c: 143: LATDbits.LATD6 = !LATDbits.LATD6;
+  5854                           ;interrupts.c: 146: LATDbits.LATD6 = !LATDbits.LATD6;
   5855  000AEE  BC8C               	btfsc	3980,6,c	;volatile
   5856  000AF0  D002               	goto	i2u232_40
   5857  000AF2  0E01               	movlw	1
@@ -5897,12 +5897,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   5873  000B0E  6E8C               	movwf	3980,c	;volatile
   5874                           
   5875                           ; BSR set to: 0
-  5876                           ;interrupts.c: 144: int pureADCValue = ReadADC();
+  5876                           ;interrupts.c: 147: int pureADCValue = ReadADC();
   5877  000B10  EC4D  F00D         	call	_ReadADC	;wreg free
   5878  000B14  C02D  F0A6         	movff	?_ReadADC,InterruptHandlerHigh@pureADCValue
   5879  000B18  C02E  F0A7         	movff	?_ReadADC+1,InterruptHandlerHigh@pureADCValue+1
   5880                           
-  5881                           ;interrupts.c: 145: ADCValue = pureADCValue >> 2;
+  5881                           ;interrupts.c: 148: ADCValue = pureADCValue >> 2;
   5882  000B1C  0100               	movlb	0	; () banked
   5883  000B1E  C0A6  F096         	movff	InterruptHandlerHigh@pureADCValue,??_InterruptHandlerHigh
   5884  000B22  0100               	movlb	0	; () banked
@@ -5920,44 +5920,44 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   5896  000B3C  6E4D               	movwf	_ADCValue,c
   5897                           
   5898                           ; BSR set to: 0
-  5899                           ;interrupts.c: 146: if(responding == 0)
+  5899                           ;interrupts.c: 149: if(responding == 0)
   5900  000B3E  504C               	movf	_responding+1,w,c
   5901  000B40  104B               	iorwf	_responding,w,c
   5902  000B42  A4D8               	btfss	status,2,c
   5903  000B44  D019               	goto	i2l413
   5904                           
   5905                           ; BSR set to: 0
-  5906                           ;interrupts.c: 147: {
-  5907                           ;interrupts.c: 148: if(arrayPlaceHolder == 350)
+  5906                           ;interrupts.c: 150: {
+  5907                           ;interrupts.c: 151: if(arrayPlaceHolder == 299)
   5908  000B46  044A               	decf	_arrayPlaceHolder+1,w,c
-  5909  000B48  0E5E               	movlw	94
+  5909  000B48  0E2B               	movlw	43
   5910  000B4A  B4D8               	btfsc	status,2,c
   5911  000B4C  1849               	xorwf	_arrayPlaceHolder,w,c
   5912  000B4E  A4D8               	btfss	status,2,c
   5913  000B50  D009               	goto	i2l3127
   5914                           
   5915                           ; BSR set to: 0
-  5916                           ;interrupts.c: 149: {
-  5917                           ;interrupts.c: 150: responding = 1;
+  5916                           ;interrupts.c: 152: {
+  5917                           ;interrupts.c: 153: responding = 1;
   5918  000B52  0E00               	movlw	0
   5919  000B54  6E4C               	movwf	_responding+1,c
   5920  000B56  0E01               	movlw	1
   5921  000B58  6E4B               	movwf	_responding,c
   5922                           
-  5923                           ;interrupts.c: 151: arrayPlaceHolder = 0;
+  5923                           ;interrupts.c: 154: arrayPlaceHolder = 0;
   5924  000B5A  0E00               	movlw	0
   5925  000B5C  6E4A               	movwf	_arrayPlaceHolder+1,c
   5926  000B5E  0E00               	movlw	0
   5927  000B60  6E49               	movwf	_arrayPlaceHolder,c
   5928                           
-  5929                           ;interrupts.c: 152: }
+  5929                           ;interrupts.c: 155: }
   5930  000B62  D00A               	goto	i2l413
   5931  000B64                     i2l3127:
   5932                           
   5933                           ; BSR set to: 0
-  5934                           ;interrupts.c: 153: else
-  5935                           ;interrupts.c: 154: {
-  5936                           ;interrupts.c: 155: ADCArray[arrayPlaceHolder] = ADCValue;
+  5934                           ;interrupts.c: 156: else
+  5935                           ;interrupts.c: 157: {
+  5936                           ;interrupts.c: 158: ADCArray[arrayPlaceHolder] = ADCValue;
   5937  000B64  0E36               	movlw	low _ADCArray
   5938  000B66  2449               	addwf	_arrayPlaceHolder,w,c
   5939  000B68  6ED9               	movwf	fsr2l,c
@@ -5967,7 +5967,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   5943  000B70  C04D  FFDF         	movff	_ADCValue,indf2
   5944                           
   5945                           ; BSR set to: 0
-  5946                           ;interrupts.c: 156: arrayPlaceHolder++;
+  5946                           ;interrupts.c: 159: arrayPlaceHolder++;
   5947  000B74  4A49               	infsnz	_arrayPlaceHolder,f,c
   5948  000B76  2A4A               	incf	_arrayPlaceHolder+1,f,c
   5949  000B78                     i2l413:
@@ -7395,12 +7395,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   7370  001936                     _returnADCValue:
   7371                           	opt stack 18
   7372                           
-  7373                           ;interrupts.c: 31: if(sendingPlaceHolder == 350)
+  7373                           ;interrupts.c: 31: if(sendingPlaceHolder == 299)
   7374                           
   7375                           ; BSR set to: 0
   7376                           ;incstack = 0
   7377  001936  0452               	decf	_sendingPlaceHolder+1,w,c
-  7378  001938  0E5E               	movlw	94
+  7378  001938  0E2B               	movlw	43
   7379  00193A  B4D8               	btfsc	status,2,c
   7380  00193C  1851               	xorwf	_sendingPlaceHolder,w,c
   7381  00193E  A4D8               	btfss	status,2,c
@@ -7429,7 +7429,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   7404  001956  2A52               	incf	_sendingPlaceHolder+1,f,c
   7405  001958                     i2l3093:
   7406                           
-  7407                           ;interrupts.c: 38: return ADCArray[sendingPlaceHolder];
+  7407                           ;interrupts.c: 41: return ADCArray[sendingPlaceHolder];
   7408  001958  0E36               	movlw	low _ADCArray
   7409  00195A  2451               	addwf	_sendingPlaceHolder,w,c
   7410  00195C  6ED9               	movwf	fsr2l,c
@@ -8152,7 +8152,7 @@ Data Sizes:
     Strings     0
     Constant    0
     Data        2
-    BSS         573
+    BSS         522
     Persistent  4
     Stack       0
 
@@ -8631,7 +8631,7 @@ Call Graph Tables:
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
-BIGRAM             3FF      0     15E      13       34.2%
+BIGRAM             3FF      0     12B      13       29.2%
 BITBANK3           100      0       0      11        0.0%
 BANK3              100      0       0      12        0.0%
 BITBANK2           100      0       0       7        0.0%
@@ -8647,12 +8647,12 @@ SFR                  0      0       0      40        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
 ABS                  0      0     1AF       9        0.0%
-DATA                 0      0     30D       3        0.0%
+DATA                 0      0     2DA       3        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.30 build 55553 
-Symbol Table                                                                                   Mon Feb 10 20:03:24 2014
+Symbol Table                                                                                   Mon Feb 10 20:20:57 2014
 
                 main@uthread_data 01AD          _MQ_Main_Willing_to_block 00CF  
                      _SSPSTATbits 000FC7         __end_of_ToMainLow_recvmsg 17CA  

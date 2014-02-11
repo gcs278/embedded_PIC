@@ -4711,8 +4711,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADCValue `uc ~T0 @X0 1 e ]
 [; ;interrupts.c: 14: char ADCValue;
 "15
-[v _ADCArray `uc ~T0 @X0 -> 350 `i e ]
-[; ;interrupts.c: 15: char ADCArray[350];
+[v _ADCArray `uc ~T0 @X0 -> 299 `i e ]
+[; ;interrupts.c: 15: char ADCArray[299];
 "16
 [v _responding `i ~T0 @X0 1 e ]
 [i _responding
@@ -4728,9 +4728,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "18
 [v _sendingPlaceHolder `i ~T0 @X0 1 e ]
 [i _sendingPlaceHolder
--> 350 `i
+-> 299 `i
 ]
-[; ;interrupts.c: 18: int sendingPlaceHolder = 350;
+[; ;interrupts.c: 18: int sendingPlaceHolder = 299;
 "20
 [v _setStateResponding `(v ~T0 @X0 1 ef ]
 "21
@@ -4769,9 +4769,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 30: {
 [e :U _returnADCValue ]
 [f ]
-[; ;interrupts.c: 31: if(sendingPlaceHolder == 350)
+[; ;interrupts.c: 31: if(sendingPlaceHolder == 299)
 "31
-[e $ ! == _sendingPlaceHolder -> 350 `i 588  ]
+[e $ ! == _sendingPlaceHolder -> 299 `i 588  ]
 [; ;interrupts.c: 32: {
 "32
 {
@@ -4792,285 +4792,285 @@ Version 3.2 HI-TECH Software Intermediate Code
 "37
 [e ++ _sendingPlaceHolder -> 1 `i ]
 [e :U 589 ]
-[; ;interrupts.c: 38: return ADCArray[sendingPlaceHolder];
-"38
+[; ;interrupts.c: 41: return ADCArray[sendingPlaceHolder];
+"41
 [e ) *U + &U _ADCArray * -> -> _sendingPlaceHolder `ui `ux -> -> # *U &U _ADCArray `ui `ux ]
 [e $UE 587  ]
-[; ;interrupts.c: 39: }
-"39
+[; ;interrupts.c: 42: }
+"42
 [e :UE 587 ]
 }
-"41
+"44
 [v _enable_interrupts `(v ~T0 @X0 1 ef ]
 {
-[; ;interrupts.c: 41: void enable_interrupts() {
+[; ;interrupts.c: 44: void enable_interrupts() {
 [e :U _enable_interrupts ]
 [f ]
-[; ;interrupts.c: 44: RCONbits.IPEN = 1;
-"44
+[; ;interrupts.c: 47: RCONbits.IPEN = 1;
+"47
 [e = . . _RCONbits 5 6 -> -> 1 `i `uc ]
-[; ;interrupts.c: 45: INTCONbits.GIEH = 1;
-"45
-[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;interrupts.c: 46: INTCONbits.GIEL = 1;
-"46
-[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;interrupts.c: 48: INTCONbits.TMR0IE = 1;
+[; ;interrupts.c: 48: INTCONbits.GIEH = 1;
 "48
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;interrupts.c: 50: INTCON2bits.TMR0IP = 1;
-"50
-[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
-[; ;interrupts.c: 51: }
+[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
+[; ;interrupts.c: 49: INTCONbits.GIEL = 1;
+"49
+[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
+[; ;interrupts.c: 51: INTCONbits.TMR0IE = 1;
 "51
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;interrupts.c: 53: INTCON2bits.TMR0IP = 1;
+"53
+[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
+[; ;interrupts.c: 54: }
+"54
 [e :UE 590 ]
 }
-"53
+"56
 [v _in_high_int `(i ~T0 @X0 1 ef ]
 {
-[; ;interrupts.c: 53: int in_high_int() {
+[; ;interrupts.c: 56: int in_high_int() {
 [e :U _in_high_int ]
 [f ]
-[; ;interrupts.c: 54: return (!INTCONbits.GIEH);
-"54
+[; ;interrupts.c: 57: return (!INTCONbits.GIEH);
+"57
 [e ) -> ! != -> . . _INTCONbits 2 7 `i -> -> -> 0 `i `Vuc `i `i ]
 [e $UE 591  ]
-[; ;interrupts.c: 55: }
-"55
+[; ;interrupts.c: 58: }
+"58
 [e :UE 591 ]
 }
-"57
+"60
 [v _low_int_active `(i ~T0 @X0 1 ef ]
 {
-[; ;interrupts.c: 57: int low_int_active() {
+[; ;interrupts.c: 60: int low_int_active() {
 [e :U _low_int_active ]
 [f ]
-[; ;interrupts.c: 58: return (!INTCONbits.GIEL);
-"58
+[; ;interrupts.c: 61: return (!INTCONbits.GIEL);
+"61
 [e ) -> ! != -> . . _INTCONbits 2 6 `i -> -> -> 0 `i `Vuc `i `i ]
 [e $UE 592  ]
-[; ;interrupts.c: 59: }
-"59
+[; ;interrupts.c: 62: }
+"62
 [e :UE 592 ]
 }
-"61
+"64
 [v _in_low_int `(i ~T0 @X0 1 ef ]
 {
-[; ;interrupts.c: 61: int in_low_int() {
+[; ;interrupts.c: 64: int in_low_int() {
 [e :U _in_low_int ]
 [f ]
-[; ;interrupts.c: 62: if (INTCONbits.GIEL == 1) {
-"62
+[; ;interrupts.c: 65: if (INTCONbits.GIEL == 1) {
+"65
 [e $ ! == -> . . _INTCONbits 2 6 `i -> 1 `i 594  ]
 {
-[; ;interrupts.c: 63: return (0);
-"63
+[; ;interrupts.c: 66: return (0);
+"66
 [e ) -> 0 `i ]
 [e $UE 593  ]
-"64
+"67
 }
-[; ;interrupts.c: 64: } else if (in_high_int()) {
+[; ;interrupts.c: 67: } else if (in_high_int()) {
 [e $U 595  ]
 [e :U 594 ]
 [e $ ! != ( _in_high_int ..  -> 0 `i 596  ]
 {
-[; ;interrupts.c: 65: return (0);
-"65
+[; ;interrupts.c: 68: return (0);
+"68
 [e ) -> 0 `i ]
 [e $UE 593  ]
-"66
+"69
 }
-[; ;interrupts.c: 66: } else {
+[; ;interrupts.c: 69: } else {
 [e $U 597  ]
 [e :U 596 ]
 {
-[; ;interrupts.c: 67: return (1);
-"67
+[; ;interrupts.c: 70: return (1);
+"70
 [e ) -> 1 `i ]
 [e $UE 593  ]
-"68
+"71
 }
 [e :U 597 ]
 [e :U 595 ]
-[; ;interrupts.c: 68: }
-[; ;interrupts.c: 69: }
-"69
+[; ;interrupts.c: 71: }
+[; ;interrupts.c: 72: }
+"72
 [e :UE 593 ]
 }
-"71
+"74
 [v _in_main `(i ~T0 @X0 1 ef ]
 {
-[; ;interrupts.c: 71: int in_main() {
+[; ;interrupts.c: 74: int in_main() {
 [e :U _in_main ]
 [f ]
-[; ;interrupts.c: 72: if ((!in_low_int()) && (!in_high_int())) {
-"72
+[; ;interrupts.c: 75: if ((!in_low_int()) && (!in_high_int())) {
+"75
 [e $ ! && ! != ( _in_low_int ..  -> 0 `i ! != ( _in_high_int ..  -> 0 `i 599  ]
 {
-[; ;interrupts.c: 73: return (1);
-"73
+[; ;interrupts.c: 76: return (1);
+"76
 [e ) -> 1 `i ]
 [e $UE 598  ]
-"74
+"77
 }
-[; ;interrupts.c: 74: } else {
+[; ;interrupts.c: 77: } else {
 [e $U 600  ]
 [e :U 599 ]
 {
-[; ;interrupts.c: 75: return (0);
-"75
+[; ;interrupts.c: 78: return (0);
+"78
 [e ) -> 0 `i ]
 [e $UE 598  ]
-"76
+"79
 }
 [e :U 600 ]
-[; ;interrupts.c: 76: }
-[; ;interrupts.c: 77: }
-"77
+[; ;interrupts.c: 79: }
+[; ;interrupts.c: 80: }
+"80
 [e :UE 598 ]
 }
 [v F5114 `(v ~T0 @X0 1 tf ]
-"114
+"117
 [v _InterruptHandlerHigh `IF5114 ~T0 @X0 1 e ]
 {
-[; ;interrupts.c: 109: interrupt
-[; ;interrupts.c: 114: void InterruptHandlerHigh() {
+[; ;interrupts.c: 112: interrupt
+[; ;interrupts.c: 117: void InterruptHandlerHigh() {
 [e :U _InterruptHandlerHigh ]
 [f ]
-[; ;interrupts.c: 119: if (PIR1bits.SSPIF) {
-"119
+[; ;interrupts.c: 122: if (PIR1bits.SSPIF) {
+"122
 [e $ ! != -> . . _PIR1bits 1 1 `i -> -> -> 0 `i `Vuc `i 602  ]
 {
-[; ;interrupts.c: 121: PIR1bits.SSPIF = 0;
-"121
-[e = . . _PIR1bits 1 1 -> -> 0 `i `uc ]
-[; ;interrupts.c: 123: i2c_int_handler();
-"123
-[e ( _i2c_int_handler ..  ]
+[; ;interrupts.c: 124: PIR1bits.SSPIF = 0;
 "124
+[e = . . _PIR1bits 1 1 -> -> 0 `i `uc ]
+[; ;interrupts.c: 126: i2c_int_handler();
+"126
+[e ( _i2c_int_handler ..  ]
+"127
 }
 [e :U 602 ]
-[; ;interrupts.c: 124: }
-[; ;interrupts.c: 127: if (INTCONbits.TMR0IF) {
-"127
+[; ;interrupts.c: 127: }
+[; ;interrupts.c: 130: if (INTCONbits.TMR0IF) {
+"130
 [e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 603  ]
 {
-[; ;interrupts.c: 128: INTCONbits.TMR0IF = 0;
-"128
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;interrupts.c: 131: LATDbits.LATD7 = !LATDbits.LATD7;
+[; ;interrupts.c: 131: INTCONbits.TMR0IF = 0;
 "131
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;interrupts.c: 134: LATDbits.LATD7 = !LATDbits.LATD7;
+"134
 [e = . . _LATDbits 0 7 -> -> ! != -> . . _LATDbits 0 7 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[; ;interrupts.c: 132: ConvertADC();
-"132
+[; ;interrupts.c: 135: ConvertADC();
+"135
 [e ( _ConvertADC ..  ]
-"133
+"136
 }
 [e :U 603 ]
-[; ;interrupts.c: 133: }
-[; ;interrupts.c: 138: if(PIR1bits.ADIF == 1)
-"138
+[; ;interrupts.c: 136: }
+[; ;interrupts.c: 141: if(PIR1bits.ADIF == 1)
+"141
 [e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 604  ]
-[; ;interrupts.c: 139: {
-"139
-{
-[; ;interrupts.c: 142: PIR1bits.ADIF = 0;
+[; ;interrupts.c: 142: {
 "142
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-[; ;interrupts.c: 143: LATDbits.LATD6 = !LATDbits.LATD6;
-"143
-[e = . . _LATDbits 0 6 -> -> ! != -> . . _LATDbits 0 6 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-"144
-[v _pureADCValue `i ~T0 @X0 1 a ]
-[; ;interrupts.c: 144: int pureADCValue = ReadADC();
-[e = _pureADCValue ( _ReadADC ..  ]
-[; ;interrupts.c: 145: ADCValue = pureADCValue >> 2;
+{
+[; ;interrupts.c: 145: PIR1bits.ADIF = 0;
 "145
-[e = _ADCValue -> >> _pureADCValue -> 2 `i `uc ]
-[; ;interrupts.c: 146: if(responding == 0)
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;interrupts.c: 146: LATDbits.LATD6 = !LATDbits.LATD6;
 "146
-[e $ ! == _responding -> 0 `i 605  ]
-[; ;interrupts.c: 147: {
+[e = . . _LATDbits 0 6 -> -> ! != -> . . _LATDbits 0 6 `i -> -> -> 0 `i `Vuc `i `i `uc ]
 "147
-{
-[; ;interrupts.c: 148: if(arrayPlaceHolder == 350)
+[v _pureADCValue `i ~T0 @X0 1 a ]
+[; ;interrupts.c: 147: int pureADCValue = ReadADC();
+[e = _pureADCValue ( _ReadADC ..  ]
+[; ;interrupts.c: 148: ADCValue = pureADCValue >> 2;
 "148
-[e $ ! == _arrayPlaceHolder -> 350 `i 606  ]
-[; ;interrupts.c: 149: {
+[e = _ADCValue -> >> _pureADCValue -> 2 `i `uc ]
+[; ;interrupts.c: 149: if(responding == 0)
 "149
-{
-[; ;interrupts.c: 150: responding = 1;
+[e $ ! == _responding -> 0 `i 605  ]
+[; ;interrupts.c: 150: {
 "150
-[e = _responding -> 1 `i ]
-[; ;interrupts.c: 151: arrayPlaceHolder = 0;
-"151
-[e = _arrayPlaceHolder -> 0 `i ]
-"152
-}
-[; ;interrupts.c: 152: }
-[e $U 607  ]
-"153
-[e :U 606 ]
-[; ;interrupts.c: 153: else
-[; ;interrupts.c: 154: {
-"154
 {
-[; ;interrupts.c: 155: ADCArray[arrayPlaceHolder] = ADCValue;
+[; ;interrupts.c: 151: if(arrayPlaceHolder == 299)
+"151
+[e $ ! == _arrayPlaceHolder -> 299 `i 606  ]
+[; ;interrupts.c: 152: {
+"152
+{
+[; ;interrupts.c: 153: responding = 1;
+"153
+[e = _responding -> 1 `i ]
+[; ;interrupts.c: 154: arrayPlaceHolder = 0;
+"154
+[e = _arrayPlaceHolder -> 0 `i ]
 "155
-[e = *U + &U _ADCArray * -> -> _arrayPlaceHolder `ui `ux -> -> # *U &U _ADCArray `ui `ux _ADCValue ]
-[; ;interrupts.c: 156: arrayPlaceHolder++;
+}
+[; ;interrupts.c: 155: }
+[e $U 607  ]
 "156
-[e ++ _arrayPlaceHolder -> 1 `i ]
+[e :U 606 ]
+[; ;interrupts.c: 156: else
+[; ;interrupts.c: 157: {
 "157
+{
+[; ;interrupts.c: 158: ADCArray[arrayPlaceHolder] = ADCValue;
+"158
+[e = *U + &U _ADCArray * -> -> _arrayPlaceHolder `ui `ux -> -> # *U &U _ADCArray `ui `ux _ADCValue ]
+[; ;interrupts.c: 159: arrayPlaceHolder++;
+"159
+[e ++ _arrayPlaceHolder -> 1 `i ]
+"160
 }
 [e :U 607 ]
-"158
-}
-[e :U 605 ]
 "161
 }
+[e :U 605 ]
+"164
+}
 [e :U 604 ]
-[; ;interrupts.c: 157: }
-[; ;interrupts.c: 158: }
+[; ;interrupts.c: 160: }
 [; ;interrupts.c: 161: }
-[; ;interrupts.c: 168: }
-"168
+[; ;interrupts.c: 164: }
+[; ;interrupts.c: 171: }
+"171
 [e :UE 601 ]
 }
 [v F5117 `(v ~T0 @X0 1 tf ]
-"180
+"183
 [v _InterruptHandlerLow `ILF5117 ~T0 @X0 1 e ]
 {
-[; ;interrupts.c: 175: interrupt low_priority
-[; ;interrupts.c: 180: void InterruptHandlerLow() {
+[; ;interrupts.c: 178: interrupt low_priority
+[; ;interrupts.c: 183: void InterruptHandlerLow() {
 [e :U _InterruptHandlerLow ]
 [f ]
-[; ;interrupts.c: 182: if (PIR1bits.TMR1IF) {
-"182
+[; ;interrupts.c: 185: if (PIR1bits.TMR1IF) {
+"185
 [e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 609  ]
 {
-[; ;interrupts.c: 183: PIR1bits.TMR1IF = 0;
-"183
+[; ;interrupts.c: 186: PIR1bits.TMR1IF = 0;
+"186
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"185
+"188
 }
 [e :U 609 ]
-[; ;interrupts.c: 185: }
-[; ;interrupts.c: 188: if (PIR1bits.RCIF) {
-"188
+[; ;interrupts.c: 188: }
+[; ;interrupts.c: 191: if (PIR1bits.RCIF) {
+"191
 [e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 610  ]
 {
-[; ;interrupts.c: 189: PIR1bits.RCIF = 0;
-"189
+[; ;interrupts.c: 192: PIR1bits.RCIF = 0;
+"192
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-[; ;interrupts.c: 190: uart_recv_int_handler();
-"190
+[; ;interrupts.c: 193: uart_recv_int_handler();
+"193
 [e ( _uart_recv_int_handler ..  ]
-"191
+"194
 }
 [e :U 610 ]
-[; ;interrupts.c: 191: }
-[; ;interrupts.c: 192: }
-"192
+[; ;interrupts.c: 194: }
+[; ;interrupts.c: 195: }
+"195
 [e :UE 608 ]
 }

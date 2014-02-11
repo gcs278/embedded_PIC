@@ -6001,10 +6001,10 @@ unsigned char i2c_master_recv(unsigned char);
 
 # 14 "../src/interrupts.c"
 char ADCValue;
-char ADCArray[350];
+char ADCArray[299];
 int responding = 0;
 int arrayPlaceHolder = 0;
-int sendingPlaceHolder = 350;
+int sendingPlaceHolder = 299;
 
 void setStateResponding()
 {
@@ -6017,13 +6017,16 @@ responding = 0;
 }
 char returnADCValue()
 {
-if(sendingPlaceHolder == 350)
+if(sendingPlaceHolder == 299)
 {
 responding = 0;
 sendingPlaceHolder = 0;
 }
 else
 sendingPlaceHolder++;
+
+
+
 return ADCArray[sendingPlaceHolder];
 }
 
@@ -6065,10 +6068,10 @@ return (0);
 }
 }
 
-# 109
+# 112
 interrupt
 
-# 114
+# 117
 void InterruptHandlerHigh() {
 
 
@@ -6103,7 +6106,7 @@ int pureADCValue = ReadADC();
 ADCValue = pureADCValue >> 2;
 if(responding == 0)
 {
-if(arrayPlaceHolder == 350)
+if(arrayPlaceHolder == 299)
 {
 responding = 1;
 arrayPlaceHolder = 0;
@@ -6118,13 +6121,13 @@ arrayPlaceHolder++;
 
 }
 
-# 168
+# 171
 }
 
-# 175
+# 178
 interrupt low_priority
 
-# 180
+# 183
 void InterruptHandlerLow() {
 
 if (PIR1bits.TMR1IF) {

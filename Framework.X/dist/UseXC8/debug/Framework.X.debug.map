@@ -5,9 +5,9 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.30\dat\en_msgs.txt -cs \
   -h+dist/UseXC8/debug\Framework.X.debug.sym \
   --cmf=dist/UseXC8/debug\Framework.X.debug.cmf -z -Q18F45J10 \
-  -oC:\Users\TaylorM7\AppData\Local\Temp\s72c.6 \
+  -oC:\Users\TaylorM7\AppData\Local\Temp\s7c0.6 \
   -Mdist/UseXC8/debug/Framework.X.debug.map -E1 -ver=XC8 \
-  -ASTACK=0394h-03ffh -pstack=STACK -ACODE=00h-07FF7h -ACONST=00h-07FF7h \
+  -ASTACK=0361h-03ffh -pstack=STACK -ACODE=00h-07FF7h -ACONST=00h-07FF7h \
   -ASMALLCONST=0400h-04FFhx123,07F00h-07FF7h -AMEDIUMCONST=0400h-07FF7h \
   -ACOMRAM=01h-07Fh -AABS1=00h-03FFh -ABIGRAM=01h-03FFh \
   -ARAM=080h-0FFh,0100h-01FFhx3 -ABANK0=080h-0FFh -ABANK1=0100h-01FFh \
@@ -20,7 +20,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj \
+  C:\Users\TaylorM7\AppData\Local\Temp\s7c0.obj \
   dist/UseXC8/debug\Framework.X.debug.obj 
 
 Object code version is 3.11
@@ -33,7 +33,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\TaylorM7\AppData\Local\Temp\s72c.obj
+C:\Users\TaylorM7\AppData\Local\Temp\s7c0.obj
                 end_init                             B0       B0        4        C       0
                 reset_vec                             0        0        6        0       0
                 config                             7FF8     7FF8        6     7FF8       0
@@ -89,7 +89,7 @@ dist/UseXC8/debug\Framework.X.debug.obj
                 cstackCOMRAM                          1        1       48        1       1
                 cstackBANK0                          80       80       4D       80       1
                 cstackBANK1                         1A2      1A2       35      100       1
-                bssBIGRAM                           236      236      15E      236       1
+                bssBIGRAM                           236      236      12B      236       1
                 bssBANK2                            200      200       36      200       1
                 bssBANK1                            100      100       A2      100       1
                 bssBANK0                             CF       CF        1       80       1
@@ -172,7 +172,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ABS1           
 
         CLASS   BIGRAM         
-                bssBIGRAM                           236      236      15E         1
+                bssBIGRAM                           236      236      12B         1
 
         CLASS   RAM            
 
@@ -210,7 +210,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackBANK0                    000080  000050  0000D0        80       1  BANK0   
                 bssBANK1                       000100  0000D7  0001D7       100       1  BANK1   
                 bssBANK2                       000200  000036  000236       200       1  BANK2   
-                bssBIGRAM                      000236  00015E  000394       236       1  BIGRAM  
+                bssBIGRAM                      000236  00012B  000361       236       1  BIGRAM  
                 config                         007FF8  000006  007FFE      7FF8       0  CONFIG  
 
 
@@ -219,11 +219,11 @@ UNUSED ADDRESS RANGES
         Name                Unused          Largest block    Delta
         BANK0            000D0-000FF              30
         BANK1            001D7-001FF              29
-        BANK3            00394-003FF              6C
+        BANK3            00361-003FF              9F
         BIGRAM           00053-0007F              2D
                          000D0-000FF              30
                          001D7-001FF              29
-                         00394-003FF              6C
+                         00361-003FF              9F
         CODE             00006-00007               2
                          00014-00017               4
                          01AAE-07FF7            654A
@@ -234,10 +234,10 @@ UNUSED ADDRESS RANGES
         MEDIUMCONST      01AAE-07FF7            654A
         RAM              000D0-000FF              30
                          001D7-001FF              29
-                         00394-003FF              6C
+                         00361-003FF              9F
         SFR              00F80-00FFC              7D
         SMALLCONST       01AAE-07FF7             100
-        STACK            00394-003FF              6C
+        STACK            00361-003FF              9F
 
                                   Symbol Table
 
@@ -561,7 +561,7 @@ __Ltext7                          text7         00000
 __Ltext8                          text8         00000
 __Ltext9                          text9         00000
 __S0                              (abs)         07FFE
-__S1                              (abs)         00394
+__S1                              (abs)         00361
 __S2                              (abs)         00000
 ___extmem_base                    (abs)         20000
 ___inthi_sp                       stack         00000
@@ -850,7 +850,7 @@ send_msg@qptr                     cstackBANK0   000B2
 send_msg@slot                     cstackBANK0   000BB
 send_msg@tlength                  cstackBANK0   000B9
 stackhi                           (abs)         003FF
-stacklo                           (abs)         00394
+stacklo                           (abs)         00361
 start                             init          000B0
 start_i2c_slave_reply@length      cstackBANK0   000AC
 start_i2c_slave_reply@msg         cstackBANK0   000A8
@@ -1484,7 +1484,7 @@ Total ram usage:        1 bytes
 
  *************** function _enable_interrupts *****************
  Defined at:
-		line 41 in file "../src/interrupts.c"
+		line 44 in file "../src/interrupts.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1546,7 +1546,7 @@ Total ram usage:        1 bytes
 
  *************** function _in_main *****************
  Defined at:
-		line 71 in file "../src/interrupts.c"
+		line 74 in file "../src/interrupts.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1577,7 +1577,7 @@ Total ram usage:        2 bytes
 
  *************** function _in_low_int *****************
  Defined at:
-		line 61 in file "../src/interrupts.c"
+		line 64 in file "../src/interrupts.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1608,7 +1608,7 @@ Total ram usage:        2 bytes
 
  *************** function _in_high_int *****************
  Defined at:
-		line 53 in file "../src/interrupts.c"
+		line 56 in file "../src/interrupts.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1924,7 +1924,7 @@ Total ram usage:        1 bytes
 
  *************** function _InterruptHandlerLow *****************
  Defined at:
-		line 180 in file "../src/interrupts.c"
+		line 183 in file "../src/interrupts.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2138,7 +2138,7 @@ Total ram usage:        1 bytes
 
  *************** function _InterruptHandlerHigh *****************
  Defined at:
-		line 114 in file "../src/interrupts.c"
+		line 117 in file "../src/interrupts.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

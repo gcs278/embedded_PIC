@@ -9,19 +9,19 @@
 [v _setStateReading setStateReading `(v  1 e 0 0 ]
 "29
 [v _returnADCValue returnADCValue `(uc  1 e 1 0 ]
-"41
+"44
 [v _enable_interrupts enable_interrupts `(v  1 e 0 0 ]
-"53
+"56
 [v _in_high_int in_high_int `(i  1 e 2 0 ]
-"57
+"60
 [v _low_int_active low_int_active `(i  1 e 2 0 ]
-"61
+"64
 [v _in_low_int in_low_int `(i  1 e 2 0 ]
-"71
+"74
 [v _in_main in_main `(i  1 e 2 0 ]
-"114
+"117
 [v _InterruptHandlerHigh InterruptHandlerHigh `II(v  1 e 0 0 ]
-"180
+"183
 [v _InterruptHandlerLow InterruptHandlerLow `IIL(v  1 e 0 0 ]
 "99 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/main.c
 [v _initADC initADC `(v  1 e 0 0 ]
@@ -252,7 +252,7 @@
 "14 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _ADCValue ADCValue `uc  1 e 1 0 ]
 "15
-[v _ADCArray ADCArray `[350]uc  1 e 350 0 ]
+[v _ADCArray ADCArray `[299]uc  1 e 299 0 ]
 "16
 [v _responding responding `i  1 e 2 0 ]
 "17
@@ -1032,30 +1032,30 @@
 [v i2c_configure_slave@addr addr `uc  1 a 1 40 ]
 "341
 } 0
-"41 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"44 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _enable_interrupts enable_interrupts `(v  1 e 0 0 ]
 {
-"51
+"54
 } 0
 "258 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
 [v _block_on_To_msgqueues block_on_To_msgqueues `(v  1 e 0 0 ]
 {
 "278
 } 0
-"71 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"74 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _in_main in_main `(i  1 e 2 0 ]
 {
-"77
+"80
 } 0
-"61
+"64
 [v _in_low_int in_low_int `(i  1 e 2 0 ]
 {
-"69
+"72
 } 0
-"53
+"56
 [v _in_high_int in_high_int `(i  1 e 2 0 ]
 {
-"55
+"58
 } 0
 "222 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/messages.c
 [v _check_msg check_msg `(uc  1 e 1 0 ]
@@ -1145,10 +1145,10 @@
 [v OpenTimer0@config config `uc  1 a 1 40 ]
 "31
 } 0
-"180 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"183 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _InterruptHandlerLow InterruptHandlerLow `IIL(v  1 e 0 0 ]
 {
-"192
+"195
 } 0
 "11 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_uart.c
 [v _uart_recv_int_handler uart_recv_int_handler `(v  1 e 0 0 ]
@@ -1197,12 +1197,12 @@
 [v ReadUSART@data data `uc  1 a 1 0 ]
 "37
 } 0
-"114 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
+"117 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _InterruptHandlerHigh InterruptHandlerHigh `II(v  1 e 0 0 ]
 {
-"144
+"147
 [v InterruptHandlerHigh@pureADCValue pureADCValue `i  1 a 2 38 ]
-"168
+"171
 } 0
 "22 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\plib\ADC\adcconv.c
 [v i2_ConvertADC ConvertADC `(v  1 e 0 0 ]
@@ -1245,7 +1245,7 @@
 "29 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/interrupts.c
 [v _returnADCValue returnADCValue `(uc  1 e 1 0 ]
 {
-"39
+"42
 } 0
 "72 C:\Users\TaylorM7\Embedded\git_embedded\embedded_PIC/src/my_i2c.c
 [v _handle_start handle_start `(v  1 e 0 0 ]
