@@ -1,3 +1,8 @@
+/*
+ TEAM 1 - GRANT SPENCE, TAYLOR MCGOUGH, MARTIN ANILANE, MATT O'NEIL
+ Milestone 1 = 2/11/2014
+ */
+
 #include "maindefs.h"
 #include "interrupts.h"
 #include "user_interrupts.h"
@@ -12,22 +17,29 @@
 //       enabled.
 
 char ADCValue;
+// ADC buffer, matches size of screen on ARM LCD
 char ADCArray[299];
+// ADC logic variables
 int responding = 0;
 int arrayPlaceHolder = 0;
 int sendingPlaceHolder = 299;
 
+// PIC is responding to ARM I2C request
 void setStateResponding()
 {
     responding = 1;
 }
 
+// PIC is reading ADC values
 void setStateReading()
 {
     responding = 0;
 }
+
+// Returns a current ADC value
 char returnADCValue()
 {
+    // BUFFER is full
     if(sendingPlaceHolder == 299)
     {
         responding = 0;
@@ -38,7 +50,8 @@ char returnADCValue()
     //if(sendingPlaceHolder == 0)
         //return 0xFF;
     //else
-        return ADCArray[sendingPlaceHolder];
+    // Return current buffer value
+    return ADCArray[sendingPlaceHolder];
 }
 
 void enable_interrupts() {

@@ -1,3 +1,8 @@
+/*
+ TEAM 1 - GRANT SPENCE, TAYLOR MCGOUGH, MARTIN ANILANE, MATT O'NEIL
+ Milestone 1 = 2/11/2014
+ */
+
 #include "maindefs.h"
 #ifndef __XC8
 #include <i2c.h>

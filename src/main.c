@@ -1,3 +1,8 @@
+/*
+ TEAM 1 - GRANT SPENCE, TAYLOR MCGOUGH, MARTIN ANILANE, MATT O'NEIL
+ Milestone 1 = 2/11/2014
+ */
+
 //#include <plib.h>
 #include <xc.h>
 #include <stdlib.h>
@@ -95,18 +100,21 @@ void readMyADC()
 }
 */
 
-
+// Configure the ADC to run on timer 0 interupt
 void initADC()
 {
+    // Debug output pins set up
     TRISDbits.TRISD7 = 0;
     TRISDbits.TRISD6 = 0;
     //LATBbits.LATB7 = !LATBbits.LATB7;
     //LATBbits.LATB6 = !LATBbits.LATB6;
     int ADCValue = 0;
+
     //Configure ADC
     OpenADC(ADC_FOSC_2 & ADC_RIGHT_JUST & ADC_20_TAD, ADC_CH0 & ADC_INT_ON & ADC_VREFPLUS_VDD & ADC_VREFMINUS_VSS, ADC_0ANA);
     ADC_INT_ENABLE(); //Easy ADC interrupt setup
     ei();
+    // Begin ADC process
     ConvertADC();
 
 }
@@ -151,6 +159,7 @@ void main(void) {
     // initialize message queues before enabling any interrupts
     init_queues();
 
+    // Set up ADC
     initADC();
 
     // set direction for PORTB to output
@@ -217,6 +226,11 @@ void main(void) {
     _asm
     goto 0x08
     _endasm;
+     */
+
+
+    /*
+     WE ARE NOT USING THE FOLLOWING WHILE LOOP FOR MESSAGE PASSING
      */
 
     // printf() is available, but is not advisable.  It goes to the UART pin
