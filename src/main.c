@@ -176,7 +176,7 @@ void main(void) {
      */
 
     // initialize Timers
-    OpenTimer0(TIMER_INT_ON & T0_8BIT & T0_SOURCE_INT & T0_PS_1_1);
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
     //OpenTimer1(TIMER_INT_ON & T1_PS_1_1 & T1_16BIT_RW & T1_SOURCE_INT & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF);
 
     // Peripheral interrupts can have their priority set to high or low
@@ -217,9 +217,10 @@ void main(void) {
     // must specifically enable the I2C interrupts
     PIE1bits.SSPIE = 1;
 
+
     // configure the hardware USART device
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
-            USART_CONT_RX & USART_BRGH_LOW, 0x19);
+            USART_CONT_RX & USART_BRGH_HIGH, 77);
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
     PIR1bits.SSPIF = 1;
@@ -228,7 +229,7 @@ void main(void) {
     _endasm;
      */
 
-
+    
     /*
      WE ARE NOT USING THE FOLLOWING WHILE LOOP FOR MESSAGE PASSING
      */
@@ -337,6 +338,7 @@ void main(void) {
                 case MSGT_OVERRUN:
                 case MSGT_UART_DATA:
                 {
+               
                     uart_lthread(&uthread_data, msgtype, length, msgbuffer);
                     break;
                 };
