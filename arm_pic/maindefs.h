@@ -35,5 +35,7 @@
 #define MSGT_I2C_MASTER_RECV_COMPLETE 45
 #define MSGT_I2C_MASTER_RECV_FAILED 46
 
+int main_uart_done = 0;
+
 #endif
 

@@ -12,6 +12,8 @@
 #include <plib/usart.h>
 #include <plib/adc.h>
 
+#include <delays.h>
+
 #include "maindefs.h"
 #include <stdio.h>
 //#include <adc.h>
@@ -119,7 +121,27 @@ void initADC()
 
 }
 
+void Init_WiFly()
+{
+    WriteUSART('$');
+    for (int i = 1; i != 0; i++);
+    WriteUSART('$');
+    for (int i = 1; i != 0; i++);
+    WriteUSART('$');
+    for (int j = 0; j < 15; j++)
+        for (int i = 1; i != 0; i++); // integer wraparound
+    putsUSART("");
+    putsUSART("close");
+    for (int j = 0; j < 15; j++)
+        for (int i = 1; i != 0; i++);
+    putsUSART("open 1.2.3.15 2000");
+    for (int j = 0; j < 15; j++)
+        for (int i = 1; i != 0; i++);
+    main_uart_done = 1;
+}
 
+
+int done = 0;
 
 void main(void) {
     OSCCON = 0x82;         // see datasheeet
@@ -175,9 +197,7 @@ void main(void) {
             TRISA = 0x0F;	// set RA3-RA0 to inputs
      */
 
-    // initialize Timers
-    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
-    //OpenTimer1(TIMER_INT_ON & T1_PS_1_1 & T1_16BIT_RW & T1_SOURCE_INT & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF);
+
 
     // Peripheral interrupts can have their priority set to high or low
     // enable high-priority interrupts and low-priority interrupts
@@ -219,8 +239,16 @@ void main(void) {
 
 
     // configure the hardware USART device
-    OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
+    OpenUSART(USART_TX_INT_OFF & USART_RX_INT_OFF & USART_ASYNCH_MODE & USART_EIGHT_BIT &
             USART_CONT_RX & USART_BRGH_HIGH, 77);
+    //for (int i = 0; i < 50; i++)
+      //  DelayMs();
+
+    Init_WiFly();
+
+    // initialize Timers
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
+    //OpenTimer1(TIMER_INT_ON & T1_PS_1_1 & T1_16BIT_RW & T1_SOURCE_INT & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF);
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
     PIR1bits.SSPIF = 1;

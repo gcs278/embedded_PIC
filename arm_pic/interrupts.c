@@ -141,9 +141,28 @@ void InterruptHandlerHigh() {
 
     // check to see if we have an interrupt on timer 0
     if (INTCONbits.TMR0IF) {
+        // Delays for about 12s to allow for wifi starting time
+        //static int delay_count = 0;
+        //if (delay_count < 2)
+        //{
+        //    delay_count++;
+        //    return;
+        //}
+        //if (!main_uart_done)
+        //    return;
+        static char command = 'W';
+        if (command == 'W')
+            command = 'Q';
+        else if (command == 'Q')
+            command = 'W';
+        else
+            command = 'W';
+
+        WriteUSART(command);
+
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
-        //timer0_int_handler();
+        // timer0_int_handler();
         LATDbits.LATD7 = !LATDbits.LATD7;
         ConvertADC();
     }
