@@ -108,7 +108,7 @@ void initADC()
     // Debug output pins set up
     TRISDbits.TRISD7 = 0;
     TRISDbits.TRISD6 = 0;
-    //LATBbits.LATB7 = !LATBbits.LATB7;
+    
     //LATBbits.LATB6 = !LATBbits.LATB6;
     int ADCValue = 0;
 
@@ -123,21 +123,22 @@ void initADC()
 
 void Init_WiFly()
 {
+    
     WriteUSART('$');
     for (int i = 1; i != 0; i++);
     WriteUSART('$');
     for (int i = 1; i != 0; i++);
     WriteUSART('$');
-    for (int j = 0; j < 15; j++)
+    for (int j = 0; j < 5; j++)
         for (int i = 1; i != 0; i++); // integer wraparound
     putsUSART("");
     putsUSART("close");
-    for (int j = 0; j < 15; j++)
+    for (int j = 0; j < 5; j++)
         for (int i = 1; i != 0; i++);
-    putsUSART("open 1.2.3.15 2000");
-    for (int j = 0; j < 15; j++)
+    putsUSART("open 1.2.3.20 2000");
+    for (int j = 0; j < 5; j++)
         for (int i = 1; i != 0; i++);
-    main_uart_done = 1;
+main_uart_done = 1;
 }
 
 
@@ -146,7 +147,8 @@ int done = 0;
 void main(void) {
     OSCCON = 0x82;         // see datasheeet
     OSCTUNEbits.PLLEN = 0;
-
+    TRISBbits.TRISB7 = 0;
+    LATBbits.LATB7 = 0;
     char c;
     signed char length;
     unsigned char msgtype;
@@ -237,17 +239,19 @@ void main(void) {
     // must specifically enable the I2C interrupts
     PIE1bits.SSPIE = 1;
 
-
+    // Calculating the UART baud rate, equation in documentation
+    // 12000000 / (16 * (77 + 1)) = ~ 9600
+    // 12000000 / (16 * (38 + 1)) = ~ 19200
     // configure the hardware USART device
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_OFF & USART_ASYNCH_MODE & USART_EIGHT_BIT &
-            USART_CONT_RX & USART_BRGH_HIGH, 77);
+            USART_CONT_RX & USART_BRGH_HIGH, 38);
     //for (int i = 0; i < 50; i++)
       //  DelayMs();
 
     Init_WiFly();
 
     // initialize Timers
-    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
+    OpenTimer0(TIMER_INT_ON & T0_8BIT & T0_SOURCE_INT & T0_PS_1_128);
     //OpenTimer1(TIMER_INT_ON & T1_PS_1_1 & T1_16BIT_RW & T1_SOURCE_INT & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF);
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
@@ -298,6 +302,9 @@ void main(void) {
                     break;
                 };
                 case MSGT_I2C_DATA:
+                {
+                    start_i2c_slave_reply(length, msgbuffer);
+                }
                 case MSGT_I2C_DBG:
                 {
                     // Here is where you could handle debugging, if you wanted
@@ -315,18 +322,22 @@ void main(void) {
                     // The last byte received is the "register" that is trying to be read
                     // The response is dependent on the register.
                     switch (last_reg_recvd) {
-                        case 0xaa:
+                        case 0x01:
                         {
-                            length = 1;
-                            //msgbuffer[0] = 0x55;
+                            //WriteUSART('W');
+                            length = 2;
+                            msgbuffer[0] = 0x55;
+                            msgbuffer[1] = 0x87;
                             //msgbuffer[0] = returnADCValue();
                             //msgbuffer[1] = 0xAA;
                             break;
                         }
-                        case 0xa8:
+                        case 0x05:
                         {
-                            length = 1;
-                            //msgbuffer[0] = 0x3A;
+                            length = 2;
+                            //WriteUSART('Q');
+                            msgbuffer[0] = 0x66;
+                            msgbuffer[1] = 0x87;
                             //msgbuffer[0] = returnADCValue();
                             break;
                         }
@@ -338,7 +349,12 @@ void main(void) {
                             break;
                         }
                     };
-                    start_i2c_slave_reply(length, msgbuffer);
+                    //start_i2c_slave_reply(length, msgbuffer);
+
+
+                    // SEND I2C Message TO UART
+                    msgbuffer[0] = last_reg_recvd;
+                    ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) msgbuffer);
                     break;
                 };
                 default:
@@ -364,9 +380,13 @@ void main(void) {
                     break;
                 };
                 case MSGT_OVERRUN:
+                case MSGT_UART_SEND:
+                {
+                    WriteUSART(msgbuffer[0]);
+                }
                 case MSGT_UART_DATA:
                 {
-               
+
                     uart_lthread(&uthread_data, msgtype, length, msgbuffer);
                     break;
                 };

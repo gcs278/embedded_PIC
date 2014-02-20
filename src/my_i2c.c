@@ -18,7 +18,7 @@ static i2c_comm *ic_ptr;
 //   i2c_comm (as pointed to by ic_ptr) for later use.
 
 void i2c_configure_master(unsigned char slave_addr) {
-    // Your code goes here
+    
 }
 
 // Sending in I2C Master mode [slave write]

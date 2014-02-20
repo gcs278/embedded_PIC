@@ -148,22 +148,23 @@ void InterruptHandlerHigh() {
         //    delay_count++;
         //    return;
         //}
+         WriteUSART(0x07);
         //if (!main_uart_done)
         //    return;
-        static char command = 'W';
-        if (command == 'W')
-            command = 'Q';
-        else if (command == 'Q')
-            command = 'W';
-        else
-            command = 'W';
+//        static char command = 'W';
+//        if (command == 'W')
+//            command = 'Q';
+//        else if (command == 'Q')
+//            command = 'W';
+//        else
+//            command = 'W';
 
-        WriteUSART(command);
+//        WriteUSART(command);
 
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
         // timer0_int_handler();
-        LATDbits.LATD7 = !LATDbits.LATD7;
+        // LATDbits.LATD7 = !LATDbits.LATD7;
         ConvertADC();
     }
 

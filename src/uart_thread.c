@@ -1,6 +1,8 @@
 #include "maindefs.h"
 #include <stdio.h>
 #include "uart_thread.h"
+#include "interrupts.h"
+#include "messages.h"
 
 // This is a "logical" thread that processes messages from the UART
 // It is not a "real" thread because there is only the single main thread
@@ -13,12 +15,13 @@ int uart_lthread(uart_thread_struct *uptr, int msgtype, int length, unsigned cha
         // 		was a printable string)
         msgbuffer[length] = '\0'; // null-terminate the array as a string
         //putsUSART(msgbuffer);
-        if(msgbuffer[0] == 'W'){
+        if(msgbuffer[0] == 0x01){
              WriteUSART(1);
              WriteUSART(129);
         }
-        else if (msgbuffer[0] == 'Q')
+        else if (msgbuffer[0] == 0x05) {
             WriteUSART(0x00);
+        }
         else if (msgbuffer[0] == 'A'){
             WriteUSART(219);
             WriteUSART(35);
@@ -31,6 +34,7 @@ int uart_lthread(uart_thread_struct *uptr, int msgtype, int length, unsigned cha
             WriteUSART(77);
             WriteUSART(204);
         }
+        ToMainHigh_sendmsg(length, MSGT_I2C_DATA, (void *) msgbuffer);
         i++;
     }
 }

@@ -144,7 +144,7 @@ void InterruptHandlerHigh() {
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
         //timer0_int_handler();
-        LATDbits.LATD7 = !LATDbits.LATD7;
+        // LATDbits.LATD7 = !LATDbits.LATD7;
         ConvertADC();
     }
 

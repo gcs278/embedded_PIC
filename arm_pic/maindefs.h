@@ -34,7 +34,7 @@
 #define MSGT_I2C_MASTER_SEND_FAILED 44
 #define MSGT_I2C_MASTER_RECV_COMPLETE 45
 #define MSGT_I2C_MASTER_RECV_FAILED 46
-
+#define MSGT_UART_SEND 47
 int main_uart_done = 0;
 
 #endif

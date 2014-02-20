@@ -122,8 +122,6 @@ void initADC()
 
 
 void main(void) {
-    OSCCON = 0x82;         // see datasheeet
-    OSCTUNEbits.PLLEN = 0;
 
     char c;
     signed char length;
@@ -220,8 +218,7 @@ void main(void) {
 
     // configure the hardware USART device
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
-            USART_CONT_RX & USART_BRGH_HIGH, 77);
-
+            USART_CONT_RX & USART_BRGH_HIGH, 38);
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
     PIR1bits.SSPIF = 1;
     _asm
@@ -246,6 +243,7 @@ void main(void) {
     // they can be equated with the tasks in your task diagram if you
     // structure them properly.
     while (1) {
+        
         // Call a routine that blocks until either on the incoming
         // messages queues has a message (this may put the processor into
         // an idle mode)
@@ -270,6 +268,11 @@ void main(void) {
                     break;
                 };
                 case MSGT_I2C_DATA:
+                {
+                    LATDbits.LATD7 = !LATDbits.LATD7;
+                    LATDbits.LATD7 = !LATDbits.LATD7;
+                    i2c_master_send(length, msgbuffer);
+                }
                 case MSGT_I2C_DBG:
                 {
                     // Here is where you could handle debugging, if you wanted
