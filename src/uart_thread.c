@@ -19,7 +19,6 @@ int uart_lthread(uart_thread_struct *uptr, int msgtype, int length, unsigned cha
 
 #if defined(ARM_PIC)
                     // SEND I2C Message TO UART
-                    msgbuffer[0] = last_reg_recvd;
                     ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) msgbuffer);
 
                     // start_i2c_slave_reply(length, msgbuffer);
