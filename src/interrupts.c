@@ -7,6 +7,7 @@
 #include "interrupts.h"
 #include "user_interrupts.h"
 #include "messages.h"
+#include "my_i2c_master.h"
 
 //----------------------------------------------------------------------------
 // Note: This code for processing interrupts is configured to allow for high and
@@ -23,6 +24,7 @@ char ADCArray[299];
 int responding = 0;
 int arrayPlaceHolder = 0;
 int sendingPlaceHolder = 299;
+int start_stop = 0;
 
 // PIC is responding to ARM I2C request
 void setStateResponding()
@@ -136,7 +138,15 @@ void InterruptHandlerHigh() {
         // clear the interrupt flag
         PIR1bits.SSPIF = 0;
         // call the handler
-        i2c_int_handler();
+        #if defined (MAIN_PIC)
+        {
+            i2c_master_handler();
+        }
+        #else
+        {
+            i2c_int_handler();
+        }
+        #endif
     }
 
     // check to see if we have an interrupt on timer 0
@@ -145,7 +155,28 @@ void InterruptHandlerHigh() {
         // call whatever handler you want (this is "user" defined)
         //timer0_int_handler();
         // LATDbits.LATD7 = !LATDbits.LATD7;
-        ConvertADC();
+        #if defined (MAIN_PIC)
+        {
+            if(start_stop == 0)
+            {
+                i2c_master_recv(0x02, 0x01);
+                start_stop = 1;
+            }
+            else if (start_stop == 1)
+            {
+                i2c_master_recv(0x02, 0x05);
+                start_stop = 0;
+            }
+        }
+        #else
+        {
+            i2c_int_handler();
+        }
+        #endif
+
+
+
+        //ConvertADC();
     }
 
     // here is where you would check other interrupt flags.

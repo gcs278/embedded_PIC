@@ -24,6 +24,7 @@
 #include <plib/i2c.h>
 #include <plib/timers.h>
 #endif
+#include "my_i2c_master.h"
 #include "interrupts.h"
 #include "messages.h"
 #include "my_uart.h"
@@ -203,6 +204,8 @@ void main(void) {
     i2c_configure_slave(0x9F);
 #elif defined(MOTOR_PIC)
     i2c_configure_slave(0x01);
+#elif defined(MAIN_PIC)
+    i2c_configure_master(0x4F);
 #endif
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
@@ -260,9 +263,9 @@ void main(void) {
 #elif defined(SENSOR_PIC)
                 
 #elif defined(MAIN_PIC)
-                    LATDbits.LATD7 = !LATDbits.LATD7;
-                    LATDbits.LATD7 = !LATDbits.LATD7;
-                    i2c_master_send(length, msgbuffer);
+                    //LATDbits.LATD7 = !LATDbits.LATD7;
+                    //LATDbits.LATD7 = !LATDbits.LATD7;
+                    //i2c_master_send(length, msgbuffer);
 #endif
                     
                 }
