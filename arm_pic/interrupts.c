@@ -148,7 +148,7 @@ void InterruptHandlerHigh() {
         //    delay_count++;
         //    return;
         //}
-         WriteUSART(0x07);
+      //   WriteUSART(0x07);
         //if (!main_uart_done)
         //    return;
 //        static char command = 'W';

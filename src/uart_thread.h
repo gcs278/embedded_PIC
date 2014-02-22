@@ -4,3 +4,5 @@ typedef struct __uart_thread_struct {
 } uart_thread_struct;
 
 int uart_lthread(uart_thread_struct *,int,int,unsigned char*);
+
+int uart_sendthread(int msgtype, int length, unsigned char *msgbuffer);

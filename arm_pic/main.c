@@ -141,7 +141,6 @@ void Init_WiFly()
 main_uart_done = 1;
 }
 
-
 int done = 0;
 
 void main(void) {

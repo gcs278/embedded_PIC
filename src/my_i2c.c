@@ -265,38 +265,7 @@ void i2c_int_handler() {
         ic_ptr->error_count = 0;
     }
     if (msg_to_send) {
-        int length;
-        unsigned char msgbuffer[MSGLEN + 1];
-        length = 2;
-        //for(int i = 0; i <3; i++)
-        msgbuffer[0] = returnADCValue();
-        //msgbuffer[0] = 0x04;
-                        
-//        switch (ic_ptr->buflen) {
-//                        case 0xaa:
-//                        {
-//                            length = 2;
-//                            msgbuffer[0] = 0x55;
-//                            //msgbuffer[0] = returnADCValue();
-//                            msgbuffer[1] = 0xAA;
-//                            break;
-//                        }
-//                        case 0xa8:
-//                        {
-//                            length = 1;
-//                            msgbuffer[0] = 0x3A;
-//                            //msgbuffer[0] = returnADCValue();
-//                            break;
-//                        }
-//                        case 0xa9:
-//                        {
-//                            length = 1;
-//                            msgbuffer[0] = 0xA3;
-//                            // msgbuffer[0] = returnADCValue();
-//                            break;
-//                        }
-//                    };
-        start_i2c_slave_reply(length, msgbuffer);
+        ToMainHigh_sendmsg(0, MSGT_I2C_RQST, (void *) ic_ptr->buffer);
         msg_to_send = 0;
     }
 }

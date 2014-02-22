@@ -31,6 +31,8 @@
 #include "uart_thread.h"
 #include "timer1_thread.h"
 #include "timer0_thread.h"
+#include "my_adc.h"
+#include "my_wifly.h"
 
 #ifdef __USE18F45J10
 // CONFIG1L
@@ -91,36 +93,6 @@
 #endif
 #endif
 
-
-
-/*
-void readMyADC()
-{
-    ADCValue = ReadADC();
-}
-*/
-
-// Configure the ADC to run on timer 0 interupt
-void initADC()
-{
-    // Debug output pins set up
-    TRISDbits.TRISD7 = 0;
-    TRISDbits.TRISD6 = 0;
-    //LATBbits.LATB7 = !LATBbits.LATB7;
-    //LATBbits.LATB6 = !LATBbits.LATB6;
-    int ADCValue = 0;
-
-    //Configure ADC
-    OpenADC(ADC_FOSC_2 & ADC_RIGHT_JUST & ADC_20_TAD, ADC_CH0 & ADC_INT_ON & ADC_VREFPLUS_VDD & ADC_VREFMINUS_VSS, ADC_0ANA);
-    ADC_INT_ENABLE(); //Easy ADC interrupt setup
-    ei();
-    // Begin ADC process
-    ConvertADC();
-
-}
-
-
-
 void main(void) {
 
     char c;
@@ -157,12 +129,10 @@ void main(void) {
     // initialize message queues before enabling any interrupts
     init_queues();
 
-    // Set up ADC
-    initADC();
-
     // set direction for PORTB to output
     TRISB = 0x0;
     LATB = 0x0;
+
 
     // how to set up PORTA for input (for the V4 board with the PIC2680)
     /*
@@ -200,7 +170,6 @@ void main(void) {
     // They *are* changed in the timer interrupt handlers if those timers are
     //   enabled.  They are just there to make the lights blink and can be
     //   disabled.
-    i2c_configure_slave(0x9E);
 #else
     // If I want to test the temperature sensor from the ARM, I just make
     // sure this PIC does not have the same address and configure the
@@ -216,9 +185,26 @@ void main(void) {
     PIE1bits.SSPIE = 1;
 
 
+    // Calculating the UART baud rate, equation in documentation
+    // 12000000 / (16 * (77 + 1)) = ~ 9600
+    // 12000000 / (16 * (38 + 1)) = ~ 19200
     // configure the hardware USART device
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
             USART_CONT_RX & USART_BRGH_HIGH, 38);
+
+    
+#if defined(ARM_PIC)
+    // Initialize the WiFLy
+    initWiFly();
+    i2c_configure_slave(0x9E);
+#elif defined(SENSOR_PIC)
+    // Set up ADC
+    init_ADC();
+    i2c_configure_slave(0x9F);
+#elif defined(MOTOR_PIC)
+    i2c_configure_slave(0x01);
+#endif
+
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
     PIR1bits.SSPIF = 1;
     _asm
@@ -269,9 +255,16 @@ void main(void) {
                 };
                 case MSGT_I2C_DATA:
                 {
+#if defined(ARM_PIC)
+                    start_i2c_slave_reply(length, msgbuffer);
+#elif defined(SENSOR_PIC)
+                
+#elif defined(MAIN_PIC)
                     LATDbits.LATD7 = !LATDbits.LATD7;
                     LATDbits.LATD7 = !LATDbits.LATD7;
                     i2c_master_send(length, msgbuffer);
+#endif
+                    
                 }
                 case MSGT_I2C_DBG:
                 {
@@ -313,7 +306,17 @@ void main(void) {
                             break;
                         }
                     };
-                    start_i2c_slave_reply(length, msgbuffer);
+#if defined(ARM_PIC)
+                    // SEND I2C Message TO UART
+                    msgbuffer[0] = last_reg_recvd;
+                    ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) msgbuffer);
+
+                    // start_i2c_slave_reply(length, msgbuffer);
+#elif defined(SENSOR_PIC)
+
+#elif defined(MAIN_PIC)
+
+#endif
                     break;
                 };
                 default:
@@ -339,6 +342,11 @@ void main(void) {
                     break;
                 };
                 case MSGT_OVERRUN:
+                case MSGT_UART_SEND:
+                {
+                    //uart_send_thread()
+                    WriteUSART(msgbuffer[0]);
+                }
                 case MSGT_UART_DATA:
                 {
                
