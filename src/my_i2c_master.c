@@ -21,9 +21,8 @@ unsigned char slave_addr;
 // Configure for I2C Master mode -- the variable "slave_addr" should be stored in
 //   i2c_comm (as pointed to by ic_ptr) for later use.
 
-void i2c_configure_master(unsigned char slave_a) {
+void i2c_configure_master(void) {
         // Make sure the pins are set as input
-    slave_addr = slave_a;
     I2C1_SCL = 1;
     I2C1_SDA = 1;
 
@@ -64,7 +63,7 @@ unsigned char sync_mode=0, slew=0, add1,w,data,status,length;
 
 unsigned char I2C_Send[21] = "MICROCHIP:I2C_MASTER" ;
 unsigned char I2C_Recv[21];
-unsigned char i2c_master_send(unsigned char length, unsigned char *msg)
+unsigned char i2c_master_send(unsigned char length, unsigned char *msg, unsigned char slave_addr)
 {
         LATDbits.LATD7 = !LATDbits.LATD7;
                 // Set the main state to indicate a write in progress
@@ -102,7 +101,7 @@ unsigned char i2c_master_send(unsigned char length, unsigned char *msg)
 //   is determined by the parameter passed to i2c_master_recv()].
 // The interrupt handler will be responsible for copying the message received into
 
-unsigned char i2c_master_recv(unsigned char length, unsigned char data)
+unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned char slave_addr)
 {
         LATBbits.LATB7 = !LATBbits.LATB7;
             // Set the main state to indicate a read in progress
@@ -152,13 +151,11 @@ void i2c_master_handler() {
                 // Sending of the address has completed, check the ACK status
                 // and send some data.
 
-#ifndef I2C_MASTER_IGNORE_NACK
                 // Check for a NACK (ACKSTAT 0 indicates ACK received)
                 if (1 == SSPCON2bits.ACKSTAT) {
-                    // NACK probably means there is no slave with that address
-                    //i2c_master_handle_error();
+                    // NACK 
                 } else
-#endif
+
                 {
                     unsigned char first_byte;
 
@@ -183,13 +180,11 @@ void i2c_master_handler() {
                 // A data byte has completed, send the next one or finish the
                 // write.
 
-#ifndef I2C_MASTER_IGNORE_NACK
                 // Check for a NACK (ACKSTAT 0 indicates ACK received)
                 if (1 == SSPCON2bits.ACKSTAT) {
-                    // NACK probably means there is no slave with that address
-                    //i2c_master_handle_error();
-                } else
-#endif
+                    // NACK 
+                }
+                else
                 {
                     // The path differs for reads and writes
                     if (MASTER_WRITE == ic_ptr->state) {
@@ -276,13 +271,10 @@ void i2c_master_handler() {
                 // Sending of the address has completed, check the ACK status
                 // and prepare to receive data.
 
-#ifndef I2C_MASTER_IGNORE_NACK
-                // Check for a NACK (ACKSTAT 0 indicates ACK received)
+
                 if (1 == SSPCON2bits.ACKSTAT) {
-                    // NACK probably means there is no slave with that address
-                    //i2c_master_handle_error();
+                    // NACK 
                 } else
-#endif
                 {
                     // Prepare to receive a byte
                     SSPCON2bits.RCEN = 1;
