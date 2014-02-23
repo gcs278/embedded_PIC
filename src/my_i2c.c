@@ -227,7 +227,19 @@ void i2c_int_handler() {
         ic_ptr->error_count = 0;
     }
     if (msg_to_send) {
-        ToMainHigh_sendmsg(0, MSGT_I2C_RQST, (void *) ic_ptr->buffer);
+#if defined(ARM_PIC) || defined(MOTOR_PIC)
+        // SEND I2C Message TO UART
+        msgbuffer[0] = last_reg_recvd;
+        ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) msgbuffer);
+        length = 2;
+        msgbuffer[1] = 0x11;
+        start_i2c_slave_reply(length, msgbuffer);
+#elif defined(SENSOR_PIC)
+
+#elif defined(MAIN_PIC)
+
+#endif
+        //ToMainHigh_sendmsg(0, MSGT_I2C_RQST, (void *) ic_ptr->buffer);
         msg_to_send = 0;
     }
 }

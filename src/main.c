@@ -281,8 +281,11 @@ void main(void) {
                     last_reg_recvd = msgbuffer[0];
                     break;
                 };
+
                 case MSGT_I2C_RQST:
                 {
+                    // NOT USING THIS RIGHT NOW - GRANT
+
                     // Generally, this is *NOT* how I recommend you handle an I2C slave request
                     // I recommend that you handle it completely inside the i2c interrupt handler
                     // by reading the data from a queue (i.e., you would not send a message, as is done
@@ -314,18 +317,7 @@ void main(void) {
                             break;
                         }
                     };*/
-#if defined(ARM_PIC) || defined(MOTOR_PIC)
-                    // SEND I2C Message TO UART
-                    msgbuffer[0] = last_reg_recvd;
-                    ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) msgbuffer);
-                    length = 2;
-                    msgbuffer[1] = 0x11;
-                    start_i2c_slave_reply(length, msgbuffer);
-#elif defined(SENSOR_PIC)
 
-#elif defined(MAIN_PIC)
-
-#endif
                     break;
                 };
                 default:
