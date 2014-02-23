@@ -157,16 +157,17 @@ void InterruptHandlerHigh() {
         // LATDbits.LATD7 = !LATDbits.LATD7;
         #if defined (MAIN_PIC)
         {
-            if(start_stop == 0)
-            {
-                i2c_master_recv(0x02, 0x01);
-                start_stop = 1;
-            }
-            else if (start_stop == 1)
-            {
-                i2c_master_recv(0x02, 0x05);
-                start_stop = 0;
-            }
+            // Start and stop to motor encoder
+//            if(start_stop == 0)
+//            {
+//                i2c_master_recv(0x02, 0x01);
+//                start_stop = 1;
+//            }
+//            else if (start_stop == 1)
+//            {
+//                i2c_master_recv(0x02, 0x05);
+//                start_stop = 0;
+//            }
         }
         #else
         {

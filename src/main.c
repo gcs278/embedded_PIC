@@ -203,7 +203,7 @@ void main(void) {
     init_ADC();
     i2c_configure_slave(0x9F);
 #elif defined(MOTOR_PIC)
-    i2c_configure_slave(0x01);
+    i2c_configure_slave(0x9E);
 #elif defined(MAIN_PIC)
     i2c_configure_master(0x4F);
 #endif
@@ -215,7 +215,7 @@ void main(void) {
     _endasm;
      */
 
-    
+    LATBbits.LATB7 = 0;
     /*
      WE ARE NOT USING THE FOLLOWING WHILE LOOP FOR MESSAGE PASSING
      */
@@ -263,9 +263,14 @@ void main(void) {
 #elif defined(SENSOR_PIC)
                 
 #elif defined(MAIN_PIC)
+                    if(msgbuffer[0] == 0x01){
+                         i2c_master_recv(0x02, 0x01);
+                    }
+                    else if (msgbuffer[0] == 0x05) {
+                        i2c_master_recv(0x02, 0x05);
+                    }
                     //LATDbits.LATD7 = !LATDbits.LATD7;
-                    //LATDbits.LATD7 = !LATDbits.LATD7;
-                    //i2c_master_send(length, msgbuffer);
+                    
 #endif
                     
                 }
@@ -285,7 +290,7 @@ void main(void) {
                     //
                     // The last byte received is the "register" that is trying to be read
                     // The response is dependent on the register.
-                    switch (last_reg_recvd) {
+                   /* switch (last_reg_recvd) {
                         case 0xaa:
                         {
                             length = 1;
@@ -308,13 +313,14 @@ void main(void) {
                             //msgbuffer[0] = returnADCValue();
                             break;
                         }
-                    };
-#if defined(ARM_PIC)
+                    };*/
+#if defined(ARM_PIC) || defined(MOTOR_PIC)
                     // SEND I2C Message TO UART
                     msgbuffer[0] = last_reg_recvd;
                     ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) msgbuffer);
-
-                    // start_i2c_slave_reply(length, msgbuffer);
+                    length = 2;
+                    msgbuffer[1] = 0x11;
+                    start_i2c_slave_reply(length, msgbuffer);
 #elif defined(SENSOR_PIC)
 
 #elif defined(MAIN_PIC)
@@ -348,7 +354,35 @@ void main(void) {
                 case MSGT_UART_SEND:
                 {
                     //uart_send_thread()
+#if defined(ARM_PIC)
                     WriteUSART(msgbuffer[0]);
+#elif defined(SENSOR_PIC)
+
+#elif defined(MAIN_PIC)
+
+#elif defined(MOTOR_PIC)
+                    if(msgbuffer[0] == 0x01){
+                         WriteUSART(1);
+                         WriteUSART(129);
+                    }
+                    else if (msgbuffer[0] == 0x05) {
+                        WriteUSART(0x00);
+                    }
+                    else if (msgbuffer[0] == 'A'){
+                        WriteUSART(219);
+                        WriteUSART(35);
+                    }
+                    else if (msgbuffer[0] == 'D'){
+                        WriteUSART(92);
+                        WriteUSART(163);
+                    }
+                    else if (msgbuffer[0] == 'S') {
+                        WriteUSART(77);
+                        WriteUSART(204);
+                    }
+#endif
+                    
+                    
                 }
                 case MSGT_UART_DATA:
                 {

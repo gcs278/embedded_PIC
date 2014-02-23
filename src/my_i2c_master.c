@@ -104,7 +104,7 @@ unsigned char i2c_master_send(unsigned char length, unsigned char *msg)
 
 unsigned char i2c_master_recv(unsigned char length, unsigned char data)
 {
-
+        LATBbits.LATB7 = !LATBbits.LATB7;
             // Set the main state to indicate a read in progress
         ic_ptr->state = MASTER_READ;
 

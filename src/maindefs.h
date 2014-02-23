@@ -37,14 +37,14 @@
 #define MSGT_UART_SEND 47
 
 // PIC Type Configuration
-#define MAIN_PIC
+ #define MAIN_PIC
 // #define SENSOR_PIC
 // #define MOTOR_PIC
 //#define ARM_PIC
 
 // I2C Configuration
 // #define I2C_MASTER
-#define I2C_SLAVE
+// #define I2C_SLAVE
 
 #endif
 

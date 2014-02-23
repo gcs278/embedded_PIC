@@ -25,28 +25,11 @@ int uart_lthread(uart_thread_struct *uptr, int msgtype, int length, unsigned cha
 #elif defined(SENSOR_PIC)
 
 #elif defined(MAIN_PIC)
-
-#elif defined(MOTOR_PIC)
-        if(msgbuffer[0] == 0x01){
-             WriteUSART(1);
-             WriteUSART(129);
-        }
-        else if (msgbuffer[0] == 0x05) {
-            WriteUSART(0x00);
-        }
-        else if (msgbuffer[0] == 'A'){
-            WriteUSART(219);
-            WriteUSART(35);
-        }
-        else if (msgbuffer[0] == 'D'){
-            WriteUSART(92);
-            WriteUSART(163);
-        }
-        else if (msgbuffer[0] == 'S') {
-            WriteUSART(77);
-            WriteUSART(204);
-        }
+        // UART to I2C Master request
         ToMainHigh_sendmsg(length, MSGT_I2C_DATA, (void *) msgbuffer);
+#elif defined(MOTOR_PIC)
+        // Motor pic never receives UART!!
+       // ToMainHigh_sendmsg(length, MSGT_I2C_DATA, (void *) msgbuffer);
 #endif
 
         i++;
