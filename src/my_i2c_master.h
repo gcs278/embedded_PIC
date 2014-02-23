@@ -84,9 +84,9 @@ typedef struct __i2c_master_comm {
 
 void init_i2c_master(i2c_master_comm *);
 void i2c_master_handler(void);
-void i2c_configure_master(unsigned char);
-unsigned char i2c_master_send(unsigned char,unsigned char *);
-unsigned char i2c_master_recv(unsigned char, unsigned char);
+void i2c_configure_master(void);
+unsigned char i2c_master_send(unsigned char,unsigned char *, unsigned char);
+unsigned char i2c_master_recv(unsigned char, unsigned char, unsigned char);
 
 
 #endif	/* MY_I2C_MASTER_H */

@@ -205,7 +205,7 @@ void main(void) {
 #elif defined(MOTOR_PIC)
     i2c_configure_slave(0x9E);
 #elif defined(MAIN_PIC)
-    i2c_configure_master(0x4F);
+    i2c_configure_master();
 #endif
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
@@ -264,10 +264,10 @@ void main(void) {
                 
 #elif defined(MAIN_PIC)
                     if(msgbuffer[0] == 0x01){
-                         i2c_master_recv(0x02, 0x01);
+                         i2c_master_recv(0x02, 0x01, 0x4F);
                     }
                     else if (msgbuffer[0] == 0x05) {
-                        i2c_master_recv(0x02, 0x05);
+                        i2c_master_recv(0x02, 0x05, 0x4F);
                     }
                     //LATDbits.LATD7 = !LATDbits.LATD7;
                     
