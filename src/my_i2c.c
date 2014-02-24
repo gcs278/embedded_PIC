@@ -227,11 +227,16 @@ void i2c_int_handler() {
         ic_ptr->error_count = 0;
     }
     if (msg_to_send) {
-#if defined(ARM_PIC) || defined(MOTOR_PIC)
+#if defined(ARM_PIC)
         // SEND I2C Message TO UART
-        msgbuffer[0] = last_reg_recvd;
-        ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) msgbuffer);
-        length = 2;
+        //ic_ptr->buffer[2] = '\0';
+        ToMainLow_sendmsg(ic_ptr->buflen, MSGT_UART_SEND, (void *) ic_ptr->buffer);
+#elif defined(MOTOR_PIC)
+        // SEND I2C Message TO UART
+        ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) ic_ptr->buffer);
+        int length = 2;
+        unsigned char msgbuffer[MSGLEN + 1];
+        msgbuffer[0] = 0x01;
         msgbuffer[1] = 0x11;
         start_i2c_slave_reply(length, msgbuffer);
 #elif defined(SENSOR_PIC)

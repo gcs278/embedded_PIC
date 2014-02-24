@@ -95,7 +95,7 @@
 #endif
 
 void main(void) {
-
+    int master_sent = 0;
     char c;
     signed char length;
     unsigned char msgtype;
@@ -215,7 +215,7 @@ void main(void) {
     _endasm;
      */
 
-    LATBbits.LATB7 = 0;
+    LATBbits.LATB7 = 1;
     /*
      WE ARE NOT USING THE FOLLOWING WHILE LOOP FOR MESSAGE PASSING
      */
@@ -263,13 +263,29 @@ void main(void) {
 #elif defined(SENSOR_PIC)
                 
 #elif defined(MAIN_PIC)
-                    if(msgbuffer[0] == 0x01){
-                         i2c_master_recv(0x02, 0x01, 0x4F);
+                    LATBbits.LATB7 = !LATBbits.LATB7;
+                    //WriteUSART(length);
+//                    int i;
+//                    for( i=0; i < length; i++ ) {
+//                        while(BusyUSART());
+//                        WriteUSART(msgbuffer[i]);
+//                    }
+//                    while(BusyUSART());
+//                    WriteUSART(0x7C);
+                  //if(msgbuffer[0] == 0x01){
+                    if ( master_sent == 0 ) {
+                        i2c_master_recv(0x02, 0x01, 0x4F);
+                        master_sent = 1;
+                        
                     }
-                    else if (msgbuffer[0] == 0x05) {
-                        i2c_master_recv(0x02, 0x05, 0x4F);
-                    }
-                    //LATDbits.LATD7 = !LATDbits.LATD7;
+
+                        // i2c_master_recv(0x02, 0x01, 0x4E);
+                   // }
+//                    else if (msgbuffer[0] == 0x05) {
+//                        i2c_master_recv(0x02, 0x05, 0x4F);
+//                        // i2c_master_recv(0x02, 0x05, 0x4E);
+//                    }
+                    // LATDbits.LATD7 = !LATDbits.LATD7;
                     
 #endif
                     
@@ -320,6 +336,10 @@ void main(void) {
 
                     break;
                 };
+                case MSGT_I2C_MASTER_RECV_COMPLETE:
+                {
+                    ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
+                }
                 default:
                 {
                     // Your code should handle this error
@@ -347,11 +367,20 @@ void main(void) {
                 {
                     //uart_send_thread()
 #if defined(ARM_PIC)
-                    WriteUSART(msgbuffer[0]);
+                    // Put the I2C request on UART
+                    WriteUSART(0x2B);
+                    while(BusyUSART());
+                    WriteUSART(0x9F);
+                    while(BusyUSART());
+                    WriteUSART(msgbuffer[0]); // Write message type
+                    while(BusyUSART());
+                    WriteUSART(msgbuffer[1]); // Write length
+                    while(BusyUSART());
+                    WriteUSART(0x5C);
 #elif defined(SENSOR_PIC)
 
 #elif defined(MAIN_PIC)
-
+                    uart_sendthread(length, msgbuffer);
 #elif defined(MOTOR_PIC)
                     if(msgbuffer[0] == 0x01){
                          WriteUSART(1);
@@ -378,7 +407,6 @@ void main(void) {
                 }
                 case MSGT_UART_DATA:
                 {
-               
                     uart_lthread(&uthread_data, msgtype, length, msgbuffer);
                     break;
                 };

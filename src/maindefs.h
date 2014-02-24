@@ -36,11 +36,23 @@
 #define MSGT_I2C_MASTER_RECV_FAILED 46
 #define MSGT_UART_SEND 47
 
+#define UART_STATE_HEADER1 48
+#define UART_STATE_HEADER2 53
+#define UART_STATE_MSGTYPE 49
+#define UART_STATE_LENGTH 50
+#define UART_STATE_DATA 51
+#define UART_STATE_FOOTER 52
+
+#define UART_HEADER1 0x2B
+#define UART_HEADER2 0x9F
+#define UART_FOOTER 0x5C
+
+
 // PIC Type Configuration
  #define MAIN_PIC
 // #define SENSOR_PIC
 // #define MOTOR_PIC
-//#define ARM_PIC
+// #define ARM_PIC
 
 // I2C Configuration
 // #define I2C_MASTER

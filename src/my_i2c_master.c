@@ -65,7 +65,7 @@ unsigned char I2C_Send[21] = "MICROCHIP:I2C_MASTER" ;
 unsigned char I2C_Recv[21];
 unsigned char i2c_master_send(unsigned char length, unsigned char *msg, unsigned char slave_addr)
 {
-        LATDbits.LATD7 = !LATDbits.LATD7;
+        
                 // Set the main state to indicate a write in progress
         ic_ptr->state = MASTER_WRITE;
 
@@ -103,7 +103,6 @@ unsigned char i2c_master_send(unsigned char length, unsigned char *msg, unsigned
 
 unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned char slave_addr)
 {
-        LATBbits.LATB7 = !LATBbits.LATB7;
             // Set the main state to indicate a read in progress
         ic_ptr->state = MASTER_READ;
 

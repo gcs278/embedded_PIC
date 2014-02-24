@@ -160,12 +160,12 @@ void InterruptHandlerHigh() {
             // Start and stop to motor encoder
 //            if(start_stop == 0)
 //            {
-//                i2c_master_recv(0x02, 0x01);
+//                i2c_master_recv(0x02, 0x01, 0x4F);
 //                start_stop = 1;
 //            }
 //            else if (start_stop == 1)
 //            {
-//                i2c_master_recv(0x02, 0x05);
+//                i2c_master_recv(0x02, 0x05, 0x4F);
 //                start_stop = 0;
 //            }
         }
