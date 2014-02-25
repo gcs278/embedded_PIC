@@ -17,6 +17,14 @@
 //       priority interrupts, but this code is not setup for that and this nesting is not
 //       enabled.
 
+int semaphore = 0;
+int motor_value = 0;
+int sensor_value = 30;
+int motor_index = 1;
+unsigned char motorArray[10];
+unsigned char motorSend[10];
+
+
 char ADCValue;
 // ADC buffer, matches size of screen on ARM LCD
 char ADCArray[299];
@@ -25,6 +33,28 @@ int responding = 0;
 int arrayPlaceHolder = 0;
 int sendingPlaceHolder = 299;
 int start_stop = 0;
+
+
+
+unsigned char* motorTickValue(void)
+{
+    while(semaphore == 1){};
+    
+    
+    motorArray[0] = motor_index - 1;
+//    motorSend[1] = motorArray[1];
+//    motorSend[2] = motorArray[2];
+//    motorSend[3] = motorArray[3];
+//    motorSend[4] = motorArray[4];
+//    motorSend[5] = motorArray[5];
+//    motorSend[6] = motorArray[6];
+//    motorSend[7] = motorArray[7];
+//    motorSend[8] = motorArray[8];
+    
+    motor_index = 1;
+    return motorArray;
+    
+}
 
 // PIC is responding to ARM I2C request
 void setStateResponding()
@@ -157,21 +187,42 @@ void InterruptHandlerHigh() {
         // LATDbits.LATD7 = !LATDbits.LATD7;
         #if defined (MAIN_PIC)
         {
-            // Start and stop to motor encoder
-//            if(start_stop == 0)
-//            {
-//                i2c_master_recv(0x02, 0x01, 0x4F);
-//                start_stop = 1;
-//            }
-//            else if (start_stop == 1)
-//            {
-//                i2c_master_recv(0x02, 0x05, 0x4F);
-//                start_stop = 0;
-//            }
+            if(start_stop == 0)
+            {
+                i2c_master_recv(0x0A, 0x05, 0x4F);
+                start_stop = 1;
+            }
+            else if (start_stop == 1)
+            {
+                i2c_master_recv(0x0A, 0x05, 0x4E);
+                start_stop = 0;
+            }
         }
         #else
         {
-            i2c_int_handler();
+            semaphore = 1;
+            #if defined (MOTOR_PIC)
+            {
+                if(motor_index == 10)
+                {
+                    //indicate message lost
+                    motor_index = 1;
+                }
+                motorArray[motor_index] = motor_value;
+                motor_value++;
+                motor_index++;
+            }
+            #elif defined(SENSOR_PIC)
+            {
+                if(motor_index == 10)
+                    motor_index = 1;
+                motorArray[motor_index++] = sensor_value++;
+                motorArray[motor_index++] = sensor_value++;
+                motorArray[motor_index++] = sensor_value++;
+                motorArray[motor_index++] = sensor_value++;
+            }
+            #endif
+            semaphore = 0;
         }
         #endif
 
@@ -204,7 +255,7 @@ void InterruptHandlerHigh() {
                 arrayPlaceHolder++;
             }
         }
-        
+
         //ConvertADC();
     }
     // The *last* thing I do here is check to see if we can
@@ -238,4 +289,3 @@ void InterruptHandlerLow() {
         uart_recv_int_handler();
     }
 }
-

@@ -11,6 +11,8 @@ char returnADCValue(void);
 void setStateResponding(void);
 void setStateReading(void);
 
+unsigned char * motorTickValue(void);
+
 // enable the interrupts (high and low priority)
 void enable_interrupts(void);
 // Are we calling from a high-priority interrupt?
@@ -24,3 +26,4 @@ int	in_low_int(void);
 int	in_main(void);
 
 #endif
+
