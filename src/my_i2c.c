@@ -217,7 +217,7 @@ void i2c_int_handler() {
 
     if (msg_ready) {
         ic_ptr->buffer[ic_ptr->buflen] = ic_ptr->event_count;
-        ToMainHigh_sendmsg(ic_ptr->buflen + 1, MSGT_I2C_DATA, (void *) ic_ptr->buffer);
+        // ToMainHigh_sendmsg(ic_ptr->buflen + 1, MSGT_I2C_DATA, (void *) ic_ptr->buffer);
         ic_ptr->buflen = 0;
     } else if (ic_ptr->error_count >= I2C_ERR_THRESHOLD) {
         error_buf[0] = ic_ptr->error_count;
@@ -231,6 +231,10 @@ void i2c_int_handler() {
         // SEND I2C Message TO UART
         //ic_ptr->buffer[2] = '\0';
         ToMainLow_sendmsg(ic_ptr->buflen, MSGT_UART_SEND, (void *) ic_ptr->buffer);
+        //unsigned char msgbuffer[MSGLEN + 1];
+        //msgbuffer[0] = 0x01;
+        //msgbuffer[1] = 0x11;
+        //start_i2c_slave_reply(2, msgbuffer);
 #elif defined(MOTOR_PIC)
         // SEND I2C Message TO UART
         ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) ic_ptr->buffer);

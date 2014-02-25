@@ -259,11 +259,18 @@ void main(void) {
                 case MSGT_I2C_DATA:
                 {
 #if defined(ARM_PIC)
+                    // LATBbits.LATB7 = !LATBbits.LATB7;
+                    //int count = msgbuffer[2];
+                    //int length = msgbuffer[3]+1;
+                    msgbuffer[0] = msgbuffer[2];
+                    msgbuffer[1] = msgbuffer[3];
+                    int length = 2;
+
                     start_i2c_slave_reply(length, msgbuffer);
 #elif defined(SENSOR_PIC)
                 
 #elif defined(MAIN_PIC)
-                    LATBbits.LATB7 = !LATBbits.LATB7;
+                    // LATBbits.LATB7 = !LATBbits.LATB7;
                     //WriteUSART(length);
 //                    int i;
 //                    for( i=0; i < length; i++ ) {
@@ -273,11 +280,41 @@ void main(void) {
 //                    while(BusyUSART());
 //                    WriteUSART(0x7C);
                   //if(msgbuffer[0] == 0x01){
-                    if ( master_sent == 0 ) {
-                        i2c_master_recv(0x02, 0x01, 0x4F);
-                        master_sent = 1;
-                        
-                    }
+//                    if ( master_sent == 0 ) {
+                      // i2c_master_recv(0x02, 0x01, 0x4F);
+//                        master_sent = 1;
+                    
+                    // Put the I2C request on UART
+                    while(BusyUSART());
+                    WriteUSART(0x2B);
+                    while(BusyUSART());
+                    WriteUSART(0x9F);
+                    while(BusyUSART());
+                    WriteUSART(0x03); // Write Count
+                    while(BusyUSART());
+                    WriteUSART(0x04); // Write length
+                    while(BusyUSART());
+                    WriteUSART(0x01); // Start data
+                    while(BusyUSART());
+                    WriteUSART(0x02);
+                    while(BusyUSART());
+                    WriteUSART(0x03); 
+                    while(BusyUSART());
+                    WriteUSART(0x04); // Write length
+                    while(BusyUSART());
+                    WriteUSART(0x05); // Write length
+                    while(BusyUSART());
+                    WriteUSART(0x06); // Write length
+                    while(BusyUSART());
+                    WriteUSART(0x07); // Write length
+                    while(BusyUSART());
+                    WriteUSART(0x08); // Write length
+                    while(BusyUSART());
+                    WriteUSART(0x09); // Write length
+                    while(BusyUSART());
+                    WriteUSART(0x5C);
+                    
+//                    }
 
                         // i2c_master_recv(0x02, 0x01, 0x4E);
                    // }
@@ -288,7 +325,7 @@ void main(void) {
                     // LATDbits.LATD7 = !LATDbits.LATD7;
                     
 #endif
-                    
+                    break;
                 }
                 case MSGT_I2C_DBG:
                 {
@@ -339,6 +376,7 @@ void main(void) {
                 case MSGT_I2C_MASTER_RECV_COMPLETE:
                 {
                     ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
+                    break;
                 }
                 default:
                 {

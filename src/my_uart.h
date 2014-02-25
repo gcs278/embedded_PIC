@@ -13,6 +13,8 @@ typedef struct __uart_comm {
         unsigned char state;
         unsigned char msgtype;
         unsigned char data_length;
+        unsigned char count;
+        unsigned char data_read;
 } uart_comm;
 
 void init_uart_recv(uart_comm *);
