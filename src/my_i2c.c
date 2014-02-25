@@ -12,6 +12,7 @@
 #include "my_i2c.h"
 #include "interrupts.h"
 
+int sensor_count = 0;
 static i2c_comm *ic_ptr;
 
 
@@ -238,12 +239,16 @@ void i2c_int_handler() {
 #elif defined(MOTOR_PIC)
         // SEND I2C Message TO UART
         ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) ic_ptr->buffer);
-        int length = 2;
-        unsigned char msgbuffer[MSGLEN + 1];
-        msgbuffer[0] = 0x01;
-        msgbuffer[1] = 0x11;
+        int length = 10;
+        unsigned char * msgbuffer = motorTickValue();
+
+
         start_i2c_slave_reply(length, msgbuffer);
 #elif defined(SENSOR_PIC)
+        int length = 10;
+        unsigned char * msgbuffer = motorTickValue();
+        start_i2c_slave_reply(length, msgbuffer);
+
 
 #elif defined(MAIN_PIC)
 

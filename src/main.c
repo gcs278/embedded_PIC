@@ -7,6 +7,7 @@
 #include <xc.h>
 #include <stdlib.h>
 #include <pic18f45j10.h>
+#include "my_adc.h"
 //#include "config.h"
 #include <plib/timers.h>
 #include <plib/usart.h>
@@ -145,7 +146,7 @@ void main(void) {
      */
 
     // initialize Timers
-    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
+    
     //OpenTimer1(TIMER_INT_ON & T1_PS_1_1 & T1_16BIT_RW & T1_SOURCE_INT & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF);
 
     // Peripheral interrupts can have their priority set to high or low
@@ -195,16 +196,20 @@ void main(void) {
 
     
 #if defined(ARM_PIC)
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
     // Initialize the WiFLy
     initWiFly();
     i2c_configure_slave(0x9E);
 #elif defined(SENSOR_PIC)
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4);
     // Set up ADC
     init_ADC();
-    i2c_configure_slave(0x9F);
+    i2c_configure_slave(0x9C);
 #elif defined(MOTOR_PIC)
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_2);
     i2c_configure_slave(0x9E);
 #elif defined(MAIN_PIC)
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4); //set to request data ever .087 seconds or 87 ms
     i2c_configure_master();
 #endif
 
