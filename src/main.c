@@ -209,7 +209,7 @@ void main(void) {
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_2);
     i2c_configure_slave(0x9E);
 #elif defined(MAIN_PIC)
-    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4); //set to request data ever .087 seconds or 87 ms
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_16); //set to request data ever .087 seconds or 87 ms
     i2c_configure_master();
 #endif
 
