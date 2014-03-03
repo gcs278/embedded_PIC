@@ -96,15 +96,15 @@
 #endif
 
 void main(void) {
-    int master_sent = 0;
-    char c;
+    //int master_sent = 0;
+    //char c;
     signed char length;
     unsigned char msgtype;
     unsigned char last_reg_recvd;
     uart_comm uc;
     i2c_comm ic;
     unsigned char msgbuffer[MSGLEN + 1];
-    unsigned char i;
+    
     uart_thread_struct uthread_data; // info for uart_lthread
     timer1_thread_struct t1thread_data; // info for timer1_lthread
     timer0_thread_struct t0thread_data; // info for timer0_lthread
@@ -135,6 +135,8 @@ void main(void) {
     TRISB = 0x0;
     LATB = 0x0;
 
+    // UART TX interrupt flag
+    IPR1bits.TXIP = 0;
 
     // how to set up PORTA for input (for the V4 board with the PIC2680)
     /*
@@ -205,7 +207,7 @@ void main(void) {
     // Rover data buffer - buffer for giving ARM most recent data
     // Allows for asynchronous communication
     unsigned char roverDataBuf[2][I2CMSGLEN];
-    int roverDataBufIndex = 0;
+    unsigned char roverDataBufIndex = 0;
     int j = 0;
     // Initialize the first bit to FF, the garage bit
     for (j; j < I2CMSGLEN; j++) {
@@ -402,7 +404,7 @@ void main(void) {
                 {
 #if defined(ARM_PIC)
                     // Store data that we received in the buffer for ARM
-                    LATBbits.LATB7 = !LATBbits.LATB7;
+                    
                     // Put the data into the current position of the buffer
                     int i;
                     for (i=0; i<I2CMSGLEN; i++) {
@@ -439,16 +441,7 @@ void main(void) {
                 {
                     //uart_send_thread()
 #if defined(ARM_PIC)
-                    // Put the I2C request on UART
-                    WriteUSART(0x2B); // header 1 byte
-                    while(BusyUSART());
-                    WriteUSART(0x9F); // header 2 byte
-                    while(BusyUSART());
-                    WriteUSART(msgbuffer[0]); // Write message type
-                    while(BusyUSART());
-                    WriteUSART(msgbuffer[1]); // Write count
-                    while(BusyUSART());
-                    WriteUSART(0x5C); // footer
+                    uart_send_data(msgbuffer,2);                 
 #elif defined(SENSOR_PIC)
 
 #elif defined(MAIN_PIC)

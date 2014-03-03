@@ -1,6 +1,9 @@
 #include "maindefs.h"
 #include <stdio.h>
 #include "uart_thread.h"
+
+
+#include "my_uart.h"
 #include "interrupts.h"
 #include "messages.h"
 #include "my_i2c.h"
@@ -18,7 +21,7 @@ int uart_lthread(uart_thread_struct *uptr, int msgtype, int length, unsigned cha
         // 		was a printable string)
         msgbuffer[length] = '\0'; // null-terminate the array as a string
 //LATBbits.LATB7 = !LATBbits.LATB7;
-#if defined(ARM_PIC)
+    #if defined(ARM_PIC)
         // UART to I2C slave reply
         //int length =
         //start_i2c_slave_reply(1, msgbuffer);
@@ -34,20 +37,17 @@ int uart_lthread(uart_thread_struct *uptr, int msgtype, int length, unsigned cha
 
 // Sending UART data
 int uart_sendthread(int length, unsigned char *msgbuffer, unsigned char count) {
-        // Put the I2C request on UART
-    while(BusyUSART());
-    WriteUSART(0x2B); // Header byte 1
-    while(BusyUSART());
-    WriteUSART(0x9F); // header byte 2
-    while(BusyUSART());
-    WriteUSART(count); // Write Count
-    while(BusyUSART());
+    unsigned char buf[I2CMSGLEN+1];
+
+    // Put the count on
+    buf[0] = count;
+
+    // Put the data on
     int i;
-    // Get all of the data bytes
-    for (i=0; i < 10; i++) {
-        while(BusyUSART());
-        WriteUSART(msgbuffer[i]); // Start data
+    for (i=0; i < I2CMSGLEN; i++) {
+        buf[i+1] = msgbuffer[i]; // Start data
     }
-    while(BusyUSART());
-    WriteUSART(0x5C); // Footer
+
+    // Send out
+    uart_send_data(buf,I2CMSGLEN+1);
 }

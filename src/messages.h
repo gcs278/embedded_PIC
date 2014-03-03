@@ -3,7 +3,10 @@
 
 // The maximum length (in bytes) of a message
 #define MSGLEN 10
+// Length of the I2C response
 #define I2CMSGLEN 10
+// How many UART data bytes are coming over from rover
+#define UARTDATALEN 9
 // The maximum number of messages in a single queue
 #define MSGQUEUELEN 4
 

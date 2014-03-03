@@ -8,7 +8,7 @@
 #include "user_interrupts.h"
 #include "messages.h"
 #include "my_i2c_master.h"
-#include "my_uart.h"
+
 //----------------------------------------------------------------------------
 // Note: This code for processing interrupts is configured to allow for high and
 //       low priority interrupts.  The high priority interrupt can interrupt the
@@ -24,7 +24,6 @@ int motor_index = 1;
 unsigned char motorArray[10];
 unsigned char motorSend[10];
 
-#if defined(SENSOR_PIC)
 
 char ADCValue;
 // ADC buffer, matches size of screen on ARM LCD
@@ -35,6 +34,27 @@ int arrayPlaceHolder = 0;
 int sendingPlaceHolder = 299;
 int start_stop = 0;
 
+
+
+unsigned char* motorTickValue(void)
+{
+    while(semaphore == 1){};
+    
+    
+    motorArray[0] = motor_index - 1;
+//    motorSend[1] = motorArray[1];
+//    motorSend[2] = motorArray[2];
+//    motorSend[3] = motorArray[3];
+//    motorSend[4] = motorArray[4];
+//    motorSend[5] = motorArray[5];
+//    motorSend[6] = motorArray[6];
+//    motorSend[7] = motorArray[7];
+//    motorSend[8] = motorArray[8];
+    
+    motor_index = 1;
+    return motorArray;
+    
+}
 
 // PIC is responding to ARM I2C request
 void setStateResponding()
@@ -64,29 +84,6 @@ char returnADCValue()
     //else
     // Return current buffer value
     return ADCArray[sendingPlaceHolder];
-}
-
-
-#endif
-
-unsigned char* motorTickValue(void)
-{
-    while(semaphore == 1){};
-    
-    
-    motorArray[0] = motor_index - 1;
-//    motorSend[1] = motorArray[1];
-//    motorSend[2] = motorArray[2];
-//    motorSend[3] = motorArray[3];
-//    motorSend[4] = motorArray[4];
-//    motorSend[5] = motorArray[5];
-//    motorSend[6] = motorArray[6];
-//    motorSend[7] = motorArray[7];
-//    motorSend[8] = motorArray[8];
-    
-    motor_index = 1;
-    return motorArray;
-    
 }
 
 void enable_interrupts() {
@@ -190,16 +187,29 @@ void InterruptHandlerHigh() {
         // LATDbits.LATD7 = !LATDbits.LATD7;
         #if defined (MAIN_PIC)
         {
+<<<<<<< HEAD
 //            if(start_stop == 0)
 //            {
-                i2c_master_recv(0x0A, 0x05, 0x4F);
+//                i2c_master_recv(0x0A, 0x05, 0x4F);
 //                start_stop = 1;
 //            }
 //            else if (start_stop == 1)
 //            {
-                i2c_master_recv(0x0A, 0x05, 0x4E);
+//                i2c_master_recv(0x0A, 0x05, 0x4E);
 //                start_stop = 0;
 //            }
+=======
+            if(start_stop == 0)
+            {
+                //i2c_master_recv(0x0A, 0x05, 0x4F);
+                start_stop = 1;
+            }
+            else if (start_stop == 1)
+            {
+                //i2c_master_recv(0x0A, 0x05, 0x4E);
+                start_stop = 0;
+            }
+>>>>>>> 40654d679abcc144a056ce542427aa7eafea0497
         }
         #else
         {
@@ -239,7 +249,6 @@ void InterruptHandlerHigh() {
         //check if the interrupt is caused by ADC
     if(PIR1bits.ADIF == 1)
     {
-#if defined (SENSOR_PIC)
         //ADCValue = ReadADC();
         //Reset interrupt flag and start conversion again
         PIR1bits.ADIF = 0;
@@ -259,7 +268,7 @@ void InterruptHandlerHigh() {
                 arrayPlaceHolder++;
             }
         }
-#endif
+
         //ConvertADC();
     }
     // The *last* thing I do here is check to see if we can
@@ -291,14 +300,5 @@ void InterruptHandlerLow() {
     if (PIR1bits.RCIF) {
         PIR1bits.RCIF = 0; //clear interrupt flag
         uart_recv_int_handler();
-    }
-
-    // Check if we can an UART message to send
-    if ( PIE1bits.TXIE && PIR1bits.TX1IF ) {
-        // Stop the interrupt
-        PIE1bits.TXIE = 0;
-
-        // Handle that tx data
-        uart_send_int_handler();
     }
 }
