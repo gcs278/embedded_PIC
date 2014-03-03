@@ -229,20 +229,19 @@ void i2c_int_handler() {
     }
     if (msg_to_send) {
 #if defined(ARM_PIC)
-        // SEND I2C Message TO UART
-        //ic_ptr->buffer[2] = '\0';
-        ToMainLow_sendmsg(ic_ptr->buflen, MSGT_UART_SEND, (void *) ic_ptr->buffer);
-        //unsigned char msgbuffer[MSGLEN + 1];
-        //msgbuffer[0] = 0x01;
-        //msgbuffer[1] = 0x11;
-        //start_i2c_slave_reply(2, msgbuffer);
+        // Immediately respond with what is in the buffer
+        ToMainHigh_sendmsg(ic_ptr->buflen, MSGT_I2C_DATA, (void *) ic_ptr->buffer);
+        
+        // Send out the command to the rover via UART
+        ToMainLow_sendmsg(MSGLEN, MSGT_UART_SEND, (void *) ic_ptr->buffer);
+
 #elif defined(MOTOR_PIC)
         // SEND I2C Message TO UART
         ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) ic_ptr->buffer);
+
+        // Reply with random tick values
         int length = 10;
         unsigned char * msgbuffer = motorTickValue();
-
-
         start_i2c_slave_reply(length, msgbuffer);
 #elif defined(SENSOR_PIC)
         int length = 10;

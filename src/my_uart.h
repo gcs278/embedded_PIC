@@ -3,7 +3,7 @@
 
 #include "messages.h"
 
-#define MAXUARTBUF 1
+#define MAXUARTBUF 12
 #if (MAXUARTBUF > MSGLEN)
 #define MAXUARTBUF MSGLEN
 #endif

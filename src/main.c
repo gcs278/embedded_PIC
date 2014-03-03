@@ -146,7 +146,7 @@ void main(void) {
      */
 
     // initialize Timers
-    
+
     //OpenTimer1(TIMER_INT_ON & T1_PS_1_1 & T1_16BIT_RW & T1_SOURCE_INT & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF);
 
     // Peripheral interrupts can have their priority set to high or low
@@ -163,7 +163,7 @@ void main(void) {
     IPR1bits.SSPIP = 1;
 
     IPR1bits.ADIP = 1;
-    
+
 
     // configure the hardware i2c device as a slave (0x9E -> 0x4F) or (0x9A -> 0x4D)
 #if 1
@@ -194,12 +194,25 @@ void main(void) {
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
             USART_CONT_RX & USART_BRGH_HIGH, 38);
 
-    
+
 #if defined(ARM_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
     // Initialize the WiFLy
-    initWiFly();
+    // 3/2/14 - SET UP DOESN'T REQUIRE WIFLY INIT ANY MORE
+    //initWiFly();
     i2c_configure_slave(0x9E);
+
+    // Rover data buffer - buffer for giving ARM most recent data
+    // Allows for asynchronous communication
+    unsigned char roverDataBuf[2][I2CMSGLEN];
+    int roverDataBufIndex = 0;
+    int j = 0;
+    // Initialize the first bit to FF, the garage bit
+    for (j; j < I2CMSGLEN; j++) {
+        roverDataBuf[j][0] = 0xFF;
+    }
+    // initialize my uart recv handling code
+    init_uart_recv(&uc);
 #elif defined(SENSOR_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4);
     // Set up ADC
@@ -211,6 +224,10 @@ void main(void) {
 #elif defined(MAIN_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4); //set to request data ever .087 seconds or 87 ms
     i2c_configure_master();
+
+    // A count buffer, to store the count while I2C slave respond
+    unsigned char countBuffer[5];
+    int countBufferIndex = 0;
 #endif
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
@@ -237,7 +254,7 @@ void main(void) {
     // they can be equated with the tasks in your task diagram if you
     // structure them properly.
     while (1) {
-        
+
         // Call a routine that blocks until either on the incoming
         // messages queues has a message (this may put the processor into
         // an idle mode)
@@ -265,60 +282,58 @@ void main(void) {
                 {
 #if defined(ARM_PIC)
                     // LATBbits.LATB7 = !LATBbits.LATB7;
-                    //int count = msgbuffer[2];
-                    //int length = msgbuffer[3]+1;
-                    msgbuffer[0] = msgbuffer[2];
-                    msgbuffer[1] = msgbuffer[3];
-                    int length = 2;
 
-                    start_i2c_slave_reply(length, msgbuffer);
+                    // Decrement the buffer
+                    if ( roverDataBufIndex > 0)
+                        roverDataBufIndex -= 1;
+
+                    // Reply with most recent data in buffer
+                    start_i2c_slave_reply(I2CMSGLEN, roverDataBuf[roverDataBufIndex]);
+
+                    // Marked the buffer used
+                    roverDataBuf[roverDataBufIndex][0] = 0xFF;
+
 #elif defined(SENSOR_PIC)
-                
+
 #elif defined(MAIN_PIC)
                     // LATBbits.LATB7 = !LATBbits.LATB7;
-                    //WriteUSART(length);
-//                    int i;
-//                    for( i=0; i < length; i++ ) {
-//                        while(BusyUSART());
-//                        WriteUSART(msgbuffer[i]);
-//                    }
-//                    while(BusyUSART());
-//                    WriteUSART(0x7C);
-                  //if(msgbuffer[0] == 0x01){
+
 //                    if ( master_sent == 0 ) {
-                      // i2c_master_recv(0x02, 0x01, 0x4F);
+                       i2c_master_recv(0x0A, msgbuffer[0], 0x4F);
 //                        master_sent = 1;
-                    
+                       countBuffer[countBufferIndex] = msgbuffer[1];
+                       countBufferIndex += 1;
+                       
                     // Put the I2C request on UART
-                    while(BusyUSART());
-                    WriteUSART(0x2B);
-                    while(BusyUSART());
-                    WriteUSART(0x9F);
-                    while(BusyUSART());
-                    WriteUSART(0x03); // Write Count
-                    while(BusyUSART());
-                    WriteUSART(0x04); // Write length
-                    while(BusyUSART());
-                    WriteUSART(0x01); // Start data
-                    while(BusyUSART());
-                    WriteUSART(0x02);
-                    while(BusyUSART());
-                    WriteUSART(0x03); 
-                    while(BusyUSART());
-                    WriteUSART(0x04); // Write length
-                    while(BusyUSART());
-                    WriteUSART(0x05); // Write length
-                    while(BusyUSART());
-                    WriteUSART(0x06); // Write length
-                    while(BusyUSART());
-                    WriteUSART(0x07); // Write length
-                    while(BusyUSART());
-                    WriteUSART(0x08); // Write length
-                    while(BusyUSART());
-                    WriteUSART(0x09); // Write length
-                    while(BusyUSART());
-                    WriteUSART(0x5C);
-                    
+//                    while(BusyUSART());
+//                    WriteUSART(0x2B);
+//                    while(BusyUSART());
+//                    WriteUSART(0x9F);
+//                    while(BusyUSART());
+//                    WriteUSART(0x03); // Write Count
+//                    while(BusyUSART());
+//                    WriteUSART(0x04); // Write length
+//                    while(BusyUSART());
+//                    WriteUSART(0x01); // Start data
+//                    while(BusyUSART());
+//                    WriteUSART(0x02);
+//                    while(BusyUSART());
+//                    WriteUSART(0x03);
+//                    while(BusyUSART());
+//                    WriteUSART(0x04); // Write length
+//                    while(BusyUSART());
+//                    WriteUSART(0x05); // Write length
+//                    while(BusyUSART());
+//                    WriteUSART(0x06); // Write length
+//                    while(BusyUSART());
+//                    WriteUSART(0x07); // Write length
+//                    while(BusyUSART());
+//                    WriteUSART(0x08); // Write length
+//                    while(BusyUSART());
+//                    WriteUSART(0x09); // Write length
+//                    while(BusyUSART());
+//                    WriteUSART(0x5C);
+
 //                    }
 
                         // i2c_master_recv(0x02, 0x01, 0x4E);
@@ -328,7 +343,7 @@ void main(void) {
 //                        // i2c_master_recv(0x02, 0x05, 0x4E);
 //                    }
                     // LATDbits.LATD7 = !LATDbits.LATD7;
-                    
+
 #endif
                     break;
                 }
@@ -383,6 +398,20 @@ void main(void) {
                     ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
                     break;
                 }
+                case MSGT_BUF_PUT_DATA:
+                {
+#if defined(ARM_PIC)
+                    // Store data that we received in the buffer for ARM
+                    LATBbits.LATB7 = !LATBbits.LATB7;
+                    // Put the data into the current position of the buffer
+                    int i;
+                    for (i=0; i<I2CMSGLEN; i++) {
+                        roverDataBuf[roverDataBufIndex][i] = msgbuffer[i];
+                    }
+                    roverDataBufIndex += 1;
+                    break;
+#endif
+                }
                 default:
                 {
                     // Your code should handle this error
@@ -411,42 +440,49 @@ void main(void) {
                     //uart_send_thread()
 #if defined(ARM_PIC)
                     // Put the I2C request on UART
-                    WriteUSART(0x2B);
+                    WriteUSART(0x2B); // header 1 byte
                     while(BusyUSART());
-                    WriteUSART(0x9F);
+                    WriteUSART(0x9F); // header 2 byte
                     while(BusyUSART());
                     WriteUSART(msgbuffer[0]); // Write message type
                     while(BusyUSART());
-                    WriteUSART(msgbuffer[1]); // Write length
+                    WriteUSART(msgbuffer[1]); // Write count
                     while(BusyUSART());
-                    WriteUSART(0x5C);
+                    WriteUSART(0x5C); // footer
 #elif defined(SENSOR_PIC)
 
 #elif defined(MAIN_PIC)
-                    uart_sendthread(length, msgbuffer);
+                    countBufferIndex -= 1;
+                    uart_sendthread(length, msgbuffer,countBuffer[countBufferIndex]);
+
 #elif defined(MOTOR_PIC)
+                    // Full throttle!!
                     if(msgbuffer[0] == 0x01){
                          WriteUSART(1);
                          WriteUSART(129);
                     }
+                    // Stop
                     else if (msgbuffer[0] == 0x05) {
                         WriteUSART(0x00);
                     }
-                    else if (msgbuffer[0] == 'A'){
+                    // Left
+                    else if (msgbuffer[0] == 0x02){
                         WriteUSART(219);
                         WriteUSART(35);
                     }
-                    else if (msgbuffer[0] == 'D'){
+                    // Right
+                    else if (msgbuffer[0] == 0x03){
                         WriteUSART(92);
                         WriteUSART(163);
                     }
-                    else if (msgbuffer[0] == 'S') {
+                    // Backwards
+                    else if (msgbuffer[0] == 0x04) {
                         WriteUSART(77);
                         WriteUSART(204);
                     }
 #endif
-                    
-                    
+
+
                 }
                 case MSGT_UART_DATA:
                 {

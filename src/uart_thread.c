@@ -33,34 +33,21 @@ int uart_lthread(uart_thread_struct *uptr, int msgtype, int length, unsigned cha
 }
 
 // Sending UART data
-int uart_sendthread(int length, unsigned char *msgbuffer) {
+int uart_sendthread(int length, unsigned char *msgbuffer, unsigned char count) {
         // Put the I2C request on UART
     while(BusyUSART());
-    WriteUSART(0x2B);
+    WriteUSART(0x2B); // Header byte 1
     while(BusyUSART());
-    WriteUSART(0x9F);
+    WriteUSART(0x9F); // header byte 2
     while(BusyUSART());
-    WriteUSART(0x03); // Write Count
+    WriteUSART(count); // Write Count
     while(BusyUSART());
-    WriteUSART(0x04); // Write length
+    int i;
+    // Get all of the data bytes
+    for (i=0; i < 10; i++) {
+        while(BusyUSART());
+        WriteUSART(msgbuffer[i]); // Start data
+    }
     while(BusyUSART());
-    WriteUSART(0x01); // Start data
-    while(BusyUSART());
-    WriteUSART(0x02);
-    while(BusyUSART());
-    WriteUSART(0x03);
-    while(BusyUSART());
-    WriteUSART(0x04); // Write length
-    while(BusyUSART());
-    WriteUSART(0x05); // Write length
-    while(BusyUSART());
-    WriteUSART(0x06); // Write length
-    while(BusyUSART());
-    WriteUSART(0x07); // Write length
-    while(BusyUSART());
-    WriteUSART(0x08); // Write length
-    while(BusyUSART());
-    WriteUSART(0x09); // Write length
-    while(BusyUSART());
-    WriteUSART(0x5C);
+    WriteUSART(0x5C); // Footer
 }
