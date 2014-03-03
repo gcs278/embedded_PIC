@@ -189,12 +189,12 @@ void InterruptHandlerHigh() {
         {
 //            if(start_stop == 0)
 //            {
-//                i2c_master_recv(0x0A, 0x05, 0x4F);
+                i2c_master_recv(0x0A, 0x05, 0x4F);
 //                start_stop = 1;
 //            }
 //            else if (start_stop == 1)
 //            {
-//                i2c_master_recv(0x0A, 0x05, 0x4E);
+                i2c_master_recv(0x0A, 0x05, 0x4E);
 //                start_stop = 0;
 //            }
         }

@@ -15,36 +15,29 @@
 #include "interrupts.h"
 
 static i2c_master_comm *ic_ptr;
+i2c_mode mode;
+unsigned char slave_address;
 
-unsigned char slave_addr;
-
-// Configure for I2C Master mode -- the variable "slave_addr" should be stored in
+// Configure for I2C Master mode -- the variable "slave_address" should be stored in
 //   i2c_comm (as pointed to by ic_ptr) for later use.
 
 void i2c_configure_master(void) {
-        // Make sure the pins are set as input
+    // set clock and data as inputs
     I2C1_SCL = 1;
     I2C1_SDA = 1;
 
-    // Set the config bits located in the status register
+    // configure status bits
     SSP1STATbits.SMP = 1;
     SSP1STATbits.CKE = 0;
 
-    // Reset the control registers (just in case)
-    SSP1CON1 = 0;
-    SSP1CON2 = 0;
-
-    // Set the module for I2C master mode (SSPM field of SSP1CON1)
-    SSP1CON1 |= 0b01000;
-
-    // Set the module for 100kHz operation using the given formula:
-    // Fscl = Fosc / (4*(SSPxADD+1))
-    // Solved for SSPxADD:
-    // SSPxADD = (Fosc / (4*Fscl)) - 1
-    // With Fscl = 100kHz and Fosc = 12MHz,  SSPxADD = 29
+    // set frequency to 100kHz
     SSP1ADD = 29;
 
-    // Enable the module
+    // set to master mode
+    SSP1CON1 = 0x8;
+    SSP1CON2 = 0;
+
+    // start I2C Master mode
     SSP1CON1bits.SSPEN = 1;
 }
 
@@ -63,23 +56,17 @@ unsigned char sync_mode=0, slew=0, add1,w,data,status,length;
 
 unsigned char I2C_Send[21] = "MICROCHIP:I2C_MASTER" ;
 unsigned char I2C_Recv[21];
-unsigned char i2c_master_send(unsigned char length, unsigned char *msg, unsigned char slave_addr)
+unsigned char i2c_master_send(unsigned char length, unsigned char *msg, unsigned char slave_address)
 {
-        
-        ic_ptr->state = MASTER_WRITE;
-
-        memcpy(ic_ptr->buffer, msg, length);
-
-        ic_ptr->buffer_length = length;
-
-        ic_ptr->buffer_index = 0;
-
-        ic_ptr->slave_addr = slave_addr;
-
-        SSP1CON2bits.SEN = 1;
-        ic_ptr->substate = I2C_SUBSTATE_START_SENT;
-        LATDbits.LATD7 = !LATDbits.LATD7;
-        return 0;
+    mode = MASTER_WRITE;
+    memcpy(ic_ptr->buffer, msg, length);
+    ic_ptr->buffer_length = length;
+    ic_ptr->buffer_index = 0;
+    ic_ptr->slave_address = slave_address << 1;
+    SSP1CON2bits.SEN = 1;
+    ic_ptr->state = START_BIT;
+    LATDbits.LATD7 = !LATDbits.LATD7;
+    return 0;
 }
 
 // Receiving in I2C Master mode [slave read]
@@ -95,221 +82,161 @@ unsigned char i2c_master_send(unsigned char length, unsigned char *msg, unsigned
 //   is determined by the parameter passed to i2c_master_recv()].
 // The interrupt handler will be responsible for copying the message received into
 
-unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned char slave_addr)
+unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned char slave_address)
 {
+    mode = MASTER_READ;
 
-        ic_ptr->state = MASTER_READ;
-
-        ic_ptr->buffer_length = length;
-                // Copy the provided data to the internal buffer
-        //memcpy(ic_ptr->buffer, data, 0x1);
-
-
-        ic_ptr->buffer_index = 0;
-
-        ic_ptr->slave_addr = slave_addr;
-
-        ic_ptr->register_byte = data;
-
-        SSP1CON2bits.SEN = 1;
-        ic_ptr->substate = I2C_SUBSTATE_START_SENT;
+    ic_ptr->buffer_length = length;
+    ic_ptr->buffer_index = 0;
+    ic_ptr->slave_address = slave_address << 1;
+    ic_ptr->address = data;
+    SSP1CON2bits.SEN = 1;
+    ic_ptr->state = START_BIT;
     return(0);
 }
 
-void i2c_master_handler() {
+void i2c_master_handler()
+{
+    switch (ic_ptr->state)
+    {
+        case START_BIT:
+        {
 
-    if (ic_ptr->state != MASTER_IDLE) {
-        switch (ic_ptr->substate) {
-            case I2C_SUBSTATE_START_SENT:
+            SSPBUF = (ic_ptr->slave_address);
+            ic_ptr->state = WRITE_ADDRESS;
+            break;
+        } 
+
+        case WRITE_ADDRESS:
+        {
+            if (1 == SSPCON2bits.ACKSTAT)
             {
-
-                SSPBUF = (ic_ptr->slave_addr << 1);
-
-                ic_ptr->substate = I2C_SUBSTATE_ADDR_W_SENT;
-
-                break;
-            } 
-
-            case I2C_SUBSTATE_ADDR_W_SENT:
-            {
-
-                if (1 == SSPCON2bits.ACKSTAT) {
                     // NACK 
-                } else
-
+            }
+            else
+            {
+                if (mode == MASTER_WRITE )
                 {
-                    unsigned char first_byte;
-
-                    if (MASTER_WRITE == ic_ptr->state) {
-                        first_byte = ic_ptr->buffer[ic_ptr->buffer_index];
-                    } else if (MASTER_READ == ic_ptr->state) {
-                        first_byte = ic_ptr->register_byte;
-                    }
-
-                    SSPBUF = first_byte;
-
-                    ic_ptr->substate = I2C_SUBSTATE_DATA_SENT;
+                    SSPBUF = ic_ptr->buffer[ic_ptr->buffer_index];
+                } 
+                else if (mode == MASTER_READ )
+                {
+                    SSPBUF = ic_ptr->address;
                 }
-                break;
-            } 
+                ic_ptr->state = DATA;
+            }
+            break;
+        }
 
-            case I2C_SUBSTATE_DATA_SENT:
+        case DATA:
+        {
+
+        if (1 == SSPCON2bits.ACKSTAT)
+        {
+            // NACK
+        }
+        else
+        {
+            if (mode == MASTER_WRITE )
             {
+                        
+                ic_ptr->buffer_index++;
 
-                if (1 == SSPCON2bits.ACKSTAT) {
-                    // NACK 
+                if (ic_ptr->buffer_index < ic_ptr->buffer_length)
+                {     
+                    SSPBUF = ic_ptr->buffer[ic_ptr->buffer_index];
+                    ic_ptr->state = DATA;
                 }
                 else
                 {
-                    if (MASTER_WRITE == ic_ptr->state) {
-                        
-                        ic_ptr->buffer_index++;
-
-                        if (ic_ptr->buffer_index < ic_ptr->buffer_length) {
-                            
-                            SSPBUF = ic_ptr->buffer[ic_ptr->buffer_index];
-
-                            
-                            ic_ptr->substate = I2C_SUBSTATE_DATA_SENT;
-
-                        }
-                        else {
-                            SSPCON2bits.PEN = 1;
-
-                            
-                            ic_ptr->substate = I2C_SUBSTATE_STOP_SENT;
-                        }
-                    }
-                    else if (MASTER_READ == ic_ptr->state) {
-                        
-                        SSPCON2bits.RSEN = 1;
-
-                        
-                        ic_ptr->substate = I2C_SUBSTATE_RESTART_SENT;
-                    }
-
-                } 
-
-                break;
-            } 
-
-            case I2C_SUBSTATE_ERROR:
-                
-            case I2C_SUBSTATE_STOP_SENT:
-            {
-                if (ic_ptr->substate != I2C_SUBSTATE_ERROR) {
-                    
-                    if (MASTER_WRITE == ic_ptr->state) {
-                        ToMainHigh_sendmsg(0, MSGT_I2C_MASTER_SEND_COMPLETE, 0);
-                    } else if (MASTER_READ == ic_ptr->state) {
-                        ToMainHigh_sendmsg(ic_ptr->buffer_index, MSGT_I2C_MASTER_RECV_COMPLETE, ic_ptr->buffer);
-                    }
-
+                    SSPCON2bits.PEN = 1;
+                    ic_ptr->state = STOP_MESSAGE;
                 }
-                else {
-                    
-                    if (MASTER_WRITE == ic_ptr->state) {
-                        ToMainHigh_sendmsg(0, MSGT_I2C_MASTER_SEND_FAILED, 0);
-                    } else if (MASTER_READ == ic_ptr->state) {
-                        ToMainHigh_sendmsg(0, MSGT_I2C_MASTER_RECV_FAILED, 0);
-                    }
-                }
-
-                
-                ic_ptr->state = MASTER_IDLE;
-                ic_ptr->substate = I2C_SUBSTATE_IDLE;
-
-                break;
-            } 
-
-            case I2C_SUBSTATE_RESTART_SENT:
+            }
+            else if (mode == MASTER_READ )
             {
+                SSPCON2bits.RSEN = 1;
+                ic_ptr->state = RESTART;
+            }
+
+        }
+        break;
+        }
                 
-                SSPBUF = (ic_ptr->slave_addr << 1) | 0x01;
+        case RESTART:
+        {
+            SSPBUF = (ic_ptr->slave_address) | 0x01;
+            ic_ptr->state = READ_ADDRESS;
+            break;
+        } 
 
-                
-                ic_ptr->substate = I2C_SUBSTATE_ADDR_R_SENT;
-
-                break;
-            } 
-
-            case I2C_SUBSTATE_ADDR_R_SENT:
+        case READ_ADDRESS:
+        {
+            if (1 == SSPCON2bits.ACKSTAT)
             {
-
-
-                if (1 == SSPCON2bits.ACKSTAT) {
                     // NACK 
-                } else
-                {
-                    
-                    SSPCON2bits.RCEN = 1;
-                    ic_ptr->substate = I2C_SUBSTATE_WAITING_TO_RECEIVE;
-                }
-
-                break;
-            } 
-
-            case I2C_SUBSTATE_WAITING_TO_RECEIVE:
-            {
-
-                ic_ptr->buffer[ic_ptr->buffer_index] = SSPBUF;
-
-                
-                ic_ptr->buffer_index++;
-
-                
-                if (ic_ptr->buffer_index < ic_ptr->buffer_length) {
-                   
-                    SSPCON2bits.ACKDT = 0;
-
-                    
-                    ic_ptr->substate = I2C_SUBSTATE_ACK_SENT;
-
-                }
-                else {
-                    
-                    SSPCON2bits.ACKDT = 1;
-
-                    
-                    ic_ptr->substate = I2C_SUBSTATE_NACK_SENT;
-                }
-
-                SSPCON2bits.ACKEN = 1;
-
-                break;
-            } 
-
-            case I2C_SUBSTATE_ACK_SENT:
-            {
+            } else
+            {        
                 SSPCON2bits.RCEN = 1;
-                ic_ptr->substate = I2C_SUBSTATE_WAITING_TO_RECEIVE;
+                ic_ptr->state = SLAVE_RESPONSE;
+            }
+            break;
+        }
+        case SLAVE_RESPONSE:
+        {
+            ic_ptr->buffer[ic_ptr->buffer_index] = SSPBUF;
 
-                break;
+                
+            ic_ptr->buffer_index++;    
+            if (ic_ptr->buffer_index < ic_ptr->buffer_length)
+            {
+                SSPCON2bits.ACKDT = 0;
+                ic_ptr->state = ACK;
+
+            }
+            else
+            {
+                SSPCON2bits.ACKDT = 1;
+                ic_ptr->state = NACK;
+            }
+            SSPCON2bits.ACKEN = 1;
+            break;
             } 
 
-            case I2C_SUBSTATE_NACK_SENT:
-            {
-                SSPCON2bits.PEN = 1;
-
-                ic_ptr->substate = I2C_SUBSTATE_STOP_SENT;
-
-                break;
-            } 
-
-            default:
-            {
-                break;
-            } // End default case
-        }
-    } else {
-
-        if (I2C_SUBSTATE_ERROR != ic_ptr->substate) {
-            //error occured
+        case ACK:
+        {
+            SSPCON2bits.RCEN = 1;
+            ic_ptr->state = SLAVE_RESPONSE;
+            break;
+        } 
+        case NACK:
+        {
+            SSPCON2bits.PEN = 1;
+            ic_ptr->state = STOP_MESSAGE;
+            break;
         }
 
-        ic_ptr->state = MASTER_IDLE;
-        ic_ptr->substate = I2C_SUBSTATE_IDLE;
+        case STOP_MESSAGE:
+        {
+            if ( mode == MASTER_WRITE )
+            {
+                ToMainHigh_sendmsg(0, MSGT_I2C_MASTER_SEND_COMPLETE, 0);
+            } else if (mode == MASTER_READ )
+            {
+                ToMainHigh_sendmsg(ic_ptr->buffer_index, MSGT_I2C_MASTER_RECV_COMPLETE, ic_ptr->buffer);
+            }
+
+            mode = MASTER_IDLE;
+            ic_ptr->state = IDLE;
+            break;
+        }
+
+        default:
+        {
+            break;
+        } // End default case
     }
+
 }
 
 
@@ -567,9 +494,11 @@ void i2c_int_handler() {
 
 
 void init_i2c_master(i2c_master_comm *ic) {
+    mode = MASTER_IDLE;
+
     ic_ptr = ic;
-    ic_ptr->state = MASTER_IDLE;
-    ic_ptr->substate = I2C_SUBSTATE_IDLE;
+    
+    ic_ptr->state = IDLE;
     //ic_ptr->buffer = 0
     //ic_ptr->buffer_length = 0;
 }
