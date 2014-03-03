@@ -35,6 +35,7 @@
 #include "timer0_thread.h"
 #include "my_adc.h"
 #include "my_wifly.h"
+#include "my_motor.h"
 
 #ifdef __USE18F45J10
 // CONFIG1L
@@ -223,6 +224,7 @@ void main(void) {
 #elif defined(MOTOR_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_2);
     i2c_configure_slave(0x9E);
+    motor_init();
 #elif defined(MAIN_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_16); //set to request data ever .087 seconds or 87 ms
     i2c_configure_master();
@@ -449,30 +451,8 @@ void main(void) {
                     uart_sendthread(length, msgbuffer,countBuffer[countBufferIndex]);
 
 #elif defined(MOTOR_PIC)
-                    // Full throttle!!
-                    if(msgbuffer[0] == 0x01){
-                         WriteUSART(1);
-                         WriteUSART(129);
-                    }
-                    // Stop
-                    else if (msgbuffer[0] == 0x05) {
-                        WriteUSART(0x00);
-                    }
-                    // Left
-                    else if (msgbuffer[0] == 0x02){
-                        WriteUSART(219);
-                        WriteUSART(35);
-                    }
-                    // Right
-                    else if (msgbuffer[0] == 0x03){
-                        WriteUSART(92);
-                        WriteUSART(163);
-                    }
-                    // Backwards
-                    else if (msgbuffer[0] == 0x04) {
-                        WriteUSART(77);
-                        WriteUSART(204);
-                    }
+                    // Send the msg to the motor control thread
+                    motor_encode_lthread(msgbuffer[0]);
 #endif
 
 

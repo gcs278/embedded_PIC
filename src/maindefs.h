@@ -53,8 +53,8 @@
 // PIC Type Configuration
 // #define MAIN_PIC
 // #define SENSOR_PIC
-// #define MOTOR_PIC
-#define ARM_PIC
+ #define MOTOR_PIC
+// #define ARM_PIC
 
 // I2C Configuration
 // #define I2C_MASTER

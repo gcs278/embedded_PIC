@@ -144,7 +144,14 @@ void uart_send_int_handler() {
 }
 
 void uart_send_data(unsigned char* data, int size) {
+#if defined (MOTOR_PIC)
+    // Put the data on
+    int i = 0;
+    for(i; i < size; i++)
+        uc_ptr->sendBuffer[i] = data[i];
 
+    uc_ptr->sendSize = size;
+#else
     // Copy over the data to send to UART buffer
     uc_ptr->sendBuffer[0] = UART_HEADER1;
     uc_ptr->sendBuffer[1] = UART_HEADER2;
@@ -156,9 +163,11 @@ void uart_send_data(unsigned char* data, int size) {
 
     // Put the footer on
     uc_ptr->sendBuffer[i+2] = UART_FOOTER;
-    
+
     // Set the params
     uc_ptr->sendSize = size+3;
+#endif
+    
     uc_ptr->sendCurrent = 0;
 
     // Flag the interrupt
