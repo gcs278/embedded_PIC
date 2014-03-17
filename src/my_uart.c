@@ -7,6 +7,8 @@
 #include "my_uart.h"
 #include "my_i2c.h"
 #include <string.h>
+#include "my_i2c_master.h"
+
 static uart_comm *uc_ptr;
 
 void uart_recv_state(unsigned char byte) {
@@ -86,7 +88,7 @@ void uart_recv_state(unsigned char byte) {
             if ( byte == UART_FOOTER ) {
             // WriteUSART(0x08);
                 uc_ptr->state = UART_STATE_HEADER1;
-                LATBbits.LATB7 = !LATBbits.LATB7;
+                //LATBbits.LATB7 = !LATBbits.LATB7;
 
 #if defined (ARM_PIC)
                 // Copy over into a buffer before passing
@@ -99,6 +101,8 @@ void uart_recv_state(unsigned char byte) {
                 // Put it in the roverDataBuf
                 ToMainHigh_sendmsg(I2CMSGLEN, MSGT_BUF_PUT_DATA, (void *) temp);
 #elif defined (MAIN_PIC)
+                // Wait for first to finish
+                while(i2c_master_busy());
                 ToMainHigh_sendmsg(2, MSGT_I2C_DATA, (void *) uc_ptr->buffer);
 #endif
             }

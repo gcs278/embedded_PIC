@@ -18,7 +18,6 @@ static i2c_comm *ic_ptr;
 
 
 
-
 void start_i2c_slave_reply(unsigned char length, unsigned char *msg) {
 
     for (ic_ptr->outbuflen = 0; ic_ptr->outbuflen < length; ic_ptr->outbuflen++) {
@@ -236,13 +235,14 @@ void i2c_int_handler() {
         ToMainLow_sendmsg(MSGLEN, MSGT_UART_SEND, (void *) ic_ptr->buffer);
 
 #elif defined(MOTOR_PIC)
+
+        ToMainHigh_sendmsg(1,MSGT_I2C_DATA, (void *) ic_ptr->buffer);
+
         // SEND I2C Message TO UART
         ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) ic_ptr->buffer);
 
-        // Reply with random tick values
-        int length = 10;
-        unsigned char * msgbuffer = motorTickValue();
-        start_i2c_slave_reply(length, msgbuffer);
+        
+        
 #elif defined(SENSOR_PIC)
         int length = 10;
         unsigned char * msgbuffer = motorTickValue();

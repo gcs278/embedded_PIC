@@ -9,7 +9,7 @@
 #define	MY_I2C_MASTER_H
 
 #include "messages.h"
-
+#include "i2c_queue.h"
 typedef enum
 {
     MASTER_IDLE,
@@ -42,12 +42,14 @@ typedef struct __i2c_master_comm {
     unsigned char slave_address;
 } i2c_master_comm;
 
+i2c_queue i2c_q;
+
 void init_i2c_master(i2c_master_comm *);
 void i2c_master_handler(void);
 void i2c_configure_master(void);
 unsigned char i2c_master_send(unsigned char,unsigned char *, unsigned char);
 unsigned char i2c_master_recv(unsigned char, unsigned char, unsigned char);
-
+unsigned char i2c_master_busy();
 
 #endif	/* MY_I2C_MASTER_H */
 

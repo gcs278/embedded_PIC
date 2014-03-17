@@ -9,6 +9,7 @@
 #include "messages.h"
 #include "my_i2c_master.h"
 #include "my_uart.h"
+#include "my_motor.h"
 //----------------------------------------------------------------------------
 // Note: This code for processing interrupts is configured to allow for high and
 //       low priority interrupts.  The high priority interrupt can interrupt the
@@ -17,11 +18,14 @@
 //       priority interrupts, but this code is not setup for that and this nesting is not
 //       enabled.
 
+#define motorArraySize 10
+
 int semaphore = 0;
 int motor_value = 0;
 int sensor_value = 30;
-int motor_index = 1;
-unsigned char motorArray[10];
+unsigned int motor_index = 1;
+unsigned char motorArrayLeft[motorArraySize];
+unsigned char motorArrayRight[motorArraySize];
 unsigned char motorSend[10];
 
 #if defined(SENSOR_PIC)
@@ -66,26 +70,25 @@ char returnADCValue()
     return ADCArray[sendingPlaceHolder];
 }
 
+#elif defined (MOTOR_PIC)
+unsigned char timer2_extender = 0;
 
 #endif
 
-unsigned char* motorTickValue(void)
+unsigned char* motorTickValue(unsigned char msgRequest)
 {
     while(semaphore == 1){};
     
-    
-    motorArray[0] = motor_index - 1;
-//    motorSend[1] = motorArray[1];
-//    motorSend[2] = motorArray[2];
-//    motorSend[3] = motorArray[3];
-//    motorSend[4] = motorArray[4];
-//    motorSend[5] = motorArray[5];
-//    motorSend[6] = motorArray[6];
-//    motorSend[7] = motorArray[7];
-//    motorSend[8] = motorArray[8];
-    
-    motor_index = 1;
-    return motorArray;
+    if ( msgRequest == motorDataLeft ) {
+        motorArrayLeft[0] = motor_index - 1;
+        motor_index = 1;
+        return motorArrayLeft;
+    }
+    else {//if (msgRequest == motorDataRight ) {
+        motorArrayRight[0] = motor_index - 1;
+        motor_index = 1;
+        return motorArrayRight;
+    }
     
 }
 
@@ -182,40 +185,60 @@ void InterruptHandlerHigh() {
         #endif
     }
 
+    // Check to see if we have an interrupt on timer 2
+    if ( PIR1bits.TMR2IF ) {
+        // LATBbits.LATB7 = !LATBbits.LATB7;
+        PIR1bits.TMR2IF = 0;
+
+        #if defined (MOTOR_PIC)
+        {
+            if ( timer2_extender == 10 ) {
+                semaphore = 1;
+//            if(motor_index == 10)
+//            {
+//                //indicate message lost
+//                motor_index = 1;
+//            }
+                motorArrayLeft[motor_index % 10] = ticks_left;
+                motorArrayRight[motor_index % 10] = ticks_right;
+                ticks_left = 0;
+                ticks_right = 0;
+
+                motor_index++;
+                semaphore = 0;
+                timer2_extender = 0;
+            } else {
+                timer2_extender++;
+            }
+        }
+#endif
+
+    }
+
     // check to see if we have an interrupt on timer 0
     if (INTCONbits.TMR0IF) {
+        //LATBbits.LATB7 = !LATBbits.LATB7;
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
-        //timer0_int_handler();
+        timer0_int_handler();
         // LATDbits.LATD7 = !LATDbits.LATD7;
         #if defined (MAIN_PIC)
         {
 //            if(start_stop == 0)
 //            {
-                i2c_master_recv(0x0A, 0x05, 0x4F);
+//                i2c_master_recv(0x0A, 0x05, 0x4F);
 //                start_stop = 1;
 //            }
 //            else if (start_stop == 1)
 //            {
-                i2c_master_recv(0x0A, 0x05, 0x4E);
+//                i2c_master_recv(0x0A, 0x05, 0x4E);
 //                start_stop = 0;
 //            }
         }
         #else
         {
             semaphore = 1;
-            #if defined (MOTOR_PIC)
-            {
-                if(motor_index == 10)
-                {
-                    //indicate message lost
-                    motor_index = 1;
-                }
-                motorArray[motor_index] = motor_value;
-                motor_value++;
-                motor_index++;
-            }
-            #elif defined(SENSOR_PIC)
+            #if defined(SENSOR_PIC)
             {
                 if(motor_index == 10)
                     motor_index = 1;
@@ -268,6 +291,16 @@ void InterruptHandlerHigh() {
     // initialized using "init_queues()" -- if you aren't using
     // this, then you shouldn't have this call here
     //SleepIfOkay();
+
+
+#if defined (MOTOR_PIC)
+//    if (INTCONbits.RBIF && INTCONbits.RBIE){
+//        INTCONbits.RBIF = 0;
+//
+//        ticks += 1;
+//    }
+#endif
+
 }
 
 //----------------------------------------------------------------------------
@@ -284,7 +317,7 @@ void InterruptHandlerLow() {
     // check to see if we have an interrupt on timer 1
     if (PIR1bits.TMR1IF) {
         PIR1bits.TMR1IF = 0; //clear interrupt flag
-       // timer1_int_handler();
+        timer1_int_handler();
     }
 
     // check to see if we have an interrupt on USART RX

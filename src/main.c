@@ -36,6 +36,7 @@
 #include "my_adc.h"
 #include "my_wifly.h"
 #include "my_motor.h"
+#include "i2c_queue.h"
 
 #ifdef __USE18F45J10
 // CONFIG1L
@@ -133,8 +134,14 @@ void main(void) {
     init_queues();
 
     // set direction for PORTB to output
+    // TRISB = 0x0;
     TRISB = 0x0;
     LATB = 0x0;
+    //TRISBbits.RB7 = 0;
+    //LATB = 0x0;
+
+
+
 
     // UART TX interrupt flag
     IPR1bits.TXIP = 0;
@@ -222,9 +229,38 @@ void main(void) {
     init_ADC();
     i2c_configure_slave(0x9C);
 #elif defined(MOTOR_PIC)
-    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_2);
+    // Timer 2 Interrupt
+    IPR1bits.TMR2IP = 1;
+    
+    TRISBbits.RB5 = 1;
+    TRISCbits.RC0 = 1;
+    TRISBbits.RB6 = 0;
+    LATBbits.LATB6 = 0;
+
+    OpenTimer0(TIMER_INT_ON & T0_8BIT & T0_SOURCE_EXT & T0_PS_1_1 & T0_EDGE_FALL & T0_EDGE_RISE );
+    OpenTimer1(TIMER_INT_ON & T1_8BIT_RW & T1_SOURCE_EXT & T1_SYNC_EXT_OFF & T1_PS_1_1 & T1_OSC1EN_OFF );
+    OpenTimer2(TIMER_INT_ON & T2_PS_1_16 & T2_POST_1_16); // 10 ms is 16 and 7
+
+    // Configure timer 1 so it only takes 12 ticks
+    WriteTimer1(65523);
+    WriteTimer0(243);
+
+    T1CONbits.RD16 = 0;
     i2c_configure_slave(0x9E);
     motor_init();
+
+//    TRISBbits.RB0 = 1;
+//    TRISBbits.RB1 = 1;
+//
+//    // Enable interrupt
+//    INTCONbits.RBIE = 1;
+//    // Set flag to zero
+//    INTCONbits.RBIF = 0;
+//
+//
+//    INTCON2bits.RBIP = 1;
+//    INTCON2bits.INTEDG0 = 1;
+    
 #elif defined(MAIN_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_16); //set to request data ever .087 seconds or 87 ms
     i2c_configure_master();
@@ -299,11 +335,27 @@ void main(void) {
 
 #elif defined(SENSOR_PIC)
 
+#elif defined(MOTOR_PIC)
+                // Reply with random tick values
+                int length = 10;
+                    unsigned char motorTEST[10];
+                    int i =0;
+                    for(i;i<10;i++) {
+                        motorTEST[i] = 0x12;
+                    }
+                unsigned char * tickbuffer = motorTickValue(msgbuffer[0]);
+                start_i2c_slave_reply(length, tickbuffer);
+
 #elif defined(MAIN_PIC)
                     // LATBbits.LATB7 = !LATBbits.LATB7;
 
+                //putQueue(&i2c_q,msgbuffer[0]);
+                
 //                    if ( master_sent == 0 ) {
+                       LATBbits.LATB6 = !LATBbits.LATB6;
                        i2c_master_recv(0x0A, msgbuffer[0], 0x4F);
+                           //ToMainHigh_sendmsg(2, MSGT_I2C_DATA, (void *) msgbuffer);
+                
 //                        master_sent = 1;
                        countBuffer[countBufferIndex] = msgbuffer[1];
                        countBufferIndex += 1;
@@ -451,6 +503,7 @@ void main(void) {
                     uart_sendthread(length, msgbuffer,countBuffer[countBufferIndex]);
 
 #elif defined(MOTOR_PIC)
+
                     // Send the msg to the motor control thread
                     motor_encode_lthread(msgbuffer[0]);
 #endif

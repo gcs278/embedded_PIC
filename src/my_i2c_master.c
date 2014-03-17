@@ -13,6 +13,7 @@
 #endif
 #include "my_i2c_master.h"
 #include "interrupts.h"
+#include "i2c_queue.h"
 
 static i2c_master_comm *ic_ptr;
 i2c_mode mode;
@@ -39,6 +40,9 @@ void i2c_configure_master(void) {
 
     // start I2C Master mode
     SSP1CON1bits.SSPEN = 1;
+
+    ic_ptr->state = IDLE; 
+    //createQueue(&i2c_q,10);
 }
 
 // Sending in I2C Master mode [slave write]
@@ -84,6 +88,10 @@ unsigned char i2c_master_send(unsigned char length, unsigned char *msg, unsigned
 
 unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned char slave_address)
 {
+    // Check if we are in the middle of something
+    if ( ic_ptr->state != IDLE)
+        return 0;
+
     mode = MASTER_READ;
 
     ic_ptr->buffer_length = length;
@@ -92,7 +100,8 @@ unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned
     ic_ptr->address = data;
     SSP1CON2bits.SEN = 1;
     ic_ptr->state = START_BIT;
-    return(0);
+    LATBbits.LATB7 = !LATBbits.LATB7;
+    return 1;
 }
 
 void i2c_master_handler()
@@ -503,3 +512,11 @@ void init_i2c_master(i2c_master_comm *ic) {
     //ic_ptr->buffer_length = 0;
 }
 
+unsigned char i2c_master_busy() {
+    if( ic_ptr->state == IDLE ) {
+        return 0;
+    }
+    else {
+        return 1;
+    }
+}

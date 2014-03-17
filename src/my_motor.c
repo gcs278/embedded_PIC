@@ -24,6 +24,8 @@ static char stop[] = { 0 };
 
 void motor_init() {
     motor_state = moveStop;
+    ticks_left = 0; // Timer 1
+    ticks_right = 0; // Timer 0
 }
 
 void motor_encode_lthread(unsigned char msg) {
@@ -59,7 +61,7 @@ void motor_encode_lthread(unsigned char msg) {
             uart_send_data(back, 2);
             motor_state = moveBack;
             break;
-            
+
         default:
             break;
 
