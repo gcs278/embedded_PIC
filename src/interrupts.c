@@ -242,10 +242,10 @@ void InterruptHandlerHigh() {
             {
                 if(motor_index == 10)
                     motor_index = 1;
-                motorArray[motor_index++] = sensor_value++;
-                motorArray[motor_index++] = sensor_value++;
-                motorArray[motor_index++] = sensor_value++;
-                motorArray[motor_index++] = sensor_value++;
+//                motorArray[motor_index++] = sensor_value++;
+//                motorArray[motor_index++] = sensor_value++;
+//                motorArray[motor_index++] = sensor_value++;
+//                motorArray[motor_index++] = sensor_value++;
             }
             #endif
             semaphore = 0;

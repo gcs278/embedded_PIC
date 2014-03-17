@@ -245,7 +245,7 @@ void i2c_int_handler() {
         
 #elif defined(SENSOR_PIC)
         int length = 10;
-        unsigned char * msgbuffer = motorTickValue();
+        unsigned char * msgbuffer = motorTickValue(0x00);
         start_i2c_slave_reply(length, msgbuffer);
 
 
