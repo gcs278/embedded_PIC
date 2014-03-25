@@ -20,19 +20,16 @@
 
 #define motorArraySize 10
 
+unsigned char timer2_extender = 0;
 int semaphore = 0;
-int motor_value = 0;
-int sensor_value = 30;
-unsigned int motor_index = 1;
-unsigned char motorArrayLeft[motorArraySize];
-unsigned char motorArrayRight[motorArraySize];
-unsigned char motorSend[10];
+int messages_lost = 0;
 
 #if defined(SENSOR_PIC)
 
 char ADCValue;
+int adc_index = 0;
 // ADC buffer, matches size of screen on ARM LCD
-char ADCArray[299];
+char ADCArray[10];
 // ADC logic variables
 int responding = 0;
 int arrayPlaceHolder = 0;
@@ -70,15 +67,25 @@ char returnADCValue()
     return ADCArray[sendingPlaceHolder];
 }
 
-#elif defined (MOTOR_PIC)
-unsigned char timer2_extender = 0;
+unsigned char* SensorValues() {
+    ADCArray[0] = adc_index + messages_lost - 1;
 
-#endif
+    adc_index = 1;
+    messages_lost = 0;
+    return ADCArray;
+}
+
+#elif defined (MOTOR_PIC)
+int motor_value = 0;
+unsigned int motor_index = 1;
+unsigned char motorArrayLeft[motorArraySize];
+unsigned char motorArrayRight[motorArraySize];
+unsigned char motorSend[10];
 
 unsigned char* motorTickValue(unsigned char msgRequest)
 {
     while(semaphore == 1){};
-    
+
     if ( msgRequest == motorDataLeft ) {
         motorArrayLeft[0] = motor_index - 1;
         motor_index = 1;
@@ -89,8 +96,10 @@ unsigned char* motorTickValue(unsigned char msgRequest)
         motor_index = 1;
         return motorArrayRight;
     }
-    
+
 }
+
+#endif
 
 void enable_interrupts() {
     // Peripheral interrupts can have their priority set to high or low
@@ -221,9 +230,20 @@ void InterruptHandlerHigh() {
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
         timer0_int_handler();
+        
         // LATDbits.LATD7 = !LATDbits.LATD7;
         #if defined (MAIN_PIC)
         {
+//            WriteUSART(i2c_q->end);
+            // Check queue
+//            if ( !isEmpty(i2c_q) ) {
+//               unsigned char message;
+//               LATBbits.LATB7 = !LATBbits.LATB7;
+//               getQueue(i2c_q,message);
+////               i2c_q->end = -1;
+//               WriteUSART(i2c_q->end);
+                //i2c_master_recv(0x0A, message, 0x4F);
+//            }
 //            if(start_stop == 0)
 //            {
 //                i2c_master_recv(0x0A, 0x05, 0x4F);
@@ -231,26 +251,24 @@ void InterruptHandlerHigh() {
 //            }
 //            else if (start_stop == 1)
 //            {
-//                i2c_master_recv(0x0A, 0x05, 0x4E);
+             //   i2cMstrMsgState = I2CMST_SENSOR;
+             //   i2c_master_recv(0x0A, 0x05, 0x4E);
+//            }
 //                start_stop = 0;
 //            }
+
         }
-        #else
-        {
-            semaphore = 1;
-            #if defined(SENSOR_PIC)
-            {
-                if(motor_index == 10)
-                    motor_index = 1;
+#elif defined(SENSOR_PIC)
+{
+                ConvertADC();
+//                if(motor_index == 10)
+//                    motor_index = 1;
 //                motorArray[motor_index++] = sensor_value++;
 //                motorArray[motor_index++] = sensor_value++;
 //                motorArray[motor_index++] = sensor_value++;
-//                motorArray[motor_index++] = sensor_value++;
-            }
-            #endif
-            semaphore = 0;
-        }
-        #endif
+                
+}
+#endif
 
 
 
@@ -258,33 +276,45 @@ void InterruptHandlerHigh() {
     }
 
     // here is where you would check other interrupt flags.
-
+#ifdef SENSOR_PIC
         //check if the interrupt is caused by ADC
     if(PIR1bits.ADIF == 1)
-    {
-#if defined (SENSOR_PIC)
         //ADCValue = ReadADC();
         //Reset interrupt flag and start conversion again
         PIR1bits.ADIF = 0;
         LATDbits.LATD6 = !LATDbits.LATD6;
         int pureADCValue = ReadADC();
         ADCValue = pureADCValue >> 2;
-        if(responding == 0)
+
+        semaphore = 1;
+        if(adc_index == 10)
         {
-            if(arrayPlaceHolder == 299)
-            {
-                responding = 1;
-                arrayPlaceHolder = 0;
-            }
-            else
-            {
-                ADCArray[arrayPlaceHolder] = ADCValue;
-                arrayPlaceHolder++;
-            }
+            //indicate message lost
+            messages_lost = messages_lost + 8;
+            adc_index = 1;
         }
-#endif
+        ADCArray[adc_index] = ADCValue;
+        adc_index++;
+        semaphore = 0;
+
+
+//        if(responding == 0)
+//        {
+//            if(arrayPlaceHolder == 299)
+//            {
+//                responding = 1;
+//                arrayPlaceHolder = 0;
+//            }
+//            else
+//            {
+//                ADCArray[arrayPlaceHolder] = ADCValue;
+//                arrayPlaceHolder++;
+//            }
+//        }
+
         //ConvertADC();
-    }
+#endif
+
     // The *last* thing I do here is check to see if we can
     // allow the processor to go to sleep
     // This code *DEPENDS* on the code in messages.c being

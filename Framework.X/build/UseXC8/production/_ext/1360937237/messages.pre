@@ -5905,7 +5905,11 @@ extern __nonreentrant void _delaywdt(unsigned long);
 extern __nonreentrant void _delay3(unsigned char);
 
 # 10 "../src/interrupts.h"
-int returnADCValue(void);
+char returnADCValue(void);
+void setStateResponding(void);
+void setStateReading(void);
+
+unsigned char * motorTickValue(unsigned char msgRequest);
 
 
 void enable_interrupts(void);
@@ -5919,7 +5923,7 @@ int in_low_int(void);
 
 int in_main(void);
 
-# 10 "../src/messages.h"
+# 51 "../src/messages.h"
 typedef struct __msg {
 unsigned char full;
 unsigned char length;
@@ -5933,7 +5937,7 @@ unsigned char cur_write_ind;
 unsigned char cur_read_ind;
 } msg_queue;
 
-# 43
+# 84
 void init_queues(void);
 
 
@@ -5944,19 +5948,19 @@ void SleepIfOkay(void);
 
 void block_on_To_msgqueues(void);
 
-# 57
+# 98
 signed char ToMainLow_sendmsg(unsigned char,unsigned char,void *);
 signed char ToMainLow_recvmsg(unsigned char,unsigned char *,void *);
 
-# 64
+# 105
 signed char ToMainHigh_sendmsg(unsigned char,unsigned char,void *);
 signed char ToMainHigh_recvmsg(unsigned char,unsigned char *,void *);
 
-# 71
+# 112
 signed char FromMainLow_sendmsg(unsigned char,unsigned char,void *);
 signed char FromMainLow_recvmsg(unsigned char,unsigned char *,void *);
 
-# 78
+# 119
 signed char FromMainHigh_sendmsg(unsigned char,unsigned char,void *);
 signed char FromMainHigh_recvmsg(unsigned char,unsigned char *,void *);
 
@@ -5992,7 +5996,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 14 "../src/messages.c"
+# 19 "../src/messages.c"
 void init_queue(msg_queue *qptr) {
 unsigned char i;
 
@@ -6009,7 +6013,7 @@ unsigned char slot;
 msg *qmsg;
 size_t tlength = length;
 
-# 38
+# 43
 slot = qptr->cur_write_ind;
 qmsg = &(qptr->queue[slot]);
 
@@ -6021,7 +6025,7 @@ return (-1);
 qmsg->length = length;
 qmsg->msgtype = msgtype;
 
-# 55
+# 60
 memcpy(qmsg->data, data, tlength);
 qptr->cur_write_ind = (qptr->cur_write_ind + 1) % 4;
 
@@ -6050,7 +6054,7 @@ return (-3);
 tlength = qmsg->length;
 memcpy(data, qmsg->data, tlength);
 
-# 87
+# 92
 qptr->cur_read_ind = (qptr->cur_read_ind + 1) % 4;
 
 (*msgtype) = qmsg->msgtype;
@@ -6062,63 +6066,63 @@ return (-4);
 }
 }
 
-# 101
+# 106
 static msg_queue ToMainLow_MQ;
 
 signed char ToMainLow_sendmsg(unsigned char length, unsigned char msgtype, void *data) {
 
-# 109
+# 114
 return (send_msg(&ToMainLow_MQ, length, msgtype, data));
 }
 
 signed char ToMainLow_recvmsg(unsigned char maxlength, unsigned char *msgtype, void *data) {
 
-# 118
+# 123
 return (recv_msg(&ToMainLow_MQ, maxlength, msgtype, data));
 }
 
-# 124
+# 129
 static msg_queue ToMainHigh_MQ;
 
 signed char ToMainHigh_sendmsg(unsigned char length, unsigned char msgtype, void *data) {
 
-# 132
+# 137
 return (send_msg(&ToMainHigh_MQ, length, msgtype, data));
 }
 
 signed char ToMainHigh_recvmsg(unsigned char maxlength, unsigned char *msgtype, void *data) {
 
-# 141
+# 146
 return (recv_msg(&ToMainHigh_MQ, maxlength, msgtype, data));
 }
 
-# 148
+# 153
 static msg_queue FromMainLow_MQ;
 
 signed char FromMainLow_sendmsg(unsigned char length, unsigned char msgtype, void *data) {
 
-# 156
+# 161
 return (send_msg(&FromMainLow_MQ, length, msgtype, data));
 }
 
 signed char FromMainLow_recvmsg(unsigned char maxlength, unsigned char *msgtype, void *data) {
 
-# 165
+# 170
 return (recv_msg(&FromMainLow_MQ, maxlength, msgtype, data));
 }
 
-# 172
+# 177
 static msg_queue FromMainHigh_MQ;
 
 signed char FromMainHigh_sendmsg(unsigned char length, unsigned char msgtype, void *data) {
 
-# 180
+# 185
 return (send_msg(&FromMainHigh_MQ, length, msgtype, data));
 }
 
 signed char FromMainHigh_recvmsg(unsigned char maxlength, unsigned char *msgtype, void *data) {
 
-# 189
+# 194
 return (recv_msg(&FromMainHigh_MQ, maxlength, msgtype, data));
 }
 
@@ -6137,11 +6141,11 @@ void enter_sleep_mode(void) {
 OSCCONbits.IDLEN = 1;
 
 
-# 212
+# 217
 #asm
     SLEEP
 
-# 214
+# 219
 #endasm 
 
  }

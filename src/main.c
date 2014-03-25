@@ -3,19 +3,8 @@
  Milestone 1 = 2/11/2014
  */
 
-//#include <plib.h>
-#include <xc.h>
-#include <stdlib.h>
-#include <pic18f45j10.h>
-#include "my_adc.h"
-//#include "config.h"
-#include <plib/timers.h>
-#include <plib/usart.h>
-#include <plib/adc.h>
-
 #include "maindefs.h"
 #include <stdio.h>
-//#include <adc.h>
 #ifndef __XC8
 #include <usart.h>
 #include <i2c.h>
@@ -25,7 +14,6 @@
 #include <plib/i2c.h>
 #include <plib/timers.h>
 #endif
-#include "my_i2c_master.h"
 #include "interrupts.h"
 #include "messages.h"
 #include "my_uart.h"
@@ -37,7 +25,9 @@
 #include "my_wifly.h"
 #include "my_motor.h"
 #include "i2c_queue.h"
+#include "my_i2c_master.h"
 
+//Setup configuration registers
 #ifdef __USE18F45J10
 // CONFIG1L
 #pragma config WDTEN = OFF      // Watchdog Timer Enable bit (WDT disabled (control is placed on SWDTEN bit))
@@ -65,6 +55,7 @@
 #pragma config CCP2MX = DEFAULT // CCP2 MUX bit (CCP2 is multiplexed with RC1)
 
 #else
+
 #ifdef __USE18F2680
 #pragma config OSC = IRCIO67    // Oscillator Selection bits (Internal oscillator block, port function on RA6 and RA7)
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor disabled)
@@ -92,8 +83,109 @@
 // Have to turn this off because I don't see how to enable this in the checkboxes for XC8 in this IDE
 #pragma config XINST = ON       // Extended Instruction Set Enable bit (Instruction set extension and Indexed Addressing mode enabled)
 #endif
+
 #else
-//Something is messed up
+
+#ifdef __USE18F26J50
+
+// PIC18F26J50 Configuration Bit Settings
+
+// CONFIG1L
+#pragma config WDTEN = OFF      // Watchdog Timer (Disabled - Controlled by SWDTEN bit)
+#pragma config PLLDIV = 3       // PLL Prescaler Selection bits (Divide by 3 (12 MHz oscillator input))
+#pragma config STVREN = OFF     // Stack Overflow/Underflow Reset  (Disabled)
+#pragma config XINST = ON       // Extended Instruction Set (Enabled)
+
+// CONFIG1H
+#pragma config CPUDIV = OSC1    // CPU System Clock Postscaler (No CPU system clock divide)
+#pragma config CP0 = OFF        // Code Protect (Program memory is not code-protected)
+
+// CONFIG2L
+#pragma config OSC = HSPLL      // Oscillator (HS+PLL, USB-HS+PLL)
+#pragma config T1DIG = OFF      // T1OSCEN Enforcement (Secondary Oscillator clock source may not be selected)
+#pragma config LPT1OSC = OFF    // Low-Power Timer1 Oscillator (High-power operation)
+#pragma config FCMEN = OFF      // Fail-Safe Clock Monitor (Disabled)
+#pragma config IESO = ON        // Internal External Oscillator Switch Over Mode (Enabled)
+
+// CONFIG2H
+#pragma config WDTPS = 32768    // Watchdog Postscaler (1:32768)
+
+// CONFIG3L
+#pragma config DSWDTOSC = T1OSCREF// DSWDT Clock Select (DSWDT uses T1OSC/T1CKI)
+#pragma config RTCOSC = T1OSCREF// RTCC Clock Select (RTCC uses T1OSC/T1CKI)
+#pragma config DSBOREN = OFF    // Deep Sleep BOR (Disabled)
+#pragma config DSWDTEN = OFF    // Deep Sleep Watchdog Timer (Disabled)
+#pragma config DSWDTPS = G2     // Deep Sleep Watchdog Postscaler (1:2,147,483,648 (25.7 days))
+
+// CONFIG3H
+#pragma config IOL1WAY = ON     // IOLOCK One-Way Set Enable bit (The IOLOCK bit (PPSCON<0>) can be set once)
+#pragma config MSSP7B_EN = MSK7 // MSSP address masking (7 Bit address masking mode)
+
+// CONFIG4L
+#pragma config WPFP = PAGE_63   // Write/Erase Protect Page Start/End Location (Write Protect Program Flash Page 63)
+#pragma config WPEND = PAGE_WPFP// Write/Erase Protect Region Select (valid when WPDIS = 0) (Page WPFP<5:0> through Configuration Words erase/write protected)
+#pragma config WPCFG = OFF      // Write/Erase Protect Configuration Region (Configuration Words page not erase/write-protected)
+
+// CONFIG4H
+#pragma config WPDIS = OFF      // Write Protect Disable bit (WPFP<5:0>/WPEND region ignored)
+
+#else
+
+#ifdef __USE18F46J50
+
+// PIC18F46J50 Configuration Bit Settings
+
+// CONFIG1L
+#pragma config WDTEN = OFF      // Watchdog Timer (Disabled - Controlled by SWDTEN bit)
+#pragma config PLLDIV = 3       // PLL Prescaler Selection bits (Divide by 3 (12 MHz oscillator input))
+#pragma config STVREN = OFF     // Stack Overflow/Underflow Reset (Disabled)
+#ifndef __XC8
+// Have to turn this off because I don't see how to enable this in the checkboxes for XC8 in this IDE
+#pragma config XINST = ON       // Extended Instruction Set (Enabled)
+#else
+#pragma config XINST = OFF      // Extended Instruction Set (Disabled)
+#endif
+
+// CONFIG1H
+#pragma config CPUDIV = OSC1    // CPU System Clock Postscaler (No CPU system clock divide)
+#pragma config CP0 = OFF        // Code Protect (Program memory is not code-protected)
+
+// CONFIG2L
+#pragma config OSC = HSPLL      // Oscillator (HS+PLL, USB-HS+PLL)
+#pragma config T1DIG = OFF      // T1OSCEN Enforcement (Secondary Oscillator clock source may not be selected)
+#pragma config LPT1OSC = OFF    // Low-Power Timer1 Oscillator (High-power operation)
+#pragma config FCMEN = OFF      // Fail-Safe Clock Monitor (Disabled)
+#pragma config IESO = ON        // Internal External Oscillator Switch Over Mode (Enabled)
+
+// CONFIG2H
+#pragma config WDTPS = 32768    // Watchdog Postscaler (1:32768)
+
+// CONFIG3L
+#pragma config DSWDTOSC = T1OSCREF// DSWDT Clock Select (DSWDT uses T1OSC/T1CKI)
+#pragma config RTCOSC = T1OSCREF// RTCC Clock Select (RTCC uses T1OSC/T1CKI)
+#pragma config DSBOREN = OFF    // Deep Sleep BOR (Disabled)
+#pragma config DSWDTEN = OFF    // Deep Sleep Watchdog Timer (Disabled)
+#pragma config DSWDTPS = G2     // Deep Sleep Watchdog Postscaler (1:2,147,483,648 (25.7 days))
+
+// CONFIG3H
+#pragma config IOL1WAY = ON     // IOLOCK One-Way Set Enable bit (The IOLOCK bit (PPSCON<0>) can be set once)
+#pragma config MSSP7B_EN = MSK7 // MSSP address masking (7 Bit address masking mode)
+
+// CONFIG4L
+#pragma config WPFP = PAGE_63   // Write/Erase Protect Page Start/End Location (Write Protect Program Flash Page 63)
+#pragma config WPEND = PAGE_WPFP// Write/Erase Protect Region Select (valid when WPDIS = 0) (Page WPFP<5:0> through Configuration Words erase/write protected)
+#pragma config WPCFG = OFF      // Write/Erase Protect Configuration Region (Configuration Words page not erase/write-protected)
+
+// CONFIG4H
+#pragma config WPDIS = OFF      // Write Protect Disable bit (WPFP<5:0>/WPEND region ignored)
+
+#else
+
+Something is messed up.
+The PIC selected is not supported or the preprocessor directives are wrong.
+
+#endif
+#endif
 #endif
 #endif
 
@@ -111,13 +203,29 @@ void main(void) {
     timer1_thread_struct t1thread_data; // info for timer1_lthread
     timer0_thread_struct t0thread_data; // info for timer0_lthread
 
+    unsigned char movingtest = 0; 
 #ifdef __USE18F2680
     OSCCON = 0xFC; // see datasheet
     // We have enough room below the Max Freq to enable the PLL for this chip
     OSCTUNEbits.PLLEN = 1; // 4x the clock speed in the previous line
 #else
+#ifdef __USE18F45J10
     OSCCON = 0x82; // see datasheeet
     OSCTUNEbits.PLLEN = 0; // Makes the clock exceed the PIC's rated speed if the PLL is on
+#else
+#ifdef __USE18F26J50
+    OSCCON = 0xE0; // see datasheeet
+    OSCTUNEbits.PLLEN = 1;
+#else
+#ifdef __USE18F46J50
+    OSCCON = 0xE0; //see datasheet
+    OSCTUNEbits.PLLEN = 1;
+#else
+    Something is messed up.
+    The PIC selected is not supported or the preprocessor directives are wrong.
+#endif
+#endif
+#endif
 #endif
 
     // initialize my uart recv handling code
@@ -135,8 +243,17 @@ void main(void) {
 
     // set direction for PORTB to output
     // TRISB = 0x0;
+#ifndef __USE18F26J50
+    // set direction for PORTB to output
     TRISB = 0x0;
     LATB = 0x0;
+    
+#ifdef __USE18F46J50
+    TRISBbits.TRISB4 = 1;
+    TRISBbits.TRISB5 = 1;
+#endif
+    
+#endif
     //TRISBbits.RB7 = 0;
     //LATB = 0x0;
 
@@ -200,10 +317,15 @@ void main(void) {
     // Calculating the UART baud rate, equation in documentation
     // 12000000 / (16 * (77 + 1)) = ~ 9600
     // 12000000 / (16 * (38 + 1)) = ~ 19200
+    // 48000000 / (16 * (155 + 1)) = ~ 19200
     // configure the hardware USART device
+#ifdef __USE18F46J50
+    Open1USART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
+            USART_CONT_RX & USART_BRGH_HIGH, 155);
+#else
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
             USART_CONT_RX & USART_BRGH_HIGH, 38);
-
+#endif
 
 #if defined(ARM_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
@@ -227,7 +349,7 @@ void main(void) {
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4);
     // Set up ADC
     init_ADC();
-    i2c_configure_slave(0x9C);
+    i2c_configure_slave(0x9C); // send with address of 4E from master and aardvark
 #elif defined(MOTOR_PIC)
     // Timer 2 Interrupt
     IPR1bits.TMR2IP = 1;
@@ -262,12 +384,14 @@ void main(void) {
 //    INTCON2bits.INTEDG0 = 1;
     
 #elif defined(MAIN_PIC)
-    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_16); //set to request data ever .087 seconds or 87 ms
     i2c_configure_master();
+    // createQueue(i2c_q,10);
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_1); //set to request data ever .087 seconds or 87 ms
+    //OpenTimer1(TIMER_INT_ON & T1_16BIT_RW & T0_SOURCE_INT & T0_PS
+
 
     // A count buffer, to store the count while I2C slave respond
-    unsigned char countBuffer[5];
-    int countBufferIndex = 0;
+    unsigned char msgCount;
 #endif
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
@@ -348,49 +472,26 @@ void main(void) {
 
 #elif defined(MAIN_PIC)
                     // LATBbits.LATB7 = !LATBbits.LATB7;
-
-                //putQueue(&i2c_q,msgbuffer[0]);
+                        LATBbits.LATB6 = !LATBbits.LATB6;
+             //       putQueue(i2c_q,msgbuffer[0]);
                 
 //                    if ( master_sent == 0 ) {
-                       LATBbits.LATB6 = !LATBbits.LATB6;
-                       i2c_master_recv(0x0A, msgbuffer[0], 0x4F);
+                   
+                        i2cMstrMsgState = I2CMST_MOTOR;
+                        if ( msgbuffer[0] == moveForwardFull )
+                            movingtest = 1;
+                        else if( msgbuffer[0] == moveStop )
+                            movingtest = 0;
+                        
+                        // See what pic the message goes to
+                        if ( msgbuffer[0] == sensorDataFull )
+                            i2c_master_recv(0x0A, 0x05, 0x4E);
+                        else
+                            i2c_master_recv(0x0A, msgbuffer[0], 0x4F);
                            //ToMainHigh_sendmsg(2, MSGT_I2C_DATA, (void *) msgbuffer);
                 
 //                        master_sent = 1;
-                       countBuffer[countBufferIndex] = msgbuffer[1];
-                       countBufferIndex += 1;
-                       
-                    // Put the I2C request on UART
-//                    while(BusyUSART());
-//                    WriteUSART(0x2B);
-//                    while(BusyUSART());
-//                    WriteUSART(0x9F);
-//                    while(BusyUSART());
-//                    WriteUSART(0x03); // Write Count
-//                    while(BusyUSART());
-//                    WriteUSART(0x04); // Write length
-//                    while(BusyUSART());
-//                    WriteUSART(0x01); // Start data
-//                    while(BusyUSART());
-//                    WriteUSART(0x02);
-//                    while(BusyUSART());
-//                    WriteUSART(0x03);
-//                    while(BusyUSART());
-//                    WriteUSART(0x04); // Write length
-//                    while(BusyUSART());
-//                    WriteUSART(0x05); // Write length
-//                    while(BusyUSART());
-//                    WriteUSART(0x06); // Write length
-//                    while(BusyUSART());
-//                    WriteUSART(0x07); // Write length
-//                    while(BusyUSART());
-//                    WriteUSART(0x08); // Write length
-//                    while(BusyUSART());
-//                    WriteUSART(0x09); // Write length
-//                    while(BusyUSART());
-//                    WriteUSART(0x5C);
-
-//                    }
+                       msgCount = msgbuffer[1];                 
 
                         // i2c_master_recv(0x02, 0x01, 0x4E);
                    // }
@@ -451,7 +552,34 @@ void main(void) {
                 };
                 case MSGT_I2C_MASTER_RECV_COMPLETE:
                 {
-                    ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
+                    if ( i2cMstrMsgState == I2CMST_SENSOR ) {
+                        
+//                        if ( msgbuffer[1] > 30 ) {
+//
+//                            if ( movingtest == 0) {
+//                                i2cMstrMsgState = I2CMST_MOTOR;
+//                                movingtest = 1;
+//                                i2c_master_recv(0x0A, moveForwardFull, 0x4F);
+//                            }
+//                        }
+                        int length = msgbuffer[0];
+                        if ( length > 0 ) {
+                            int i;
+                            int average;
+                            for (i=0; i < length; i++)
+                                average += msgbuffer[i];
+                            average = average / length;
+                            if ( msgbuffer[1] < 30 ) {
+                                if ( movingtest == 1) {
+                                    i2cMstrMsgState = I2CMST_MOTOR;
+                                    movingtest = 0;
+                                    i2c_master_recv(0x0A, moveStop, 0x4F);
+                                }
+                            }
+                        }
+                    } else {
+                        ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
+                    }
                     break;
                 }
                 case MSGT_BUF_PUT_DATA:
@@ -499,8 +627,7 @@ void main(void) {
 #elif defined(SENSOR_PIC)
 
 #elif defined(MAIN_PIC)
-                    countBufferIndex -= 1;
-                    uart_sendthread(length, msgbuffer,countBuffer[countBufferIndex]);
+                    uart_sendthread(length, msgbuffer,msgCount);
 
 #elif defined(MOTOR_PIC)
 

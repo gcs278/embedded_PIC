@@ -1,0 +1,1525 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F45J10 ]
+[d frameptr 4065 ]
+"21 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c
+[e E5159 . `uc
+IDLE 0
+START_BIT 1
+RESTART 2
+WRITE_ADDRESS 3
+READ_ADDRESS 4
+DATA 5
+SLAVE_RESPONSE 6
+ACK 7
+NACK 8
+STOP_MESSAGE 9
+ERROR 10
+]
+"22
+[e E5154 . `uc
+MASTER_IDLE 0
+MASTER_WRITE 1
+MASTER_READ 2
+]
+"3 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/i2c_queue.c
+[v _createQueue createQueue `(uc  1 e 1 0 ]
+"10
+[v _putQueue putQueue `(uc  1 e 1 0 ]
+"29
+[v _getQueue getQueue `(uc  1 e 1 0 ]
+"46
+[v _isEmpty isEmpty `(uc  1 e 1 0 ]
+"41 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c
+[v _setStateResponding setStateResponding `(v  1 e 0 0 ]
+"47
+[v _setStateReading setStateReading `(v  1 e 0 0 ]
+"53
+[v _returnADCValue returnADCValue `(uc  1 e 1 0 ]
+"70
+[v _SensorValues SensorValues `(*.39uc  1 e 2 0 ]
+"104
+[v _enable_interrupts enable_interrupts `(v  1 e 0 0 ]
+"116
+[v _in_high_int in_high_int `(i  1 e 2 0 ]
+"120
+[v _low_int_active low_int_active `(i  1 e 2 0 ]
+"124
+[v _in_low_int in_low_int `(i  1 e 2 0 ]
+"134
+[v _in_main in_main `(i  1 e 2 0 ]
+"177
+[v _InterruptHandlerHigh InterruptHandlerHigh `II(v  1 e 0 0 ]
+"346
+[v _InterruptHandlerLow InterruptHandlerLow `IIL(v  1 e 0 0 ]
+"192 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c
+[v _main main `(v  1 e 0 0 ]
+"19 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c
+[v _init_queue init_queue `(v  1 e 0 0 ]
+"29
+[v _send_msg send_msg `(c  1 e 1 0 ]
+[v i1_send_msg send_msg `(c  1 e 1 0 ]
+[v i1_send_msg send_msg `(c  1 e 1 0 ]
+[v i2_send_msg send_msg `(c  1 e 1 0 ]
+[v i2_send_msg send_msg `(c  1 e 1 0 ]
+"68
+[v _recv_msg recv_msg `(c  1 e 1 0 ]
+"108
+[v _ToMainLow_sendmsg ToMainLow_sendmsg `(c  1 e 1 0 ]
+[v i1_ToMainLow_sendmsg ToMainLow_sendmsg `(c  1 e 1 0 ]
+[v i1_ToMainLow_sendmsg ToMainLow_sendmsg `(c  1 e 1 0 ]
+"117
+[v _ToMainLow_recvmsg ToMainLow_recvmsg `(c  1 e 1 0 ]
+"131
+[v _ToMainHigh_sendmsg ToMainHigh_sendmsg `(c  1 e 1 0 ]
+"140
+[v _ToMainHigh_recvmsg ToMainHigh_recvmsg `(c  1 e 1 0 ]
+"155
+[v _FromMainLow_sendmsg FromMainLow_sendmsg `(c  1 e 1 0 ]
+"164
+[v _FromMainLow_recvmsg FromMainLow_recvmsg `(c  1 e 1 0 ]
+"179
+[v _FromMainHigh_sendmsg FromMainHigh_sendmsg `(c  1 e 1 0 ]
+"188
+[v _FromMainHigh_recvmsg FromMainHigh_recvmsg `(c  1 e 1 0 ]
+"199
+[v _init_queues init_queues `(v  1 e 0 0 ]
+"207
+[v _enter_sleep_mode enter_sleep_mode `(v  1 e 0 0 ]
+"227
+[v _check_msg check_msg `(uc  1 e 1 0 ]
+"233
+[v _SleepIfOkay SleepIfOkay `(v  1 e 0 0 ]
+"263
+[v _block_on_To_msgqueues block_on_To_msgqueues `(v  1 e 0 0 ]
+"6 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c
+[v _init_ADC init_ADC `(v  1 e 0 0 ]
+"21 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c
+[v _start_i2c_slave_reply start_i2c_slave_reply `(v  1 e 0 0 ]
+"39
+[v _handle_start handle_start `(v  1 e 0 0 ]
+"68
+[v _i2c_int_handler i2c_int_handler `(v  1 e 0 0 ]
+"263
+[v _init_i2c init_i2c `(v  1 e 0 0 ]
+"274
+[v _i2c_configure_slave i2c_configure_slave `(v  1 e 0 0 ]
+"28 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c
+[v _i2c_configure_master i2c_configure_master `(v  1 e 0 0 ]
+"79
+[v _i2c_master_send i2c_master_send `(uc  1 e 1 0 ]
+"105
+[v _i2c_master_recv i2c_master_recv `(uc  1 e 1 0 ]
+"124
+[v _i2c_master_handler i2c_master_handler `(v  1 e 0 0 ]
+"522
+[v _init_i2c_master init_i2c_master `(v  1 e 0 0 ]
+"532
+[v _i2c_master_busy i2c_master_busy `(uc  1 e 1 0 ]
+"29 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_motor.c
+[v _motor_init motor_init `(v  1 e 0 0 ]
+"37
+[v _motor_encode_lthread motor_encode_lthread `(v  1 e 0 0 ]
+"14 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c
+[v _uart_recv_state uart_recv_state `(v  1 e 0 0 ]
+"121
+[v _uart_recv_int_handler uart_recv_int_handler `(v  1 e 0 0 ]
+"150
+[v _uart_send_int_handler uart_send_int_handler `(v  1 e 0 0 ]
+"171
+[v _uart_send_data uart_send_data `(v  1 e 0 0 ]
+"202
+[v _init_uart_recv init_uart_recv `(v  1 e 0 0 ]
+"4 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_wifly.c
+[v _initWiFly initWiFly `(v  1 e 0 0 ]
+"10 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c
+[v _init_timer0_lthread init_timer0_lthread `(v  1 e 0 0 ]
+"14
+[v _timer0_lthread timer0_lthread `(i  1 e 2 0 ]
+"6 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c
+[v _init_timer1_lthread init_timer1_lthread `(v  1 e 0 0 ]
+"14
+[v _timer1_lthread timer1_lthread `(i  1 e 2 0 ]
+"17 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c
+[v _uart_lthread uart_lthread `(i  1 e 2 0 ]
+"39
+[v _uart_sendthread uart_sendthread `(i  1 e 2 0 ]
+"17 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c
+[v _timer0_int_handler timer0_int_handler `(v  1 e 0 0 ]
+"42
+[v _timer1_int_handler timer1_int_handler `(v  1 e 0 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/common/abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/common/abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"31 /Applications/microchip/xc8/v1.30/sources/common/abtofl.c
+[v ___abtofl __abtofl `(d  1 e 3 0 ]
+"33 /Applications/microchip/xc8/v1.30/sources/common/abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"36 /Applications/microchip/xc8/v1.30/sources/common/altofl.c
+[v ___altofl __altofl `(d  1 e 3 0 ]
+"42 /Applications/microchip/xc8/v1.30/sources/common/altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 /Applications/microchip/xc8/v1.30/sources/common/attofl.c
+[v ___attofl __attofl `(d  1 e 3 0 ]
+"37 /Applications/microchip/xc8/v1.30/sources/common/attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"31 /Applications/microchip/xc8/v1.30/sources/common/awtofl.c
+[v ___awtofl __awtofl `(d  1 e 3 0 ]
+"32 /Applications/microchip/xc8/v1.30/sources/common/awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"2 /Applications/microchip/xc8/v1.30/sources/common/bmul.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"63 /Applications/microchip/xc8/v1.30/sources/common/double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 /Applications/microchip/xc8/v1.30/sources/common/fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"49 /Applications/microchip/xc8/v1.30/sources/common/fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/common/flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"50 /Applications/microchip/xc8/v1.30/sources/common/flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 /Applications/microchip/xc8/v1.30/sources/common/flneg.c
+[v ___flneg __flneg `(d  1 e 3 0 ]
+"62 /Applications/microchip/xc8/v1.30/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 /Applications/microchip/xc8/v1.30/sources/common/flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"43 /Applications/microchip/xc8/v1.30/sources/common/fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"86 /Applications/microchip/xc8/v1.30/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"49 /Applications/microchip/xc8/v1.30/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/common/ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"51 /Applications/microchip/xc8/v1.30/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 /Applications/microchip/xc8/v1.30/sources/common/ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"20 /Applications/microchip/xc8/v1.30/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 /Applications/microchip/xc8/v1.30/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/common/lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/common/lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 /Applications/microchip/xc8/v1.30/sources/common/lbtofl.c
+[v ___lbtofl __lbtofl `(d  1 e 3 0 ]
+"27 /Applications/microchip/xc8/v1.30/sources/common/lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"30 /Applications/microchip/xc8/v1.30/sources/common/lltofl.c
+[v ___lltofl __lltofl `(d  1 e 3 0 ]
+"35 /Applications/microchip/xc8/v1.30/sources/common/lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"2 /Applications/microchip/xc8/v1.30/sources/common/lmul.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 /Applications/microchip/xc8/v1.30/sources/common/lttofl.c
+[v ___lttofl __lttofl `(d  1 e 3 0 ]
+"30 /Applications/microchip/xc8/v1.30/sources/common/lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 /Applications/microchip/xc8/v1.30/sources/common/lwtofl.c
+[v ___lwtofl __lwtofl `(d  1 e 3 0 ]
+"28 /Applications/microchip/xc8/v1.30/sources/common/lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"11 /Applications/microchip/xc8/v1.30/sources/common/memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+[v i1_memcpy memcpy `(*.39v  1 e 2 0 ]
+[v i1_memcpy memcpy `(*.39v  1 e 2 0 ]
+[v i2_memcpy memcpy `(*.39v  1 e 2 0 ]
+[v i2_memcpy memcpy `(*.39v  1 e 2 0 ]
+"2 /Applications/microchip/xc8/v1.30/sources/common/tmul.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/common/wmul.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/pic18/asfladd.c
+[v ___asfladd __asfladd `(d  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/pic18/asfldiv.c
+[v ___asfldiv __asfldiv `(d  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/pic18/asflmul.c
+[v ___asflmul __asflmul `(d  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/pic18/asflsub.c
+[v ___asflsub __asflsub `(d  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/pic18/asftadd.c
+[v ___asftadd __asftadd `(f  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/pic18/asftdiv.c
+[v ___asftdiv __asftdiv `(f  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/pic18/asftmul.c
+[v ___asftmul __asftmul `(f  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/pic18/asftsub.c
+[v ___asftsub __asftsub `(f  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.30/sources/pic18/aslmul.c
+[v ___aslmul __aslmul `(ul  1 e 4 0 ]
+"8 /Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c
+[v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
+"22 /Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c
+[v _ConvertADC ConvertADC `(v  1 e 0 0 ]
+[v i2_ConvertADC ConvertADC `(v  1 e 0 0 ]
+[v i2_ConvertADC ConvertADC `(v  1 e 0 0 ]
+"68 /Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c
+[v _OpenADC OpenADC `(v  1 e 0 0 ]
+"24 /Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c
+[v _ReadADC ReadADC `(i  1 e 2 0 ]
+"18 /Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c
+[v _OpenTimer0 OpenTimer0 `(v  1 e 0 0 ]
+"16 /Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c
+[v _WriteTimer0 WriteTimer0 `(v  1 e 0 0 ]
+"15 /Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c
+[v _ReadTimer1 ReadTimer1 `(ui  1 e 2 0 ]
+"14 /Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c
+[v _WriteTimer1 WriteTimer1 `(v  1 e 0 0 ]
+"73 /Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c
+[v _OpenUSART OpenUSART `(v  1 e 0 0 ]
+"15 /Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c
+[v _ReadUSART ReadUSART `(uc  1 e 1 0 ]
+"13 /Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uwrite.c
+[v _WriteUSART WriteUSART `(v  1 e 0 0 ]
+"23 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c
+[v _timer2_extender timer2_extender `uc  1 e 1 0 ]
+"24
+[v _semaphore semaphore `i  1 e 2 0 ]
+"25
+[v _messages_lost messages_lost `i  1 e 2 0 ]
+"29
+[v _ADCValue ADCValue `uc  1 e 1 0 ]
+"30
+[v _adc_index adc_index `i  1 e 2 0 ]
+"32
+[v _ADCArray ADCArray `[10]uc  1 e 10 0 ]
+"34
+[v _responding responding `i  1 e 2 0 ]
+"35
+[v _arrayPlaceHolder arrayPlaceHolder `i  1 e 2 0 ]
+"36
+[v _sendingPlaceHolder sendingPlaceHolder `i  1 e 2 0 ]
+"37
+[v _start_stop start_stop `i  1 e 2 0 ]
+[s S1011 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
+"106 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c
+[s S1016 __msg_queue 54 `[4]S1011 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
+[v _ToMainLow_MQ ToMainLow_MQ `S1016  1 s 54 ToMainLow_MQ ]
+"129
+[v _ToMainHigh_MQ ToMainHigh_MQ `S1016  1 s 54 ToMainHigh_MQ ]
+"153
+[v _FromMainLow_MQ FromMainLow_MQ `S1016  1 s 54 FromMainLow_MQ ]
+"177
+[v _FromMainHigh_MQ FromMainHigh_MQ `S1016  1 s 54 FromMainHigh_MQ ]
+"197
+[v _MQ_Main_Willing_to_block MQ_Main_Willing_to_block `uc  1 s 1 MQ_Main_Willing_to_block ]
+"15 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c
+[v _sensor_count sensor_count `i  1 e 2 0 ]
+[s S428 __i2c_comm 28 `[10]uc 1 buffer 10 0 `uc 1 buflen 1 10 `uc 1 event_count 1 11 `uc 1 status 1 12 `uc 1 error_code 1 13 `uc 1 error_count 1 14 `[10]uc 1 outbuffer 10 15 `uc 1 outbuflen 1 25 `uc 1 outbufind 1 26 `uc 1 slave_addr 1 27 ]
+"16
+[v _ic_ptr ic_ptr `*.39S428  1 s 2 ic_ptr ]
+[s S1867 __i2c_master_comm 15 `E5159 1 state 1 0 `[10]uc 1 buffer 10 1 `uc 1 buffer_length 1 11 `uc 1 buffer_index 1 12 `uc 1 address 1 13 `uc 1 slave_address 1 14 ]
+"21 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c
+[v my_i2c_master@ic_ptr ic_ptr `*.39S1867  1 s 2 ic_ptr ]
+"22
+[v _mode mode `E5154  1 e 1 0 ]
+"23
+[v _slave_address slave_address `uc  1 e 1 0 ]
+"75
+[v _sync_mode sync_mode `uc  1 e 1 0 ]
+[v _slew slew `uc  1 e 1 0 ]
+[v _add1 add1 `uc  1 e 1 0 ]
+[v _w w `uc  1 e 1 0 ]
+[v _data data `uc  1 e 1 0 ]
+[v _status status `uc  1 e 1 0 ]
+[v _length length `uc  1 e 1 0 ]
+"77
+[v _I2C_Send I2C_Send `[21]uc  1 e 21 0 ]
+"78
+[v _I2C_Recv I2C_Recv `[21]uc  1 e 21 0 ]
+"17 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.h
+[v _i2cMstrMsgState i2cMstrMsgState `uc  1 e 1 0 ]
+[s S181 i2c_queue 8 `uc 1 size 1 0 `i 1 front 2 1 `i 1 end 2 3 `*.39uc 1 elements 3 5 ]
+"51
+[v _i2c_q i2c_q `*.39S181  1 e 2 0 ]
+"19 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_motor.c
+[v _forwardFull forwardFull `[2]uc  1 s 2 forwardFull ]
+"20
+[v _forwardHalf forwardHalf `[2]uc  1 s 2 forwardHalf ]
+"21
+[v _forwardSlow forwardSlow `[2]uc  1 s 2 forwardSlow ]
+"22
+[v _left left `[2]uc  1 s 2 left ]
+"23
+[v _left2 left2 `[1]uc  1 s 1 left2 ]
+"24
+[v _right2 right2 `[1]uc  1 s 1 right2 ]
+"25
+[v _right right `[2]uc  1 s 2 right ]
+"26
+[v _back back `[2]uc  1 s 2 back ]
+"27
+[v _stop stop `[1]uc  1 s 1 stop ]
+"25 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_motor.h
+[v _motor_state motor_state `uc  1 e 1 0 ]
+"26
+[v _ticks_right ticks_right `ui  1 e 2 0 ]
+"27
+[v _ticks_left ticks_left `ui  1 e 2 0 ]
+"28
+[v _ticks_left_C ticks_left_C `ui  1 e 2 0 ]
+"29
+[v _ticks_right_C ticks_right_C `ui  1 e 2 0 ]
+[s S186 __uart_comm 28 `[10]uc 1 buffer 10 0 `uc 1 buflen 1 10 `uc 1 state 1 11 `uc 1 msgtype 1 12 `uc 1 data_length 1 13 `uc 1 count 1 14 `uc 1 data_read 1 15 `[10]uc 1 sendBuffer 10 16 `uc 1 sendSize 1 26 `uc 1 sendCurrent 1 27 ]
+"12 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c
+[v _uc_ptr uc_ptr `*.39S186  1 s 2 uc_ptr ]
+"14 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c
+[v _i i `i  1 e 2 0 ]
+"2065 /Applications/microchip/xc8/v1.30/include/pic18f45j10.h
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S21 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2113
+[s S30 . 1 `uc 1 LB0 1 0 :1:0 
+]
+[s S32 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LB1 1 0 :1:1 
+]
+[s S35 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LB2 1 0 :1:2 
+]
+[s S38 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LB3 1 0 :1:3 
+]
+[s S41 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LB4 1 0 :1:4 
+]
+[s S44 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LB5 1 0 :1:5 
+]
+[s S47 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LB6 1 0 :1:6 
+]
+[s S50 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LB7 1 0 :1:7 
+]
+[u S53 . 1 `S21 1 . 1 0 `S30 1 . 1 0 `S32 1 . 1 0 `S35 1 . 1 0 `S38 1 . 1 0 `S41 1 . 1 0 `S44 1 . 1 0 `S47 1 . 1 0 `S50 1 . 1 0 ]
+[v _LATBbits LATBbits `VES53  1 e 1 @3978 ]
+"2377
+[v _LATDbits LATDbits `VES53  1 e 1 @3980 ]
+"2722
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+[s S758 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"2975
+[s S767 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S776 . 1 `S758 1 . 1 0 `S767 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES776  1 e 1 @3988 ]
+"3196
+[v _TRISDbits TRISDbits `VES776  1 e 1 @3989 ]
+[s S1250 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PLLEN 1 0 :1:6 
+]
+"3559
+[u S1253 . 1 `S1250 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES1253  1 e 1 @3995 ]
+[s S197 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"3591
+[s S206 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S211 . 1 `S197 1 . 1 0 `S206 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES211  1 e 1 @3997 ]
+"3673
+[v _PIR1bits PIR1bits `VES211  1 e 1 @3998 ]
+"3755
+[v _IPR1bits IPR1bits `VES211  1 e 1 @3999 ]
+"4080
+[v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
+[s S250 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"4135
+[s S259 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 ADEN 1 0 :1:3 
+`uc 1 . 1 0 :2:4 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S265 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 NOT_RC8 1 0 :1:6 
+]
+[s S268 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S271 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S274 . 1 `uc 1 RX9D1 1 0 :1:0 
+`uc 1 OERR1 1 0 :1:1 
+`uc 1 FERR1 1 0 :1:2 
+`uc 1 ADDEN1 1 0 :1:3 
+`uc 1 CREN1 1 0 :1:4 
+`uc 1 SREN1 1 0 :1:5 
+`uc 1 RX91 1 0 :1:6 
+`uc 1 SPEN1 1 0 :1:7 
+]
+[s S283 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[u S286 . 1 `S250 1 . 1 0 `S259 1 . 1 0 `S265 1 . 1 0 `S268 1 . 1 0 `S271 1 . 1 0 `S274 1 . 1 0 `S283 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES286  1 e 1 @4011 ]
+"4417
+[v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+[s S3086 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"4462
+[s S3095 . 1 `uc 1 TXD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S3099 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 NOT_TX8 1 0 :1:6 
+]
+[s S3102 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nTX8 1 0 :1:6 
+]
+[s S3105 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[u S3114 . 1 `S3086 1 . 1 0 `S3095 1 . 1 0 `S3099 1 . 1 0 `S3102 1 . 1 0 `S3105 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES3114  1 e 1 @4012 ]
+"4704
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"4715
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"4726
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"4737
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
+"5576
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"5646
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"5736
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S2738 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"5786
+[s S2741 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S2748 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADCAL 1 0 :1:7 
+]
+[s S2757 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[s S2760 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S2763 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S2766 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S2769 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S2772 . 1 `S2738 1 . 1 0 `S2741 1 . 1 0 `S2738 1 . 1 0 `S2748 1 . 1 0 `S2757 1 . 1 0 `S2760 1 . 1 0 `S2763 1 . 1 0 `S2766 1 . 1 0 `S2769 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES2772  1 e 1 @4034 ]
+"5871
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"5877
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"5883
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
+"5888
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @4037 ]
+[s S802 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"5976
+[s S811 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 ACKDT1 1 0 :1:5 
+]
+[s S814 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 ACKEN1 1 0 :1:4 
+]
+[s S817 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 ACKSTAT1 1 0 :1:6 
+]
+[s S820 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK1 1 0 :1:1 
+]
+[s S823 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK11 1 0 :1:1 
+]
+[s S826 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 ADMSK2 1 0 :1:2 
+]
+[s S829 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 ADMSK21 1 0 :1:2 
+]
+[s S832 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADMSK3 1 0 :1:3 
+]
+[s S835 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADMSK31 1 0 :1:3 
+]
+[s S838 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 ADMSK4 1 0 :1:4 
+]
+[s S841 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 ADMSK41 1 0 :1:4 
+]
+[s S844 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 ADMSK5 1 0 :1:5 
+]
+[s S847 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 ADMSK51 1 0 :1:5 
+]
+[s S850 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 GCEN1 1 0 :1:7 
+]
+[s S853 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PEN1 1 0 :1:2 
+]
+[s S856 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 RCEN1 1 0 :1:3 
+]
+[s S859 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RSEN1 1 0 :1:1 
+]
+[s S862 . 1 `uc 1 SEN1 1 0 :1:0 
+]
+[u S864 . 1 `S802 1 . 1 0 `S811 1 . 1 0 `S814 1 . 1 0 `S817 1 . 1 0 `S820 1 . 1 0 `S823 1 . 1 0 `S826 1 . 1 0 `S829 1 . 1 0 `S832 1 . 1 0 `S835 1 . 1 0 `S838 1 . 1 0 `S841 1 . 1 0 `S844 1 . 1 0 `S847 1 . 1 0 `S850 1 . 1 0 `S853 1 . 1 0 `S856 1 . 1 0 `S859 1 . 1 0 `S862 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES864  1 e 1 @4037 ]
+"6192
+[v _SSP1CON2bits SSP1CON2bits `VES864  1 e 1 @4037 ]
+"6326
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+"6331
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @4038 ]
+[s S440 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"6382
+[s S446 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[s S451 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CKP1 1 0 :1:4 
+]
+[s S454 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SSPEN1 1 0 :1:5 
+]
+[s S457 . 1 `uc 1 SSPM01 1 0 :1:0 
+]
+[s S459 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 SSPM11 1 0 :1:1 
+]
+[s S462 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 SSPM21 1 0 :1:2 
+]
+[s S465 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPM31 1 0 :1:3 
+]
+[s S468 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 SSPOV1 1 0 :1:6 
+]
+[s S471 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 WCOL1 1 0 :1:7 
+]
+[u S474 . 1 `S440 1 . 1 0 `S446 1 . 1 0 `S451 1 . 1 0 `S454 1 . 1 0 `S457 1 . 1 0 `S459 1 . 1 0 `S462 1 . 1 0 `S465 1 . 1 0 `S468 1 . 1 0 `S471 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES474  1 e 1 @4038 ]
+"6516
+[v _SSP1CON1bits SSP1CON1bits `VES474  1 e 1 @4038 ]
+"6605
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+[s S520 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"6743
+[s S523 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S526 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S541 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S546 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S552 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S557 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S560 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S563 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S568 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S573 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S578 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 DA 1 0 :1:5 
+]
+[s S581 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+]
+[s S584 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 START 1 0 :1:3 
+]
+[s S587 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 STOP 1 0 :1:4 
+]
+[s S590 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+]
+[s S593 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[s S596 . 1 `uc 1 BF1 1 0 :1:0 
+]
+[s S598 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CKE1 1 0 :1:6 
+]
+[s S601 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 DA1 1 0 :1:5 
+]
+[s S604 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW1 1 0 :1:2 
+]
+[s S607 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SMP1 1 0 :1:7 
+]
+[s S610 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 START1 1 0 :1:3 
+]
+[s S613 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 STOP1 1 0 :1:4 
+]
+[s S616 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 UA1 1 0 :1:1 
+]
+[u S619 . 1 `S520 1 . 1 0 `S523 1 . 1 0 `S526 1 . 1 0 `S520 1 . 1 0 `S523 1 . 1 0 `S541 1 . 1 0 `S546 1 . 1 0 `S552 1 . 1 0 `S557 1 . 1 0 `S560 1 . 1 0 `S563 1 . 1 0 `S568 1 . 1 0 `S573 1 . 1 0 `S578 1 . 1 0 `S581 1 . 1 0 `S584 1 . 1 0 `S587 1 . 1 0 `S590 1 . 1 0 `S593 1 . 1 0 `S596 1 . 1 0 `S598 1 . 1 0 `S601 1 . 1 0 `S604 1 . 1 0 `S607 1 . 1 0 `S610 1 . 1 0 `S613 1 . 1 0 `S616 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES619  1 e 1 @4039 ]
+"7074
+[v _SSP1STATbits SSP1STATbits `VES619  1 e 1 @4039 ]
+"7278
+[v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
+"7283
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @4040 ]
+"7583
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"7925
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"7931
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
+[s S1460 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"7979
+[s S1462 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S1465 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S1468 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S1471 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S1474 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :2:5 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S1482 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S1488 . 1 `S1460 1 . 1 0 `S1462 1 . 1 0 `S1465 1 . 1 0 `S1468 1 . 1 0 `S1471 1 . 1 0 `S1474 1 . 1 0 `S1482 1 . 1 0 ]
+[v _RCONbits RCONbits `VES1488  1 e 1 @4048 ]
+"8090
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S1027 . 1 `uc 1 SCS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 IDLEN 1 0 :1:7 
+]
+"8108
+[s S1033 . 1 `uc 1 SCS0 1 0 :1:0 
+`uc 1 SCS1 1 0 :1:1 
+]
+[u S1036 . 1 `S1027 1 . 1 0 `S1033 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES1036  1 e 1 @4051 ]
+"8137
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+[s S3011 . 1 `uc 1 T0PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 T08BIT 1 0 :1:6 
+`uc 1 TMR0ON 1 0 :1:7 
+]
+"8157
+[s S3018 . 1 `uc 1 T0PS0 1 0 :1:0 
+`uc 1 T0PS1 1 0 :1:1 
+`uc 1 T0PS2 1 0 :1:2 
+]
+[u S3022 . 1 `S3011 1 . 1 0 `S3018 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES3022  1 e 1 @4053 ]
+"8212
+[v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
+"8218
+[v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
+[s S1612 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"8576
+[s S1615 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S1624 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IP 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S1629 . 1 `S1612 1 . 1 0 `S1615 1 . 1 0 `S1624 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES1629  1 e 1 @4081 ]
+[s S1525 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"8677
+[s S1534 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S1543 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[s S1552 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S1561 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S1565 . 1 `S1525 1 . 1 0 `S1534 1 . 1 0 `S1543 1 . 1 0 `S1552 1 . 1 0 `S1561 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1565  1 e 1 @4082 ]
+[s S233 . 1 `uc 1 RX_NINE 1 0 :1:0 
+`uc 1 TX_NINE 1 0 :1:1 
+`uc 1 FRAME_ERROR 1 0 :1:2 
+`uc 1 OVERRUN_ERROR 1 0 :1:3 
+`uc 1 fill 1 0 :4:4 
+]
+"5 /Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/udefs.c
+[u S239 USART 1 `uc 1 val 1 0 `S233 1 . 1 0 ]
+[v _USART_Status USART_Status `S239  1 e 1 0 ]
+"192 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c
+[v _main main `(v  1 e 0 0 ]
+{
+"567
+[v main@i i `i  1 a 2 17 ]
+"568
+[v main@average average `i  1 a 2 14 ]
+"555
+[v main@length_1452 length `i  1 a 2 19 ]
+[s S428 __i2c_comm 28 `[10]uc 1 buffer 10 0 `uc 1 buflen 1 10 `uc 1 event_count 1 11 `uc 1 status 1 12 `uc 1 error_code 1 13 `uc 1 error_count 1 14 `[10]uc 1 outbuffer 10 15 `uc 1 outbuflen 1 25 `uc 1 outbufind 1 26 `uc 1 slave_addr 1 27 ]
+"199
+[v main@ic ic `S428  1 a 28 55 ]
+[s S186 __uart_comm 28 `[10]uc 1 buffer 10 0 `uc 1 buflen 1 10 `uc 1 state 1 11 `uc 1 msgtype 1 12 `uc 1 data_length 1 13 `uc 1 count 1 14 `uc 1 data_read 1 15 `[10]uc 1 sendBuffer 10 16 `uc 1 sendSize 1 26 `uc 1 sendCurrent 1 27 ]
+"198
+[v main@uc uc `S186  1 a 28 27 ]
+"200
+[v main@msgbuffer msgbuffer `[11]uc  1 a 11 3 ]
+[s S168 __timer0_thread_struct 2 `ui 1 msgcount 2 0 ]
+"204
+[v main@t0thread_data t0thread_data `S168  1 a 2 23 ]
+[s S149 __timer1_thread_struct 2 `ui 1 msgcount 2 0 ]
+"203
+[v main@t1thread_data t1thread_data `S149  1 a 2 21 ]
+[s S129 __uart_thread_struct 2 `i 1 data 2 0 ]
+"202
+[v main@uthread_data uthread_data `S129  1 a 2 1 ]
+"195
+[v main@length length `c  1 a 1 26 ]
+"196
+[v main@msgtype msgtype `uc  1 a 1 25 ]
+"206
+[v main@movingtest movingtest `uc  1 a 1 16 ]
+"197
+[v main@last_reg_recvd last_reg_recvd `uc  1 a 1 0 ]
+"654
+} 0
+"17 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c
+[v _uart_lthread uart_lthread `(i  1 e 2 0 ]
+{
+[s S129 __uart_thread_struct 2 `i 1 data 2 0 ]
+[v uart_lthread@uptr uptr `*.39S129  1 p 2 0 ]
+[v uart_lthread@msgtype msgtype `i  1 p 2 2 ]
+[v uart_lthread@length length `i  1 p 2 4 ]
+[v uart_lthread@msgbuffer msgbuffer `*.39uc  1 p 2 6 ]
+"36
+} 0
+"14 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c
+[v _timer1_lthread timer1_lthread `(i  1 e 2 0 ]
+{
+"15
+[v timer1_lthread@retval retval `c  1 a 1 35 ]
+[s S149 __timer1_thread_struct 2 `ui 1 msgcount 2 0 ]
+"14
+[v timer1_lthread@tptr tptr `*.39S149  1 p 2 26 ]
+[v timer1_lthread@msgtype msgtype `i  1 p 2 28 ]
+[v timer1_lthread@length length `i  1 p 2 30 ]
+[v timer1_lthread@msgbuffer msgbuffer `*.39uc  1 p 2 32 ]
+"26
+} 0
+"14 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c
+[v _timer0_lthread timer0_lthread `(i  1 e 2 0 ]
+{
+"19
+[v timer0_lthread@retval retval `c  1 a 1 35 ]
+[s S168 __timer0_thread_struct 2 `ui 1 msgcount 2 0 ]
+"14
+[v timer0_lthread@tptr tptr `*.39S168  1 p 2 26 ]
+[v timer0_lthread@msgtype msgtype `i  1 p 2 28 ]
+[v timer0_lthread@length length `i  1 p 2 30 ]
+[v timer0_lthread@msgbuffer msgbuffer `*.39uc  1 p 2 32 ]
+"31
+} 0
+"8 /Applications/microchip/xc8/v1.30/sources/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 5 ]
+"8
+[v ___lwmod@dividend dividend `ui  1 p 2 0 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 2 ]
+"26
+} 0
+"179 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c
+[v _FromMainHigh_sendmsg FromMainHigh_sendmsg `(c  1 e 1 0 ]
+{
+[v FromMainHigh_sendmsg@length length `uc  1 a 1 wreg ]
+[v FromMainHigh_sendmsg@length length `uc  1 a 1 wreg ]
+[v FromMainHigh_sendmsg@msgtype msgtype `uc  1 p 1 22 ]
+[v FromMainHigh_sendmsg@data data `*.39v  1 p 2 23 ]
+"185
+[v FromMainHigh_sendmsg@length length `uc  1 a 1 25 ]
+"186
+} 0
+"202 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c
+[v _init_uart_recv init_uart_recv `(v  1 e 0 0 ]
+{
+[s S186 __uart_comm 28 `[10]uc 1 buffer 10 0 `uc 1 buflen 1 10 `uc 1 state 1 11 `uc 1 msgtype 1 12 `uc 1 data_length 1 13 `uc 1 count 1 14 `uc 1 data_read 1 15 `[10]uc 1 sendBuffer 10 16 `uc 1 sendSize 1 26 `uc 1 sendCurrent 1 27 ]
+[v init_uart_recv@uc uc `*.39S186  1 p 2 0 ]
+"207
+} 0
+"6 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c
+[v _init_timer1_lthread init_timer1_lthread `(v  1 e 0 0 ]
+{
+[s S149 __timer1_thread_struct 2 `ui 1 msgcount 2 0 ]
+[v init_timer1_lthread@tptr tptr `*.39S149  1 p 2 0 ]
+"8
+} 0
+"10 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c
+[v _init_timer0_lthread init_timer0_lthread `(v  1 e 0 0 ]
+{
+[s S168 __timer0_thread_struct 2 `ui 1 msgcount 2 0 ]
+[v init_timer0_lthread@tptr tptr `*.39S168  1 p 2 0 ]
+"12
+} 0
+"199 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c
+[v _init_queues init_queues `(v  1 e 0 0 ]
+{
+"205
+} 0
+"19
+[v _init_queue init_queue `(v  1 e 0 0 ]
+{
+"20
+[v init_queue@i i `uc  1 a 1 3 ]
+[s S1011 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
+"19
+[s S1016 __msg_queue 54 `[4]S1011 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
+[v init_queue@qptr qptr `*.39S1016  1 p 2 0 ]
+"27
+} 0
+"263 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c
+[v _init_i2c init_i2c `(v  1 e 0 0 ]
+{
+[s S428 __i2c_comm 28 `[10]uc 1 buffer 10 0 `uc 1 buflen 1 10 `uc 1 event_count 1 11 `uc 1 status 1 12 `uc 1 error_code 1 13 `uc 1 error_count 1 14 `[10]uc 1 outbuffer 10 15 `uc 1 outbuflen 1 25 `uc 1 outbufind 1 26 `uc 1 slave_addr 1 27 ]
+[v init_i2c@ic ic `*.39S428  1 p 2 0 ]
+"269
+} 0
+"6 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c
+[v _init_ADC init_ADC `(v  1 e 0 0 ]
+{
+"13
+[v init_ADC@ADCValue ADCValue `i  1 a 2 7 ]
+"21
+} 0
+"68 /Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c
+[v _OpenADC OpenADC `(v  1 e 0 0 ]
+{
+[v OpenADC@config config `uc  1 a 1 wreg ]
+[v OpenADC@config config `uc  1 a 1 wreg ]
+"69
+[v OpenADC@config2 config2 `uc  1 p 1 0 ]
+"70
+[v OpenADC@portconfig portconfig `uc  1 p 1 1 ]
+"72
+[v OpenADC@config config `uc  1 a 1 4 ]
+"89
+} 0
+"22 /Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c
+[v _ConvertADC ConvertADC `(v  1 e 0 0 ]
+{
+"25
+} 0
+"105 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c
+[v _i2c_master_recv i2c_master_recv `(uc  1 e 1 0 ]
+{
+"106
+[v i2c_master_recv@length length `uc  1 a 1 wreg ]
+[v i2c_master_recv@length length `uc  1 a 1 wreg ]
+[v i2c_master_recv@data data `uc  1 p 1 0 ]
+[v i2c_master_recv@slave_address slave_address `uc  1 p 1 1 ]
+"108
+[v i2c_master_recv@length length `uc  1 a 1 3 ]
+"122
+} 0
+"274 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c
+[v _i2c_configure_slave i2c_configure_slave `(v  1 e 0 0 ]
+{
+[v i2c_configure_slave@addr addr `uc  1 a 1 wreg ]
+[v i2c_configure_slave@addr addr `uc  1 a 1 wreg ]
+"286
+[v i2c_configure_slave@addr addr `uc  1 a 1 0 ]
+"326
+} 0
+"104 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c
+[v _enable_interrupts enable_interrupts `(v  1 e 0 0 ]
+{
+"114
+} 0
+"263 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c
+[v _block_on_To_msgqueues block_on_To_msgqueues `(v  1 e 0 0 ]
+{
+"283
+} 0
+"134 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c
+[v _in_main in_main `(i  1 e 2 0 ]
+{
+"140
+} 0
+"124
+[v _in_low_int in_low_int `(i  1 e 2 0 ]
+{
+"132
+} 0
+"116
+[v _in_high_int in_high_int `(i  1 e 2 0 ]
+{
+"118
+} 0
+"227 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c
+[v _check_msg check_msg `(uc  1 e 1 0 ]
+{
+[s S1011 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
+[s S1016 __msg_queue 54 `[4]S1011 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
+[v check_msg@qptr qptr `*.39S1016  1 p 2 0 ]
+"229
+} 0
+"8 /Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c
+[v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
+{
+[v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1KTCYx@unit unit `uc  1 a 1 0 ]
+"13
+} 0
+"8 /Applications/microchip/xc8/v1.30/sources/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"42
+} 0
+"108 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c
+[v _ToMainLow_sendmsg ToMainLow_sendmsg `(c  1 e 1 0 ]
+{
+[v ToMainLow_sendmsg@length length `uc  1 a 1 wreg ]
+[v ToMainLow_sendmsg@length length `uc  1 a 1 wreg ]
+[v ToMainLow_sendmsg@msgtype msgtype `uc  1 p 1 22 ]
+[v ToMainLow_sendmsg@data data `*.39v  1 p 2 23 ]
+"114
+[v ToMainLow_sendmsg@length length `uc  1 a 1 25 ]
+"115
+} 0
+"29
+[v _send_msg send_msg `(c  1 e 1 0 ]
+{
+[s S1011 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
+"32
+[v send_msg@qmsg qmsg `*.39S1011  1 a 2 20 ]
+"33
+[v send_msg@tlength tlength `ui  1 a 2 17 ]
+"30
+[v send_msg@slot slot `uc  1 a 1 19 ]
+"29
+[s S1016 __msg_queue 54 `[4]S1011 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
+[v send_msg@qptr qptr `*.39S1016  1 p 2 10 ]
+[v send_msg@length length `uc  1 p 1 12 ]
+[v send_msg@msgtype msgtype `uc  1 p 1 13 ]
+[v send_msg@data data `*.39v  1 p 2 14 ]
+"66
+} 0
+"117
+[v _ToMainLow_recvmsg ToMainLow_recvmsg `(c  1 e 1 0 ]
+{
+[v ToMainLow_recvmsg@maxlength maxlength `uc  1 a 1 wreg ]
+[v ToMainLow_recvmsg@maxlength maxlength `uc  1 a 1 wreg ]
+[v ToMainLow_recvmsg@msgtype msgtype `*.39uc  1 p 2 24 ]
+[v ToMainLow_recvmsg@data data `*.39v  1 p 2 26 ]
+"123
+[v ToMainLow_recvmsg@maxlength maxlength `uc  1 a 1 28 ]
+"124
+} 0
+"140
+[v _ToMainHigh_recvmsg ToMainHigh_recvmsg `(c  1 e 1 0 ]
+{
+[v ToMainHigh_recvmsg@maxlength maxlength `uc  1 a 1 wreg ]
+[v ToMainHigh_recvmsg@maxlength maxlength `uc  1 a 1 wreg ]
+[v ToMainHigh_recvmsg@msgtype msgtype `*.39uc  1 p 2 24 ]
+[v ToMainHigh_recvmsg@data data `*.39v  1 p 2 26 ]
+"146
+[v ToMainHigh_recvmsg@maxlength maxlength `uc  1 a 1 28 ]
+"147
+} 0
+"68
+[v _recv_msg recv_msg `(c  1 e 1 0 ]
+{
+[s S1011 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
+"73
+[v recv_msg@qmsg qmsg `*.39S1011  1 a 2 22 ]
+"74
+[v recv_msg@tlength tlength `ui  1 a 2 20 ]
+"69
+[v recv_msg@slot slot `uc  1 a 1 19 ]
+"68
+[s S1016 __msg_queue 54 `[4]S1011 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
+[v recv_msg@qptr qptr `*.39S1016  1 p 2 10 ]
+[v recv_msg@maxlength maxlength `uc  1 p 1 12 ]
+[v recv_msg@msgtype msgtype `*.39uc  1 p 2 13 ]
+[v recv_msg@data data `*.39v  1 p 2 15 ]
+"101
+} 0
+"11 /Applications/microchip/xc8/v1.30/sources/common/memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+{
+"20
+[v memcpy@s s `*.39Cuc  1 a 2 8 ]
+"18
+[v memcpy@d d `*.39uc  1 a 2 6 ]
+"11
+[v memcpy@d1 d1 `*.39v  1 p 2 0 ]
+[v memcpy@s1 s1 `*.39Cv  1 p 2 2 ]
+[v memcpy@n n `ui  1 p 2 4 ]
+"32
+} 0
+"73 /Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c
+[v _OpenUSART OpenUSART `(v  1 e 0 0 ]
+{
+[v OpenUSART@config config `uc  1 a 1 wreg ]
+[v OpenUSART@config config `uc  1 a 1 wreg ]
+[v OpenUSART@spbrg spbrg `ui  1 p 2 0 ]
+"75
+[v OpenUSART@config config `uc  1 a 1 5 ]
+"143
+} 0
+"18 /Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c
+[v _OpenTimer0 OpenTimer0 `(v  1 e 0 0 ]
+{
+[v OpenTimer0@config config `uc  1 a 1 wreg ]
+[v OpenTimer0@config config `uc  1 a 1 wreg ]
+"20
+[v OpenTimer0@config config `uc  1 a 1 0 ]
+"31
+} 0
+"346 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c
+[v _InterruptHandlerLow InterruptHandlerLow `IIL(v  1 e 0 0 ]
+{
+"367
+} 0
+"150 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c
+[v _uart_send_int_handler uart_send_int_handler `(v  1 e 0 0 ]
+{
+"169
+} 0
+"13 /Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uwrite.c
+[v _WriteUSART WriteUSART `(v  1 e 0 0 ]
+{
+[v WriteUSART@data data `uc  1 a 1 wreg ]
+[v WriteUSART@data data `uc  1 a 1 wreg ]
+"15
+[v WriteUSART@data data `uc  1 a 1 0 ]
+"23
+} 0
+"121 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c
+[v _uart_recv_int_handler uart_recv_int_handler `(v  1 e 0 0 ]
+{
+"148
+} 0
+"108 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c
+[v i1_ToMainLow_sendmsg ToMainLow_sendmsg `(c  1 e 1 0 ]
+{
+[v i1ToMainLow_sendmsg@length length `uc  1 a 1 wreg ]
+[v i1ToMainLow_sendmsg@length length `uc  1 a 1 wreg ]
+[v i1ToMainLow_sendmsg@msgtype msgtype `uc  1 p 1 22 ]
+[v i1ToMainLow_sendmsg@data data `*.39v  1 p 2 23 ]
+"114
+[v i1ToMainLow_sendmsg@length length `uc  1 a 1 25 ]
+"115
+} 0
+"29
+[v i1_send_msg send_msg `(c  1 e 1 0 ]
+{
+[s S1011 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
+[v i1send_msg@qmsg send_msg `*.39S1011  1 a 2 20 ]
+[v i1send_msg@tlength send_msg `ui  1 a 2 17 ]
+[v i1send_msg@slot send_msg `uc  1 a 1 19 ]
+[s S1016 __msg_queue 54 `[4]S1011 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
+[v i1send_msg@qptr qptr `*.39S1016  1 p 2 10 ]
+[v i1send_msg@length length `uc  1 p 1 12 ]
+[v i1send_msg@msgtype msgtype `uc  1 p 1 13 ]
+[v i1send_msg@data data `*.39v  1 p 2 14 ]
+"66
+} 0
+"11 /Applications/microchip/xc8/v1.30/sources/common/memcpy.c
+[v i1_memcpy memcpy `(*.39v  1 e 2 0 ]
+{
+[v i1memcpy@s memcpy `*.39Cuc  1 a 2 8 ]
+[v i1memcpy@d memcpy `*.39uc  1 a 2 6 ]
+[v i1memcpy@d1 d1 `*.39v  1 p 2 0 ]
+[v i1memcpy@s1 s1 `*.39Cv  1 p 2 2 ]
+[v i1memcpy@n n `ui  1 p 2 4 ]
+"32
+} 0
+"14 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c
+[v _uart_recv_state uart_recv_state `(v  1 e 0 0 ]
+{
+[v uart_recv_state@byte byte `uc  1 a 1 wreg ]
+[v uart_recv_state@byte byte `uc  1 a 1 wreg ]
+[v uart_recv_state@byte byte `uc  1 a 1 2 ]
+"119
+} 0
+"15 /Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c
+[v _ReadUSART ReadUSART `(uc  1 e 1 0 ]
+{
+"17
+[v ReadUSART@data data `uc  1 a 1 0 ]
+"37
+} 0
+"42 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c
+[v _timer1_int_handler timer1_int_handler `(v  1 e 0 0 ]
+{
+"43
+[v timer1_int_handler@result result `ui  1 a 2 5 ]
+"60
+} 0
+"14 /Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c
+[v _WriteTimer1 WriteTimer1 `(v  1 e 0 0 ]
+{
+[u S3045 Timers 2 `ui 1 lt 2 0 `[2]uc 1 bt 2 0 ]
+"16
+[v WriteTimer1@timer timer `S3045  1 a 2 2 ]
+"14
+[v WriteTimer1@timer1 timer1 `ui  1 p 2 0 ]
+"22
+} 0
+"15 /Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c
+[v _ReadTimer1 ReadTimer1 `(ui  1 e 2 0 ]
+{
+[u S3045 Timers 2 `ui 1 lt 2 0 `[2]uc 1 bt 2 0 ]
+"17
+[v ReadTimer1@timer timer `S3045  1 a 2 2 ]
+"23
+} 0
+"177 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c
+[v _InterruptHandlerHigh InterruptHandlerHigh `II(v  1 e 0 0 ]
+{
+"286
+[v InterruptHandlerHigh@pureADCValue pureADCValue `i  1 a 2 56 ]
+"334
+} 0
+"22 /Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c
+[v i2_ConvertADC ConvertADC `(v  1 e 0 0 ]
+{
+"25
+} 0
+"17 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c
+[v _timer0_int_handler timer0_int_handler `(v  1 e 0 0 ]
+{
+"37
+} 0
+"16 /Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c
+[v _WriteTimer0 WriteTimer0 `(v  1 e 0 0 ]
+{
+[u S3045 Timers 2 `ui 1 lt 2 0 `[2]uc 1 bt 2 0 ]
+"18
+[v WriteTimer0@timer timer `S3045  1 a 2 2 ]
+"16
+[v WriteTimer0@timer0 timer0 `ui  1 p 2 0 ]
+"24
+} 0
+"68 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c
+[v _i2c_int_handler i2c_int_handler `(v  1 e 0 0 ]
+{
+"248
+[v i2c_int_handler@msgbuffer msgbuffer `*.39uc  1 a 2 29 ]
+"247
+[v i2c_int_handler@length length `i  1 a 2 27 ]
+"75
+[v i2c_int_handler@error_buf error_buf `[3]uc  1 a 3 31 ]
+"70
+[v i2c_int_handler@data_read data_read `uc  1 a 1 39 ]
+"72
+[v i2c_int_handler@msg_ready msg_ready `uc  1 a 1 38 ]
+"73
+[v i2c_int_handler@msg_to_send msg_to_send `uc  1 a 1 37 ]
+"69
+[v i2c_int_handler@i2c_data i2c_data `uc  1 a 1 36 ]
+"74
+[v i2c_int_handler@overrun_error overrun_error `uc  1 a 1 35 ]
+"71
+[v i2c_int_handler@data_written data_written `uc  1 a 1 34 ]
+"258
+} 0
+"21
+[v _start_i2c_slave_reply start_i2c_slave_reply `(v  1 e 0 0 ]
+{
+[v start_i2c_slave_reply@length length `uc  1 a 1 wreg ]
+[v start_i2c_slave_reply@length length `uc  1 a 1 wreg ]
+[v start_i2c_slave_reply@msg msg `*.39uc  1 p 2 0 ]
+"23
+[v start_i2c_slave_reply@length length `uc  1 a 1 4 ]
+"35
+} 0
+"39
+[v _handle_start handle_start `(v  1 e 0 0 ]
+{
+[v handle_start@data_read data_read `uc  1 a 1 wreg ]
+[v handle_start@data_read data_read `uc  1 a 1 wreg ]
+[v handle_start@data_read data_read `uc  1 a 1 0 ]
+"60
+} 0
+"131 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c
+[v _ToMainHigh_sendmsg ToMainHigh_sendmsg `(c  1 e 1 0 ]
+{
+[v ToMainHigh_sendmsg@length length `uc  1 a 1 wreg ]
+[v ToMainHigh_sendmsg@length length `uc  1 a 1 wreg ]
+[v ToMainHigh_sendmsg@msgtype msgtype `uc  1 p 1 22 ]
+[v ToMainHigh_sendmsg@data data `*.39v  1 p 2 23 ]
+"137
+[v ToMainHigh_sendmsg@length length `uc  1 a 1 25 ]
+"138
+} 0
+"29
+[v i2_send_msg send_msg `(c  1 e 1 0 ]
+{
+[s S1011 __msg 13 `uc 1 full 1 0 `uc 1 length 1 1 `uc 1 msgtype 1 2 `[10]uc 1 data 10 3 ]
+[v i2send_msg@qmsg send_msg `*.39S1011  1 a 2 20 ]
+[v i2send_msg@tlength send_msg `ui  1 a 2 17 ]
+[v i2send_msg@slot send_msg `uc  1 a 1 19 ]
+[s S1016 __msg_queue 54 `[4]S1011 1 queue 52 0 `uc 1 cur_write_ind 1 52 `uc 1 cur_read_ind 1 53 ]
+[v i2send_msg@qptr qptr `*.39S1016  1 p 2 10 ]
+[v i2send_msg@length length `uc  1 p 1 12 ]
+[v i2send_msg@msgtype msgtype `uc  1 p 1 13 ]
+[v i2send_msg@data data `*.39v  1 p 2 14 ]
+"66
+} 0
+"11 /Applications/microchip/xc8/v1.30/sources/common/memcpy.c
+[v i2_memcpy memcpy `(*.39v  1 e 2 0 ]
+{
+[v i2memcpy@s memcpy `*.39Cuc  1 a 2 8 ]
+[v i2memcpy@d memcpy `*.39uc  1 a 2 6 ]
+[v i2memcpy@d1 d1 `*.39v  1 p 2 0 ]
+[v i2memcpy@s1 s1 `*.39Cv  1 p 2 2 ]
+[v i2memcpy@n n `ui  1 p 2 4 ]
+"32
+} 0
+"70 /Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c
+[v _SensorValues SensorValues `(*.39uc  1 e 2 0 ]
+{
+"76
+} 0
+"24 /Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c
+[v _ReadADC ReadADC `(i  1 e 2 0 ]
+{
+"27
+} 0

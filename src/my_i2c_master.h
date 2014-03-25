@@ -10,6 +10,12 @@
 
 #include "messages.h"
 #include "i2c_queue.h"
+
+#define I2CMST_SENSOR 1
+#define I2CMST_MOTOR 2
+
+unsigned char i2cMstrMsgState;
+
 typedef enum
 {
     MASTER_IDLE,
@@ -42,7 +48,7 @@ typedef struct __i2c_master_comm {
     unsigned char slave_address;
 } i2c_master_comm;
 
-i2c_queue i2c_q;
+i2c_queue* i2c_q;
 
 void init_i2c_master(i2c_master_comm *);
 void i2c_master_handler(void);

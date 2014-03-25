@@ -5904,7 +5904,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 10 "../src/messages.h"
+# 51 "../src/messages.h"
 typedef struct __msg {
 unsigned char full;
 unsigned char length;
@@ -5918,7 +5918,7 @@ unsigned char cur_write_ind;
 unsigned char cur_read_ind;
 } msg_queue;
 
-# 43
+# 84
 void init_queues(void);
 
 
@@ -5929,43 +5929,255 @@ void SleepIfOkay(void);
 
 void block_on_To_msgqueues(void);
 
-# 57
+# 98
 signed char ToMainLow_sendmsg(unsigned char,unsigned char,void *);
 signed char ToMainLow_recvmsg(unsigned char,unsigned char *,void *);
 
-# 64
+# 105
 signed char ToMainHigh_sendmsg(unsigned char,unsigned char,void *);
 signed char ToMainHigh_recvmsg(unsigned char,unsigned char *,void *);
 
-# 71
+# 112
 signed char FromMainLow_sendmsg(unsigned char,unsigned char,void *);
 signed char FromMainLow_recvmsg(unsigned char,unsigned char *,void *);
 
-# 78
+# 119
 signed char FromMainHigh_sendmsg(unsigned char,unsigned char,void *);
 signed char FromMainHigh_recvmsg(unsigned char,unsigned char *,void *);
 
 # 10 "../src/my_uart.h"
 typedef struct __uart_comm {
-unsigned char buffer[4];
+unsigned char buffer[10];
 unsigned char buflen;
+unsigned char state;
+unsigned char msgtype;
+unsigned char data_length;
+unsigned char count;
+unsigned char data_read;
+unsigned char sendBuffer[10];
+unsigned char sendSize;
+unsigned char sendCurrent;
 } uart_comm;
 
 void init_uart_recv(uart_comm *);
 void uart_recv_int_handler(void);
+void uart_recv_state(unsigned char byte);
+void uart_send_int_handler();
+void uart_send_data(unsigned char* data, int size);
 
-# 9 "../src/my_uart.c"
+# 7 "../src/my_i2c.h"
+typedef struct __i2c_comm {
+unsigned char buffer[10];
+unsigned char buflen;
+unsigned char event_count;
+unsigned char status;
+unsigned char error_code;
+unsigned char error_count;
+unsigned char outbuffer[10];
+unsigned char outbuflen;
+unsigned char outbufind;
+unsigned char slave_addr;
+} i2c_comm;
+
+# 32
+void init_i2c(i2c_comm *);
+void i2c_int_handler(void);
+void start_i2c_slave_reply(unsigned char,unsigned char *);
+void i2c_configure_slave(unsigned char);
+
+# 22 "/Applications/microchip/xc8/v1.30/include/string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 35
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 15 "../src/i2c_queue.h"
+typedef struct i2c_queue {
+unsigned char size;
+int front;
+int end;
+unsigned char* elements;
+} i2c_queue;
+
+unsigned char createQueue(i2c_queue* queue, unsigned char size);
+unsigned char putQueue(i2c_queue* queue, unsigned char element);
+unsigned char getQueue(i2c_queue* queue, unsigned char* element);
+unsigned char isEmpty(i2c_queue* queue);
+
+# 17 "../src/my_i2c_master.h"
+unsigned char i2cMstrMsgState;
+
+typedef enum
+{
+MASTER_IDLE,
+MASTER_WRITE,
+MASTER_READ
+}i2c_mode;
+
+typedef enum {
+
+IDLE = 0,
+START_BIT,
+
+RESTART,
+WRITE_ADDRESS,
+READ_ADDRESS,
+DATA,
+SLAVE_RESPONSE,
+ACK,
+NACK,
+STOP_MESSAGE,
+ERROR
+} i2c_state;
+
+typedef struct __i2c_master_comm {
+i2c_state state;
+unsigned char buffer[10];
+unsigned char buffer_length;
+unsigned char buffer_index;
+unsigned char address;
+unsigned char slave_address;
+} i2c_master_comm;
+
+i2c_queue* i2c_q;
+
+void init_i2c_master(i2c_master_comm *);
+void i2c_master_handler(void);
+void i2c_configure_master(void);
+unsigned char i2c_master_send(unsigned char,unsigned char *, unsigned char);
+unsigned char i2c_master_recv(unsigned char, unsigned char, unsigned char);
+unsigned char i2c_master_busy();
+
+# 12 "../src/my_uart.c"
 static uart_comm *uc_ptr;
 
-void uart_recv_int_handler() {
-if ((PIR1bits.RCIF)) {
-uc_ptr->buffer[uc_ptr->buflen] = ReadUSART();
-uc_ptr->buflen++;
+void uart_recv_state(unsigned char byte) {
 
-if (uc_ptr->buflen == 4) {
-ToMainLow_sendmsg(uc_ptr->buflen, 31, (void *) uc_ptr->buffer);
-uc_ptr->buflen = 0;
+switch (uc_ptr->state) {
+
+case 48:
+if ( byte == 0x2B) {
+
+uc_ptr->state = 53;
 }
+break;
+
+case 53:
+if ( byte == 0x9F ) {
+
+
+
+
+uc_ptr->state = 49;
+
+}
+else {
+uc_ptr->state = 48;
+}
+break;
+
+case 49:
+uc_ptr->buflen = 0;
+uc_ptr->data_read = 0;
+
+uc_ptr->msgtype = byte;
+uc_ptr->buffer[0] = byte;
+uc_ptr->state = 54;
+break;
+
+case 54:
+
+uc_ptr->count = byte;
+
+
+
+
+uc_ptr->buffer[1] = byte;
+uc_ptr->state = 52;
+
+break;
+
+case 50:
+
+uc_ptr->buffer[1] = byte;
+uc_ptr->data_length = byte;
+uc_ptr->buflen = 0;
+uc_ptr->data_read = 0;
+uc_ptr->state = 51;
+break;
+
+case 51:
+
+
+
+if ( uc_ptr->data_read + 2 < 10 ) {
+uc_ptr->buffer[uc_ptr->data_read+2] = byte;
+}
+
+
+uc_ptr->data_read += 1;
+
+
+if(9 == uc_ptr->data_read) {
+uc_ptr->state = 52;
+}
+
+break;
+case 52:
+
+if ( byte == 0x5C ) {
+
+uc_ptr->state = 48;
+
+# 105
+while(i2c_master_busy());
+ToMainHigh_sendmsg(2, 40, (void *) uc_ptr->buffer);
+
+}
+else {
+uc_ptr->state = 48;
+}
+uc_ptr->buflen = 0;
+uc_ptr->data_read = 0;
+break;
+default:
+break;
+}
+
+}
+
+void uart_recv_int_handler() {
+
+# 135
+if ((PIR1bits.RCIF)) {
+
+uart_recv_state(ReadUSART());
 }
 if (USART_Status.OVERRUN_ERROR == 1) {
 
@@ -5974,9 +6186,55 @@ RCSTAbits.CREN = 0;
 RCSTAbits.CREN = 1;
 ToMainLow_sendmsg(0, 30, (void *) 0);
 }
+
+
+}
+
+void uart_send_int_handler() {
+
+
+if(uc_ptr->sendSize > 0) {
+
+
+
+WriteUSART(uc_ptr->sendBuffer[uc_ptr->sendCurrent]);
+
+# 163
+PIE1bits.TXIE = 1;
+
+
+uc_ptr->sendCurrent++;
+uc_ptr->sendSize--;
+}
+}
+
+void uart_send_data(unsigned char* data, int size) {
+
+# 181
+uc_ptr->sendBuffer[0] = 0x2B;
+uc_ptr->sendBuffer[1] = 0x9F;
+
+
+int i = 0;
+for(i; i < size; i++)
+uc_ptr->sendBuffer[i+2] = data[i];
+
+
+uc_ptr->sendBuffer[i+2] = 0x5C;
+
+
+uc_ptr->sendSize = size+3;
+
+
+uc_ptr->sendCurrent = 0;
+
+
+PIE1bits.TXIE = 1;
 }
 
 void init_uart_recv(uart_comm *uc) {
 uc_ptr = uc;
 uc_ptr->buflen = 0;
+uc_ptr->data_read = 0;
+uc_ptr->state = 48;
 }

@@ -3,7 +3,6 @@
  Milestone 1 = 2/11/2014
  */
 #include <string.h>
-#include <pic18f45j10.h>
 #include "maindefs.h"
 #include "messages.h"
 #ifndef __XC8
@@ -14,7 +13,11 @@
 #include "my_i2c_master.h"
 #include "interrupts.h"
 #include "i2c_queue.h"
-
+#ifdef __USE18F46J50
+//#include "PIC18F46J50.h"
+#else
+#include "PIC18F45J10.h"
+#endif
 static i2c_master_comm *ic_ptr;
 i2c_mode mode;
 unsigned char slave_address;
@@ -24,15 +27,29 @@ unsigned char slave_address;
 
 void i2c_configure_master(void) {
     // set clock and data as inputs
+#ifdef __USE18F46J50
+    SCL1 = 1;
+    SDA1 = 1;
+#else
     I2C1_SCL = 1;
     I2C1_SDA = 1;
+#endif
 
+
+ 
     // configure status bits
     SSP1STATbits.SMP = 1;
     SSP1STATbits.CKE = 0;
 
+
+#ifdef __USE18F46J50
+    SSP1ADD = 119;
+#else
     // set frequency to 100kHz
     SSP1ADD = 29;
+#endif
+
+
 
     // set to master mode
     SSP1CON1 = 0x8;
@@ -42,7 +59,6 @@ void i2c_configure_master(void) {
     SSP1CON1bits.SSPEN = 1;
 
     ic_ptr->state = IDLE; 
-    //createQueue(&i2c_q,10);
 }
 
 // Sending in I2C Master mode [slave write]
@@ -89,8 +105,9 @@ unsigned char i2c_master_send(unsigned char length, unsigned char *msg, unsigned
 unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned char slave_address)
 {
     // Check if we are in the middle of something
-    if ( ic_ptr->state != IDLE)
+    if ( ic_ptr->state != IDLE) {
         return 0;
+    }
 
     mode = MASTER_READ;
 
@@ -100,7 +117,7 @@ unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned
     ic_ptr->address = data;
     SSP1CON2bits.SEN = 1;
     ic_ptr->state = START_BIT;
-    LATBbits.LATB7 = !LATBbits.LATB7;
+    
     return 1;
 }
 

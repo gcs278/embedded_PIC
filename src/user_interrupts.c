@@ -17,14 +17,18 @@
 void timer0_int_handler() {
     unsigned int val;
     int length, msgtype;
-    //LATBbits.LATB6 = !LATBbits.LATB6;
+    LATBbits.LATB6 = !LATBbits.LATB6;
     // toggle an LED
     // LATBbits.LATB0 = !LATBbits.LATB0;
     // reset the timer
+#if defined (MOTOR_PIC)
     WriteTimer0(243);
-
     ticks_right++;
-    
+    ticks_right_C++;
+#else
+    WriteTimer0(0);
+#endif
+
     // try to receive a message and, if we get one, echo it back
     //length = FromMainHigh_recvmsg(sizeof(val), (unsigned char *)&msgtype, (void *) &val);
     //if (length == sizeof (val)) {
@@ -39,12 +43,18 @@ void timer1_int_handler() {
     unsigned int result;
 
     // read the timer and then send an empty message to main()
-     //LATBbits.LATB7 = !LATBbits.LATB7;
+    LATBbits.LATB7 = !LATBbits.LATB7;
     result = ReadTimer1();
     //ToMainLow_sendmsg(0, MSGT_TIMER1, (void *) 0);
-    ticks_left++;
     
+
+#if defined (MOTOR_PIC)
     // reset the timer
     WriteTimer1(65523);
+    ticks_left++;
+    ticks_left_C++;
+#else
+    WriteTimer1(0);
+#endif
    // WriteTimer1(0);
 }

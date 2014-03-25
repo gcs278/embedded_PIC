@@ -3,7 +3,7 @@
 
 void initWiFly()
 {
-
+#ifdef __USE
     WriteUSART('$');
     for (int i = 1; i != 0; i++);
     WriteUSART('$');
@@ -18,4 +18,5 @@ void initWiFly()
     putsUSART("open 1.2.3.20 2000");
     for (int j = 0; j < 5; j++)
         for (int i = 1; i != 0; i++);
+#endif
 }

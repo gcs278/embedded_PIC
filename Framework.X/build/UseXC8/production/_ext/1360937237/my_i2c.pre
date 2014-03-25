@@ -5904,7 +5904,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 10 "../src/messages.h"
+# 51 "../src/messages.h"
 typedef struct __msg {
 unsigned char full;
 unsigned char length;
@@ -5918,7 +5918,7 @@ unsigned char cur_write_ind;
 unsigned char cur_read_ind;
 } msg_queue;
 
-# 43
+# 84
 void init_queues(void);
 
 
@@ -5929,19 +5929,19 @@ void SleepIfOkay(void);
 
 void block_on_To_msgqueues(void);
 
-# 57
+# 98
 signed char ToMainLow_sendmsg(unsigned char,unsigned char,void *);
 signed char ToMainLow_recvmsg(unsigned char,unsigned char *,void *);
 
-# 64
+# 105
 signed char ToMainHigh_sendmsg(unsigned char,unsigned char,void *);
 signed char ToMainHigh_recvmsg(unsigned char,unsigned char *,void *);
 
-# 71
+# 112
 signed char FromMainLow_sendmsg(unsigned char,unsigned char,void *);
 signed char FromMainLow_recvmsg(unsigned char,unsigned char *,void *);
 
-# 78
+# 119
 signed char FromMainHigh_sendmsg(unsigned char,unsigned char,void *);
 signed char FromMainHigh_recvmsg(unsigned char,unsigned char *,void *);
 
@@ -5964,31 +5964,32 @@ void init_i2c(i2c_comm *);
 void i2c_int_handler(void);
 void start_i2c_slave_reply(unsigned char,unsigned char *);
 void i2c_configure_slave(unsigned char);
-void i2c_configure_master(unsigned char);
-unsigned char i2c_master_send(unsigned char,unsigned char *);
-unsigned char i2c_master_recv(unsigned char);
 
-# 9 "../src/my_i2c.c"
+# 10 "../src/interrupts.h"
+char returnADCValue(void);
+void setStateResponding(void);
+void setStateReading(void);
+
+unsigned char * motorTickValue(unsigned char msgRequest);
+
+
+void enable_interrupts(void);
+
+int in_high_int(void);
+
+int low_int_active(void);
+
+int in_low_int(void);
+
+
+int in_main(void);
+
+# 15 "../src/my_i2c.c"
+int sensor_count = 0;
 static i2c_comm *ic_ptr;
 
 
 
-
-void i2c_configure_master(unsigned char slave_addr) {
-
-}
-
-# 30
-unsigned char i2c_master_send(unsigned char length, unsigned char *msg) {
-
-return(0);
-}
-
-# 48
-unsigned char i2c_master_recv(unsigned char length) {
-
-return(0);
-}
 
 void start_i2c_slave_reply(unsigned char length, unsigned char *msg) {
 
@@ -6031,7 +6032,7 @@ ic_ptr->status = 0x6;
 }
 }
 
-# 100
+# 68
 void i2c_int_handler() {
 unsigned char i2c_data;
 unsigned char data_read = 0;
@@ -6184,7 +6185,7 @@ ic_ptr->error_code = 0x7;
 
 if (msg_ready) {
 ic_ptr->buffer[ic_ptr->buflen] = ic_ptr->event_count;
-ToMainHigh_sendmsg(ic_ptr->buflen + 1, 40, (void *) ic_ptr->buffer);
+
 ic_ptr->buflen = 0;
 } else if (ic_ptr->error_count >= 1) {
 error_buf[0] = ic_ptr->error_count;
@@ -6194,14 +6195,8 @@ ToMainHigh_sendmsg(sizeof (unsigned char) *3, 41, (void *) error_buf);
 ic_ptr->error_count = 0;
 }
 if (msg_to_send) {
-int length;
-unsigned char msgbuffer[10 + 1];
-length = 2;
-msgbuffer[0] = returnADCValue();
-msgbuffer[1] = 0xAA;
 
-# 292
-start_i2c_slave_reply(length, msgbuffer);
+# 256
 msg_to_send = 0;
 }
 }
@@ -6222,9 +6217,12 @@ ic_ptr->error_count = 0;
 
 void i2c_configure_slave(unsigned char addr) {
 
-
+# 286
 TRISCbits.TRISC3 = 1;
 TRISCbits.TRISC4 = 1;
+
+
+
 
 SSPADD = addr;
 
@@ -6234,10 +6232,11 @@ SSPCON2 = 0x0;
 SSPCON1 |= 0x0E;
 SSPSTAT |= 0b10000000;
 
+
 TRISCbits.TRISC3 = 1;
 TRISCbits.TRISC4 = 1;
 
-# 336
+# 323
 SSPCON2bits.SEN = 1;
 SSPCON1 |= 0b00100000;
 

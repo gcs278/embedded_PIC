@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=Framework.X
 
 # Active Configuration
-DEFAULTCONF=UseXC8
+DEFAULTCONF=MARK3
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=UseXC8 
+ALLCONFS=MARK3 MARK4 
 
 
 # build
@@ -45,13 +45,15 @@ ALLCONFS=UseXC8
 
 # clobber
 .clobber-impl: .clobber-pre .depcheck-impl
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=UseXC8 clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=MARK3 clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=MARK4 clean
 
 
 
 # all
 .all-impl: .all-pre .depcheck-impl
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=UseXC8 build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=MARK3 build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=MARK4 build
 
 
 

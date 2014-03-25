@@ -119,6 +119,19 @@ void uart_recv_state(unsigned char byte) {
 }
 
 void uart_recv_int_handler() {
+#ifdef __USE18F46J50
+    if (DataRdy1USART()) {
+        // UART state machine
+        uart_recv_state(Read1USART());
+    }
+    if (USART1_Status.OVERRUN_ERROR == 1) {
+        // we've overrun the USART and must reset
+        // send an error message for this
+        RCSTAbits.CREN = 0;
+        RCSTAbits.CREN = 1;
+        ToMainLow_sendmsg(0, MSGT_OVERRUN, (void *) 0);
+    }
+#else
     if (DataRdyUSART()) {
         // UART state machine
         uart_recv_state(ReadUSART());
@@ -130,13 +143,21 @@ void uart_recv_int_handler() {
         RCSTAbits.CREN = 1;
         ToMainLow_sendmsg(0, MSGT_OVERRUN, (void *) 0);
     }
+#endif
+
 }
 
 void uart_send_int_handler() {
     //LATBbits.LATB7 = 0;
     // Make sure we still have data to send
     if(uc_ptr->sendSize > 0) {
+#ifdef __USE18F46J50
+        Write1USART(uc_ptr->sendBuffer[uc_ptr->sendCurrent]);
+#else
         WriteUSART(uc_ptr->sendBuffer[uc_ptr->sendCurrent]);
+#endif
+        
+
 
         // Flag interrupt for next byte
         PIE1bits.TXIE = 1;

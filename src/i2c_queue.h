@@ -14,14 +14,15 @@ extern "C" {
 
     typedef struct i2c_queue {
         unsigned char size;
-        unsigned char front;
-        unsigned char end;
+        int front;
+        int end;
         unsigned char* elements;
     } i2c_queue;
 
     unsigned char createQueue(i2c_queue* queue, unsigned char size);
     unsigned char putQueue(i2c_queue* queue, unsigned char element);
     unsigned char getQueue(i2c_queue* queue, unsigned char* element);
+    unsigned char isEmpty(i2c_queue* queue);
     
 
 #ifdef	__cplusplus

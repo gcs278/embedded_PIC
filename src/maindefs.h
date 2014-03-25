@@ -8,6 +8,14 @@
 #else
 #ifdef _18F2680
 #define __USE18F2680 1
+#else
+#ifdef _18F26J50
+#define __USE18F26J50 1
+#else
+#ifdef _18F46J50
+#define __USE18F46J50 1
+#endif
+#endif
 #endif
 #endif
 #else
@@ -16,6 +24,14 @@
 #else
 #ifdef __18F2680
 #define __USE18F2680 1
+#else
+#ifdef __18F26J50
+#define __USE18F26J50 1
+#else
+#ifdef __18F46J50
+#define __USE18F46J50 1
+#endif
+#endif
 #endif
 #endif
 #include <p18cxxx.h>

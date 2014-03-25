@@ -2,6 +2,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1 ../src/uart_thread.h
 [s S582 `i 1 ]
 [n S582 __uart_thread_struct data ]
+"105 ../src/messages.h
+[v _ToMainHigh_sendmsg `(c ~T0 @X0 0 ef3`uc`uc`*v ]
+"27 ../src/my_uart.h
+[v _uart_send_data `(v ~T0 @X0 0 ef2`*uc`i ]
 [; ;htc.h: 22: extern void __builtin_software_breakpoint(void);
 [; ;pic18f45j10.h: 44: extern volatile unsigned char PORTA @ 0xF80;
 "46 /Applications/microchip/xc8/v1.30/include/pic18f45j10.h
@@ -4607,36 +4611,157 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;uart_thread.h: 3: int data;
 [; ;uart_thread.h: 4: } uart_thread_struct;
 [; ;uart_thread.h: 6: int uart_lthread(uart_thread_struct *,int,int,unsigned char*);
-"9 ../src/uart_thread.c
+[; ;uart_thread.h: 8: int uart_sendthread(int length, unsigned char *msgbuffer, unsigned char count);
+[; ;messages.h: 51: typedef struct __msg {
+[; ;messages.h: 52: unsigned char full;
+[; ;messages.h: 53: unsigned char length;
+[; ;messages.h: 54: unsigned char msgtype;
+[; ;messages.h: 55: unsigned char data[10];
+[; ;messages.h: 56: } msg;
+[; ;messages.h: 58: typedef struct __msg_queue {
+[; ;messages.h: 59: msg queue[4];
+[; ;messages.h: 60: unsigned char cur_write_ind;
+[; ;messages.h: 61: unsigned char cur_read_ind;
+[; ;messages.h: 62: } msg_queue;
+[; ;messages.h: 84: void init_queues(void);
+[; ;messages.h: 88: void SleepIfOkay(void);
+[; ;messages.h: 92: void block_on_To_msgqueues(void);
+[; ;messages.h: 98: signed char ToMainLow_sendmsg(unsigned char,unsigned char,void *);
+[; ;messages.h: 99: signed char ToMainLow_recvmsg(unsigned char,unsigned char *,void *);
+[; ;messages.h: 105: signed char ToMainHigh_sendmsg(unsigned char,unsigned char,void *);
+[; ;messages.h: 106: signed char ToMainHigh_recvmsg(unsigned char,unsigned char *,void *);
+[; ;messages.h: 112: signed char FromMainLow_sendmsg(unsigned char,unsigned char,void *);
+[; ;messages.h: 113: signed char FromMainLow_recvmsg(unsigned char,unsigned char *,void *);
+[; ;messages.h: 119: signed char FromMainHigh_sendmsg(unsigned char,unsigned char,void *);
+[; ;messages.h: 120: signed char FromMainHigh_recvmsg(unsigned char,unsigned char *,void *);
+[; ;my_uart.h: 10: typedef struct __uart_comm {
+[; ;my_uart.h: 11: unsigned char buffer[10];
+[; ;my_uart.h: 12: unsigned char buflen;
+[; ;my_uart.h: 13: unsigned char state;
+[; ;my_uart.h: 14: unsigned char msgtype;
+[; ;my_uart.h: 15: unsigned char data_length;
+[; ;my_uart.h: 16: unsigned char count;
+[; ;my_uart.h: 17: unsigned char data_read;
+[; ;my_uart.h: 18: unsigned char sendBuffer[10];
+[; ;my_uart.h: 19: unsigned char sendSize;
+[; ;my_uart.h: 20: unsigned char sendCurrent;
+[; ;my_uart.h: 21: } uart_comm;
+[; ;my_uart.h: 23: void init_uart_recv(uart_comm *);
+[; ;my_uart.h: 24: void uart_recv_int_handler(void);
+[; ;my_uart.h: 25: void uart_recv_state(unsigned char byte);
+[; ;my_uart.h: 26: void uart_send_int_handler();
+[; ;my_uart.h: 27: void uart_send_data(unsigned char* data, int size);
+[; ;interrupts.h: 10: char returnADCValue(void);
+[; ;interrupts.h: 11: void setStateResponding(void);
+[; ;interrupts.h: 12: void setStateReading(void);
+[; ;interrupts.h: 14: unsigned char * motorTickValue(unsigned char msgRequest);
+[; ;interrupts.h: 17: void enable_interrupts(void);
+[; ;interrupts.h: 19: int in_high_int(void);
+[; ;interrupts.h: 21: int low_int_active(void);
+[; ;interrupts.h: 23: int in_low_int(void);
+[; ;interrupts.h: 26: int in_main(void);
+[; ;my_i2c.h: 7: typedef struct __i2c_comm {
+[; ;my_i2c.h: 8: unsigned char buffer[10];
+[; ;my_i2c.h: 9: unsigned char buflen;
+[; ;my_i2c.h: 10: unsigned char event_count;
+[; ;my_i2c.h: 11: unsigned char status;
+[; ;my_i2c.h: 12: unsigned char error_code;
+[; ;my_i2c.h: 13: unsigned char error_count;
+[; ;my_i2c.h: 14: unsigned char outbuffer[10];
+[; ;my_i2c.h: 15: unsigned char outbuflen;
+[; ;my_i2c.h: 16: unsigned char outbufind;
+[; ;my_i2c.h: 17: unsigned char slave_addr;
+[; ;my_i2c.h: 18: } i2c_comm;
+[; ;my_i2c.h: 32: void init_i2c(i2c_comm *);
+[; ;my_i2c.h: 33: void i2c_int_handler(void);
+[; ;my_i2c.h: 34: void start_i2c_slave_reply(unsigned char,unsigned char *);
+[; ;my_i2c.h: 35: void i2c_configure_slave(unsigned char);
+"14 ../src/uart_thread.c
+[v _i `i ~T0 @X0 1 e ]
+[i _i
+-> 0 `i
+]
+[; ;uart_thread.c: 14: int i = 0;
+"17
 [v _uart_lthread `(i ~T0 @X0 1 ef4`*S582`i`i`*uc ]
 {
-[; ;uart_thread.c: 9: int uart_lthread(uart_thread_struct *uptr, int msgtype, int length, unsigned char *msgbuffer) {
+[; ;uart_thread.c: 17: int uart_lthread(uart_thread_struct *uptr, int msgtype, int length, unsigned char *msgbuffer) {
 [e :U _uart_lthread ]
 [v _uptr `*S582 ~T0 @X0 1 r1 ]
 [v _msgtype `i ~T0 @X0 1 r2 ]
 [v _length `i ~T0 @X0 1 r3 ]
 [v _msgbuffer `*uc ~T0 @X0 1 r4 ]
 [f ]
-[; ;uart_thread.c: 10: if (msgtype == 30) {
-"10
-[e $ ! == _msgtype -> 30 `i 584  ]
+[; ;uart_thread.c: 18: if (msgtype == 30) {
+"18
+[e $ ! == _msgtype -> 30 `i 588  ]
 {
-"11
+"19
 }
-[; ;uart_thread.c: 11: } else if (msgtype == 31) {
-[e $U 585  ]
-[e :U 584 ]
-[e $ ! == _msgtype -> 31 `i 586  ]
+[; ;uart_thread.c: 19: } else if (msgtype == 31) {
+[e $U 589  ]
+[e :U 588 ]
+[e $ ! == _msgtype -> 31 `i 590  ]
 {
-[; ;uart_thread.c: 14: msgbuffer[length] = '\0';
-"14
+[; ;uart_thread.c: 22: msgbuffer[length] = '\0';
+"22
 [e = *U + _msgbuffer * -> _length `x -> -> # *U _msgbuffer `i `x -> -> 0 `ui `uc ]
-"16
+[; ;uart_thread.c: 31: ToMainHigh_sendmsg(length, 40, (void *) msgbuffer);
+"31
+[e ( _ToMainHigh_sendmsg (3 , , -> _length `uc -> -> 40 `i `uc -> _msgbuffer `*v ]
+[; ;uart_thread.c: 34: i++;
+"34
+[e ++ _i -> 1 `i ]
+"35
 }
-[e :U 586 ]
-"17
-[e :U 585 ]
-[; ;uart_thread.c: 16: }
-[; ;uart_thread.c: 17: }
-[e :UE 583 ]
+[e :U 590 ]
+"36
+[e :U 589 ]
+[; ;uart_thread.c: 35: }
+[; ;uart_thread.c: 36: }
+[e :UE 587 ]
+}
+"39
+[v _uart_sendthread `(i ~T0 @X0 1 ef3`i`*uc`uc ]
+{
+[; ;uart_thread.c: 39: int uart_sendthread(int length, unsigned char *msgbuffer, unsigned char count) {
+[e :U _uart_sendthread ]
+[v _length `i ~T0 @X0 1 r1 ]
+[v _msgbuffer `*uc ~T0 @X0 1 r2 ]
+[v _count `uc ~T0 @X0 1 r3 ]
+[f ]
+"40
+[v _buf `uc ~T0 @X0 + -> 10 `i -> 1 `i a ]
+[; ;uart_thread.c: 40: unsigned char buf[10+1];
+[; ;uart_thread.c: 43: buf[0] = count;
+"43
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux _count ]
+[v _i `i ~T0 @X0 1 a ]
+[; ;uart_thread.c: 46: int i;
+[; ;uart_thread.c: 47: for (i=0; i < 10; i++) {
+"47
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 592  ]
+[e $U 593  ]
+[e :U 592 ]
+{
+[; ;uart_thread.c: 48: buf[i+1] = msgbuffer[i];
+"48
+[e = *U + &U _buf * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux *U + _msgbuffer * -> _i `x -> -> # *U _msgbuffer `i `x ]
+"49
+}
+"47
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 592  ]
+[e :U 593 ]
+"49
+}
+[; ;uart_thread.c: 49: }
+[; ;uart_thread.c: 52: uart_send_data(buf,10+1);
+"52
+[e ( _uart_send_data (2 , &U _buf + -> 10 `i -> 1 `i ]
+[; ;uart_thread.c: 53: }
+"53
+[e :UE 591 ]
 }

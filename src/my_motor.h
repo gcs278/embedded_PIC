@@ -14,17 +14,19 @@ extern "C" {
 
 // MSG TYPE conversions
 #define moveForwardFull 0x01
-#define moveLeft 0x02
-#define moveRight 0x03
+#define moveLeft 0x03
+#define moveRight 0x02
 #define moveBack 0x04
 #define moveStop 0x05
 #define motorDataLeft 0x07
 #define motorDataRight 0x08
+#define sensorDataFull 0x11
     
     unsigned char motor_state;
     unsigned int ticks_right;
     unsigned int ticks_left;
-
+    unsigned int ticks_left_C;
+    unsigned int ticks_right_C;
     void motor_encode_lthread(unsigned char msg);
     void motor_init();
 

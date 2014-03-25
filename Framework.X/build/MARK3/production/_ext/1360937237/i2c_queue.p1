@@ -1,0 +1,172 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"15 ../src/i2c_queue.h
+[s S1 `uc 1 `i 1 `i 1 `*uc 1 ]
+[n S1 i2c_queue size front end elements ]
+[; ;i2c_queue.h: 15: typedef struct i2c_queue {
+[; ;i2c_queue.h: 16: unsigned char size;
+[; ;i2c_queue.h: 17: int front;
+[; ;i2c_queue.h: 18: int end;
+[; ;i2c_queue.h: 19: unsigned char* elements;
+[; ;i2c_queue.h: 20: } i2c_queue;
+[; ;i2c_queue.h: 22: unsigned char createQueue(i2c_queue* queue, unsigned char size);
+[; ;i2c_queue.h: 23: unsigned char putQueue(i2c_queue* queue, unsigned char element);
+[; ;i2c_queue.h: 24: unsigned char getQueue(i2c_queue* queue, unsigned char* element);
+[; ;i2c_queue.h: 25: unsigned char isEmpty(i2c_queue* queue);
+"3 ../src/i2c_queue.c
+[v _createQueue `(uc ~T0 @X0 1 ef2`*S1`uc ]
+{
+[; ;i2c_queue.c: 3: unsigned char createQueue(i2c_queue* queue, unsigned char size) {
+[e :U _createQueue ]
+[v _queue `*S1 ~T0 @X0 1 r1 ]
+[v _size `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;i2c_queue.c: 4: queue->size = size;
+"4
+[e = . *U _queue 0 _size ]
+[; ;i2c_queue.c: 5: queue->front = 0;
+"5
+[e = . *U _queue 1 -> 0 `i ]
+[; ;i2c_queue.c: 6: queue->end = -1;
+"6
+[e = . *U _queue 2 -U -> 1 `i ]
+[; ;i2c_queue.c: 7: queue->elements[queue->size];
+"7
+[e *U + . *U _queue 3 * -> . *U _queue 0 `ux -> -> # *U . *U _queue 3 `ui `ux ]
+[; ;i2c_queue.c: 8: }
+"8
+[e :UE 2 ]
+}
+"10
+[v _putQueue `(uc ~T0 @X0 1 ef2`*S1`uc ]
+{
+[; ;i2c_queue.c: 10: unsigned char putQueue(i2c_queue* queue, unsigned char element) {
+[e :U _putQueue ]
+[v _queue `*S1 ~T0 @X0 1 r1 ]
+[v _element `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;i2c_queue.c: 13: if ( queue->end == queue->size - 1) {
+"13
+[e $ ! == . *U _queue 2 - -> . *U _queue 0 `i -> 1 `i 4  ]
+{
+[; ;i2c_queue.c: 14: return 0;
+"14
+[e ) -> -> 0 `i `uc ]
+[e $UE 3  ]
+"15
+}
+[; ;i2c_queue.c: 15: } else {
+[e $U 5  ]
+[e :U 4 ]
+{
+[; ;i2c_queue.c: 17: if (queue->end == -1) {
+"17
+[e $ ! == . *U _queue 2 -U -> 1 `i 6  ]
+{
+[; ;i2c_queue.c: 18: queue->elements[0] = element;
+"18
+[e = *U + . *U _queue 3 * -> -> 0 `i `x -> -> # *U . *U _queue 3 `i `x _element ]
+[; ;i2c_queue.c: 19: queue->end++;
+"19
+[e ++ . *U _queue 2 -> 1 `i ]
+"20
+}
+[; ;i2c_queue.c: 20: } else {
+[e $U 7  ]
+[e :U 6 ]
+{
+[; ;i2c_queue.c: 21: queue->end++;
+"21
+[e ++ . *U _queue 2 -> 1 `i ]
+[; ;i2c_queue.c: 22: queue->elements[queue->end] = element;
+"22
+[e = *U + . *U _queue 3 * -> . *U _queue 2 `x -> -> # *U . *U _queue 3 `i `x _element ]
+"24
+}
+[e :U 7 ]
+[; ;i2c_queue.c: 24: }
+[; ;i2c_queue.c: 25: return 1;
+"25
+[e ) -> -> 1 `i `uc ]
+[e $UE 3  ]
+"26
+}
+[e :U 5 ]
+[; ;i2c_queue.c: 26: }
+[; ;i2c_queue.c: 27: }
+"27
+[e :UE 3 ]
+}
+"29
+[v _getQueue `(uc ~T0 @X0 1 ef2`*S1`*uc ]
+{
+[; ;i2c_queue.c: 29: unsigned char getQueue(i2c_queue* queue, unsigned char* element) {
+[e :U _getQueue ]
+[v _queue `*S1 ~T0 @X0 1 r1 ]
+[v _element `*uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;i2c_queue.c: 31: if ( queue->end == -1 ) {
+"31
+[e $ ! == . *U _queue 2 -U -> 1 `i 9  ]
+{
+[; ;i2c_queue.c: 32: return 0;
+"32
+[e ) -> -> 0 `i `uc ]
+[e $UE 8  ]
+"33
+}
+[; ;i2c_queue.c: 33: } else {
+[e $U 10  ]
+[e :U 9 ]
+{
+[; ;i2c_queue.c: 35: *element = queue->elements[0];
+"35
+[e = *U _element *U + . *U _queue 3 * -> -> 0 `i `x -> -> # *U . *U _queue 3 `i `x ]
+"37
+[v _i `i ~T0 @X0 1 a ]
+[; ;i2c_queue.c: 37: int i;
+[; ;i2c_queue.c: 38: for (i = 0; i < queue->end; i++)
+"38
+{
+[e = _i -> 0 `i ]
+[e $U 14  ]
+"39
+[e :U 11 ]
+[; ;i2c_queue.c: 39: queue->elements[i] = queue->elements[i+1];
+[e = *U + . *U _queue 3 * -> _i `x -> -> # *U . *U _queue 3 `i `x *U + . *U _queue 3 * -> + _i -> 1 `i `x -> -> # *U . *U _queue 3 `i `x ]
+"38
+[e ++ _i -> 1 `i ]
+[e :U 14 ]
+[e $ < _i . *U _queue 2 11  ]
+[e :U 12 ]
+"39
+}
+[; ;i2c_queue.c: 40: queue->end--;
+"40
+[e -- . *U _queue 2 -> 1 `i ]
+[; ;i2c_queue.c: 42: return 1;
+"42
+[e ) -> -> 1 `i `uc ]
+[e $UE 8  ]
+"43
+}
+[e :U 10 ]
+[; ;i2c_queue.c: 43: }
+[; ;i2c_queue.c: 44: }
+"44
+[e :UE 8 ]
+}
+"46
+[v _isEmpty `(uc ~T0 @X0 1 ef1`*S1 ]
+{
+[; ;i2c_queue.c: 46: unsigned char isEmpty(i2c_queue* queue) {
+[e :U _isEmpty ]
+[v _queue `*S1 ~T0 @X0 1 r1 ]
+[f ]
+[; ;i2c_queue.c: 47: return (queue->end == -1);
+"47
+[e ) -> -> == . *U _queue 2 -U -> 1 `i `i `uc ]
+[e $UE 15  ]
+[; ;i2c_queue.c: 48: }
+"48
+[e :UE 15 ]
+}

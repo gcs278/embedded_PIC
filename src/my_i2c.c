@@ -245,7 +245,7 @@ void i2c_int_handler() {
         
 #elif defined(SENSOR_PIC)
         int length = 10;
-        unsigned char * msgbuffer = motorTickValue(0x00);
+        unsigned char * msgbuffer = SensorValues();
         start_i2c_slave_reply(length, msgbuffer);
 
 
@@ -274,8 +274,20 @@ void init_i2c(i2c_comm *ic) {
 void i2c_configure_slave(unsigned char addr) {
 
     // ensure the two lines are set for input (we are a slave)
+#ifdef __USE18F26J50
+    //THIS CODE LOOKS WRONG, SHOULDN'T IT BE USING THE TRIS BITS???
+    PORTBbits.SCL1 = 1;
+    PORTBbits.SDA1 = 1;
+#else
+#ifdef __USE18F46J50
+    TRISBbits.TRISB4 = 1; //RB4 = SCL1
+    TRISBbits.TRISB5 = 1; //RB5 = SDA1
+#else
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
+#endif
+#endif
+
     // set the address
     SSPADD = addr;
     //OpenI2C(SLAVE_7,SLEW_OFF); // replaced w/ code below
@@ -284,17 +296,29 @@ void i2c_configure_slave(unsigned char addr) {
     SSPCON2 = 0x0;
     SSPCON1 |= 0x0E; // enable Slave 7-bit w/ start/stop interrupts
     SSPSTAT |= SLEW_OFF;
+
 #ifdef I2C_V3
     I2C1_SCL = 1;
     I2C1_SDA = 1;
-#else 
+#else
 #ifdef I2C_V1
     I2C_SCL = 1;
     I2C_SDA = 1;
 #else
+#ifdef __USE18F26J50
+    PORTBbits.SCL1 = 1;
+    PORTBbits.SDA1 = 1;
+#else
+#ifdef __USE18F46J50
+    PORTBbits.SCL1 = 1;
+    PORTBbits.SDA1 = 1;
+#else
     __dummyXY=35;// Something is messed up with the #ifdefs; this line is designed to invoke a compiler error
 #endif
 #endif
+#endif
+#endif
+
     // enable clock-stretching
     SSPCON2bits.SEN = 1;
     SSPCON1 |= SSPENB;

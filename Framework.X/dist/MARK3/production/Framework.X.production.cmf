@@ -1,0 +1,1644 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$/tmp/cgtA9kMQL.obj
+end_init CODE 0 C2 C2 4 1
+reset_vec CODE 0 0 0 4 1
+config CONFIG 0 7FF8 7FF8 6 1
+$dist/MARK3/production/Framework.X.production.obj
+intcodelo CODE 0 18 18 AA 1
+intcode CODE 0 8 8 C 1
+text56 CODE 0 1F90 1F90 10 1
+text55 CODE 0 1CA6 1CA6 38 1
+text54 CODE 0 19CC 19CC 5E 1
+text53 CODE 0 10A0 10A0 104 1
+text52 CODE 0 1DB6 1DB6 36 1
+text51 CODE 0 13D6 13D6 9C 1
+text50 CODE 0 11A4 11A4 D6 1
+text49 CODE 0 C6 C6 51A 1
+text48 CODE 0 1F7E 1F7E 12 1
+text47 CODE 0 1D80 1D80 36 1
+text46 CODE 0 1FBE 1FBE 4 1
+intcode_body CODE 0 E78 E78 124 1
+text44 CODE 0 1F6C 1F6C 12 1
+text43 CODE 0 1F5A 1F5A 12 1
+text42 CODE 0 1DEC 1DEC 34 1
+text41 CODE 0 1EC4 1EC4 1E 1
+text40 CODE 0 9A0 9A0 26C 1
+text39 CODE 0 1C66 1C66 40 1
+text38 CODE 0 132C 132C AA 1
+text37 CODE 0 1E9E 1E9E 26 1
+text36 CODE 0 1E20 1E20 2C 1
+text35 CODE 0 1F10 1F10 14 1
+text34 CODE 0 16A4 16A4 80 1
+text32 CODE 0 1E4C 1E4C 2A 1
+text31 CODE 0 1504 1504 92 1
+text30 CODE 0 196E 196E 5E 1
+text29 CODE 0 D42 D42 136 1
+text28 CODE 0 1C24 1C24 42 1
+text27 CODE 0 1BE2 1BE2 42 1
+text26 CODE 0 F9C F9C 104 1
+text25 CODE 0 1D4A 1D4A 36 1
+text24 CODE 0 C0C C0C 136 1
+text23 CODE 0 1EFA 1EFA 16 1
+text22 CODE 0 1D14 1D14 36 1
+text21 CODE 0 1F48 1F48 12 1
+text20 CODE 0 1B58 1B58 46 1
+text19 CODE 0 1B9E 1B9E 44 1
+text18 CODE 0 127A 127A B2 1
+text17 CODE 0 1FAE 1FAE C 1
+text16 CODE 0 1E76 1E76 28 1
+text15 CODE 0 1472 1472 92 1
+text14 CODE 0 1FBA 1FBA 4 1
+text13 CODE 0 1620 1620 84 1
+text12 CODE 0 1B12 1B12 46 1
+text11 CODE 0 1A7E 1A7E 4E 1
+text10 CODE 0 179E 179E 7A 1
+text9 CODE 0 18FC 18FC 72 1
+text8 CODE 0 1F36 1F36 12 1
+text7 CODE 0 1F24 1F24 12 1
+text6 CODE 0 1A2A 1A2A 54 1
+text5 CODE 0 1CDE 1CDE 36 1
+text4 CODE 0 1596 1596 8A 1
+text3 CODE 0 188A 188A 72 1
+text2 CODE 0 1818 1818 72 1
+text1 CODE 0 1ACC 1ACC 46 1
+text0 CODE 0 5E0 5E0 3C0 1
+cstackCOMRAM COMRAM 1 1 1 2C 1
+cstackBANK0 BANK0 1 80 80 3A 1
+cstackBANK1 BANK1 1 1A3 1A3 26 1
+cstackBANK2 BANK2 1 200 200 53 1
+bssBANK2 BANK2 1 253 253 36 1
+bssBANK1 BANK1 1 100 100 A3 1
+dataBANK0 BANK0 1 DE DE 17 1
+bssBANK0 BANK0 1 BA BA 24 1
+dataCOMRAM COMRAM 1 53 53 E 1
+bssCOMRAM COMRAM 1 2D 2D 26 1
+cinit CODE 0 1724 1724 7A 1
+nvBANK0 BANK0 1 F5 F5 2 1
+nvCOMRAM COMRAM 1 61 61 2 1
+idataBANK0 CODE 0 1EE2 1EE2 17 1
+idataCOMRAM CODE 0 1FA0 1FA0 E 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+BANK0 000F7-000FF 1
+BANK1 001C9-001FF 1
+BANK2 00289-002FF 1
+BANK3 00300-003FF 1
+BIGRAM 00063-0007F 1
+BIGRAM 000F7-000FF 1
+BIGRAM 001C9-001FF 1
+BIGRAM 00289-003FF 1
+CODE 00004-00007 1
+CODE 00014-00017 1
+CODE 01EF9-01EF9 1
+CODE 01FC2-07FF7 1
+COMRAM 00063-0007F 1
+CONST 00004-00007 1
+CONST 00014-00017 1
+CONST 01EF9-01EF9 1
+CONST 01FC2-07FF7 1
+MEDIUMCONST 01EF9-01EF9 1
+MEDIUMCONST 01FC2-07FF7 1
+RAM 000F7-000FF 1
+RAM 001C9-001FF 1
+RAM 00289-003FF 1
+SFR 00F80-00FFF 1
+SMALLCONST 01EF9-01EF9 1
+SMALLCONST 01FC2-07FF7 1
+STACK 00289-003FF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <file name>:<line number> <address> <psect name> <class name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/MARK3/production/Framework.X.production.obj
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":177 8 intcode CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":23 8 intcode CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":346 18 intcodelo CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":31 18 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":348 5C intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":349 60 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":350 62 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":354 66 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":355 6A intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":356 6C intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":360 70 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":362 76 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":365 78 intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":367 7C intcodelo CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":68 C6 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":70 C6 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":71 D6 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":72 E6 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":73 F6 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":74 106 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":78 116 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":79 11A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":83 11C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":84 12C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":85 13C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":86 14A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":89 15A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":90 15E text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":91 162 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":97 172 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":99 17C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":102 17C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":103 180 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":105 18A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":106 19C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":107 1AC text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":112 1BA text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":115 1BA text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":118 1BE text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":119 1CC text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":120 1D6 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":121 1DA text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":122 1EA text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":123 1EC text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":124 1FA text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":126 20A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":128 20C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":129 216 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":130 224 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":131 228 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":132 22C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":134 23C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":140 24E text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":141 25C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":142 26C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":149 27C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":150 2A4 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":151 2D4 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":152 2E2 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":155 2F0 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":159 2F4 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":162 2F4 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":164 2F8 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":165 306 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":166 310 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":167 314 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":168 33E text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":171 34E text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":172 35C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":173 36C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":176 37E text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":178 38E text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":179 390 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":180 39A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":181 3A8 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":182 3AC text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":183 3D6 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":184 3E4 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":185 3E6 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":186 3EA text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":187 3FA text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":188 40A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":190 41A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":191 42A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":193 42C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":194 42C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":98 43C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":201 462 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":204 462 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":206 474 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":207 476 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":212 478 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":213 492 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":214 4A2 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":215 4B0 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":218 4C0 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":219 4CA text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":221 4FE text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":222 504 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":223 516 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":224 52A text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":225 53E text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":226 552 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":227 57C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":229 58C text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":247 596 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":248 5A4 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":249 5B4 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":256 5CE text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":192 5E0 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":206 5E0 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":258 5E0 text49 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":213 5F0 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":214 5F4 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":232 5F6 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":235 60E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":238 626 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":240 63E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":242 656 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":248 65A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":249 65E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":264 662 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":281 664 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":286 668 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":288 66A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":290 66C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":292 66E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":314 670 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":327 672 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":349 686 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":351 68C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":352 690 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":404 696 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":425 698 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":432 69C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":433 6D0 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":442 6DA text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":443 72A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":507 72C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":511 72C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":512 730 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":555 732 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":565 73C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":566 74A text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":569 75E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":570 76E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":569 79C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":571 7CA text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":572 7EA text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":573 7F6 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":574 800 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":575 810 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":576 820 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":581 848 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":439 878 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":608 89E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":609 8D2 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":618 8DC text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":619 92C text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":642 92E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":643 97E text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":615 980 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/main.c":654 9A0 text0 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":14 9A0 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":16 9A4 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":19 9A6 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":21 9AE text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":26 9C6 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":35 9CE text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":40 9E6 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":41 9FC text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":43 A12 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":44 A28 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":45 A34 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":46 A4A text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":50 A4C text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":58 A62 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":62 A64 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":63 A7A text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":64 A90 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":65 AA6 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":66 ABC text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":67 AD2 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":73 AD4 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":74 B08 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":75 B40 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":78 B40 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":81 B54 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":82 B6C text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":88 B84 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":110 B88 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":112 B9E text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":113 BB4 text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":114 BCA text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":16 BCC text40 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":119 C0C text40 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":8 C0C text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":14 C0C text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":15 C1C text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":16 C34 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":17 C42 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":19 C52 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":20 C6A text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":21 C78 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":23 C80 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":24 C8E text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":25 C9A text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":26 CAA text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":27 CAC text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":28 CB8 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":26 CBE text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":31 CC6 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":32 CD2 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":33 CEE text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":34 D06 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":36 D0C text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":37 D18 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":39 D20 text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":40 D2A text24 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":41 D38 text24 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":68 D42 text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":77 D42 text29 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/awdiv.c":42 D42 text24 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":78 D5C text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":79 D7E text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":81 D8C text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":82 DAA text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":85 DAE text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":86 DD4 text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":92 E10 text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":94 E42 text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":96 E60 text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":97 E6C text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":99 E74 text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":177 E78 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":101 E78 text29 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":182 EA8 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":184 EAC intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":192 EAE intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":198 EB2 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":200 EB4 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":228 EB6 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":230 EBA intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":232 EBC intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":263 EC0 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":281 EC4 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":284 EC6 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":285 EC8 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":286 EEA intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":287 EFA intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":289 F1C intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":290 F24 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":293 F2E intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":294 F3A intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":296 F42 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":297 F56 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":298 F5A intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":334 F62 intcode_body CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":29 F9C text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":33 F9C text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":43 FAA text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":44 FC4 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":46 FE6 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":47 FF4 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":51 FF8 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":52 1010 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":60 1028 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":61 105E text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":64 1090 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":65 109C text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":29 10A0 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":33 10A0 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":66 10A0 text26 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":43 10AE text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":44 10C8 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":46 10EA text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":47 10F8 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":51 10FC text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":52 1114 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":60 112C text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":61 1162 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":64 1194 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":65 11A0 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":66 11A4 text53 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":21 11A4 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":23 11A8 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":24 11BA text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":23 1216 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":26 1244 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":27 1256 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":30 1266 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":33 1276 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":35 1278 text50 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":263 127A text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":264 127A text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":267 128C text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":268 128E text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":270 129E text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":271 12BC text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":272 12CC text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":275 12D0 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":276 12EE text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":277 12FE text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":280 1302 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":281 1308 text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":29 132C text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":33 132C text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":283 132C text18 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":43 1332 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":44 1342 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":46 1352 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":47 1360 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":51 1364 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":52 1374 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":60 1384 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":61 13A4 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":64 13C6 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":65 13D2 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":66 13D6 text38 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":39 13D6 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":40 13DA text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":41 13EA text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":43 13FA text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":44 1404 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":47 1408 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":48 1418 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":49 1426 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":50 1436 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":51 1438 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":52 143C text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":53 144C text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":54 144E text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":58 1460 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":60 1472 text51 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":105 1472 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":106 1472 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":108 1476 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":112 1484 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":114 1490 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":115 14A8 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":116 14BE text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":117 14DC text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":118 14F4 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":119 14F6 text15 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c_master.c":122 1504 text15 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":73 1504 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":75 1508 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":76 150C text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":78 1510 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":79 1516 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":81 1518 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":83 1520 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":84 1522 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":87 1524 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":88 152A text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":90 152C text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":91 1534 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":92 1538 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":93 1538 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":95 153A text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":96 1540 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":98 1542 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":100 1544 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":101 154A text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":103 154C text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":104 1554 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":105 1558 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":106 1558 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":108 155A text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":110 155C text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":111 1564 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":112 1568 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":113 1568 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":115 156A text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":116 156E text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":118 1582 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":119 1584 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":137 1586 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":138 158A text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":139 1592 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":8 1596 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":13 1596 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uopen.c":143 1596 text31 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":14 15A2 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":15 15B2 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":16 15B4 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":17 15C0 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":15 15C6 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":20 15CE text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":21 15EA text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":22 1602 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":23 160E text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":24 1616 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":25 1616 text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/lwmod.c":26 161E text4 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":68 1620 text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":72 1624 text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":73 1628 text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":75 162C text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":77 1638 text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":80 1658 text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":82 1692 text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":84 169A text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":85 169C text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":86 169E text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":87 16A0 text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":88 16A0 text13 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcopen.c":89 16A2 text13 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":150 16A4 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":153 16A4 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":157 16BC text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":163 16F8 text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":166 16FA text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":167 170E text34 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":169 1724 text34 CODE
+"/tmp/cgtawLwh3":4189 1724 cinit CODE
+"/tmp/cgtawLwh3":4191 1724 cinit CODE
+"/tmp/cgtawLwh3":4194 1724 cinit CODE
+"/tmp/cgtawLwh3":4383 1724 cinit CODE
+"/tmp/cgtawLwh3":4384 1728 cinit CODE
+"/tmp/cgtawLwh3":4385 172A cinit CODE
+"/tmp/cgtawLwh3":4386 172A cinit CODE
+"/tmp/cgtawLwh3":4387 172C cinit CODE
+"/tmp/cgtawLwh3":4388 172E cinit CODE
+"/tmp/cgtawLwh3":4391 1730 cinit CODE
+"/tmp/cgtawLwh3":4392 1734 cinit CODE
+"/tmp/cgtawLwh3":4393 1736 cinit CODE
+"/tmp/cgtawLwh3":4394 1736 cinit CODE
+"/tmp/cgtawLwh3":4395 1738 cinit CODE
+"/tmp/cgtawLwh3":4396 173A cinit CODE
+"/tmp/cgtawLwh3":4399 173C cinit CODE
+"/tmp/cgtawLwh3":4400 1740 cinit CODE
+"/tmp/cgtawLwh3":4401 1742 cinit CODE
+"/tmp/cgtawLwh3":4402 1742 cinit CODE
+"/tmp/cgtawLwh3":4403 1744 cinit CODE
+"/tmp/cgtawLwh3":4404 1746 cinit CODE
+"/tmp/cgtawLwh3":4407 1748 cinit CODE
+"/tmp/cgtawLwh3":4408 174C cinit CODE
+"/tmp/cgtawLwh3":4409 174E cinit CODE
+"/tmp/cgtawLwh3":4410 174E cinit CODE
+"/tmp/cgtawLwh3":4411 1750 cinit CODE
+"/tmp/cgtawLwh3":4412 1752 cinit CODE
+"/tmp/cgtawLwh3":4417 1754 cinit CODE
+"/tmp/cgtawLwh3":4418 1756 cinit CODE
+"/tmp/cgtawLwh3":4419 1758 cinit CODE
+"/tmp/cgtawLwh3":4420 175A cinit CODE
+"/tmp/cgtawLwh3":4421 175C cinit CODE
+"/tmp/cgtawLwh3":4422 175E cinit CODE
+"/tmp/cgtawLwh3":4423 1760 cinit CODE
+"/tmp/cgtawLwh3":4424 1764 cinit CODE
+"/tmp/cgtawLwh3":4425 1768 cinit CODE
+"/tmp/cgtawLwh3":4426 1768 cinit CODE
+"/tmp/cgtawLwh3":4427 176A cinit CODE
+"/tmp/cgtawLwh3":4428 176E cinit CODE
+"/tmp/cgtawLwh3":4429 1770 cinit CODE
+"/tmp/cgtawLwh3":4430 1772 cinit CODE
+"/tmp/cgtawLwh3":4434 1774 cinit CODE
+"/tmp/cgtawLwh3":4435 1776 cinit CODE
+"/tmp/cgtawLwh3":4436 1778 cinit CODE
+"/tmp/cgtawLwh3":4437 177A cinit CODE
+"/tmp/cgtawLwh3":4438 177C cinit CODE
+"/tmp/cgtawLwh3":4439 177E cinit CODE
+"/tmp/cgtawLwh3":4440 1780 cinit CODE
+"/tmp/cgtawLwh3":4441 1784 cinit CODE
+"/tmp/cgtawLwh3":4442 1788 cinit CODE
+"/tmp/cgtawLwh3":4443 1788 cinit CODE
+"/tmp/cgtawLwh3":4444 178A cinit CODE
+"/tmp/cgtawLwh3":4445 178E cinit CODE
+"/tmp/cgtawLwh3":4446 1790 cinit CODE
+"/tmp/cgtawLwh3":4447 1792 cinit CODE
+"/tmp/cgtawLwh3":4453 1794 cinit CODE
+"/tmp/cgtawLwh3":4454 1794 cinit CODE
+"/tmp/cgtawLwh3":4455 1794 cinit CODE
+"/tmp/cgtawLwh3":4456 1796 cinit CODE
+"/tmp/cgtawLwh3":4457 1798 cinit CODE
+"/tmp/cgtawLwh3":4458 179A cinit CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":19 179E text10 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":22 179E text10 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":23 17B4 text10 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":24 17CA text10 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":25 17E6 text10 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":24 1806 text10 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":27 1818 text10 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":14 1818 text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":17 1818 text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":20 1826 text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":21 185C text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":14 188A text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":21 188A text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":26 188A text2 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":24 1898 text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":25 18CE text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":199 18FC text9 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":200 18FC text9 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":31 18FC text3 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":201 190C text9 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":202 1924 text9 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":203 193C text9 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":204 1954 text9 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":205 196C text9 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":11 196E text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":24 196E text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":25 197E text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 198E text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":27 1990 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 19B4 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 19C8 text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 19CA text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":11 19CC text54 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":24 19CC text54 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 19CC text30 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":25 19DC text54 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 19EC text54 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":27 19EE text54 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1A12 text54 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1A26 text54 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1A28 text54 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":202 1A2A text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":203 1A2A text6 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1A2A text54 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":204 1A3A text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":205 1A50 text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":206 1A66 text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":207 1A7C text6 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":263 1A7E text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":264 1A7E text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":265 1A8A text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":266 1A9A text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":267 1AAA text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":268 1ABA text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":269 1ACA text11 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":17 1ACC text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":18 1ACC text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":19 1ADA text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":22 1AE8 text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":34 1B08 text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c":6 1B12 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c":9 1B12 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/uart_thread.c":36 1B12 text1 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c":10 1B14 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c":13 1B16 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c":16 1B24 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c":17 1B4A text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c":18 1B50 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c":20 1B52 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_adc.c":21 1B56 text12 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":124 1B58 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":125 1B58 text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":126 1B5C text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":127 1B6C text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":128 1B7E text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":130 1B8E text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":132 1B9E text20 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":134 1B9E text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":135 1B9E text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":136 1BC2 text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":138 1BD2 text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":140 1BE2 text19 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":117 1BE2 text27 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":123 1BE6 text27 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":124 1C24 text27 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":140 1C24 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":146 1C28 text28 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":147 1C66 text28 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":11 1C66 text39 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":24 1C66 text39 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":25 1C6E text39 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1C76 text39 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":27 1C78 text39 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1C94 text39 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1CA2 text39 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":26 1CA4 text39 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":70 1CA6 text55 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":71 1CA6 text55 CODE
+"/Applications/microchip/xc8/v1.30/sources/common/memcpy.c":32 1CA6 text39 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":73 1CB8 text55 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":74 1CC0 text55 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":75 1CC8 text55 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":76 1CDE text55 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":179 1CDE text5 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":185 1CE2 text5 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":186 1D14 text5 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":227 1D14 text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":228 1D14 text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":108 1D4A text25 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":229 1D4A text22 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":114 1D4E text25 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":115 1D80 text25 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":17 1D80 text47 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":20 1D80 text47 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":29 1DA2 text47 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":37 1DB4 text47 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":131 1DB6 text52 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":137 1DBA text52 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":138 1DEC text52 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":42 1DEC text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":46 1DEC text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":47 1E06 text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":57 1E12 text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/user_interrupts.c":60 1E1E text42 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":121 1E20 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":135 1E20 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":137 1E24 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":139 1E2C text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":142 1E30 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":143 1E32 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":144 1E34 text36 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_uart.c":148 1E4C text36 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":18 1E4C text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":20 1E50 text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":21 1E5A text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":22 1E5E text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":23 1E62 text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":25 1E64 text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":26 1E6C text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":27 1E70 text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":28 1E70 text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":30 1E72 text32 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0open.c":31 1E74 text32 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":274 1E76 text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":286 1E7A text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":287 1E7C text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":292 1E7E text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":294 1E82 text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":295 1E86 text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":296 1E8A text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":297 1E8E text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":298 1E92 text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":301 1E94 text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":302 1E96 text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":323 1E98 text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":324 1E9A text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/my_i2c.c":326 1E9C text16 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":108 1E9E text37 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":114 1EA2 text37 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/messages.c":115 1EC4 text37 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":15 1EC4 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":19 1EC4 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":21 1EC8 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":23 1ECC text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":24 1ECE text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":25 1ED0 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":26 1ED2 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":28 1ED2 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":29 1ED4 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":31 1ED6 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":32 1ED8 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":34 1EDA text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":36 1EDE text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uread.c":37 1EE2 text41 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":8 1EFA text23 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":10 1EFE text23 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":11 1EFE text23 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":12 1F06 text23 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/d1ktcyx.c":13 1F10 text23 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uwrite.c":13 1F10 text35 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uwrite.c":15 1F14 text35 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uwrite.c":17 1F18 text35 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uwrite.c":18 1F1A text35 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uwrite.c":19 1F1C text35 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uwrite.c":22 1F1E text35 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/USART/uwrite.c":23 1F22 text35 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":6 1F24 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":7 1F24 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer1_thread.c":8 1F34 text7 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":10 1F36 text8 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":11 1F36 text8 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/timer0_thread.c":12 1F46 text8 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":116 1F48 text21 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":117 1F48 text21 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":118 1F5A text21 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":14 1F5A text43 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":18 1F5A text43 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":20 1F62 text43 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":21 1F66 text43 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1write.c":22 1F6A text43 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":15 1F6C text44 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":19 1F6C text44 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":20 1F70 text44 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":22 1F74 text44 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t1read.c":23 1F7C text44 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":16 1F7E text48 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":20 1F7E text48 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":22 1F86 text48 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":23 1F8A text48 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/Timers/t0write.c":24 1F8E text48 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c":24 1F90 text56 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c":26 1F90 text56 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcread.c":27 1FA0 text56 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":104 1FAE text17 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":107 1FAE text17 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":108 1FB0 text17 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":109 1FB2 text17 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":111 1FB4 text17 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":113 1FB6 text17 CODE
+"/Users/grantspence/Dropbox/Embedded/embedded_PIC/src/interrupts.c":114 1FB8 text17 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":22 1FBA text14 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":24 1FBA text14 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":25 1FBC text14 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":22 1FBE text46 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":24 1FBE text46 CODE
+"/Applications/microchip/xc8/v1.30/sources/pic18/plib/ADC/adcconv.c":25 1FC0 text46 CODE
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+ReadTimer1@timer 3 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+__size_of_ToMainHigh_sendmsg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__CFG_XINST$OFF 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+___awdiv@counter 1A8 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_i CF 0 BANK0 1 bssBANK0 dist/MARK3/production/Framework.X.production.obj
+_w 51 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__end_ofi1_send_msg 13D6 0 CODE 0 text38 dist/MARK3/production/Framework.X.production.obj
+i1send_msg@tlength 12 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2send_msg@tlength 91 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__end_of_uart_send_int_handler 1724 0 CODE 0 text34 dist/MARK3/production/Framework.X.production.obj
+_ToMainHigh_MQ 137 0 BANK1 1 bssBANK1 dist/MARK3/production/Framework.X.production.obj
+__end_of_OpenUSART 1596 0 CODE 0 text31 dist/MARK3/production/Framework.X.production.obj
+start_i2c_slave_reply@length 84 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__S0 7FFE 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__S1 289 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__S2 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_ofi2_send_msg 11A4 0 CODE 0 text53 dist/MARK3/production/Framework.X.production.obj
+__end_of_start_i2c_slave_reply 127A 0 CODE 0 text50 dist/MARK3/production/Framework.X.production.obj
+_SSP1STATbits FC7 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hintentry 0 0 ABS 0 intentry dist/MARK3/production/Framework.X.production.obj
+__Lintentry 0 0 ABS 0 intentry dist/MARK3/production/Framework.X.production.obj
+ToMainLow_recvmsg@maxlength 1BF 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+i1memcpy@d 7 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2memcpy@d 86 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_of_init_i2c 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_of_ToMainHigh_sendmsg 1DEC 0 CODE 0 text52 dist/MARK3/production/Framework.X.production.obj
+__end_of_timer1_lthread 188A 0 CODE 0 text2 dist/MARK3/production/Framework.X.production.obj
+__end_of___awdiv D42 0 CODE 0 text24 dist/MARK3/production/Framework.X.production.obj
+_init_timer1_lthread 1F24 0 CODE 0 text7 dist/MARK3/production/Framework.X.production.obj
+timer1_int_handler@result 6 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+_LATB F8A 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_add1 47 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__end_of_ToMainHigh_recvmsg 1C66 0 CODE 0 text28 dist/MARK3/production/Framework.X.production.obj
+_data 48 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+_mode 4A 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+_sendingPlaceHolder 53 0 COMRAM 1 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+_back 55 0 COMRAM 1 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+__size_of_ToMainHigh_recvmsg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_uart_send_int_handler 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_main 5E0 0 CODE 0 text0 dist/MARK3/production/Framework.X.production.obj
+___sp 0 0 STACK 2 stack /tmp/cgtA9kMQL.obj
+_timer0_int_handler 1D80 0 CODE 0 text47 dist/MARK3/production/Framework.X.production.obj
+_left 5B 0 COMRAM 1 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+InterruptHandlerHigh@pureADCValue B8 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+i2c_int_handler@overrun_error A3 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+init_i2c@ic 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+i2c_int_handler@data_written A2 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+_timer1_int_handler 1DEC 0 CODE 0 text42 dist/MARK3/production/Framework.X.production.obj
+_slew 4D 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+_stop 52 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+start C2 0 CODE 0 init /tmp/cgtA9kMQL.obj
+_i2cMstrMsgState 100 0 BANK1 1 bssBANK1 dist/MARK3/production/Framework.X.production.obj
+_I2C_Send DE 0 BANK0 1 dataBANK0 dist/MARK3/production/Framework.X.production.obj
+_MQ_Main_Willing_to_block D3 0 BANK0 1 bssBANK0 dist/MARK3/production/Framework.X.production.obj
+_start_i2c_slave_reply 11A4 0 CODE 0 text50 dist/MARK3/production/Framework.X.production.obj
+i1memcpy@d1 1 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2memcpy@d1 80 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+_FromMainHigh_MQ 253 0 BANK2 1 bssBANK2 dist/MARK3/production/Framework.X.production.obj
+__end_of_timer0_int_handler 1DB6 0 CODE 0 text47 dist/MARK3/production/Framework.X.production.obj
+_motor_state 4B 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+_TMR0H FD7 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_TMR1H FCF 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+WriteUSART@data 1 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+_TMR0L FD6 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_TMR1L FCE 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+?_in_high_int 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_RCREG FAE 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_RCSTA FAB 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_TRISB F93 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_TXREG FAD 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_SPBRG FAF 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hirdata 0 0 CODE 0 irdata dist/MARK3/production/Framework.X.production.obj
+_TXSTA FAC 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Lirdata 0 0 CODE 0 irdata dist/MARK3/production/Framework.X.production.obj
+__HRAM 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__LRAM 1 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_T0CON FD5 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+i1send_msg@qmsg 15 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2send_msg@qmsg 94 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+i2c_configure_slave@addr 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+OpenTimer0@config 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_left2 5F 0 COMRAM 1 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+i1send_msg@msgtype E 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2send_msg@msgtype 8D 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hconfig 7FFE 0 CONFIG 0 config dist/MARK3/production/Framework.X.production.obj
+__Lconfig 7FF8 0 CONFIG 0 config dist/MARK3/production/Framework.X.production.obj
+timer0_lthread@retval 1C6 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+timer1_lthread@retval 1C6 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_ADCValue 45 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+_messages_lost 33 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+main@i 211 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+_ConvertADC 1FBA 0 CODE 0 text14 dist/MARK3/production/Framework.X.production.obj
+?___lwmod 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+WriteTimer0@timer 82 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__Hbigram 0 0 ABS 0 bigram dist/MARK3/production/Framework.X.production.obj
+WriteTimer0@timer0 80 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__Lbigram 0 0 ABS 0 bigram dist/MARK3/production/Framework.X.production.obj
+_i2c_q 31 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+i1memcpy@n 5 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2memcpy@n 84 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__Hram 0 0 ABS 0 ram dist/MARK3/production/Framework.X.production.obj
+__Lram 0 0 ABS 0 ram dist/MARK3/production/Framework.X.production.obj
+__size_of_WriteUSART 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_ReadUSART 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hcomram 0 0 ABS 0 comram dist/MARK3/production/Framework.X.production.obj
+__Lcomram 0 0 ABS 0 comram dist/MARK3/production/Framework.X.production.obj
+_send_msg F9C 0 CODE 0 text26 dist/MARK3/production/Framework.X.production.obj
+?_in_main 1A7 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Hsfr 0 0 ABS 0 sfr dist/MARK3/production/Framework.X.production.obj
+__Lsfr 0 0 ABS 0 sfr dist/MARK3/production/Framework.X.production.obj
+_I2C_Recv BA 0 BANK0 1 bssBANK0 dist/MARK3/production/Framework.X.production.obj
+__Hbss 0 0 RAM 1 bss dist/MARK3/production/Framework.X.production.obj
+_recv_msg D42 0 CODE 0 text29 dist/MARK3/production/Framework.X.production.obj
+__Lbss 0 0 RAM 1 bss dist/MARK3/production/Framework.X.production.obj
+i1send_msg@length D 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2send_msg@length 8C 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+_right 5D 0 COMRAM 1 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+__Hnvrram 0 0 COMRAM 1 nvrram dist/MARK3/production/Framework.X.production.obj
+__Lnvrram 0 0 COMRAM 1 nvrram dist/MARK3/production/Framework.X.production.obj
+WriteTimer1@timer 3 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+__size_of_timer1_int_handler 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+WriteTimer1@timer1 1 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+_forwardFull F3 0 BANK0 1 dataBANK0 dist/MARK3/production/Framework.X.production.obj
+_ADCON0 FC2 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_ADCON1 FC1 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_ADCON2 FC0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_ofi2_ConvertADC 1FC2 0 CODE 0 text46 dist/MARK3/production/Framework.X.production.obj
+_ticks_right_C 43 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+uart_lthread@length 1A7 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_PIE1bits F9D 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+init_queue@i 1A6 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__end_of_init_timer0_lthread 1F48 0 CODE 0 text8 dist/MARK3/production/Framework.X.production.obj
+__end_of_init_timer1_lthread 1F36 0 CODE 0 text7 dist/MARK3/production/Framework.X.production.obj
+i2c_int_handler@msg_to_send A5 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+_PIR1bits F9E 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_IPR1bits F9F 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+timer0_lthread@msgbuffer 1C3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_LATBbits F8A 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+timer1_lthread@msgbuffer 1C3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_ADCArray D4 0 BANK0 1 bssBANK0 dist/MARK3/production/Framework.X.production.obj
+_LATDbits F8C 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/MARK3/production/Framework.X.production.obj
+_SSPADD FC8 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/MARK3/production/Framework.X.production.obj
+_RCONbits FD0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+i1memcpy@s 9 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2memcpy@s 88 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/MARK3/production/Framework.X.production.obj
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/MARK3/production/Framework.X.production.obj
+?___awdiv 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Hintret 0 0 ABS 0 intret dist/MARK3/production/Framework.X.production.obj
+__Lintret 0 0 ABS 0 intret dist/MARK3/production/Framework.X.production.obj
+__Hramtop 400 0 RAM 0 ramtop dist/MARK3/production/Framework.X.production.obj
+__Lramtop 400 0 RAM 0 ramtop dist/MARK3/production/Framework.X.production.obj
+__Hstruct 0 0 COMRAM 1 struct dist/MARK3/production/Framework.X.production.obj
+__Lstruct 0 0 COMRAM 1 struct dist/MARK3/production/Framework.X.production.obj
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/MARK3/production/Framework.X.production.obj
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/MARK3/production/Framework.X.production.obj
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/MARK3/production/Framework.X.production.obj
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/MARK3/production/Framework.X.production.obj
+_SPBRGH FB0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hfarbss 0 0 FARRAM 0 farbss dist/MARK3/production/Framework.X.production.obj
+__Lfarbss 0 0 FARRAM 0 farbss dist/MARK3/production/Framework.X.production.obj
+main@uthread_data 201 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+_timer0_lthread 188A 0 CODE 0 text3 dist/MARK3/production/Framework.X.production.obj
+__Hintcode 14 0 CODE 0 intcode dist/MARK3/production/Framework.X.production.obj
+_SSPBUF FC9 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Lintcode 8 0 CODE 0 intcode dist/MARK3/production/Framework.X.production.obj
+_timer1_lthread 1818 0 CODE 0 text2 dist/MARK3/production/Framework.X.production.obj
+__Hfardata 0 0 FARRAM 0 fardata dist/MARK3/production/Framework.X.production.obj
+_ADRESH FC4 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Lfardata 0 0 FARRAM 0 fardata dist/MARK3/production/Framework.X.production.obj
+_sync_mode 4F 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__pintcode 8 0 CODE 0 intcode dist/MARK3/production/Framework.X.production.obj
+_OSCCON FD3 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Habs1 0 0 ABS 0 abs1 dist/MARK3/production/Framework.X.production.obj
+__Labs1 0 0 ABS 0 abs1 dist/MARK3/production/Framework.X.production.obj
+_ADRESL FC3 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+my_i2c_master@ic_ptr D1 0 BANK0 1 bssBANK0 dist/MARK3/production/Framework.X.production.obj
+_right2 60 0 COMRAM 1 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+main@msgbuffer 203 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/MARK3/production/Framework.X.production.obj
+send_msg@slot 1B6 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/MARK3/production/Framework.X.production.obj
+FromMainHigh_sendmsg@data 1BA 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+recv_msg@slot 1B6 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+i1_memcpy 1C66 0 CODE 0 text39 dist/MARK3/production/Framework.X.production.obj
+i2_memcpy 19CC 0 CODE 0 text54 dist/MARK3/production/Framework.X.production.obj
+OpenADC@portconfig 1A4 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/MARK3/production/Framework.X.production.obj
+__LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/MARK3/production/Framework.X.production.obj
+__pnvCOMRAM 61 0 COMRAM 1 nvCOMRAM dist/MARK3/production/Framework.X.production.obj
+_i2c_master_recv 1472 0 CODE 0 text15 dist/MARK3/production/Framework.X.production.obj
+main@msgtype 219 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__size_of_in_high_int 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_block_on_To_msgqueues 127A 0 CODE 0 text18 dist/MARK3/production/Framework.X.production.obj
+i1memcpy@s1 3 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2memcpy@s1 82 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+i1ToMainLow_sendmsg@data 18 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+__end_of_Delay1KTCYx 1F10 0 CODE 0 text23 dist/MARK3/production/Framework.X.production.obj
+__end_of_enable_interrupts 1FBA 0 CODE 0 text17 dist/MARK3/production/Framework.X.production.obj
+main@ic 237 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__size_of_SensorValues 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+i2c_int_handler@i2c_data A4 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+main@uc 21B 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__Hdata 0 0 ABS 0 data dist/MARK3/production/Framework.X.production.obj
+__Ldata 0 0 ABS 0 data dist/MARK3/production/Framework.X.production.obj
+send_msg@qmsg 1B7 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+recv_msg@qmsg 1B9 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__end_of_block_on_To_msgqueues 132C 0 CODE 0 text18 dist/MARK3/production/Framework.X.production.obj
+_semaphore 37 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+stackhi 3FF 0 ABS 0 - /tmp/cgtA9kMQL.obj
+_check_msg 1D14 0 CODE 0 text22 dist/MARK3/production/Framework.X.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+_length 49 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__pcstackBANK0 80 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_of_send_msg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Htemp 0 0 COMRAM 1 temp dist/MARK3/production/Framework.X.production.obj
+__Ltemp 0 0 COMRAM 1 temp dist/MARK3/production/Framework.X.production.obj
+stacklo 289 0 ABS 0 - /tmp/cgtA9kMQL.obj
+__Hrbit 0 0 COMRAM 1 rbit dist/MARK3/production/Framework.X.production.obj
+__Lrbit 0 0 COMRAM 1 rbit dist/MARK3/production/Framework.X.production.obj
+__end_of_SensorValues 1CDE 0 CODE 0 text55 dist/MARK3/production/Framework.X.production.obj
+__Hinit C2 0 CODE 0 init dist/MARK3/production/Framework.X.production.obj
+__Linit C2 0 CODE 0 init dist/MARK3/production/Framework.X.production.obj
+__Hintcodelo C2 0 CODE 0 intcodelo dist/MARK3/production/Framework.X.production.obj
+__Lintcodelo 18 0 CODE 0 intcodelo dist/MARK3/production/Framework.X.production.obj
+__size_ofi1_ToMainLow_sendmsg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hrbss 0 0 COMRAM 1 rbss dist/MARK3/production/Framework.X.production.obj
+__end_of_main 9A0 0 CODE 0 text0 dist/MARK3/production/Framework.X.production.obj
+__Lrbss 0 0 COMRAM 1 rbss dist/MARK3/production/Framework.X.production.obj
+__pintcodelo 18 0 CODE 0 intcodelo dist/MARK3/production/Framework.X.production.obj
+_ic_ptr 61 0 COMRAM 1 nvCOMRAM dist/MARK3/production/Framework.X.production.obj
+_uc_ptr F5 0 BANK0 1 nvBANK0 dist/MARK3/production/Framework.X.production.obj
+__end_of_check_msg 1D4A 0 CODE 0 text22 dist/MARK3/production/Framework.X.production.obj
+__size_of_ConvertADC 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Htext 0 0 ABS 0 text dist/MARK3/production/Framework.X.production.obj
+__Ltext 0 0 ABS 0 text dist/MARK3/production/Framework.X.production.obj
+_memcpy 196E 0 CODE 0 text30 dist/MARK3/production/Framework.X.production.obj
+_status 4E 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 dist/MARK3/production/Framework.X.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_of_Delay1KTCYx 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+i1send_msg@qptr B 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2send_msg@qptr 8A 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__pdataBANK0 DE 0 BANK0 1 dataBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_ofi1_send_msg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+end_of_initialization 1794 0 CODE 0 cinit dist/MARK3/production/Framework.X.production.obj
+i1ToMainLow_sendmsg@msgtype 17 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+ToMainHigh_sendmsg@length 99 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+init_queue@qptr 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+OpenUSART@spbrg 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_uart_lthread 1ACC 0 CODE 0 text1 dist/MARK3/production/Framework.X.production.obj
+___awdiv@sign 1A9 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+send_msg@qptr 1AD 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+recv_msg@qptr 1AD 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__HnvBANK0 0 0 ABS 0 nvBANK0 dist/MARK3/production/Framework.X.production.obj
+__LnvBANK0 0 0 ABS 0 nvBANK0 dist/MARK3/production/Framework.X.production.obj
+__end_of_in_low_int 1B9E 0 CODE 0 text20 dist/MARK3/production/Framework.X.production.obj
+__pnvBANK0 F5 0 BANK0 1 nvBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_ofi2_send_msg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_SSPCON1 FC6 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_SSPCON2 FC5 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+init_uart_recv@uc 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_ToMainLow_sendmsg 1D4A 0 CODE 0 text25 dist/MARK3/production/Framework.X.production.obj
+__end_of_handle_start 1472 0 CODE 0 text51 dist/MARK3/production/Framework.X.production.obj
+__size_of_timer1_lthread 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_handle_start 13D6 0 CODE 0 text51 dist/MARK3/production/Framework.X.production.obj
+_OpenTimer0 1E4C 0 CODE 0 text32 dist/MARK3/production/Framework.X.production.obj
+_SSP1ADD FC8 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_i2c_int_handler 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+uart_lthread@msgtype 1A5 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+FromMainHigh_sendmsg@msgtype 1B9 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_RCSTAbits FAB 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_TRISCbits F94 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_TRISDbits F95 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_TXSTAbits FAC 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_T0CONbits FD5 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_ofi2_ConvertADC 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_ReadTimer1 1F6C 0 CODE 0 text44 dist/MARK3/production/Framework.X.production.obj
+_ReadADC 1F90 0 CODE 0 text56 dist/MARK3/production/Framework.X.production.obj
+_ToMainHigh_sendmsg 1DB6 0 CODE 0 text52 dist/MARK3/production/Framework.X.production.obj
+_i2c_int_handler C6 0 CODE 0 text49 dist/MARK3/production/Framework.X.production.obj
+__size_of_uart_recv_int_handler 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_adc_index 2D 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+_OpenADC 1620 0 CODE 0 text13 dist/MARK3/production/Framework.X.production.obj
+__Hibigdata 0 0 CODE 0 ibigdata dist/MARK3/production/Framework.X.production.obj
+__Libigdata 0 0 CODE 0 ibigdata dist/MARK3/production/Framework.X.production.obj
+_uart_recv_state 9A0 0 CODE 0 text40 dist/MARK3/production/Framework.X.production.obj
+__size_of_InterruptHandlerLow 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_OpenADC 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+send_msg@data 1B1 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Hifardata 0 0 CODE 0 ifardata dist/MARK3/production/Framework.X.production.obj
+__Lifardata 0 0 CODE 0 ifardata dist/MARK3/production/Framework.X.production.obj
+recv_msg@data 1B2 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 dist/MARK3/production/Framework.X.production.obj
+__Lbank0 0 0 ABS 0 bank0 dist/MARK3/production/Framework.X.production.obj
+_arrayPlaceHolder 2F 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__Hbank1 0 0 ABS 0 bank1 dist/MARK3/production/Framework.X.production.obj
+__Lbank1 0 0 ABS 0 bank1 dist/MARK3/production/Framework.X.production.obj
+__size_of_ToMainLow_sendmsg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hbank2 0 0 ABS 0 bank2 dist/MARK3/production/Framework.X.production.obj
+__Lbank2 0 0 ABS 0 bank2 dist/MARK3/production/Framework.X.production.obj
+__size_of_OpenTimer0 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hbank3 0 0 ABS 0 bank3 dist/MARK3/production/Framework.X.production.obj
+__Lbank3 0 0 ABS 0 bank3 dist/MARK3/production/Framework.X.production.obj
+__CFG_FOSC2$ON 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_recv_msg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+ToMainLow_sendmsg@data 1BA 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Hpowerup C2 0 CODE 0 powerup dist/MARK3/production/Framework.X.production.obj
+_SSPSTAT FC7 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Lpowerup C2 0 CODE 0 powerup dist/MARK3/production/Framework.X.production.obj
+__end_of_timer1_int_handler 1E20 0 CODE 0 text42 dist/MARK3/production/Framework.X.production.obj
+__Htext0 0 0 ABS 0 text0 dist/MARK3/production/Framework.X.production.obj
+__Ltext0 0 0 ABS 0 text0 dist/MARK3/production/Framework.X.production.obj
+_SSPCON1bits FC6 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Htext1 0 0 ABS 0 text1 dist/MARK3/production/Framework.X.production.obj
+__Ltext1 0 0 ABS 0 text1 dist/MARK3/production/Framework.X.production.obj
+__ptext0 5E0 0 CODE 0 text0 dist/MARK3/production/Framework.X.production.obj
+_INTCON2bits FF1 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_SSPCON2bits FC5 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Htext2 0 0 ABS 0 text2 dist/MARK3/production/Framework.X.production.obj
+timer0_lthread@tptr 1BD 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Ltext2 0 0 ABS 0 text2 dist/MARK3/production/Framework.X.production.obj
+__ptext1 1ACC 0 CODE 0 text1 dist/MARK3/production/Framework.X.production.obj
+timer1_lthread@tptr 1BD 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Htext3 0 0 ABS 0 text3 dist/MARK3/production/Framework.X.production.obj
+__Ltext3 0 0 ABS 0 text3 dist/MARK3/production/Framework.X.production.obj
+__ptext2 1818 0 CODE 0 text2 dist/MARK3/production/Framework.X.production.obj
+ToMainLow_sendmsg@msgtype 1B9 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+ToMainHigh_sendmsg@data 97 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__Htext4 0 0 ABS 0 text4 dist/MARK3/production/Framework.X.production.obj
+__Ltext4 0 0 ABS 0 text4 dist/MARK3/production/Framework.X.production.obj
+__ptext3 188A 0 CODE 0 text3 dist/MARK3/production/Framework.X.production.obj
+__size_of_ToMainLow_recvmsg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Htext5 0 0 ABS 0 text5 dist/MARK3/production/Framework.X.production.obj
+__Ltext5 0 0 ABS 0 text5 dist/MARK3/production/Framework.X.production.obj
+__ptext4 1596 0 CODE 0 text4 dist/MARK3/production/Framework.X.production.obj
+__Htext6 0 0 ABS 0 text6 dist/MARK3/production/Framework.X.production.obj
+__Ltext6 0 0 ABS 0 text6 dist/MARK3/production/Framework.X.production.obj
+__ptext5 1CDE 0 CODE 0 text5 dist/MARK3/production/Framework.X.production.obj
+__Htext7 0 0 ABS 0 text7 dist/MARK3/production/Framework.X.production.obj
+__Ltext7 0 0 ABS 0 text7 dist/MARK3/production/Framework.X.production.obj
+__ptext6 1A2A 0 CODE 0 text6 dist/MARK3/production/Framework.X.production.obj
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+OpenUSART@config 1A8 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__end_of_ConvertADC 1FBE 0 CODE 0 text14 dist/MARK3/production/Framework.X.production.obj
+__Htext8 0 0 ABS 0 text8 dist/MARK3/production/Framework.X.production.obj
+__Ltext8 0 0 ABS 0 text8 dist/MARK3/production/Framework.X.production.obj
+__ptext7 1F24 0 CODE 0 text7 dist/MARK3/production/Framework.X.production.obj
+send_msg@tlength 1B4 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__pbssCOMRAM 2D 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__Htext9 0 0 ABS 0 text9 dist/MARK3/production/Framework.X.production.obj
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Ltext9 0 0 ABS 0 text9 dist/MARK3/production/Framework.X.production.obj
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__ptext8 1F36 0 CODE 0 text8 dist/MARK3/production/Framework.X.production.obj
+recv_msg@tlength 1B7 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__end_of_ReadTimer1 1F7E 0 CODE 0 text44 dist/MARK3/production/Framework.X.production.obj
+__ptext9 18FC 0 CODE 0 text9 dist/MARK3/production/Framework.X.production.obj
+__pcstackBANK1 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext dist/MARK3/production/Framework.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext dist/MARK3/production/Framework.X.production.obj
+__size_of_timer0_int_handler 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+main@length_1452 213 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__end_of_WriteTimer0 1F90 0 CODE 0 text48 dist/MARK3/production/Framework.X.production.obj
+__end_of_WriteTimer1 1F6C 0 CODE 0 text43 dist/MARK3/production/Framework.X.production.obj
+_ticks_right 41 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+uart_lthread@msgbuffer 1A9 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__size_of_WriteTimer0 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_WriteTimer1 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+ToMainHigh_sendmsg@msgtype 96 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__end_of_ToMainLow_sendmsg 1D80 0 CODE 0 text25 dist/MARK3/production/Framework.X.production.obj
+_OSCTUNEbits F9B 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+init_ADC@ADCValue 1AA 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__end_of_memcpy 19CC 0 CODE 0 text30 dist/MARK3/production/Framework.X.production.obj
+__end_of__initialization 1794 0 CODE 0 cinit dist/MARK3/production/Framework.X.production.obj
+__end_of_in_main 1BE2 0 CODE 0 text19 dist/MARK3/production/Framework.X.production.obj
+_i2c_configure_slave 1E76 0 CODE 0 text16 dist/MARK3/production/Framework.X.production.obj
+__CFG_CCP2MX$DEFAULT 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_sensor_count 39 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__end_of_ToMainLow_recvmsg 1C24 0 CODE 0 text27 dist/MARK3/production/Framework.X.production.obj
+memcpy@d 1A9 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+i2_ConvertADC 1FBE 0 CODE 0 text46 dist/MARK3/production/Framework.X.production.obj
+__size_of_init_ADC 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+init_timer0_lthread@tptr 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_InterruptHandlerLow 18 0 CODE 0 intcodelo dist/MARK3/production/Framework.X.production.obj
+_WriteUSART 1F10 0 CODE 0 text35 dist/MARK3/production/Framework.X.production.obj
+__end_of_i2c_master_recv 1504 0 CODE 0 text15 dist/MARK3/production/Framework.X.production.obj
+_SSPSTATbits FC7 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_init_queues 18FC 0 CODE 0 text9 dist/MARK3/production/Framework.X.production.obj
+_responding 35 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__end_of_init_ADC 1B58 0 CODE 0 text12 dist/MARK3/production/Framework.X.production.obj
+init_timer1_lthread@tptr 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+memcpy@n 1A7 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_USART_Status 46 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+ReadUSART@data 1 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+_InterruptHandlerHigh 8 0 CODE 0 intcode dist/MARK3/production/Framework.X.production.obj
+_ticks_left_C 3F 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__Hidata 0 0 CODE 0 idata dist/MARK3/production/Framework.X.production.obj
+__Lidata 0 0 CODE 0 idata dist/MARK3/production/Framework.X.production.obj
+memcpy@s 1AB 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Hrdata 0 0 COMRAM 1 rdata dist/MARK3/production/Framework.X.production.obj
+__Lrdata 0 0 COMRAM 1 rdata dist/MARK3/production/Framework.X.production.obj
+_in_high_int 1F48 0 CODE 0 text21 dist/MARK3/production/Framework.X.production.obj
+ToMainLow_recvmsg@data 1BD 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Hidloc 0 0 IDLOC 0 idloc dist/MARK3/production/Framework.X.production.obj
+__Lidloc 0 0 IDLOC 0 idloc dist/MARK3/production/Framework.X.production.obj
+__CFG_STVREN$OFF 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_of_ReadADC 1FA0 0 CODE 0 text56 dist/MARK3/production/Framework.X.production.obj
+__Hstack 0 0 STACK 2 stack dist/MARK3/production/Framework.X.production.obj
+__Lstack 0 0 STACK 2 stack dist/MARK3/production/Framework.X.production.obj
+int_func E78 0 CODE 0 intcode_body dist/MARK3/production/Framework.X.production.obj
+send_msg@length 1AF 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__size_of_init_queue 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+___lwmod 1596 0 CODE 0 text4 dist/MARK3/production/Framework.X.production.obj
+__Hparam 0 0 ABS 0 param0 dist/MARK3/production/Framework.X.production.obj
+__Lparam 0 0 ABS 0 param0 dist/MARK3/production/Framework.X.production.obj
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i1_send_msg 132C 0 CODE 0 text38 dist/MARK3/production/Framework.X.production.obj
+i2_send_msg 10A0 0 CODE 0 text53 dist/MARK3/production/Framework.X.production.obj
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+__size_of_InterruptHandlerHigh 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+ToMainLow_recvmsg@msgtype 1BB 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__CFG_IESO$ON 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+_in_main 1B9E 0 CODE 0 text19 dist/MARK3/production/Framework.X.production.obj
+_uart_send_int_handler 16A4 0 CODE 0 text34 dist/MARK3/production/Framework.X.production.obj
+_init_queue 179E 0 CODE 0 text10 dist/MARK3/production/Framework.X.production.obj
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/MARK3/production/Framework.X.production.obj
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/MARK3/production/Framework.X.production.obj
+__size_of_start_i2c_slave_reply 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+OpenADC@config 1A7 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Hnvbit 0 0 COMRAM 1 nvbit dist/MARK3/production/Framework.X.production.obj
+__Lnvbit 0 0 COMRAM 1 nvbit dist/MARK3/production/Framework.X.production.obj
+__Hcinit 0 0 ABS 0 cinit dist/MARK3/production/Framework.X.production.obj
+__Lcinit 0 0 ABS 0 cinit dist/MARK3/production/Framework.X.production.obj
+__pcinit 1724 0 CODE 0 cinit dist/MARK3/production/Framework.X.production.obj
+main@length 21A 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+___awdiv C0C 0 CODE 0 text24 dist/MARK3/production/Framework.X.production.obj
+__ramtop 400 0 RAM 0 ramtop /tmp/cgtA9kMQL.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtA9kMQL.obj
+?_in_low_int 1A5 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__size_of_init_queues 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_slave_address 4C 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+_ToMainLow_recvmsg 1BE2 0 CODE 0 text27 dist/MARK3/production/Framework.X.production.obj
+__Hconst 0 0 CODE 0 const dist/MARK3/production/Framework.X.production.obj
+__Lconst 0 0 CODE 0 const dist/MARK3/production/Framework.X.production.obj
+__size_of_OpenUSART 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+i1send_msg@data F 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2send_msg@data 8E 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+uart_lthread@uptr 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__HcstackBANK2 0 0 ABS 0 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__LcstackBANK2 0 0 ABS 0 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__HidataBANK0 0 0 ABS 0 idataBANK0 dist/MARK3/production/Framework.X.production.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 dist/MARK3/production/Framework.X.production.obj
+__pcstackBANK2 200 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__pidataBANK0 1EE2 0 CODE 0 idataBANK0 dist/MARK3/production/Framework.X.production.obj
+__end_of_FromMainHigh_sendmsg 1D14 0 CODE 0 text5 dist/MARK3/production/Framework.X.production.obj
+__size_of_check_msg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_of_uart_lthread 1B12 0 CODE 0 text1 dist/MARK3/production/Framework.X.production.obj
+__size_of_in_main 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+ToMainHigh_recvmsg@maxlength 1BF 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+check_msg@qptr 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_Delay1KTCYx 1EFA 0 CODE 0 text23 dist/MARK3/production/Framework.X.production.obj
+_init_uart_recv 1A2A 0 CODE 0 text6 dist/MARK3/production/Framework.X.production.obj
+__end_of_in_high_int 1F5A 0 CODE 0 text21 dist/MARK3/production/Framework.X.production.obj
+__end_of_init_uart_recv 1A7E 0 CODE 0 text6 dist/MARK3/production/Framework.X.production.obj
+__end_of_i2c_configure_slave 1E9E 0 CODE 0 text16 dist/MARK3/production/Framework.X.production.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/MARK3/production/Framework.X.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/MARK3/production/Framework.X.production.obj
+_SSP1CON1 FC6 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_of_WriteUSART 1F24 0 CODE 0 text35 dist/MARK3/production/Framework.X.production.obj
+__pbssBANK0 BA 0 BANK0 1 bssBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_of_timer0_lthread 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_SSP1CON2 FC5 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_of_uart_recv_int_handler 1E4C 0 CODE 0 text36 dist/MARK3/production/Framework.X.production.obj
+_forwardSlow 59 0 COMRAM 1 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2c_master_recv@data 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_ToMainLow_MQ 16D 0 BANK1 1 bssBANK1 dist/MARK3/production/Framework.X.production.obj
+__HbssBANK1 0 0 ABS 0 bssBANK1 dist/MARK3/production/Framework.X.production.obj
+__LbssBANK1 0 0 ABS 0 bssBANK1 dist/MARK3/production/Framework.X.production.obj
+handle_start@data_read 80 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__end_of_timer0_lthread 18FC 0 CODE 0 text3 dist/MARK3/production/Framework.X.production.obj
+__end_of_InterruptHandlerLow C2 0 CODE 0 intcodelo dist/MARK3/production/Framework.X.production.obj
+__pbssBANK1 100 0 BANK1 1 bssBANK1 dist/MARK3/production/Framework.X.production.obj
+__Htext10 0 0 ABS 0 text10 dist/MARK3/production/Framework.X.production.obj
+__Ltext10 0 0 ABS 0 text10 dist/MARK3/production/Framework.X.production.obj
+__end_of_OpenTimer0 1E76 0 CODE 0 text32 dist/MARK3/production/Framework.X.production.obj
+__size_of_uart_lthread 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Htext20 0 0 ABS 0 text20 dist/MARK3/production/Framework.X.production.obj
+__Ltext20 0 0 ABS 0 text20 dist/MARK3/production/Framework.X.production.obj
+__ptext10 179E 0 CODE 0 text10 dist/MARK3/production/Framework.X.production.obj
+_ticks_left 3D 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__Htext30 0 0 ABS 0 text30 dist/MARK3/production/Framework.X.production.obj
+__Htext11 0 0 ABS 0 text11 dist/MARK3/production/Framework.X.production.obj
+__Ltext30 0 0 ABS 0 text30 dist/MARK3/production/Framework.X.production.obj
+__Ltext11 0 0 ABS 0 text11 dist/MARK3/production/Framework.X.production.obj
+__ptext20 1B58 0 CODE 0 text20 dist/MARK3/production/Framework.X.production.obj
+ToMainHigh_recvmsg@data 1BD 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_forwardHalf 57 0 COMRAM 1 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+__Htext40 0 0 ABS 0 text40 dist/MARK3/production/Framework.X.production.obj
+__Htext21 0 0 ABS 0 text21 dist/MARK3/production/Framework.X.production.obj
+recv_msg@maxlength 1AF 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Ltext40 0 0 ABS 0 text40 dist/MARK3/production/Framework.X.production.obj
+__Ltext21 0 0 ABS 0 text21 dist/MARK3/production/Framework.X.production.obj
+__ptext11 1A7E 0 CODE 0 text11 dist/MARK3/production/Framework.X.production.obj
+__ptext30 196E 0 CODE 0 text30 dist/MARK3/production/Framework.X.production.obj
+__Htext50 0 0 ABS 0 text50 dist/MARK3/production/Framework.X.production.obj
+__Htext31 0 0 ABS 0 text31 dist/MARK3/production/Framework.X.production.obj
+__Htext12 0 0 ABS 0 text12 dist/MARK3/production/Framework.X.production.obj
+__Ltext50 0 0 ABS 0 text50 dist/MARK3/production/Framework.X.production.obj
+__Ltext31 0 0 ABS 0 text31 dist/MARK3/production/Framework.X.production.obj
+__Ltext12 0 0 ABS 0 text12 dist/MARK3/production/Framework.X.production.obj
+__ptext21 1F48 0 CODE 0 text21 dist/MARK3/production/Framework.X.production.obj
+__ptext40 9A0 0 CODE 0 text40 dist/MARK3/production/Framework.X.production.obj
+_uart_recv_int_handler 1E20 0 CODE 0 text36 dist/MARK3/production/Framework.X.production.obj
+__Htext41 0 0 ABS 0 text41 dist/MARK3/production/Framework.X.production.obj
+__Htext22 0 0 ABS 0 text22 dist/MARK3/production/Framework.X.production.obj
+__Ltext41 0 0 ABS 0 text41 dist/MARK3/production/Framework.X.production.obj
+__Ltext22 0 0 ABS 0 text22 dist/MARK3/production/Framework.X.production.obj
+__ptext12 1B12 0 CODE 0 text12 dist/MARK3/production/Framework.X.production.obj
+__ptext31 1504 0 CODE 0 text31 dist/MARK3/production/Framework.X.production.obj
+__ptext50 11A4 0 CODE 0 text50 dist/MARK3/production/Framework.X.production.obj
+__Htext51 0 0 ABS 0 text51 dist/MARK3/production/Framework.X.production.obj
+__Htext32 0 0 ABS 0 text32 dist/MARK3/production/Framework.X.production.obj
+__Htext13 0 0 ABS 0 text13 dist/MARK3/production/Framework.X.production.obj
+__Ltext51 0 0 ABS 0 text51 dist/MARK3/production/Framework.X.production.obj
+__Ltext32 0 0 ABS 0 text32 dist/MARK3/production/Framework.X.production.obj
+__Ltext13 0 0 ABS 0 text13 dist/MARK3/production/Framework.X.production.obj
+__HbssBANK2 0 0 ABS 0 bssBANK2 dist/MARK3/production/Framework.X.production.obj
+__ptext22 1D14 0 CODE 0 text22 dist/MARK3/production/Framework.X.production.obj
+__ptext41 1EC4 0 CODE 0 text41 dist/MARK3/production/Framework.X.production.obj
+__LbssBANK2 0 0 ABS 0 bssBANK2 dist/MARK3/production/Framework.X.production.obj
+__Htext42 0 0 ABS 0 text42 dist/MARK3/production/Framework.X.production.obj
+__Htext23 0 0 ABS 0 text23 dist/MARK3/production/Framework.X.production.obj
+__Ltext42 0 0 ABS 0 text42 dist/MARK3/production/Framework.X.production.obj
+__Ltext23 0 0 ABS 0 text23 dist/MARK3/production/Framework.X.production.obj
+__ptext13 1620 0 CODE 0 text13 dist/MARK3/production/Framework.X.production.obj
+__ptext32 1E4C 0 CODE 0 text32 dist/MARK3/production/Framework.X.production.obj
+__ptext51 13D6 0 CODE 0 text51 dist/MARK3/production/Framework.X.production.obj
+__pbssBANK2 253 0 BANK2 1 bssBANK2 dist/MARK3/production/Framework.X.production.obj
+_ADCON0bits FC2 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Htext52 0 0 ABS 0 text52 dist/MARK3/production/Framework.X.production.obj
+__Htext14 0 0 ABS 0 text14 dist/MARK3/production/Framework.X.production.obj
+___extmem_base 20000 0 ABS 0 - /tmp/cgtA9kMQL.obj
+__Ltext52 0 0 ABS 0 text52 dist/MARK3/production/Framework.X.production.obj
+__Ltext14 0 0 ABS 0 text14 dist/MARK3/production/Framework.X.production.obj
+__ptext23 1EFA 0 CODE 0 text23 dist/MARK3/production/Framework.X.production.obj
+__ptext42 1DEC 0 CODE 0 text42 dist/MARK3/production/Framework.X.production.obj
+__size_of___awdiv 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+main@t0thread_data 217 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__Htext43 0 0 ABS 0 text43 dist/MARK3/production/Framework.X.production.obj
+__Htext24 0 0 ABS 0 text24 dist/MARK3/production/Framework.X.production.obj
+__Ltext43 0 0 ABS 0 text43 dist/MARK3/production/Framework.X.production.obj
+__Ltext24 0 0 ABS 0 text24 dist/MARK3/production/Framework.X.production.obj
+__ptext14 1FBA 0 CODE 0 text14 dist/MARK3/production/Framework.X.production.obj
+__ptext52 1DB6 0 CODE 0 text52 dist/MARK3/production/Framework.X.production.obj
+main@t1thread_data 215 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__Htext53 0 0 ABS 0 text53 dist/MARK3/production/Framework.X.production.obj
+__Htext34 0 0 ABS 0 text34 dist/MARK3/production/Framework.X.production.obj
+__Htext15 0 0 ABS 0 text15 dist/MARK3/production/Framework.X.production.obj
+__Ltext53 0 0 ABS 0 text53 dist/MARK3/production/Framework.X.production.obj
+__Ltext34 0 0 ABS 0 text34 dist/MARK3/production/Framework.X.production.obj
+__Ltext15 0 0 ABS 0 text15 dist/MARK3/production/Framework.X.production.obj
+__ptext24 C0C 0 CODE 0 text24 dist/MARK3/production/Framework.X.production.obj
+__ptext43 1F5A 0 CODE 0 text43 dist/MARK3/production/Framework.X.production.obj
+__Htext44 0 0 ABS 0 text44 dist/MARK3/production/Framework.X.production.obj
+__Htext25 0 0 ABS 0 text25 dist/MARK3/production/Framework.X.production.obj
+_WriteTimer0 1F7E 0 CODE 0 text48 dist/MARK3/production/Framework.X.production.obj
+__Ltext44 0 0 ABS 0 text44 dist/MARK3/production/Framework.X.production.obj
+__Ltext25 0 0 ABS 0 text25 dist/MARK3/production/Framework.X.production.obj
+__ptext15 1472 0 CODE 0 text15 dist/MARK3/production/Framework.X.production.obj
+__ptext34 16A4 0 CODE 0 text34 dist/MARK3/production/Framework.X.production.obj
+__ptext53 10A0 0 CODE 0 text53 dist/MARK3/production/Framework.X.production.obj
+_FromMainLow_MQ 101 0 BANK1 1 bssBANK1 dist/MARK3/production/Framework.X.production.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/cgtA9kMQL.obj
+__Htext54 0 0 ABS 0 text54 dist/MARK3/production/Framework.X.production.obj
+__Htext35 0 0 ABS 0 text35 dist/MARK3/production/Framework.X.production.obj
+__Htext16 0 0 ABS 0 text16 dist/MARK3/production/Framework.X.production.obj
+__Ltext54 0 0 ABS 0 text54 dist/MARK3/production/Framework.X.production.obj
+__Ltext35 0 0 ABS 0 text35 dist/MARK3/production/Framework.X.production.obj
+__Ltext16 0 0 ABS 0 text16 dist/MARK3/production/Framework.X.production.obj
+__ptext25 1D4A 0 CODE 0 text25 dist/MARK3/production/Framework.X.production.obj
+__ptext44 1F6C 0 CODE 0 text44 dist/MARK3/production/Framework.X.production.obj
+__Htext26 0 0 ABS 0 text26 dist/MARK3/production/Framework.X.production.obj
+__Ltext26 0 0 ABS 0 text26 dist/MARK3/production/Framework.X.production.obj
+__ptext16 1E76 0 CODE 0 text16 dist/MARK3/production/Framework.X.production.obj
+__ptext35 1F10 0 CODE 0 text35 dist/MARK3/production/Framework.X.production.obj
+__ptext54 19CC 0 CODE 0 text54 dist/MARK3/production/Framework.X.production.obj
+__Htext55 0 0 ABS 0 text55 dist/MARK3/production/Framework.X.production.obj
+__Htext36 0 0 ABS 0 text36 dist/MARK3/production/Framework.X.production.obj
+__Htext17 0 0 ABS 0 text17 dist/MARK3/production/Framework.X.production.obj
+__Ltext55 0 0 ABS 0 text55 dist/MARK3/production/Framework.X.production.obj
+__Ltext36 0 0 ABS 0 text36 dist/MARK3/production/Framework.X.production.obj
+__Ltext17 0 0 ABS 0 text17 dist/MARK3/production/Framework.X.production.obj
+__ptext26 F9C 0 CODE 0 text26 dist/MARK3/production/Framework.X.production.obj
+FromMainHigh_sendmsg@length 1BC 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Htext46 0 0 ABS 0 text46 dist/MARK3/production/Framework.X.production.obj
+__Htext27 0 0 ABS 0 text27 dist/MARK3/production/Framework.X.production.obj
+__Ltext46 0 0 ABS 0 text46 dist/MARK3/production/Framework.X.production.obj
+__Ltext27 0 0 ABS 0 text27 dist/MARK3/production/Framework.X.production.obj
+__ptext17 1FAE 0 CODE 0 text17 dist/MARK3/production/Framework.X.production.obj
+__ptext36 1E20 0 CODE 0 text36 dist/MARK3/production/Framework.X.production.obj
+__ptext55 1CA6 0 CODE 0 text55 dist/MARK3/production/Framework.X.production.obj
+__Htext56 0 0 ABS 0 text56 dist/MARK3/production/Framework.X.production.obj
+__Htext37 0 0 ABS 0 text37 dist/MARK3/production/Framework.X.production.obj
+__Htext18 0 0 ABS 0 text18 dist/MARK3/production/Framework.X.production.obj
+__end_of___lwmod 1620 0 CODE 0 text4 dist/MARK3/production/Framework.X.production.obj
+__Ltext56 0 0 ABS 0 text56 dist/MARK3/production/Framework.X.production.obj
+__Ltext37 0 0 ABS 0 text37 dist/MARK3/production/Framework.X.production.obj
+ToMainHigh_recvmsg@msgtype 1BB 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Ltext18 0 0 ABS 0 text18 dist/MARK3/production/Framework.X.production.obj
+__ptext27 1BE2 0 CODE 0 text27 dist/MARK3/production/Framework.X.production.obj
+__ptext46 1FBE 0 CODE 0 text46 dist/MARK3/production/Framework.X.production.obj
+___lwmod@divisor 1A5 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Htext47 0 0 ABS 0 text47 dist/MARK3/production/Framework.X.production.obj
+__Htext28 0 0 ABS 0 text28 dist/MARK3/production/Framework.X.production.obj
+__Ltext47 0 0 ABS 0 text47 dist/MARK3/production/Framework.X.production.obj
+__Ltext28 0 0 ABS 0 text28 dist/MARK3/production/Framework.X.production.obj
+__ptext18 127A 0 CODE 0 text18 dist/MARK3/production/Framework.X.production.obj
+__ptext37 1E9E 0 CODE 0 text37 dist/MARK3/production/Framework.X.production.obj
+__ptext56 1F90 0 CODE 0 text56 dist/MARK3/production/Framework.X.production.obj
+__Htext38 0 0 ABS 0 text38 dist/MARK3/production/Framework.X.production.obj
+__Htext19 0 0 ABS 0 text19 dist/MARK3/production/Framework.X.production.obj
+__Ltext38 0 0 ABS 0 text38 dist/MARK3/production/Framework.X.production.obj
+__Ltext19 0 0 ABS 0 text19 dist/MARK3/production/Framework.X.production.obj
+__ptext28 1C24 0 CODE 0 text28 dist/MARK3/production/Framework.X.production.obj
+__ptext47 1D80 0 CODE 0 text47 dist/MARK3/production/Framework.X.production.obj
+__size_ofi1_memcpy 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__CFG_WDTEN$OFF 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Htext48 0 0 ABS 0 text48 dist/MARK3/production/Framework.X.production.obj
+__Htext29 0 0 ABS 0 text29 dist/MARK3/production/Framework.X.production.obj
+__Ltext48 0 0 ABS 0 text48 dist/MARK3/production/Framework.X.production.obj
+__Ltext29 0 0 ABS 0 text29 dist/MARK3/production/Framework.X.production.obj
+__ptext19 1B9E 0 CODE 0 text19 dist/MARK3/production/Framework.X.production.obj
+__ptext38 132C 0 CODE 0 text38 dist/MARK3/production/Framework.X.production.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/cgtA9kMQL.obj
+__Htext39 0 0 ABS 0 text39 dist/MARK3/production/Framework.X.production.obj
+__Ltext39 0 0 ABS 0 text39 dist/MARK3/production/Framework.X.production.obj
+__ptext29 D42 0 CODE 0 text29 dist/MARK3/production/Framework.X.production.obj
+__ptext48 1F7E 0 CODE 0 text48 dist/MARK3/production/Framework.X.production.obj
+timer0_lthread@msgtype 1BF 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+timer1_lthread@msgtype 1BF 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__Htext49 0 0 ABS 0 text49 dist/MARK3/production/Framework.X.production.obj
+__Ltext49 0 0 ABS 0 text49 dist/MARK3/production/Framework.X.production.obj
+__ptext39 1C66 0 CODE 0 text39 dist/MARK3/production/Framework.X.production.obj
+_ReadUSART 1EC4 0 CODE 0 text41 dist/MARK3/production/Framework.X.production.obj
+_OSCCONbits FD3 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__ptext49 C6 0 CODE 0 text49 dist/MARK3/production/Framework.X.production.obj
+_INTCONbits FF2 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+?_ReadTimer1 1 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+_OpenUSART 1504 0 CODE 0 text31 dist/MARK3/production/Framework.X.production.obj
+__end_of_send_msg 10A0 0 CODE 0 text26 dist/MARK3/production/Framework.X.production.obj
+__Hend_init C6 0 CODE 0 end_init dist/MARK3/production/Framework.X.production.obj
+__Lend_init C2 0 CODE 0 end_init dist/MARK3/production/Framework.X.production.obj
+?_ReadADC 80 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+uart_recv_state@byte 3 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+main@average 20E 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__size_ofi2_memcpy 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_WriteTimer1 1F5A 0 CODE 0 text43 dist/MARK3/production/Framework.X.production.obj
+_init_ADC 1B12 0 CODE 0 text12 dist/MARK3/production/Framework.X.production.obj
+___awdiv@divisor 1A5 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__end_of_init_queue 1818 0 CODE 0 text10 dist/MARK3/production/Framework.X.production.obj
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/MARK3/production/Framework.X.production.obj
+memcpy@d1 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/MARK3/production/Framework.X.production.obj
+__end_of_InterruptHandlerHigh F9C 0 CODE 0 intcode_body dist/MARK3/production/Framework.X.production.obj
+__pidataCOMRAM 1FA0 0 CODE 0 idataCOMRAM dist/MARK3/production/Framework.X.production.obj
+__CFG_FOSC$HSPLL 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hjflash_buffer 7800 0 CODE 0 jflash_buffer dist/MARK3/production/Framework.X.production.obj
+__end_of_ReadUSART 1EE2 0 CODE 0 text41 dist/MARK3/production/Framework.X.production.obj
+__Ljflash_buffer 7800 0 CODE 0 jflash_buffer dist/MARK3/production/Framework.X.production.obj
+OpenADC@config2 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+i2c_master_recv@length 1A6 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+send_msg@msgtype 1B0 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__end_of_init_queues 196E 0 CODE 0 text9 dist/MARK3/production/Framework.X.production.obj
+recv_msg@msgtype 1B0 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__CFG_CP0$OFF 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/cgtA9kMQL.obj
+__end_of_OpenADC 16A4 0 CODE 0 text13 dist/MARK3/production/Framework.X.production.obj
+i2c_int_handler@data_read A7 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__Hreset_vec 4 0 CODE 0 reset_vec dist/MARK3/production/Framework.X.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec dist/MARK3/production/Framework.X.production.obj
+_in_low_int 1B58 0 CODE 0 text20 dist/MARK3/production/Framework.X.production.obj
+__size_of_FromMainHigh_sendmsg 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_i2c_master_recv 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_enable_interrupts 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+memcpy@s1 1A5 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_start_stop 3B 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+__accesstop 80 0 ABS 0 - /tmp/cgtA9kMQL.obj
+__end_of_recv_msg E78 0 CODE 0 text29 dist/MARK3/production/Framework.X.production.obj
+__Hparam0 0 0 ABS 0 param0 dist/MARK3/production/Framework.X.production.obj
+__Lparam0 0 0 ABS 0 param0 dist/MARK3/production/Framework.X.production.obj
+__size_of_uart_recv_state 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__Hintcode_body 0 0 ABS 0 intcode_body dist/MARK3/production/Framework.X.production.obj
+__Lintcode_body 0 0 ABS 0 intcode_body dist/MARK3/production/Framework.X.production.obj
+__pintcode_body E78 0 CODE 0 intcode_body dist/MARK3/production/Framework.X.production.obj
+_enable_interrupts 1FAE 0 CODE 0 text17 dist/MARK3/production/Framework.X.production.obj
+intlevel0 0 0 CODE 0 text /tmp/cgtA9kMQL.obj
+__size_of_block_on_To_msgqueues 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+intlevel1 0 0 CODE 0 text /tmp/cgtA9kMQL.obj
+intlevel2 0 0 CODE 0 text /tmp/cgtA9kMQL.obj
+i1_ToMainLow_sendmsg 1E9E 0 CODE 0 text37 dist/MARK3/production/Framework.X.production.obj
+intlevel3 0 0 CODE 0 text /tmp/cgtA9kMQL.obj
+i2c_int_handler@error_buf 9F 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+_SSP1CON1bits FC6 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+ToMainLow_sendmsg@length 1BC 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+_SSP1CON2bits FC5 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+i2c_int_handler@length 9B 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_of_init_uart_recv 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_ofi1_ToMainLow_sendmsg 1EC4 0 CODE 0 text37 dist/MARK3/production/Framework.X.production.obj
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2c_int_handler@msgbuffer 9D 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_of___lwmod 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+i1send_msg@slot 14 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+i2send_msg@slot 93 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__pdataCOMRAM 53 0 COMRAM 1 dataCOMRAM dist/MARK3/production/Framework.X.production.obj
+__size_of_init_timer0_lthread 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__size_of_init_timer1_lthread 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_of_uart_recv_state C0C 0 CODE 0 text40 dist/MARK3/production/Framework.X.production.obj
+_ToMainHigh_recvmsg 1C24 0 CODE 0 text28 dist/MARK3/production/Framework.X.production.obj
+start_initialization 1724 0 CODE 0 cinit dist/MARK3/production/Framework.X.production.obj
+___awdiv@quotient 1AA 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+i2c_int_handler@msg_ready A6 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__end_of_init_i2c 1ACC 0 CODE 0 text11 dist/MARK3/production/Framework.X.production.obj
+main@movingtest 210 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+__end_ofi1_memcpy 1CA6 0 CODE 0 text39 dist/MARK3/production/Framework.X.production.obj
+main@last_reg_recvd 200 0 BANK2 1 cstackBANK2 dist/MARK3/production/Framework.X.production.obj
+?_SensorValues 80 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_of_ReadADC 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_ofi2_memcpy 1A2A 0 CODE 0 text54 dist/MARK3/production/Framework.X.production.obj
+__size_of_ReadTimer1 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_init_i2c 1A7E 0 CODE 0 text11 dist/MARK3/production/Framework.X.production.obj
+i2c_master_recv@slave_address 1A4 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__initialization 1724 0 CODE 0 cinit dist/MARK3/production/Framework.X.production.obj
+start_i2c_slave_reply@msg 80 0 BANK0 1 cstackBANK0 dist/MARK3/production/Framework.X.production.obj
+__size_of_in_low_int 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_SensorValues 1CA6 0 CODE 0 text55 dist/MARK3/production/Framework.X.production.obj
+___lwmod@dividend 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__activetblptr 2 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_timer2_extender 50 0 COMRAM 1 bssCOMRAM dist/MARK3/production/Framework.X.production.obj
+___lwmod@counter 1A8 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__CFG_FCMEN$ON 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+__end_of_i2c_int_handler 5E0 0 CODE 0 text49 dist/MARK3/production/Framework.X.production.obj
+__size_of_i2c_configure_slave 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_FromMainHigh_sendmsg 1CDE 0 CODE 0 text5 dist/MARK3/production/Framework.X.production.obj
+timer0_lthread@length 1C1 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+timer1_lthread@length 1C1 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+Delay1KTCYx@unit 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+__size_of_handle_start 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+_init_timer0_lthread 1F36 0 CODE 0 text8 dist/MARK3/production/Framework.X.production.obj
+i1ToMainLow_sendmsg@length 1A 0 COMRAM 1 cstackCOMRAM dist/MARK3/production/Framework.X.production.obj
+__size_of_memcpy 0 0 ABS 0 - dist/MARK3/production/Framework.X.production.obj
+___awdiv@dividend 1A3 0 BANK1 1 cstackBANK1 dist/MARK3/production/Framework.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect in on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+reset_vec 0 0 0 4 1
+intcode 0 8 8 C 1
+intcodelo 0 18 18 1EE1 1
+config 0 7FF8 7FF8 6 1
+cstackCOMRAM 1 1 1 62 1
+cstackBANK0 1 80 80 77 1
+bssBANK1 1 100 100 C9 1
+cstackBANK2 1 200 200 89 1
+text23 0 1EFA 1EFA C8 1
