@@ -10,6 +10,7 @@
 #include "my_i2c_master.h"
 #include "my_uart.h"
 #include "my_motor.h"
+#include "my_adc.h"
 //----------------------------------------------------------------------------
 // Note: This code for processing interrupts is configured to allow for high and
 //       low priority interrupts.  The high priority interrupt can interrupt the
@@ -18,88 +19,7 @@
 //       priority interrupts, but this code is not setup for that and this nesting is not
 //       enabled.
 
-#define motorArraySize 10
-
 unsigned char timer2_extender = 0;
-int semaphore = 0;
-int messages_lost = 0;
-
-#if defined(SENSOR_PIC)
-
-char ADCValue;
-int adc_index = 0;
-// ADC buffer, matches size of screen on ARM LCD
-char ADCArray[10];
-// ADC logic variables
-int responding = 0;
-int arrayPlaceHolder = 0;
-int sendingPlaceHolder = 299;
-int start_stop = 0;
-
-
-// PIC is responding to ARM I2C request
-void setStateResponding()
-{
-    responding = 1;
-}
-
-// PIC is reading ADC values
-void setStateReading()
-{
-    responding = 0;
-}
-
-// Returns a current ADC value
-char returnADCValue()
-{
-    // BUFFER is full
-    if(sendingPlaceHolder == 299)
-    {
-        responding = 0;
-        sendingPlaceHolder = 0;
-    }
-    else
-        sendingPlaceHolder++;
-    //if(sendingPlaceHolder == 0)
-        //return 0xFF;
-    //else
-    // Return current buffer value
-    return ADCArray[sendingPlaceHolder];
-}
-
-unsigned char* SensorValues() {
-    ADCArray[0] = adc_index + messages_lost - 1;
-
-    adc_index = 1;
-    messages_lost = 0;
-    return ADCArray;
-}
-
-#elif defined (MOTOR_PIC)
-int motor_value = 0;
-unsigned int motor_index = 1;
-unsigned char motorArrayLeft[motorArraySize];
-unsigned char motorArrayRight[motorArraySize];
-unsigned char motorSend[10];
-
-unsigned char* motorTickValue(unsigned char msgRequest)
-{
-    while(semaphore == 1){};
-
-    if ( msgRequest == motorDataLeft ) {
-        motorArrayLeft[0] = motor_index - 1;
-        motor_index = 1;
-        return motorArrayLeft;
-    }
-    else {//if (msgRequest == motorDataRight ) {
-        motorArrayRight[0] = motor_index - 1;
-        motor_index = 1;
-        return motorArrayRight;
-    }
-
-}
-
-#endif
 
 void enable_interrupts() {
     // Peripheral interrupts can have their priority set to high or low
@@ -202,7 +122,7 @@ void InterruptHandlerHigh() {
         #if defined (MOTOR_PIC)
         {
             if ( timer2_extender == 10 ) {
-                semaphore = 1;
+                motor_semaphore = 1;
 //            if(motor_index == 10)
 //            {
 //                //indicate message lost
@@ -214,7 +134,7 @@ void InterruptHandlerHigh() {
                 ticks_right = 0;
 
                 motor_index++;
-                semaphore = 0;
+                motor_semaphore = 0;
                 timer2_extender = 0;
             } else {
                 timer2_extender++;
@@ -286,7 +206,7 @@ void InterruptHandlerHigh() {
         int pureADCValue = ReadADC();
         ADCValue = pureADCValue >> 2;
 
-        semaphore = 1;
+        adc_semaphore = 1;
         if(adc_index == 10)
         {
             //indicate message lost
@@ -295,22 +215,7 @@ void InterruptHandlerHigh() {
         }
         ADCArray[adc_index] = ADCValue;
         adc_index++;
-        semaphore = 0;
-
-
-//        if(responding == 0)
-//        {
-//            if(arrayPlaceHolder == 299)
-//            {
-//                responding = 1;
-//                arrayPlaceHolder = 0;
-//            }
-//            else
-//            {
-//                ADCArray[arrayPlaceHolder] = ADCValue;
-//                arrayPlaceHolder++;
-//            }
-//        }
+        adc_semaphore = 0;
 
         //ConvertADC();
 #endif

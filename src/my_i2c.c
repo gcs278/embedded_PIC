@@ -10,7 +10,7 @@
 #include <plib/i2c.h>
 #endif
 #include "my_i2c.h"
-#include "interrupts.h"
+#include "my_adc.h"
 
 int sensor_count = 0;
 static i2c_comm *ic_ptr;

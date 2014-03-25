@@ -139,3 +139,21 @@ void motor_encode_lthread(unsigned char msg) {
 
     }
 }
+
+
+unsigned char* motorTickValue(unsigned char msgRequest)
+{
+    while(motor_semaphore == 1){};
+
+    if ( msgRequest == motorDataLeft ) {
+        motorArrayLeft[0] = motor_index - 1;
+        motor_index = 1;
+        return motorArrayLeft;
+    }
+    else {//if (msgRequest == motorDataRight ) {
+        motorArrayRight[0] = motor_index - 1;
+        motor_index = 1;
+        return motorArrayRight;
+    }
+
+}

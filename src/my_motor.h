@@ -22,6 +22,14 @@ extern "C" {
 #define motorDataRight 0x08
 #define sensorDataFull 0x11
     
+#define motorArraySize 10
+
+    int motor_value = 0;
+    unsigned char motor_semaphore = 0;
+    unsigned int motor_index = 1;
+    unsigned char motorArrayLeft[motorArraySize];
+    unsigned char motorArrayRight[motorArraySize];
+
     unsigned char motor_state;
     unsigned int ticks_right;
     unsigned int ticks_left;
@@ -29,7 +37,7 @@ extern "C" {
     unsigned int ticks_right_C;
     void motor_encode_lthread(unsigned char msg);
     void motor_init();
-
+    unsigned char * motorTickValue(unsigned char msgRequest);
 
 #ifdef	__cplusplus
 }

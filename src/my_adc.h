@@ -11,7 +11,21 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+    char ADCValue;
+    
+    int adc_index = 0;
+    // ADC buffer, matches size of screen on ARM LCD
+    char ADCArray[10];
 
+    // ADC logic variables
+    int responding = 0;
+    int arrayPlaceHolder = 0;
+    unsigned char adc_semaphore = 0;
+    int messages_lost = 0;
+    
+    void setStateResponding(void);
+    void setStateReading(void);
+    unsigned char * SensorValues();
     void init_ADC();
 
 
