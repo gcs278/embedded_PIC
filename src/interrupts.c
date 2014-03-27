@@ -146,13 +146,14 @@ void InterruptHandlerHigh() {
 
     // check to see if we have an interrupt on timer 0
     if (INTCONbits.TMR0IF) {
-        //LATBbits.LATB7 = !LATBbits.LATB7;
+        LATBbits.LATB7 = !LATBbits.LATB7;
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
+#ifndef SENSOR_PIC
         timer0_int_handler();
-        
+#endif
         // LATDbits.LATD7 = !LATDbits.LATD7;
-        #if defined (MAIN_PIC)
+#if defined (MAIN_PIC)
         {
 //            WriteUSART(i2c_q->end);
             // Check queue
@@ -192,22 +193,21 @@ void InterruptHandlerHigh() {
 
 
 
-        //ConvertADC();
     }
 
     // here is where you would check other interrupt flags.
 #ifdef SENSOR_PIC
         //check if the interrupt is caused by ADC
-    if(PIR1bits.ADIF == 1)
+    if(PIR1bits.ADIF == 1) {
         //ADCValue = ReadADC();
         //Reset interrupt flag and start conversion again
         PIR1bits.ADIF = 0;
-        LATDbits.LATD6 = !LATDbits.LATD6;
+        // LATDbits.LATD6 = !LATDbits.LATD6;
         int pureADCValue = ReadADC();
         ADCValue = pureADCValue >> 2;
 
         adc_semaphore = 1;
-        if(adc_index == 10)
+        if(adc_index > 9)
         {
             //indicate message lost
             messages_lost = messages_lost + 8;
@@ -216,8 +216,7 @@ void InterruptHandlerHigh() {
         ADCArray[adc_index] = ADCValue;
         adc_index++;
         adc_semaphore = 0;
-
-        //ConvertADC();
+    }
 #endif
 
     // The *last* thing I do here is check to see if we can

@@ -346,7 +346,7 @@ void main(void) {
     // initialize my uart recv handling code
     init_uart_recv(&uc);
 #elif defined(SENSOR_PIC)
-    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4);
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_2);
     // Set up ADC
     init_ADC();
     i2c_configure_slave(0x9C); // send with address of 4E from master and aardvark

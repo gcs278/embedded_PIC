@@ -13,9 +13,9 @@ extern "C" {
 #endif
     char ADCValue;
     
-    int adc_index = 0;
+    int adc_index = 1;
     // ADC buffer, matches size of screen on ARM LCD
-    char ADCArray[10];
+    unsigned char ADCArray[10];
 
     // ADC logic variables
     int responding = 0;

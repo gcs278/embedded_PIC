@@ -14,6 +14,10 @@
 
 // Sensor data requests
 #define RoverMsgSensorAllData 0x11
+#define RoverMsgSensorRightForward 0x12
+#define RoverMsgSensorRightRear 0x13
+#define RoverMsgSensorForwardLeft 0x14
+#define RoverMsgSensorForwardRight 0x15
 
 // Motor adjustment commands
 #define RoverMsgMotorLeft2 0x15
@@ -27,6 +31,7 @@
 #define RoverMsgMotorLeft45 0x1D
 #define RoverMsgMotorLeft75 0x1E
 #define RoverMsgMotorLeft90 0x1F
+
 #define RoverMsgMotorRight2 0x20
 #define RoverMsgMotorRight5 0x21
 #define RoverMsgMotorRight7 0x22
