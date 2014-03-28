@@ -146,7 +146,7 @@ void InterruptHandlerHigh() {
 
     // check to see if we have an interrupt on timer 0
     if (INTCONbits.TMR0IF) {
-        LATBbits.LATB7 = !LATBbits.LATB7;
+        //LATBbits.LATB7 = !LATBbits.LATB7;
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
 #ifndef SENSOR_PIC
@@ -157,14 +157,8 @@ void InterruptHandlerHigh() {
         {
 //            WriteUSART(i2c_q->end);
             // Check queue
-//            if ( !isEmpty(i2c_q) ) {
-//               unsigned char message;
-//               LATBbits.LATB7 = !LATBbits.LATB7;
-//               getQueue(i2c_q,message);
-////               i2c_q->end = -1;
-//               WriteUSART(i2c_q->end);
-                //i2c_master_recv(0x0A, message, 0x4F);
-//            }
+            ToMainHigh_sendmsg(0,MSGT_QUEUE_GET_DATA,(void*)0);
+
 //            if(start_stop == 0)
 //            {
 //                i2c_master_recv(0x0A, 0x05, 0x4F);

@@ -257,12 +257,8 @@ void main(void) {
     //TRISBbits.RB7 = 0;
     //LATB = 0x0;
 
-
-
-
     // UART TX interrupt flag
     IPR1bits.TXIP = 0;
-
     // how to set up PORTA for input (for the V4 board with the PIC2680)
     /*
             PORTA = 0x0;	// clear the port
@@ -318,10 +314,12 @@ void main(void) {
     // 12000000 / (16 * (77 + 1)) = ~ 9600
     // 12000000 / (16 * (38 + 1)) = ~ 19200
     // 48000000 / (16 * (155 + 1)) = ~ 19200
+    // 48000000 / (16 * (12 + 1)) = 230,400
     // configure the hardware USART device
 #ifdef __USE18F46J50
     Open1USART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
-            USART_CONT_RX & USART_BRGH_HIGH, 155);
+            USART_CONT_RX & USART_BRGH_HIGH, 12);
+    
 #else
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
             USART_CONT_RX & USART_BRGH_HIGH, 38);
@@ -336,7 +334,7 @@ void main(void) {
 
     // Rover data buffer - buffer for giving ARM most recent data
     // Allows for asynchronous communication
-    unsigned char roverDataBuf[2][I2CMSGLEN];
+    unsigned char roverDataBuf[5][I2CMSGLEN];
     unsigned char roverDataBufIndex = 0;
     int j = 0;
     // Initialize the first bit to FF, the garage bit
@@ -345,6 +343,10 @@ void main(void) {
     }
     // initialize my uart recv handling code
     init_uart_recv(&uc);
+
+    i2c_queue* i2c_q;
+
+    createQueue(&i2c_q,10);
 #elif defined(SENSOR_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_2);
     // Set up ADC
@@ -384,6 +386,7 @@ void main(void) {
 //    INTCON2bits.INTEDG0 = 1;
     
 #elif defined(MAIN_PIC)
+    i2c_queue i2c_q;
     i2c_configure_master();
     // createQueue(i2c_q,10);
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_1); //set to request data ever .087 seconds or 87 ms
@@ -392,6 +395,8 @@ void main(void) {
 
     // A count buffer, to store the count while I2C slave respond
     unsigned char msgCount;
+
+    createQueue(&i2c_q,5);
 #endif
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
@@ -447,12 +452,19 @@ void main(void) {
 #if defined(ARM_PIC)
                     // LATBbits.LATB7 = !LATBbits.LATB7;
 
-                    // Decrement the buffer
-                    if ( roverDataBufIndex > 0)
-                        roverDataBufIndex -= 1;
+                    i2c_master_cmd message;
+                    
+                    if ( !isEmpty(&i2c_q) ) {
+                        getQueue(&i2c_q,&message);
+                    }
+                    else {
+                        int i;
+                        for (i = 0; i < I2CMSGLEN; i++)
+                            message.data[i] = 0xFF;
+                    }
 
                     // Reply with most recent data in buffer
-                    start_i2c_slave_reply(I2CMSGLEN, roverDataBuf[roverDataBufIndex]);
+                    start_i2c_slave_reply(I2CMSGLEN, message.data);
 
                     // Marked the buffer used
                     roverDataBuf[roverDataBufIndex][0] = 0xFF;
@@ -473,25 +485,20 @@ void main(void) {
 #elif defined(MAIN_PIC)
                     // LATBbits.LATB7 = !LATBbits.LATB7;
                         LATBbits.LATB6 = !LATBbits.LATB6;
-             //       putQueue(i2c_q,msgbuffer[0]);
+                        
+                        i2c_master_cmd message;
+                        
+                        message.msgType = msgbuffer[0];
+                        message.msgCount = msgbuffer[1];
+                        
+                        putQueue(&i2c_q,message);
                 
 //                    if ( master_sent == 0 ) {
                    
-                        i2cMstrMsgState = I2CMST_MOTOR;
-                        if ( msgbuffer[0] == moveForwardFull )
-                            movingtest = 1;
-                        else if( msgbuffer[0] == moveStop )
-                            movingtest = 0;
-                        
-                        // See what pic the message goes to
-                        if ( msgbuffer[0] == sensorDataFull )
-                            i2c_master_recv(0x0A, 0x05, 0x4E);
-                        else
-                            i2c_master_recv(0x0A, msgbuffer[0], 0x4F);
                            //ToMainHigh_sendmsg(2, MSGT_I2C_DATA, (void *) msgbuffer);
                 
 //                        master_sent = 1;
-                       msgCount = msgbuffer[1];                 
+                      // msgCount = msgbuffer[1];
 
                         // i2c_master_recv(0x02, 0x01, 0x4E);
                    // }
@@ -512,6 +519,31 @@ void main(void) {
                     break;
                 };
 
+                case MSGT_QUEUE_GET_DATA:
+                {
+#ifdef MAIN_PIC
+                    if ( !isEmpty(&i2c_q) && q_semiphore == 0 ) {
+                       i2c_master_cmd message;
+                       LATBbits.LATB7 = !LATBbits.LATB7;
+                       getQueue(&i2c_q,&message);
+
+                        i2cMstrMsgState = I2CMST_MOTOR;
+                        if ( msgbuffer[0] == moveForwardFull )
+                            movingtest = 1;
+                        else if( msgbuffer[0] == moveStop )
+                            movingtest = 0;
+
+                        msgCount = message.msgCount;
+                        // See what pic the message goes to
+                        if ( msgbuffer[0] == sensorDataFull )
+                            i2c_master_recv(0x0A, 0x05, 0x4E);
+                        else
+                            i2c_master_recv(0x0A, message.msgType, 0x4F);
+                        
+                    }
+#endif
+                    break;
+                }
                 case MSGT_I2C_RQST:
                 {
                     // NOT USING THIS RIGHT NOW - GRANT
@@ -586,13 +618,15 @@ void main(void) {
                 {
 #if defined(ARM_PIC)
                     // Store data that we received in the buffer for ARM
-                    
+                    i2c_master_cmd message;
+
                     // Put the data into the current position of the buffer
                     int i;
                     for (i=0; i<I2CMSGLEN; i++) {
-                        roverDataBuf[roverDataBufIndex][i] = msgbuffer[i];
+                        message.data[i] = msgbuffer[i];
                     }
-                    roverDataBufIndex += 1;
+                    
+                    putQueue(&i2c_q,message);
                     break;
 #endif
                 }

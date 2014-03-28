@@ -48,8 +48,6 @@ typedef struct __i2c_master_comm {
     unsigned char slave_address;
 } i2c_master_comm;
 
-i2c_queue* i2c_q;
-
 void init_i2c_master(i2c_master_comm *);
 void i2c_master_handler(void);
 void i2c_configure_master(void);
