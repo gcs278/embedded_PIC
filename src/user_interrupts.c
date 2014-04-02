@@ -10,6 +10,7 @@
 #include "user_interrupts.h"
 #include "messages.h"
 #include "my_motor.h"
+#include "my_i2c_master.h"
 
 // A function called by the interrupt handler
 // This one does the action I wanted for this program on a timer0 interrupt
@@ -53,8 +54,14 @@ void timer1_int_handler() {
     WriteTimer1(65523);
     ticks_left++;
     ticks_left_C++;
+#elif defined(MAIN_PIC)
+    // Request sensor data for parallel calculations
+    i2cMstrMsgState = I2CMST_LOCAL_SENSOR;
+    i2c_master_recv(0x0A, 0x15, 0x4E);
+    
+    WriteTimer1(0);
 #else
     WriteTimer1(0);
 #endif
-   // WriteTimer1(0);
+
 }

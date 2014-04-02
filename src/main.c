@@ -389,8 +389,10 @@ void main(void) {
     i2c_queue i2c_q;
     i2c_configure_master();
     // createQueue(i2c_q,10);
-    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_1); //set to request data ever .087 seconds or 87 ms
-    //OpenTimer1(TIMER_INT_ON & T1_16BIT_RW & T0_SOURCE_INT & T0_PS
+
+    // (12,000,00 / Prescale) * 65535
+    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_1); // = 5.46 ms
+    OpenTimer1(TIMER_INT_ON & T1_16BIT_RW & T0_SOURCE_INT & T0_PS_1_32); // = 174 ms
 
 
     // A count buffer, to store the count while I2C slave respond
@@ -584,33 +586,68 @@ void main(void) {
                 };
                 case MSGT_I2C_MASTER_RECV_COMPLETE:
                 {
-                    if ( i2cMstrMsgState == I2CMST_SENSOR ) {
-                        
-//                        if ( msgbuffer[1] > 30 ) {
-//
-//                            if ( movingtest == 0) {
-//                                i2cMstrMsgState = I2CMST_MOTOR;
-//                                movingtest = 1;
-//                                i2c_master_recv(0x0A, moveForwardFull, 0x4F);
-//                            }
-//                        }
-                        int length = msgbuffer[0];
-                        if ( length > 0 ) {
-                            int i;
-                            int average;
-                            for (i=0; i < length; i++)
-                                average += msgbuffer[i];
-                            average = average / length;
-                            if ( msgbuffer[1] < 30 ) {
-                                if ( movingtest == 1) {
-                                    i2cMstrMsgState = I2CMST_MOTOR;
-                                    movingtest = 0;
-                                    i2c_master_recv(0x0A, moveStop, 0x4F);
+                    // What type of message we are getting
+                    // Allows for us to tell if it is a LOCAL message
+                    switch (i2cMstrMsgState) {
+                        case I2CMST_LOCAL_SENSOR: {
+
+    //                        if ( msgbuffer[1] > 30 ) {
+    //
+    //                            if ( movingtest == 0) {
+    //                                i2cMstrMsgState = I2CMST_LOCAL_MOTOR;
+    //                                movingtest = 1;
+    //                                i2c_master_recv(0x0A, moveForwardFull, 0x4F);
+    //                            }
+    //                        }
+                            int length = msgbuffer[0];
+                            if ( length > 0 ) {
+                                int i;
+                                int average;
+                                for (i=0; i < length; i++)
+                                    average += msgbuffer[i];
+                                average = average / length;
+                                if ( msgbuffer[1] < 30 ) {
+                                    if ( movingtest == 1) {
+                                        i2cMstrMsgState = I2CMST_MOTOR;
+                                        movingtest = 0;
+                                        i2c_master_recv(0x0A, RoverMsgMotorStop, 0x4F);
+                                    }
                                 }
                             }
+                            break;
                         }
-                    } else {
-                        ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
+
+                        case I2CMST_LOCAL_WALLSENSOR: {
+                            // Calculate correction response
+                            int length = msgbuffer[0];
+                            if ( length > 0 ) {
+                                int i;
+                                int average;
+                                for (i=0; i < length; i++) {
+                                    if (i < 9)
+                                        average += msgbuffer[i];
+                                }
+                                average = average / length;
+
+                                if ( average < 10 ) {
+                                    // Tell motors to move away from the wall
+                                    i2cMstrMsgState = I2CMST_MOTOR;
+                                    i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
+                                }
+                                else if ( average > 38) {
+                                    // Tell motors to move closer to the wall
+                                    i2cMstrMsgState = I2CMST_MOTOR;
+                                    i2c_master_recv(0x0A, RoverMsgMotorRight2, 0x4F);
+                                }
+                            }
+                            break;
+                        }
+                        
+                        default: {
+                            // Just a regular message from the ARM, send it back
+                            ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
+                            break;
+                        }
                     }
                     break;
                 }

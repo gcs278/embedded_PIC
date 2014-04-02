@@ -11,8 +11,9 @@
 #include "messages.h"
 #include "i2c_queue.h"
 
-#define I2CMST_SENSOR 1
+#define I2CMST_LOCAL_SENSOR 1
 #define I2CMST_MOTOR 2
+#define I2CMST_LOCAL_WALLSENSOR 3
 
 unsigned char i2cMstrMsgState;
 
