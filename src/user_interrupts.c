@@ -44,7 +44,7 @@ void timer1_int_handler() {
     unsigned int result;
 
     // read the timer and then send an empty message to main()
-    LATBbits.LATB7 = !LATBbits.LATB7;
+    //LATBbits.LATB7 = !LATBbits.LATB7;
     result = ReadTimer1();
     //ToMainLow_sendmsg(0, MSGT_TIMER1, (void *) 0);
     
@@ -56,7 +56,7 @@ void timer1_int_handler() {
     ticks_left_C++;
 #elif defined(MAIN_PIC)
     // Request sensor data for parallel calculations
-    i2cMstrMsgState = I2CMST_LOCAL_SENSOR;
+    i2cMstrMsgState = I2CMST_LOCAL_WALLSENSOR;
     i2c_master_recv(0x0A, 0x15, 0x4E);
     
     WriteTimer1(0);

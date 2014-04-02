@@ -14,6 +14,7 @@
 #define I2CMST_LOCAL_SENSOR 1
 #define I2CMST_MOTOR 2
 #define I2CMST_LOCAL_WALLSENSOR 3
+#define I2CMST_MOTOR_LOCAL 4
 
 unsigned char i2cMstrMsgState;
 

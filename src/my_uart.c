@@ -102,6 +102,7 @@ void uart_recv_state(unsigned char byte) {
                 ToMainHigh_sendmsg(I2CMSGLEN, MSGT_BUF_PUT_DATA, (void *) temp);
 #elif defined (MAIN_PIC)
                 // Wait for first to finish
+                
                 while(i2c_master_busy());
                 ToMainHigh_sendmsg(2, MSGT_I2C_DATA, (void *) uc_ptr->buffer);
 #endif

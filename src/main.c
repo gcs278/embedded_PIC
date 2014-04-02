@@ -318,7 +318,7 @@ void main(void) {
     // configure the hardware USART device
 #ifdef __USE18F46J50
     Open1USART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
-            USART_CONT_RX & USART_BRGH_HIGH, 12);
+            USART_CONT_RX & USART_BRGH_HIGH, 155);
     
 #else
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
@@ -392,7 +392,7 @@ void main(void) {
 
     // (12,000,00 / Prescale) * 65535
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_1); // = 5.46 ms
-    OpenTimer1(TIMER_INT_ON & T1_16BIT_RW & T0_SOURCE_INT & T0_PS_1_32); // = 174 ms
+    OpenTimer1(TIMER_INT_ON & T1_16BIT_RW & T1_SOURCE_FOSC_4 & T1_PS_1_8,0); // = 43 ms
 
 
     // A count buffer, to store the count while I2C slave respond
@@ -486,13 +486,13 @@ void main(void) {
 
 #elif defined(MAIN_PIC)
                     // LATBbits.LATB7 = !LATBbits.LATB7;
-                        LATBbits.LATB6 = !LATBbits.LATB6;
+                       // LATBbits.LATB6 = !LATBbits.LATB6;
                         
                         i2c_master_cmd message;
                         
                         message.msgType = msgbuffer[0];
                         message.msgCount = msgbuffer[1];
-                        
+
                         putQueue(&i2c_q,message);
                 
 //                    if ( master_sent == 0 ) {
@@ -524,9 +524,10 @@ void main(void) {
                 case MSGT_QUEUE_GET_DATA:
                 {
 #ifdef MAIN_PIC
+
                     if ( !isEmpty(&i2c_q) && q_semiphore == 0 ) {
                        i2c_master_cmd message;
-                       LATBbits.LATB7 = !LATBbits.LATB7;
+                       
                        getQueue(&i2c_q,&message);
 
                         i2cMstrMsgState = I2CMST_MOTOR;
@@ -618,6 +619,7 @@ void main(void) {
                         }
 
                         case I2CMST_LOCAL_WALLSENSOR: {
+                            LATBbits.LATB7 = !LATBbits.LATB7;
                             // Calculate correction response
                             int length = msgbuffer[0];
                             if ( length > 0 ) {
@@ -631,18 +633,19 @@ void main(void) {
 
                                 if ( average < 10 ) {
                                     // Tell motors to move away from the wall
-                                    i2cMstrMsgState = I2CMST_MOTOR;
+                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
                                     i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
                                 }
                                 else if ( average > 38) {
                                     // Tell motors to move closer to the wall
-                                    i2cMstrMsgState = I2CMST_MOTOR;
+                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
                                     i2c_master_recv(0x0A, RoverMsgMotorRight2, 0x4F);
                                 }
                             }
                             break;
                         }
-                        
+                        case I2CMST_MOTOR_LOCAL:
+                            break;
                         default: {
                             // Just a regular message from the ARM, send it back
                             ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
