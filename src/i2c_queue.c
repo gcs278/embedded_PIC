@@ -1,16 +1,15 @@
 #include "i2c_queue.h"
 #include <plib/usart.h>
 
-unsigned char createQueue(i2c_queue* queue, unsigned char size) {
+unsigned char createQueue(i2c_queue* queue, unsigned char size){
     queue->size = size;
     queue->front = 0;
     queue->end = -1;
-    //queue->elements[queue->size];
+ //   queue->elements[queue->size];
 }
 
 unsigned char putQueue(i2c_queue* queue, i2c_master_cmd element) {
     q_semiphore = 1;
-
     // Make sure it isn't full
     if ( queue->end == queue->size) {
         q_semiphore = 0;
@@ -43,7 +42,6 @@ unsigned char getQueue(i2c_queue* queue, i2c_master_cmd* element) {
             queue->elements[i] = queue->elements[i+1];
 
         queue->end--;
-        
         return 1;
     }
 }

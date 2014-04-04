@@ -24,6 +24,9 @@ extern "C" {
     
 #define motorArraySize 10
 
+#define TIMER1_START 65523
+#define TIMER0_START 243
+
     int motor_value = 0;
     unsigned char motor_semaphore = 0;
     unsigned int motor_index = 1;

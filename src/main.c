@@ -309,8 +309,8 @@ void main(void) {
     // must specifically enable the I2C interrupts
     PIE1bits.SSPIE = 1;
 
-
-    // Calculating the UART baud rate, equation in documentation
+    // BRGH_LOW = 64
+    // Calculating the UART baud rate with BRGH_HIGH, equation in documentation
     // 12000000 / (16 * (77 + 1)) = ~ 9600
     // 12000000 / (16 * (38 + 1)) = ~ 19200
     // 48000000 / (16 * (155 + 1)) = ~ 19200
@@ -319,6 +319,13 @@ void main(void) {
 #ifdef __USE18F46J50
     Open1USART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
             USART_CONT_RX & USART_BRGH_HIGH, 155);
+//    TRISAbits.TRISA5 = 1;
+//    TRISAbits.TRISA0 = 0;
+//
+//    Open2USART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
+//            USART_CONT_RX & USART_BRGH_HIGH , 155); // 9600
+//    Write2USART(0x76);
+//    Write2USART('4');
     
 #else
     OpenUSART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
@@ -344,9 +351,10 @@ void main(void) {
     // initialize my uart recv handling code
     init_uart_recv(&uc);
 
-    i2c_queue* i2c_q;
+    static i2c_queue i2c_q;
 
     createQueue(&i2c_q,10);
+
 #elif defined(SENSOR_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_2);
     // Set up ADC
@@ -408,6 +416,7 @@ void main(void) {
     _endasm;
      */
 
+
     LATBbits.LATB7 = 1;
     /*
      WE ARE NOT USING THE FOLLOWING WHILE LOOP FOR MESSAGE PASSING
@@ -465,11 +474,12 @@ void main(void) {
                             message.data[i] = 0xFF;
                     }
 
+
                     // Reply with most recent data in buffer
                     start_i2c_slave_reply(I2CMSGLEN, message.data);
-
+                    
                     // Marked the buffer used
-                    roverDataBuf[roverDataBufIndex][0] = 0xFF;
+                    //roverDataBuf[roverDataBufIndex][0] = 0xFF;
 
 #elif defined(SENSOR_PIC)
 
@@ -530,16 +540,22 @@ void main(void) {
                        
                        getQueue(&i2c_q,&message);
 
-                        i2cMstrMsgState = I2CMST_MOTOR;
-                        if ( msgbuffer[0] == moveForwardFull )
-                            movingtest = 1;
-                        else if( msgbuffer[0] == moveStop )
-                            movingtest = 0;
+                        i2cMstrMsgState = I2CMST_ARM_REQUEST;
+//                        if ( msgbuffer[0] == moveForwardFull )
+//                            movingtest = 1;
+//                        else if( msgbuffer[0] == moveStop )
+//                            movingtest = 0;
 
                         msgCount = message.msgCount;
+
                         // See what pic the message goes to
-                        if ( msgbuffer[0] == sensorDataFull )
-                            i2c_master_recv(0x0A, 0x05, 0x4E);
+                        if ( message.msgType == RoverMsgSensorAllData ||
+                                message.msgType == RoverMsgSensorRightForward ||
+                                message.msgType == RoverMsgSensorRightRear ||
+                                message.msgType == RoverMsgSensorForwardLeft ||
+                                message.msgType == RoverMsgSensorForwardRight ||
+                                message.msgType == RoverMsgSensorRightAverage)
+                            i2c_master_recv(0x0A, message.msgType, 0x4E);
                         else
                             i2c_master_recv(0x0A, message.msgType, 0x4F);
                         
@@ -618,8 +634,7 @@ void main(void) {
                             break;
                         }
 
-                        case I2CMST_LOCAL_WALLSENSOR: {
-                            LATBbits.LATB7 = !LATBbits.LATB7;
+                        case I2CMST_LOCAL_WALLSENSOR: {                    
                             // Calculate correction response
                             int length = msgbuffer[0];
                             if ( length > 0 ) {
@@ -646,6 +661,12 @@ void main(void) {
                         }
                         case I2CMST_MOTOR_LOCAL:
                             break;
+                            
+                        case I2CMST_ARM_REQUEST:
+                            // Just a regular message from the ARM, send it back
+                            ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
+                            break;
+
                         default: {
                             // Just a regular message from the ARM, send it back
                             ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
@@ -658,15 +679,15 @@ void main(void) {
                 {
 #if defined(ARM_PIC)
                     // Store data that we received in the buffer for ARM
-                    i2c_master_cmd message;
-
+                    i2c_master_cmd messageRecieved;
+                    
                     // Put the data into the current position of the buffer
                     int i;
                     for (i=0; i<I2CMSGLEN; i++) {
-                        message.data[i] = msgbuffer[i];
+                        messageRecieved.data[i] = msgbuffer[i];
                     }
                     
-                    putQueue(&i2c_q,message);
+                    putQueue(&i2c_q,messageRecieved);
                     break;
 #endif
                 }

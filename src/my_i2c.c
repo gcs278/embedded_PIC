@@ -8,6 +8,7 @@
 #include <i2c.h>
 #else
 #include <plib/i2c.h>
+#include <plib/usart.h>
 #endif
 #include "my_i2c.h"
 #include "my_adc.h"
@@ -147,6 +148,7 @@ void i2c_int_handler() {
             case I2C_SLAVE_SEND:
             {
                 if (ic_ptr->outbufind < ic_ptr->outbuflen) {
+
                     SSPBUF = ic_ptr->outbuffer[ic_ptr->outbufind];
                     ic_ptr->outbufind++;
                     data_written = 1;
@@ -210,6 +212,7 @@ void i2c_int_handler() {
 
     // must check if the message is too long, if
     if ((ic_ptr->buflen > MAXI2CBUF - 2) && (!msg_ready)) {
+        LATBbits.LATB7 = 0;
         ic_ptr->status = I2C_IDLE;
         ic_ptr->error_count++;
         ic_ptr->error_code = I2C_ERR_MSGTOOLONG;

@@ -11,9 +11,11 @@
 #include "messages.h"
 #include "my_motor.h"
 #include "my_i2c_master.h"
+#include "timer1_thread.h"
 
 // A function called by the interrupt handler
 // This one does the action I wanted for this program on a timer0 interrupt
+int timer1_extender = 0;
 
 void timer0_int_handler() {
     unsigned int val;
@@ -23,7 +25,7 @@ void timer0_int_handler() {
     // LATBbits.LATB0 = !LATBbits.LATB0;
     // reset the timer
 #if defined (MOTOR_PIC)
-    WriteTimer0(243);
+    WriteTimer0(TIMER0_START);
     ticks_right++;
     ticks_right_C++;
 #else
@@ -51,13 +53,18 @@ void timer1_int_handler() {
 
 #if defined (MOTOR_PIC)
     // reset the timer
-    WriteTimer1(65523);
+    WriteTimer1(TIMER1_START);
     ticks_left++;
     ticks_left_C++;
 #elif defined(MAIN_PIC)
-    // Request sensor data for parallel calculations
-    i2cMstrMsgState = I2CMST_LOCAL_WALLSENSOR;
-    i2c_master_recv(0x0A, 0x15, 0x4E);
+//    if ( timer1_extender > 10) {
+//        // Request sensor data for parallel calculations
+//        i2cMstrMsgState = I2CMST_LOCAL_WALLSENSOR;
+//        i2c_master_recv(0x0A, 0x15, 0x4E);
+//        timer1_extender = 0;
+//    } else {
+//        timer1_extender ++;
+//    }
     
     WriteTimer1(0);
 #else

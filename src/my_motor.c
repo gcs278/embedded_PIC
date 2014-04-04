@@ -11,14 +11,24 @@
 #include "my_uart.h"
 #include <plib/usart.h>
 #include "messages.h"
+#include <plib/timers.h>
 /*
  * 
  */
+// RIGHT SIDE
+// 209 Ticks for 1 rotations = ~37.5 cm
+// 5.57333 ticks for 1 cm
+// 557 ticks for 1 meter
+
+// LEFT SIDE
+// ~6 Ticks for 1 cm
+// 223 Tick values is 1 rotation = ~37.5 cm
+// 595 Tick values is 1 meter
 
 // Motor encoding definitions
 static char forwardFull[] = { 1, 129 };
 static char forwardHalf[] = {35, 163 };
-static char forwardSlow[] = { 50, 177 };
+static char forwardSlow[] = { 50, 176 };
 static char left[] = { 219, 35 };
 static char left2[] = { 180 };
 static char right2[] = { 45 };
@@ -93,7 +103,7 @@ void motor_encode_lthread(unsigned char msg) {
             if ( motor_state == moveStop )
                 uart_send_data(stop,1);
             else if ( motor_state == moveForwardFull)
-                uart_send_data(forwardHalf, 2);
+                uart_send_data(forwardSlow, 2);
             else
                 uart_send_data(stop,1);
             break;
@@ -105,7 +115,7 @@ void motor_encode_lthread(unsigned char msg) {
             if ( motor_state == moveStop )
                 uart_send_data(stop,1);
             else if ( motor_state == moveForwardFull)
-                uart_send_data(forwardHalf, 2);
+                uart_send_data(forwardSlow, 2);
             else
                 uart_send_data(stop,1);
             break;
@@ -133,7 +143,17 @@ void motor_encode_lthread(unsigned char msg) {
             else
                 uart_send_data(stop,1);
             break;
+        case RoverMsgMotorForward1m:
+            ticks_left_C = 0;
+            ticks_right_C = 0;
+            WriteTimer0(TIMER0_START);
+            WriteTimer1(TIMER1_START);
+            uart_send_data(forwardSlow,2);
+            while(ticks_right_C < 557 && ticks_left < 595);
+            //while (ticks_left_C < 618 && ticks_right_C < 618);
+            uart_send_data(stop,1);
             
+            break;
         default:
             break;
 

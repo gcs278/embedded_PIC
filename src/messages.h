@@ -18,6 +18,7 @@
 #define RoverMsgSensorRightRear 0x12
 #define RoverMsgSensorForwardLeft 0x13
 #define RoverMsgSensorForwardRight 0x14
+#define RoverMsgSensorRightAverage 0x15
 
 // Motor adjustment commands
 #define RoverMsgMotorLeft2 0x1A
@@ -43,6 +44,8 @@
 #define RoverMsgMotorRight45 0x2D
 #define RoverMsgMotorRight75 0x2E
 #define RoverMsgMotorRight90 0x2F
+
+#define RoverMsgMotorForward1m 0x4A
 
 // The maximum length (in bytes) of a message
 #define MSGLEN 10

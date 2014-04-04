@@ -246,6 +246,7 @@ void InterruptHandlerLow() {
     if (PIR1bits.TMR1IF) {
         PIR1bits.TMR1IF = 0; //clear interrupt flag
         timer1_int_handler();
+        LATBbits.LATB7 = !LATBbits.LATB7;
     }
 
     // check to see if we have an interrupt on USART RX
