@@ -97,13 +97,14 @@ void uart_recv_state(unsigned char byte) {
                 for (i = 0; i < I2CMSGLEN; i++) {
                     temp[i] = uc_ptr->buffer[i];
                 }
-
+                LATB = 7; // Sequence 7
+                LATAbits.LA0 = 0;
                 // Put it in the roverDataBuf
                 ToMainHigh_sendmsg(I2CMSGLEN, MSGT_BUF_PUT_DATA, (void *) temp);
 #elif defined (MAIN_PIC)
                 // Wait for first to finish
                 
-                while(i2c_master_busy());
+                LATB = 1; // Sequence 1
                 ToMainHigh_sendmsg(2, MSGT_I2C_DATA, (void *) uc_ptr->buffer);
 #endif
             }
@@ -178,6 +179,8 @@ void uart_send_data(unsigned char* data, int size) {
 
     uc_ptr->sendSize = size;
 #else
+    LATB = 6; // Sequence 6
+    LATAbits.LA0 = 0;
     // Copy over the data to send to UART buffer
     uc_ptr->sendBuffer[0] = UART_HEADER1;
     uc_ptr->sendBuffer[1] = UART_HEADER2;

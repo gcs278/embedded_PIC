@@ -16,6 +16,7 @@
 #define I2CMST_LOCAL_WALLSENSOR 3
 #define I2CMST_MOTOR_LOCAL 4
 #define I2CMST_ARM_REQUEST 5
+#define I2CMST_MOTOR_LOCAL_DEBUG 6
 
 unsigned char i2cMstrMsgState;
 
@@ -53,8 +54,11 @@ typedef struct __i2c_master_comm {
 
 void init_i2c_master(i2c_master_comm *);
 void i2c_master_handler(void);
+void i2c_master_handler2(void);
 void i2c_configure_master(void);
+void i2c_configure_master2(void);
 unsigned char i2c_master_send(unsigned char,unsigned char *, unsigned char);
+unsigned char i2c_master_send2(unsigned char,unsigned char *, unsigned char);
 unsigned char i2c_master_recv(unsigned char, unsigned char, unsigned char);
 unsigned char i2c_master_busy();
 

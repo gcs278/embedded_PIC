@@ -308,7 +308,11 @@ void main(void) {
 
     // must specifically enable the I2C interrupts
     PIE1bits.SSPIE = 1;
-
+#if defined(MOTOR_PIC) || defined(MAIN_PIC)
+    // I2C2 Interrupt
+    PIE3bits.SSP2IE = 1;
+#endif
+    int testScriptIndex = 0;
     // BRGH_LOW = 64
     // Calculating the UART baud rate with BRGH_HIGH, equation in documentation
     // 12000000 / (16 * (77 + 1)) = ~ 9600
@@ -354,7 +358,12 @@ void main(void) {
     static i2c_queue i2c_q;
 
     createQueue(&i2c_q,10);
+    TRISAbits.TRISA0 = 0; // Using it for sequence output
+    LATB = 0;
+    LATAbits.LA0 = 0;
 
+    TRISDbits.TRISD4 = 0; // Using for message queue overflow indicator
+    LATDbits.LATD4 = 0;
 #elif defined(SENSOR_PIC)
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_2);
     // Set up ADC
@@ -369,9 +378,9 @@ void main(void) {
     TRISBbits.RB6 = 0;
     LATBbits.LATB6 = 0;
 
-    OpenTimer0(TIMER_INT_ON & T0_8BIT & T0_SOURCE_EXT & T0_PS_1_1 & T0_EDGE_FALL & T0_EDGE_RISE );
-    OpenTimer1(TIMER_INT_ON & T1_8BIT_RW & T1_SOURCE_EXT & T1_SYNC_EXT_OFF & T1_PS_1_1 & T1_OSC1EN_OFF );
-    OpenTimer2(TIMER_INT_ON & T2_PS_1_16 & T2_POST_1_16); // 10 ms is 16 and 7
+   OpenTimer0(TIMER_INT_ON & T0_8BIT & T0_SOURCE_EXT & T0_PS_1_1 & T0_EDGE_FALL & T0_EDGE_RISE );
+   OpenTimer1(TIMER_INT_ON & T1_8BIT_RW & T1_SOURCE_EXT & T1_SYNC_EXT_OFF & T1_PS_1_1 & T1_OSC1EN_OFF );
+   OpenTimer2(TIMER_INT_ON & T2_PS_1_16 & T2_POST_1_16); // 10 ms is 16 and 7
 
     // Configure timer 1 so it only takes 12 ticks
     WriteTimer1(65523);
@@ -380,6 +389,16 @@ void main(void) {
     T1CONbits.RD16 = 0;
     i2c_configure_slave(0x9E);
     motor_init();
+    
+    i2c_configure_master2();
+    // Clear the LEDS
+    unsigned char msg[1];
+    msg[0] = 0x76;
+    i2c_master_send2(1, msg, 0x71);
+
+    // Set Zero
+    LATB = 0;
+
 
 //    TRISBbits.RB0 = 1;
 //    TRISBbits.RB1 = 1;
@@ -394,8 +413,19 @@ void main(void) {
 //    INTCON2bits.INTEDG0 = 1;
     
 #elif defined(MAIN_PIC)
+
     i2c_queue i2c_q;
     i2c_configure_master();
+    i2c_configure_master2();
+    unsigned char msg[7];
+    msg[0] = 'o';
+    msg[1] = 'f';
+    msg[2] = 0xFF;
+    msg[3] = 'c';
+    msg[4] = 0x00;
+    msg[5] = 0x00;
+    msg[6] = 0x00;
+    i2c_master_send2(7, msg, 0x09);
     // createQueue(i2c_q,10);
 
     // (12,000,00 / Prescale) * 65535
@@ -407,6 +437,12 @@ void main(void) {
     unsigned char msgCount;
 
     createQueue(&i2c_q,5);
+    TRISAbits.TRISA0 = 0; // Using it for sequence output
+    LATB = 0;
+    LATAbits.LA0 = 0;
+
+    TRISDbits.TRISD4 = 0;
+    LATDbits.LATD4 = 0;
 #endif
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
@@ -462,10 +498,13 @@ void main(void) {
                 {
 #if defined(ARM_PIC)
                     // LATBbits.LATB7 = !LATBbits.LATB7;
-
+                    LATB = 3; // Sequence 3
+                    LATAbits.LA0 = 0;
                     i2c_master_cmd message;
                     
                     if ( !isEmpty(&i2c_q) ) {
+                        LATB = 4; // Sequence 4
+                        LATAbits.LA0 = 0;
                         getQueue(&i2c_q,&message);
                     }
                     else {
@@ -477,6 +516,8 @@ void main(void) {
 
                     // Reply with most recent data in buffer
                     start_i2c_slave_reply(I2CMSGLEN, message.data);
+                    LATB = 5; // Sequence 2
+                    LATAbits.LA0 = 0;
                     
                     // Marked the buffer used
                     //roverDataBuf[roverDataBufIndex][0] = 0xFF;
@@ -484,6 +525,7 @@ void main(void) {
 #elif defined(SENSOR_PIC)
 
 #elif defined(MOTOR_PIC)
+                
                 // Reply with random tick values
                 int length = 10;
                     unsigned char motorTEST[10];
@@ -493,32 +535,21 @@ void main(void) {
                     }
                 unsigned char * tickbuffer = motorTickValue(msgbuffer[0]);
                 start_i2c_slave_reply(length, tickbuffer);
+                LATB = 3;
+                 
 
 #elif defined(MAIN_PIC)
                     // LATBbits.LATB7 = !LATBbits.LATB7;
                        // LATBbits.LATB6 = !LATBbits.LATB6;
-                        
+                        LATAbits.LA0 = 0;
+                        LATB = 3; // Sequence 3
                         i2c_master_cmd message;
                         
                         message.msgType = msgbuffer[0];
                         message.msgCount = msgbuffer[1];
 
+                        // Put the message in the queue
                         putQueue(&i2c_q,message);
-                
-//                    if ( master_sent == 0 ) {
-                   
-                           //ToMainHigh_sendmsg(2, MSGT_I2C_DATA, (void *) msgbuffer);
-                
-//                        master_sent = 1;
-                      // msgCount = msgbuffer[1];
-
-                        // i2c_master_recv(0x02, 0x01, 0x4E);
-                   // }
-//                    else if (msgbuffer[0] == 0x05) {
-//                        i2c_master_recv(0x02, 0x05, 0x4F);
-//                        // i2c_master_recv(0x02, 0x05, 0x4E);
-//                    }
-                    // LATDbits.LATD7 = !LATDbits.LATD7;
 
 #endif
                     break;
@@ -536,6 +567,8 @@ void main(void) {
 #ifdef MAIN_PIC
 
                     if ( !isEmpty(&i2c_q) && q_semiphore == 0 ) {
+                       LATAbits.LA0 = 0;
+                       LATB = 4; // Sequence 4
                        i2c_master_cmd message;
                        
                        getQueue(&i2c_q,&message);
@@ -558,7 +591,8 @@ void main(void) {
                             i2c_master_recv(0x0A, message.msgType, 0x4E);
                         else
                             i2c_master_recv(0x0A, message.msgType, 0x4F);
-                        
+                        LATAbits.LA0 = 0;
+                        LATB = 5; // Sequence 5
                     }
 #endif
                     break;
@@ -603,19 +637,12 @@ void main(void) {
                 };
                 case MSGT_I2C_MASTER_RECV_COMPLETE:
                 {
+                    LATAbits.LA0 = 0;
+                    LATB = 6; // Sequence 6
                     // What type of message we are getting
                     // Allows for us to tell if it is a LOCAL message
                     switch (i2cMstrMsgState) {
                         case I2CMST_LOCAL_SENSOR: {
-
-    //                        if ( msgbuffer[1] > 30 ) {
-    //
-    //                            if ( movingtest == 0) {
-    //                                i2cMstrMsgState = I2CMST_LOCAL_MOTOR;
-    //                                movingtest = 1;
-    //                                i2c_master_recv(0x0A, moveForwardFull, 0x4F);
-    //                            }
-    //                        }
                             int length = msgbuffer[0];
                             if ( length > 0 ) {
                                 int i;
@@ -639,10 +666,10 @@ void main(void) {
                             int length = msgbuffer[0];
                             if ( length > 0 ) {
                                 int i;
-                                int average;
+                                int average=0;
                                 for (i=0; i < length; i++) {
                                     if (i < 9)
-                                        average += msgbuffer[i];
+                                        average += msgbuffer[i+1];
                                 }
                                 average = average / length;
 
@@ -662,6 +689,41 @@ void main(void) {
                         case I2CMST_MOTOR_LOCAL:
                             break;
                             
+                        case I2CMST_MOTOR_LOCAL_DEBUG:
+                        {
+#if defined(MOTOR_SCRIPT_MS4)
+                            // Calculate correction response
+                            int length = msgbuffer[0];
+                            if ( length > 0 ) {
+                                if ( msgbuffer[1] == 0 ) {
+                                    if ( testScriptIndex == 0) {
+                                        
+                                        i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                        i2c_master_recv(0x0A, RoverMsgMotorForwardCMDelim + 100, 0x4F);
+                                    }
+                                    else if ( testScriptIndex == 1) {
+                                        i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                        i2c_master_recv(0x0A, RoverMsgMotorLeft90, 0x4F);
+                                    }
+                                    else if ( testScriptIndex == 2) {
+                                        i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                        i2c_master_recv(0x0A, RoverMsgMotorForwardCMDelim + 20, 0x4F);
+                                    }
+                                    else if ( testScriptIndex == 3) {
+                                        i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                        i2c_master_recv(0x0A, RoverMsgMotorLeft90, 0x4F);
+                                    }
+                                    else if ( testScriptIndex == 4) {
+                                        i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                        i2c_master_recv(0x0A, RoverMsgMotorForwardCMDelim + 100, 0x4F);
+                                    }
+                                    testScriptIndex++;
+                                }
+                            }
+#endif
+                            break;
+                        }
+                            
                         case I2CMST_ARM_REQUEST:
                             // Just a regular message from the ARM, send it back
                             ToMainLow_sendmsg(length, MSGT_UART_SEND, msgbuffer );
@@ -673,11 +735,16 @@ void main(void) {
                             break;
                         }
                     }
+                    LATAbits.LA0 = 0;
+                    LATB = 7; // Sequence 7
                     break;
                 }
                 case MSGT_BUF_PUT_DATA:
                 {
-#if defined(ARM_PIC)
+#if defined(ARM_PIC) 
+                    LATB = 1; // Sequence 9
+                    LATAbits.LA0 = 1;
+
                     // Store data that we received in the buffer for ARM
                     i2c_master_cmd messageRecieved;
                     
@@ -722,6 +789,8 @@ void main(void) {
 #elif defined(SENSOR_PIC)
 
 #elif defined(MAIN_PIC)
+                    LATB = 0; // Sequence 8
+                    LATAbits.LA0 = 1;
                     uart_sendthread(length, msgbuffer,msgCount);
 
 #elif defined(MOTOR_PIC)
@@ -737,6 +806,26 @@ void main(void) {
                     uart_lthread(&uthread_data, msgtype, length, msgbuffer);
                     break;
                 };
+                case MSGT_DISPLAY_LED:
+                {
+                    unsigned char msg[12];
+                    msg[0] = 0x79;
+                    msg[1] = 0x03;
+                    msg[2] = msgbuffer[0];
+                    msg[3] = 0x79;
+                    msg[4] = 0x02;
+                    msg[5] = msgbuffer[1];
+                    msg[6] = 0x79;
+                    msg[7] = 0x01;
+                    msg[8] = msgbuffer[2];
+                    msg[9] = 0x79;
+                    msg[10] = 0x00;
+                    msg[11] = msgbuffer[3];
+                    if ( !i2c_master_busy() ) {
+                        i2c_master_send2(12, msg, 0x71);
+                    }
+                    break;
+                }
                 default:
                 {
                     // Your code should handle this error

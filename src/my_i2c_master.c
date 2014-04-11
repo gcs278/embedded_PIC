@@ -41,7 +41,7 @@ void i2c_configure_master(void) {
     SSP1STATbits.SMP = 1;
     SSP1STATbits.CKE = 0;
 
-
+    
 #ifdef __USE18F46J50
     SSP1ADD = 119;
 #else
@@ -60,6 +60,43 @@ void i2c_configure_master(void) {
 
     ic_ptr->state = IDLE; 
 }
+
+void i2c_configure_master2(void) {
+    // set clock and data as inputs
+#ifdef __USE18F46J50
+    SCL2 = 1;
+    SDA2 = 1;
+#else
+    I2C2_SCL = 1;
+    I2C2_SDA = 1;
+#endif
+
+
+
+    // configure status bits
+    SSP2STATbits.SMP = 1;
+    SSP2STATbits.CKE = 0;
+
+
+#ifdef __USE18F46J50
+    SSP2ADD = 119;
+#else
+    // set frequency to 100kHz
+    SSP2ADD = 29;
+#endif
+
+
+
+    // set to master mode
+    SSP2CON1 = 0x8;
+    SSP2CON2 = 0;
+
+    // start I2C Master mode
+    SSP2CON1bits.SSPEN = 1;
+
+    ic_ptr->state = IDLE;
+}
+
 
 // Sending in I2C Master mode [slave write]
 // 		returns -1 if the i2c bus is busy
@@ -86,6 +123,18 @@ unsigned char i2c_master_send(unsigned char length, unsigned char *msg, unsigned
     SSP1CON2bits.SEN = 1;
     ic_ptr->state = START_BIT;
     LATDbits.LATD7 = !LATDbits.LATD7;
+    return 0;
+}
+
+unsigned char i2c_master_send2(unsigned char length, unsigned char *msg, unsigned char slave_address)
+{
+    mode = MASTER_WRITE;
+    memcpy(ic_ptr->buffer, msg, length);
+    ic_ptr->buffer_length = length;
+    ic_ptr->buffer_index = 0;
+    ic_ptr->slave_address = slave_address << 1;
+    SSP2CON2bits.SEN2 = 1;
+    ic_ptr->state = START_BIT;
     return 0;
 }
 
@@ -265,6 +314,149 @@ void i2c_master_handler()
 
 }
 
+void i2c_master_handler2()
+{
+    switch (ic_ptr->state)
+    {
+        case START_BIT:
+        {
+
+            SSP2BUF = (ic_ptr->slave_address);
+            ic_ptr->state = WRITE_ADDRESS;
+            break;
+        } 
+
+        case WRITE_ADDRESS:
+        {
+            if (1 == SSP2CON2bits.ACKSTAT)
+            {
+                    // NACK 
+            }
+            else
+            {
+                if (mode == MASTER_WRITE )
+                {
+                    SSP2BUF = ic_ptr->buffer[ic_ptr->buffer_index];
+                } 
+                else if (mode == MASTER_READ )
+                {
+                    SSP2BUF = ic_ptr->address;
+                }
+                ic_ptr->state = DATA;
+            }
+            break;
+        }
+
+        case DATA:
+        {
+
+        if (1 == SSP2CON2bits.ACKSTAT)
+        {
+            // NACK
+        }
+        else
+        {
+            if (mode == MASTER_WRITE )
+            {
+                        
+                ic_ptr->buffer_index++;
+
+                if (ic_ptr->buffer_index < ic_ptr->buffer_length)
+                {     
+                    SSP2BUF = ic_ptr->buffer[ic_ptr->buffer_index];
+                    ic_ptr->state = DATA;
+                }
+                else
+                {
+                    SSP2CON2bits.PEN = 1;
+                    ic_ptr->state = STOP_MESSAGE;
+                }
+            }
+            else if (mode == MASTER_READ )
+            {
+                SSP2CON2bits.RSEN = 1;
+                ic_ptr->state = RESTART;
+            }
+
+        }
+        break;
+        }
+                
+        case RESTART:
+        {
+            SSP2BUF = (ic_ptr->slave_address) | 0x01;
+            ic_ptr->state = READ_ADDRESS;
+            break;
+        } 
+
+        case READ_ADDRESS:
+        {
+            if (1 == SSP2CON2bits.ACKSTAT)
+            {
+                    // NACK 
+            } else
+            {        
+                SSP2CON2bits.RCEN = 1;
+                ic_ptr->state = SLAVE_RESPONSE;
+            }
+            break;
+        }
+        case SLAVE_RESPONSE:
+        {
+            ic_ptr->buffer[ic_ptr->buffer_index] = SSP2BUF;
+
+                
+            ic_ptr->buffer_index++;    
+            if (ic_ptr->buffer_index < ic_ptr->buffer_length)
+            {
+                SSP2CON2bits.ACKDT = 0;
+                ic_ptr->state = ACK;
+
+            }
+            else
+            {
+                SSP2CON2bits.ACKDT = 1;
+                ic_ptr->state = NACK;
+            }
+            SSP2CON2bits.ACKEN = 1;
+            break;
+            } 
+
+        case ACK:
+        {
+            SSP2CON2bits.RCEN = 1;
+            ic_ptr->state = SLAVE_RESPONSE;
+            break;
+        } 
+        case NACK:
+        {
+            SSP2CON2bits.PEN = 1;
+            ic_ptr->state = STOP_MESSAGE;
+            break;
+        }
+
+        case STOP_MESSAGE:
+        {
+            if ( mode == MASTER_WRITE )
+            {
+                ToMainHigh_sendmsg(0, MSGT_I2C_MASTER_SEND_COMPLETE, 0);
+            } else if (mode == MASTER_READ )
+            {
+                ToMainHigh_sendmsg(ic_ptr->buffer_index, MSGT_I2C_MASTER_RECV_COMPLETE, ic_ptr->buffer);
+            }
+
+            mode = MASTER_IDLE;
+            ic_ptr->state = IDLE;
+            break;
+        }
+
+        default:
+        {
+            break;
+        } // End default case
+    }
+
+}
 
 
 /*

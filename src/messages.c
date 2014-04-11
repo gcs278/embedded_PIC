@@ -39,11 +39,14 @@ signed char send_msg(msg_queue *qptr, unsigned char length, unsigned char msgtyp
         return (MSGBAD_LEN);
     }
 #endif
-
+    
     slot = qptr->cur_write_ind;
     qmsg = &(qptr->queue[slot]);
     // if the slot isn't empty, then we should return
     if (qmsg->full != 0) {
+#if defined(MAIN_PIC) || defined(ARM_PIC)
+        LATDbits.LATD4 = !LATDbits.LATD4;
+#endif
         return (MSGQUEUE_FULL);
     }
 

@@ -36,6 +36,7 @@ extern "C" {
     unsigned char motor_state;
     unsigned int ticks_right;
     unsigned int ticks_left;
+    unsigned int ticks_left_total;
     unsigned int ticks_left_C;
     unsigned int ticks_right_C;
     void motor_encode_lthread(unsigned char msg);

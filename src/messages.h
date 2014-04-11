@@ -38,17 +38,26 @@
 #define RoverMsgMotorRight7 0x27
 #define RoverMsgMotorRight10 0x28
 #define RoverMsgMotorRight15 0x29
-#define RoverMsgMotorRight20 0x2A
-#define RoverMsgMotorRight25 0x2B
-#define RoverMsgMotorRight30 0x2C
-#define RoverMsgMotorRight45 0x2D
-#define RoverMsgMotorRight75 0x2E
 #define RoverMsgMotorRight90 0x2F
 
-#define RoverMsgMotorForward1m 0x4A
+// Speed Modes
+#define RoverMsgMotorSpeedCreepin 0x2A
+#define RoverMsgMotorSpeedSlow 0x2B
+#define RoverMsgMotorSpeedMedium 0x2C
+#define RoverMsgMotorSpeedMediumFast 0x2D
+#define RoverMsgMotorSpeedFastBRAH 0x2E
+
+#define RoverMsgMotorForwardCMDelim 0x30
+
+
 
 // The maximum length (in bytes) of a message
-#define MSGLEN 10
+#if defined(MAIN_PIC)
+    #define MSGLEN 10
+#else
+    #define MSGLEN 12
+#endif
+
 // Length of the I2C response
 #define I2CMSGLEN 10
 // How many UART data bytes are coming over from rover

@@ -231,6 +231,8 @@ void i2c_int_handler() {
     }
     if (msg_to_send) {
 #if defined(ARM_PIC)
+        LATB = 2; // Sequence 2
+        LATAbits.LA0 = 0;
         // Immediately respond with what is in the buffer
         ToMainHigh_sendmsg(ic_ptr->buflen, MSGT_I2C_DATA, (void *) ic_ptr->buffer);
         
@@ -238,7 +240,7 @@ void i2c_int_handler() {
         ToMainLow_sendmsg(MSGLEN, MSGT_UART_SEND, (void *) ic_ptr->buffer);
 
 #elif defined(MOTOR_PIC)
-
+        LATB = 2;
         ToMainHigh_sendmsg(1,MSGT_I2C_DATA, (void *) ic_ptr->buffer);
 
         // SEND I2C Message TO UART

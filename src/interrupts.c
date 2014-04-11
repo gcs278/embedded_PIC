@@ -5,12 +5,15 @@
 
 #include "maindefs.h"
 #include "interrupts.h"
+#include <stdio.h>
 #include "user_interrupts.h"
 #include "messages.h"
 #include "my_i2c_master.h"
 #include "my_uart.h"
 #include "my_motor.h"
 #include "my_adc.h"
+#include <time.h>
+#include <stdlib.h>
 //----------------------------------------------------------------------------
 // Note: This code for processing interrupts is configured to allow for high and
 //       low priority interrupts.  The high priority interrupt can interrupt the
@@ -18,8 +21,8 @@
 //       can be processed at the same time.  It is possible to enable nesting of low
 //       priority interrupts, but this code is not setup for that and this nesting is not
 //       enabled.
-
-unsigned char timer2_extender = 0;
+int i = 0;
+int timer2_extender = 0;
 
 void enable_interrupts() {
     // Peripheral interrupts can have their priority set to high or low
@@ -114,6 +117,13 @@ void InterruptHandlerHigh() {
         #endif
     }
 
+    if (PIR3bits.SSP2IF) {
+        PIR3bits.SSP2IF = 0;
+#if defined(MAIN_PIC) || defined(MOTOR_PIC)
+        i2c_master_handler2();
+#endif
+    }
+
     // Check to see if we have an interrupt on timer 2
     if ( PIR1bits.TMR2IF ) {
         // LATBbits.LATB7 = !LATBbits.LATB7;
@@ -121,21 +131,32 @@ void InterruptHandlerHigh() {
 
         #if defined (MOTOR_PIC)
         {
-            if ( timer2_extender == 10 ) {
+            if ( timer2_extender > 10 ) {
+                LATB = 4; // Sequence 3
                 motor_semaphore = 1;
 //            if(motor_index == 10)
 //            {
 //                //indicate message lost
 //                motor_index = 1;
 //            }
+                //i2c_master_send2(1, msg[0], 0x71);
+
+                unsigned char msg[10];
+                msg[0] = ticks_left_total/6 % 10;
+                msg[1] = (ticks_left_total/6/10) % 10;
+                msg[2] = (ticks_left_total/6/100) % 10;
+                msg[3] = (ticks_left_total/6/1000) % 10;
+                LATB = 5;
+                ToMainLow_sendmsg(10,MSGT_DISPLAY_LED,msg);
                 motorArrayLeft[motor_index % 10] = ticks_left;
                 motorArrayRight[motor_index % 10] = ticks_right;
                 ticks_left = 0;
                 ticks_right = 0;
-
+                LATB = 6;
                 motor_index++;
                 motor_semaphore = 0;
                 timer2_extender = 0;
+                LATB = 5;
             } else {
                 timer2_extender++;
             }
@@ -155,6 +176,66 @@ void InterruptHandlerHigh() {
         // LATDbits.LATD7 = !LATDbits.LATD7;
 #if defined (MAIN_PIC)
         {
+#if defined (MOTOR_SCRIPT_MS4)
+            if ( timer2_extender > 50 ) {
+//                unsigned char msg[5];
+//                msg[0] = 'C';
+//                msg[1] = 0x00;
+//                msg[2] = 0xFF;
+//                msg[3] = 0x00;
+//                i2c_master_send2(4, msg, 0x09);
+                
+                i2cMstrMsgState = I2CMST_MOTOR_LOCAL_DEBUG;
+                i2c_master_recv(0x0A, RoverMsgMotorLeftData, 0x4F);
+                timer2_extender = 0;
+            } else {
+                timer2_extender++;
+            }
+#elif defined (ADJUST_SCRIPT_MS4)
+            if ( timer2_extender == 0) {
+                i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                i2c_master_recv(0x0A, RoverMsgMotorForward, 0x4F);
+            }
+            if ( timer2_extender > 50 ) {
+                unsigned char msg[5];
+                msg[0] = 'C';
+                msg[1] = 0x00;
+                msg[2] = 0xFF;
+                msg[3] = 0xFF;
+                i2c_master_send2(4, msg, 0x09);
+                unsigned char buffer[10];
+                buffer[0] = 1;
+                buffer[1] = i;
+                i2cMstrMsgState = I2CMST_LOCAL_WALLSENSOR;
+                ToMainHigh_sendmsg(10, MSGT_I2C_MASTER_RECV_COMPLETE, buffer);
+                timer2_extender = 0;
+                i= i + 5;
+                if ( i > 50 )
+                    i=1;
+            } else {
+                timer2_extender++;
+            }
+#endif
+//            if ( timer2_extender > 750 ) {
+//                i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+//                //i2c_master_recv(0x0A, RoverMsgMotorForwardCMDelim + i + 150, 0x4F);
+//                if ( i == 0 ) {
+//                    i2c_master_recv(0x0A, RoverMsgMotorSpeedSlow, 0x4F);
+//                }else if ( i == 1 )
+//                    i2c_master_recv(0x0A, RoverMsgMotorForward, 0x4F);
+//                else if ( i % 2 ) {
+//                    i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
+//                }
+//                else {
+//                    i2c_master_recv(0x0A, RoverMsgMotorRight2, 0x4F);
+//                }
+//
+//                i++;
+//                timer2_extender = 0;
+//            } else {
+//                timer2_extender ++;
+//            }
+
 //            WriteUSART(i2c_q->end);
             // Check queue
             ToMainHigh_sendmsg(0,MSGT_QUEUE_GET_DATA,(void*)0);

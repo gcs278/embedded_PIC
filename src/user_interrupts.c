@@ -56,6 +56,8 @@ void timer1_int_handler() {
     WriteTimer1(TIMER1_START);
     ticks_left++;
     ticks_left_C++;
+    ticks_left_total++;
+    
 #elif defined(MAIN_PIC)
 //    if ( timer1_extender > 10) {
 //        // Request sensor data for parallel calculations

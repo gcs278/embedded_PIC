@@ -53,6 +53,8 @@
 #define MSGT_UART_SEND 47
 #define MSGT_BUF_PUT_DATA 55
 #define MSGT_QUEUE_GET_DATA 56
+#define MSGT_DISPLAY_LED 57
+#define MSGT_MOTOR_ENCODER 58
 
 #define UART_STATE_HEADER1 48
 #define UART_STATE_HEADER2 53
@@ -68,10 +70,13 @@
 
 
 // PIC Type Configuration
-// #define MAIN_PIC
+ #define MAIN_PIC
 // #define SENSOR_PIC
- #define MOTOR_PIC
+// #define MOTOR_PIC
 //#define ARM_PIC
+
+//#define MOTOR_SCRIPT_MS4
+#define ADJUST_SCRIPT_MS4
 
 // I2C Configuration
 // #define I2C_MASTER
