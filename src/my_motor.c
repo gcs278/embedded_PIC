@@ -47,29 +47,37 @@ void motor_init() {
     ticks_left_C = 0;
     ticks_right_C = 0;
     ticks_left_total = 0;
+    executingEncode = 0;
 }
 
 void motor_encode_lthread(unsigned char msg) {
     LATB = 7; // Sequence 1
     // Check if we have a move ___ distance
     if ( msg >= RoverMsgMotorForwardCMDelim ) {
-        ticks_left_C = 0;
-        ticks_right_C = 0;
+//        ticks_left_C = 0;
+//        ticks_right_C = 0;
         WriteTimer0(TIMER0_START);
         WriteTimer1(TIMER1_START);
         uart_send_data(forwardHalf,2);
 
+
         if ( msg <= 0xC5 ) {
-            while( ticks_left_C < 6*(msg-RoverMsgMotorForwardCMDelim+1)
-                    || ticks_right_C < 6.06*(msg-RoverMsgMotorForwardCMDelim+1) );
+            ticks_left_C = 6*(msg-RoverMsgMotorForwardCMDelim+1);
+            ticks_right_C = 6.06*(msg-RoverMsgMotorForwardCMDelim+1);
+            executingEncode = 1;
+//            while( ticks_left_C < 6*(msg-RoverMsgMotorForwardCMDelim+1)
+//                    || ticks_right_C < 6.06*(msg-RoverMsgMotorForwardCMDelim+1) );
         }
         else {
-            while( ticks_left_C < ( 60*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6*150 )
-                    || ticks_right_C < ( 60.6*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6.06*150) ){
-            }
+            ticks_left_C = ( 60*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6*150);
+            ticks_right_C = ( 60.6*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6.06*150);
+            executingEncode = 1;
+//            while( ticks_left_C < ( 60*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6*150 )
+//                    || ticks_right_C < ( 60.6*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6.06*150) ){
+//            }
         }
 
-        uart_send_data(stop,1);
+       
     } else {
         // Switch on the msg type
         switch (msg) {
@@ -86,29 +94,30 @@ void motor_encode_lthread(unsigned char msg) {
                 break;
 
             case RoverMsgMotorLeft:
-                ticks_left_C = 0;
-
                 uart_send_data(left, 2);
-                while (ticks_left_C < 20 ); // 200 is about 90
-                if ( motor_state == RoverMsgMotorStop )
-                    uart_send_data(stop,1);
-                else if ( motor_state == moveForwardFull)
-                    uart_send_data(forwardHalf, 2);
-                else
-                    uart_send_data(stop,1);
+                ticks_left_C = 20;
+                executingEncode = 1;
+                //while (ticks_left_C < 20 ); // 200 is about 90
+//                if ( motor_state == RoverMsgMotorStop )
+//                    uart_send_data(stop,1);
+//                else if ( motor_state == moveForwardFull)
+//                    uart_send_data(forwardHalf, 2);
+//                else
+//                    uart_send_data(stop,1);
                 //motor_state = moveStop;
                 break;
 
             case RoverMsgMotorRight:
-                ticks_left_C = 0;
                 uart_send_data(right, 2);
-                while (ticks_left_C < 20 ); // 210 is about 90
-                if ( motor_state == RoverMsgMotorStop )
-                    uart_send_data(stop,1);
-                else if ( motor_state == moveForwardFull)
-                    uart_send_data(forwardHalf, 2);
-                else
-                    uart_send_data(stop,1);
+                ticks_left_C = 20;
+                executingEncode = 1;
+               // while (ticks_left_C < 20 ); // 210 is about 90
+//                if ( motor_state == RoverMsgMotorStop )
+//                    uart_send_data(stop,1);
+//                else if ( motor_state == moveForwardFull)
+//                    uart_send_data(forwardHalf, 2);
+//                else
+//                    uart_send_data(stop,1);
 
                 //motor_state = moveStop;
                 break;
@@ -119,55 +128,63 @@ void motor_encode_lthread(unsigned char msg) {
                 break;
 
             case RoverMsgMotorLeft2:
-                ticks_left_C = 0;
+            {
                 int diff = 192 - leftWheelSpeed;
                 left2[0] = 192 + diff + 10;
                 uart_send_data(left2, 1);
-                while (ticks_left_C < 15 ); // 200 is about 90
-                if ( motor_state == RoverMsgMotorStop )
-                    uart_send_data(stop,1);
-                else if ( motor_state == RoverMsgMotorForward)
-                    uart_send_data(forwardVariable, 2);
-                else
-                    uart_send_data(stop,1);
+                ticks_left_C = 15;
+                executingEncode = 1;
+//                while (ticks_left_C < 15 ); // 200 is about 90
+//                if ( motor_state == RoverMsgMotorStop )
+//                    uart_send_data(stop,1);
+//                else if ( motor_state == RoverMsgMotorForward)
+//                    uart_send_data(forwardVariable, 2);
+//                else
+//                    uart_send_data(stop,1);
                 break;
+            }
 
             case RoverMsgMotorRight2:
-                ticks_right_C = 0;
+            {
                 int diff = 64 - rightWheelSpeed;
                 right2[0] = 64 + diff + 10;
                 uart_send_data(right2, 1);
-                while (ticks_right_C < 17 ); // 200 is about 90
-                if ( motor_state == RoverMsgMotorStop )
-                    uart_send_data(stop,1);
-                else if ( motor_state == RoverMsgMotorForward)
-                    uart_send_data(forwardVariable, 2);
-                else
-                    uart_send_data(stop,1);
+                ticks_right_C = 17;
+                executingEncode = 1;
+
+//                while (ticks_right_C < 17 ); // 200 is about 90
+//                if ( motor_state == RoverMsgMotorStop )
+//                    uart_send_data(stop,1);
+//                else if ( motor_state == RoverMsgMotorForward)
+//                    uart_send_data(forwardVariable, 2);
+//                else
+//                    uart_send_data(stop,1);
                 break;
+            }
 
             case RoverMsgMotorLeft90:
-                ticks_left_C = 0;
                 uart_send_data(left, 2);
-                while (ticks_left_C < 205 ); // 200 is about 90
-                if ( motor_state == RoverMsgMotorStop )
-                    uart_send_data(stop,1);
-                else if ( motor_state == RoverMsgMotorForward)
-                    uart_send_data(forwardVariable, 2);
-                else
-                    uart_send_data(stop,1);
+                ticks_left_C = 205;
+                executingEncode = 1;
+//                while (ticks_left_C < 205 ); // 200 is about 90
+//                if ( motor_state == RoverMsgMotorStop )
+//                    uart_send_data(stop,1);
+//                else if ( motor_state == RoverMsgMotorForward)
+//                    uart_send_data(forwardVariable, 2);
+//                else
+//                    uart_send_data(stop,1);
                 break;
 
             case RoverMsgMotorRight90:
-                ticks_left_C = 0;
                 uart_send_data(right, 2);
-                while (ticks_left_C < 210 ); // 210 is about 90
-                if ( motor_state == moveStop )
-                    uart_send_data(stop,1);
-                else if ( motor_state == RoverMsgMotorForward)
-                    uart_send_data(forwardVariable, 2);
-                else
-                    uart_send_data(stop,1);
+                ticks_left_C = 210;
+//                while (ticks_left_C < 210 ); // 210 is about 90
+//                if ( motor_state == moveStop )
+//                    uart_send_data(stop,1);
+//                else if ( motor_state == RoverMsgMotorForward)
+//                    uart_send_data(forwardVariable, 2);
+//                else
+//                    uart_send_data(stop,1);
                 break;
 
             case RoverMsgMotorSpeedCreepin:
@@ -212,6 +229,13 @@ void motor_encode_lthread(unsigned char msg) {
     }
 }
 
+void RoverForward() {
+    uart_send_data(forwardVariable, 2);
+}
+
+void RoverStop() {
+    uart_send_data(stop,1);
+}
 
 unsigned char* motorTickValue(unsigned char msgRequest)
 {

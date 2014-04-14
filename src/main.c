@@ -195,6 +195,7 @@ void main(void) {
     signed char length;
     unsigned char msgtype;
     unsigned char last_reg_recvd;
+    unsigned char moving = 0;
     uart_comm uc;
     i2c_comm ic;
     unsigned char msgbuffer[MSGLEN + 1];
@@ -337,7 +338,7 @@ void main(void) {
 #endif
 
 #if defined(ARM_PIC)
-    OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
+    //OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_256);
     // Initialize the WiFLy
     // 3/2/14 - SET UP DOESN'T REQUIRE WIFLY INIT ANY MORE
     //initWiFly();
@@ -345,17 +346,11 @@ void main(void) {
 
     // Rover data buffer - buffer for giving ARM most recent data
     // Allows for asynchronous communication
-    unsigned char roverDataBuf[5][I2CMSGLEN];
-    unsigned char roverDataBufIndex = 0;
-    int j = 0;
-    // Initialize the first bit to FF, the garage bit
-    for (j; j < I2CMSGLEN; j++) {
-        roverDataBuf[j][0] = 0xFF;
-    }
+
     // initialize my uart recv handling code
     init_uart_recv(&uc);
 
-    static i2c_queue i2c_q;
+    i2c_queue i2c_q;
 
     createQueue(&i2c_q,10);
     TRISAbits.TRISA0 = 0; // Using it for sequence output
@@ -476,6 +471,8 @@ void main(void) {
         // an idle mode)
         block_on_To_msgqueues();
 
+
+
         // At this point, one or both of the queues has a message.  It
         // makes sense to check the high-priority messages first -- in fact,
         // you may only want to check the low-priority messages when there
@@ -483,11 +480,24 @@ void main(void) {
         // I haven't done it here.
         length = ToMainHigh_recvmsg(MSGLEN, &msgtype, (void *) msgbuffer);
         if (length < 0) {
+            LATB = 4; // Sequence 3
+            LATAbits.LA0 = 1;
             // no message, check the error code to see if it is concern
-            if (length != MSGQUEUE_EMPTY) {
-                // This case be handled by your code.
+            if (length == MSGQUEUE_EMPTY) {
+                LATB = 5; // Sequence 3
+                LATAbits.LA0 = 1;
             }
+
+            if ( i2cStatus() == I2C_SLAVE_SEND ) {
+                #if defined(MAIN_PIC) || defined(ARM_PIC)
+                    LATDbits.LATD4 = 1;
+                #endif
+            }
+            
+           
         } else {
+            LATB = 3; // Sequence 3
+            LATAbits.LA0 = 1;
             switch (msgtype) {
                 case MSGT_TIMER0:
                 {
@@ -664,15 +674,21 @@ void main(void) {
                         case I2CMST_LOCAL_WALLSENSOR: {                    
                             // Calculate correction response
                             int length = msgbuffer[0];
-                            if ( length > 0 ) {
+                            if ( length > 3 ) {
                                 int i;
-                                int average=0;
-                                for (i=0; i < length; i++) {
-                                    if (i < 9)
-                                        average += msgbuffer[i+1];
+//                                int average=msgbuffer[2]+msgbuffer[3];
+////                                for (i=0; i < length; i++) {
+////                                    if (i < 9)
+////                                        average += msgbuffer[i+1];
+////                                }
+//                                average = average / 2;
+                                int average = msgbuffer[3];
+                                if ( moving == 0 ) {
+                                    // Tell motors to move away from the wall
+                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                    i2c_master_recv(0x0A, RoverMsgMotorForward, 0x4F);
+                                    moving = 1;
                                 }
-                                average = average / length;
-
                                 if ( average < 10 ) {
                                     // Tell motors to move away from the wall
                                     i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
@@ -739,25 +755,7 @@ void main(void) {
                     LATB = 7; // Sequence 7
                     break;
                 }
-                case MSGT_BUF_PUT_DATA:
-                {
-#if defined(ARM_PIC) 
-                    LATB = 1; // Sequence 9
-                    LATAbits.LA0 = 1;
 
-                    // Store data that we received in the buffer for ARM
-                    i2c_master_cmd messageRecieved;
-                    
-                    // Put the data into the current position of the buffer
-                    int i;
-                    for (i=0; i<I2CMSGLEN; i++) {
-                        messageRecieved.data[i] = msgbuffer[i];
-                    }
-                    
-                    putQueue(&i2c_q,messageRecieved);
-                    break;
-#endif
-                }
                 default:
                 {
                     // Your code should handle this error
@@ -825,6 +823,25 @@ void main(void) {
                         i2c_master_send2(12, msg, 0x71);
                     }
                     break;
+                }
+                case MSGT_BUF_PUT_DATA:
+                {
+#if defined(ARM_PIC)
+                    LATB = 1; // Sequence 9
+                    LATAbits.LA0 = 1;
+
+                    // Store data that we received in the buffer for ARM
+                    i2c_master_cmd messageRecieved;
+
+                    // Put the data into the current position of the buffer
+                    int i;
+                    for (i=0; i<I2CMSGLEN; i++) {
+                        messageRecieved.data[i] = msgbuffer[i];
+                    }
+
+                    putQueue(&i2c_q,messageRecieved);
+                    break;
+#endif
                 }
                 default:
                 {

@@ -176,6 +176,7 @@ void InterruptHandlerHigh() {
         // LATDbits.LATD7 = !LATDbits.LATD7;
 #if defined (MAIN_PIC)
         {
+            
 #if defined (MOTOR_SCRIPT_MS4)
             if ( timer2_extender > 50 ) {
 //                unsigned char msg[5];

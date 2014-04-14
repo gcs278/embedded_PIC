@@ -39,8 +39,11 @@ extern "C" {
     unsigned int ticks_left_total;
     unsigned int ticks_left_C;
     unsigned int ticks_right_C;
+    unsigned char executingEncode;
     void motor_encode_lthread(unsigned char msg);
     void motor_init();
+    void RoverForward();
+    void RoverStop();
     unsigned char * motorTickValue(unsigned char msgRequest);
 
 #ifdef	__cplusplus

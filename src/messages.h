@@ -63,7 +63,11 @@
 // How many UART data bytes are coming over from rover
 #define UARTDATALEN 9
 // The maximum number of messages in a single queue
+#if defined (ARM_PIC)
+#define MSGQUEUELEN 20
+#else
 #define MSGQUEUELEN 4
+#endif
 
 typedef struct __msg {
 	unsigned char	full;

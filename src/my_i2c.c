@@ -17,7 +17,9 @@ int sensor_count = 0;
 static i2c_comm *ic_ptr;
 
 
-
+unsigned char i2cStatus() {
+    return ic_ptr->status;
+}
 
 void start_i2c_slave_reply(unsigned char length, unsigned char *msg) {
 

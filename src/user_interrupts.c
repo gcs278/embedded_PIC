@@ -27,7 +27,17 @@ void timer0_int_handler() {
 #if defined (MOTOR_PIC)
     WriteTimer0(TIMER0_START);
     ticks_right++;
-    ticks_right_C++;
+    if ( executingEncode && ticks_right_C > 0)
+        ticks_right_C--;
+
+    if ( ticks_left_C  <= 1 && ticks_right_C <= 1 && executingEncode ) {
+        if ( motor_state == RoverMsgMotorForward)
+            RoverForward();
+        else
+            RoverStop();
+         executingEncode = 0;
+    }
+    
 #else
     WriteTimer0(0);
 #endif
@@ -55,19 +65,25 @@ void timer1_int_handler() {
     // reset the timer
     WriteTimer1(TIMER1_START);
     ticks_left++;
-    ticks_left_C++;
+    if ( executingEncode && ticks_left_C > 0)
+        ticks_left_C--;
     ticks_left_total++;
+
+    if ( ticks_left_C  <= 1 && ticks_right_C <= 1 && executingEncode ) {
+        if ( motor_state == RoverMsgMotorForward)
+            RoverForward();
+        else
+            RoverStop();
+
+         executingEncode = 0;
+    }
     
 #elif defined(MAIN_PIC)
-//    if ( timer1_extender > 10) {
-//        // Request sensor data for parallel calculations
-//        i2cMstrMsgState = I2CMST_LOCAL_WALLSENSOR;
-//        i2c_master_recv(0x0A, 0x15, 0x4E);
-//        timer1_extender = 0;
-//    } else {
-//        timer1_extender ++;
-//    }
-    
+    // Request sensor data for parallel calculations
+    i2cMstrMsgState = I2CMST_LOCAL_WALLSENSOR;
+    i2c_master_recv(0x0A, 0x15, 0x4E);
+    timer1_extender = 0;
+
     WriteTimer1(0);
 #else
     WriteTimer1(0);

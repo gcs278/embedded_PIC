@@ -30,6 +30,7 @@ typedef struct __i2c_comm {
 #define I2C_ERR_MSG_TRUNC 0x8
 
 void init_i2c(i2c_comm *);
+unsigned char i2cStatus();
 void i2c_int_handler(void);
 void start_i2c_slave_reply(unsigned char,unsigned char *);
 void i2c_configure_slave(unsigned char);

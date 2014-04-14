@@ -45,7 +45,7 @@ signed char send_msg(msg_queue *qptr, unsigned char length, unsigned char msgtyp
     // if the slot isn't empty, then we should return
     if (qmsg->full != 0) {
 #if defined(MAIN_PIC) || defined(ARM_PIC)
-        LATDbits.LATD4 = !LATDbits.LATD4;
+        LATDbits.LATD4 = 1;
 #endif
         return (MSGQUEUE_FULL);
     }
@@ -79,9 +79,14 @@ signed char recv_msg(msg_queue *qptr, unsigned char maxlength, unsigned char *ms
     // check to see if anything is available
     slot = qptr->cur_read_ind;
     qmsg = &(qptr->queue[slot]);
+
+
     if (qmsg->full == 1) {
         // not enough room in the buffer provided
         if (qmsg->length > maxlength) {
+#if defined(MAIN_PIC) || defined(ARM_PIC)
+        LATDbits.LATD4 = 1;
+#endif
             return (MSGBUFFER_TOOSMALL);
         }
         // now actually copy the message
@@ -263,22 +268,23 @@ void SleepIfOkay() {
 
 void block_on_To_msgqueues() {
     if (!in_main()) {
+        LATBbits.LATB3 = 1;
         return;
     }
-    LATBbits.LATB3 = 1;
+    //LATBbits.LATB3 = 1;
     MQ_Main_Willing_to_block = 1;
     while (1) {
         if (check_msg(&ToMainHigh_MQ)) {
             MQ_Main_Willing_to_block = 0;
-            LATBbits.LATB3 = 0;
+            //LATBbits.LATB3 = 0;
             return;
         }
         if (check_msg(&ToMainLow_MQ)) {
             MQ_Main_Willing_to_block = 0;
-            LATBbits.LATB3 = 0;
+           // LATBbits.LATB3 = 0;
             return;
         }
         Delay1KTCYx(10);
-        LATBbits.LATB3 = !LATBbits.LATB3;
+        //LATBbits.LATB3 = !LATBbits.LATB3;
     }
 }

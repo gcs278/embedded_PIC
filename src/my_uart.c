@@ -100,7 +100,7 @@ void uart_recv_state(unsigned char byte) {
                 LATB = 7; // Sequence 7
                 LATAbits.LA0 = 0;
                 // Put it in the roverDataBuf
-                ToMainHigh_sendmsg(I2CMSGLEN, MSGT_BUF_PUT_DATA, (void *) temp);
+                ToMainLow_sendmsg(I2CMSGLEN, MSGT_BUF_PUT_DATA, (void *) temp);
 #elif defined (MAIN_PIC)
                 // Wait for first to finish
                 
