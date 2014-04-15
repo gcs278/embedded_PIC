@@ -26,6 +26,8 @@
 #include "my_motor.h"
 #include "i2c_queue.h"
 #include "my_i2c_master.h"
+#include <stdlib.h> 
+
 
 //Setup configuration registers
 #ifdef __USE18F45J10
@@ -410,18 +412,18 @@ void main(void) {
 #elif defined(MAIN_PIC)
 
     i2c_queue i2c_q;
+    
     i2c_configure_master();
     i2c_configure_master2();
-    unsigned char msg[7];
-    msg[0] = 'o';
-    msg[1] = 'f';
-    msg[2] = 0xFF;
-    msg[3] = 'c';
-    msg[4] = 0x00;
-    msg[5] = 0x00;
-    msg[6] = 0x00;
-    i2c_master_send2(7, msg, 0x09);
-    // createQueue(i2c_q,10);
+//    unsigned char msg[7];
+//    msg[0] = 'o';
+//    msg[1] = 'f';
+//    msg[2] = 0xFF;
+//    msg[3] = 'c';
+//    msg[4] = 0x00;
+//    msg[5] = 0x00;
+//    msg[6] = 0x00;
+//    i2c_master_send2(7, msg, 0x09);
 
     // (12,000,00 / Prescale) * 65535
     OpenTimer0(TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_1); // = 5.46 ms
@@ -431,13 +433,19 @@ void main(void) {
     // A count buffer, to store the count while I2C slave respond
     unsigned char msgCount;
 
-    createQueue(&i2c_q,5);
+    createQueue(&i2c_q,15);
     TRISAbits.TRISA0 = 0; // Using it for sequence output
     LATB = 0;
     LATAbits.LA0 = 0;
 
     TRISDbits.TRISD4 = 0;
     LATDbits.LATD4 = 0;
+
+    unsigned char sensorDataBuf[I2CMSGLEN];
+    int i;
+    for ( i=0; i < I2CMSGLEN; i++) {
+        sensorDataBuf[i] = 0x00;
+    }
 #endif
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
@@ -549,17 +557,6 @@ void main(void) {
                  
 
 #elif defined(MAIN_PIC)
-                    // LATBbits.LATB7 = !LATBbits.LATB7;
-                       // LATBbits.LATB6 = !LATBbits.LATB6;
-                        LATAbits.LA0 = 0;
-                        LATB = 3; // Sequence 3
-                        i2c_master_cmd message;
-                        
-                        message.msgType = msgbuffer[0];
-                        message.msgCount = msgbuffer[1];
-
-                        // Put the message in the queue
-                        putQueue(&i2c_q,message);
 
 #endif
                     break;
@@ -572,41 +569,6 @@ void main(void) {
                     break;
                 };
 
-                case MSGT_QUEUE_GET_DATA:
-                {
-#ifdef MAIN_PIC
-
-                    if ( !isEmpty(&i2c_q) && q_semiphore == 0 ) {
-                       LATAbits.LA0 = 0;
-                       LATB = 4; // Sequence 4
-                       i2c_master_cmd message;
-                       
-                       getQueue(&i2c_q,&message);
-
-                        i2cMstrMsgState = I2CMST_ARM_REQUEST;
-//                        if ( msgbuffer[0] == moveForwardFull )
-//                            movingtest = 1;
-//                        else if( msgbuffer[0] == moveStop )
-//                            movingtest = 0;
-
-                        msgCount = message.msgCount;
-
-                        // See what pic the message goes to
-                        if ( message.msgType == RoverMsgSensorAllData ||
-                                message.msgType == RoverMsgSensorRightForward ||
-                                message.msgType == RoverMsgSensorRightRear ||
-                                message.msgType == RoverMsgSensorForwardLeft ||
-                                message.msgType == RoverMsgSensorForwardRight ||
-                                message.msgType == RoverMsgSensorRightAverage)
-                            i2c_master_recv(0x0A, message.msgType, 0x4E);
-                        else
-                            i2c_master_recv(0x0A, message.msgType, 0x4F);
-                        LATAbits.LA0 = 0;
-                        LATB = 5; // Sequence 5
-                    }
-#endif
-                    break;
-                }
                 case MSGT_I2C_RQST:
                 {
                     // NOT USING THIS RIGHT NOW - GRANT
@@ -674,22 +636,37 @@ void main(void) {
                         case I2CMST_LOCAL_WALLSENSOR: {                    
                             // Calculate correction response
                             int length = msgbuffer[0];
+
                             if ( length > 3 ) {
-                                int i;
-//                                int average=msgbuffer[2]+msgbuffer[3];
-////                                for (i=0; i < length; i++) {
-////                                    if (i < 9)
-////                                        average += msgbuffer[i+1];
-////                                }
-//                                average = average / 2;
-                                int average = msgbuffer[3];
+                                if ( length%4 == 0) {
+                                    sensorDataBuf[0] += length;
+                                    if ( (length/4)%2 == 1 ) {
+                                        int i;
+                                        for (i=0; i<4; i++) {
+                                            sensorDataBuf[i+1] = msgbuffer[i+1];
+                                        }
+                                    } else if ((length/4)%2 == 0 ) {
+                                        int i;
+                                        for (i=0; i<4; i++) {
+                                            sensorDataBuf[i+5] = msgbuffer[i+5];
+                                        }
+                                    }
+                                }
+                                if ( msgbuffer[4] != 0 && msgbuffer[3] != 0 && abs(msgbuffer[4]-msgbuffer[3]) < 5) {
+                                    int average=msgbuffer[4]+msgbuffer[3];
+//                                for (i=0; i < length; i++) {
+//                                    if (i < 9)
+//                                        average += msgbuffer[i+1];
+//                                }
+                                average = average / 2;
+
                                 if ( moving == 0 ) {
-                                    // Tell motors to move away from the wall
+                                    // Start movings
                                     i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
                                     i2c_master_recv(0x0A, RoverMsgMotorForward, 0x4F);
                                     moving = 1;
                                 }
-                                if ( average < 10 ) {
+                                if ( average < 15 ) {
                                     // Tell motors to move away from the wall
                                     i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
                                     i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
@@ -698,6 +675,7 @@ void main(void) {
                                     // Tell motors to move closer to the wall
                                     i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
                                     i2c_master_recv(0x0A, RoverMsgMotorRight2, 0x4F);
+                                }
                                 }
                             }
                             break;
@@ -841,8 +819,64 @@ void main(void) {
 
                     putQueue(&i2c_q,messageRecieved);
                     break;
+#elif defined(MAIN_PIC)
+                       // LATBbits.LATB7 = !LATBbits.LATB7;
+                       // LATBbits.LATB6 = !LATBbits.LATB6;
+                        LATAbits.LA0 = 0;
+                        LATB = 3; // Sequence 3
+                        i2c_master_cmd message;
+
+                        message.msgType = msgbuffer[0];
+                        message.msgCount = msgbuffer[1];
+
+                        // Put the message in the queue
+                        putQueue(&i2c_q,message);
+ 
 #endif
                 }
+                case MSGT_QUEUE_GET_DATA:
+                {
+#ifdef MAIN_PIC
+                   LATAbits.LA0 = 1;
+                   LATB = 6; // Sequence 4
+                    if ( !isEmpty(&i2c_q) && q_semiphore == 0 && !i2c_master_busy() ) {
+                       LATAbits.LA0 = 0;
+                       LATB = 4; // Sequence 4
+                       i2c_master_cmd message;
+
+                       getQueue(&i2c_q,&message);
+
+                        i2cMstrMsgState = I2CMST_ARM_REQUEST;
+//                        if ( msgbuffer[0] == moveForwardFull )
+//                            movingtest = 1;
+//                        else if( msgbuffer[0] == moveStop )
+//                            movingtest = 0;
+
+                        msgCount = message.msgCount;
+
+                        // See what pic the message goes to
+                        if ( message.msgType == RoverMsgSensorAllData ||
+                                message.msgType == RoverMsgSensorRightForward ||
+                                message.msgType == RoverMsgSensorRightRear ||
+                                message.msgType == RoverMsgSensorForwardLeft ||
+                                message.msgType == RoverMsgSensorForwardRight ||
+                                message.msgType == RoverMsgSensorRightAverage) {
+                             // Immediately send back sensor data in buffer
+                             ToMainLow_sendmsg(I2CMSGLEN, MSGT_UART_SEND, sensorDataBuf);
+                             int i;
+                             for(i=0; i<I2CMSGLEN; i++)
+                                 sensorDataBuf[i] = 0;
+                        }
+                            //i2c_master_recv(0x0A, message.msgType, 0x4E);
+                        else
+                            i2c_master_recv(0x0A, message.msgType, 0x4F);
+                        LATAbits.LA0 = 0;
+                        LATB = 5; // Sequence 5
+                    }
+#endif
+                    break;
+                }
+
                 default:
                 {
                     // Your code should handle this error

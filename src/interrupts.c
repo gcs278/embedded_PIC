@@ -239,7 +239,7 @@ void InterruptHandlerHigh() {
 
 //            WriteUSART(i2c_q->end);
             // Check queue
-            ToMainHigh_sendmsg(0,MSGT_QUEUE_GET_DATA,(void*)0);
+            ToMainLow_sendmsg(0,MSGT_QUEUE_GET_DATA,(void*)0);
 
 //            if(start_stop == 0)
 //            {

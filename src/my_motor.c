@@ -178,6 +178,7 @@ void motor_encode_lthread(unsigned char msg) {
             case RoverMsgMotorRight90:
                 uart_send_data(right, 2);
                 ticks_left_C = 210;
+                executingEncode = 1;
 //                while (ticks_left_C < 210 ); // 210 is about 90
 //                if ( motor_state == moveStop )
 //                    uart_send_data(stop,1);

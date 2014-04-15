@@ -155,7 +155,10 @@ unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned
 {
     // Check if we are in the middle of something
     if ( ic_ptr->state != IDLE) {
+        LATB = 7;
+        LATAbits.LA0 = 1;
         return 0;
+        //Reset();
     }
 
     mode = MASTER_READ;
@@ -172,6 +175,7 @@ unsigned char i2c_master_recv(unsigned char length, unsigned char data, unsigned
 
 void i2c_master_handler()
 {
+    if (ic_ptr->state != IDLE) {
     switch (ic_ptr->state)
     {
         case START_BIT:
@@ -310,6 +314,11 @@ void i2c_master_handler()
         {
             break;
         } // End default case
+    }
+    }
+    else {
+        ic_ptr->state = IDLE;
+        mode = MASTER_IDLE;
     }
 
 }

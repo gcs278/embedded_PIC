@@ -70,9 +70,9 @@
 
 
 // PIC Type Configuration
-//#define MAIN_PIC
+#define MAIN_PIC
 // #define SENSOR_PIC
-#define MOTOR_PIC
+//#define MOTOR_PIC
 //#define ARM_PIC
 
 //#define MOTOR_SCRIPT_MS4

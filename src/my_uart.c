@@ -105,7 +105,8 @@ void uart_recv_state(unsigned char byte) {
                 // Wait for first to finish
                 
                 LATB = 1; // Sequence 1
-                ToMainHigh_sendmsg(2, MSGT_I2C_DATA, (void *) uc_ptr->buffer);
+                LATAbits.LA0 = 0;
+                ToMainLow_sendmsg(2, MSGT_BUF_PUT_DATA, (void *) uc_ptr->buffer);
 #endif
             }
             else {
