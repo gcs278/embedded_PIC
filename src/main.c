@@ -198,6 +198,8 @@ void main(void) {
     unsigned char msgtype;
     unsigned char last_reg_recvd;
     unsigned char moving = 0;
+    unsigned char leftCorrect = 0;
+    unsigned char rightCorrect = 0;
     uart_comm uc;
     i2c_comm ic;
     unsigned char msgbuffer[MSGLEN + 1];
@@ -249,7 +251,7 @@ void main(void) {
 #ifndef __USE18F26J50
     // set direction for PORTB to output
     TRISB = 0x0;
-    LATB = 0x0;
+    //LATB = 0x0;
     
 #ifdef __USE18F46J50
     TRISBbits.TRISB4 = 1;
@@ -324,8 +326,14 @@ void main(void) {
     // 48000000 / (16 * (12 + 1)) = 230,400
     // configure the hardware USART device
 #ifdef __USE18F46J50
+#if defined(MAIN_PIC)
     Open1USART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
-            USART_CONT_RX & USART_BRGH_HIGH, 155);
+            USART_CONT_RX & USART_BRGH_HIGH, 12);
+#else
+
+    Open1USART(USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT &
+            USART_CONT_RX & USART_BRGH_HIGH, 12);
+#endif
 //    TRISAbits.TRISA5 = 1;
 //    TRISAbits.TRISA0 = 0;
 //
@@ -411,10 +419,13 @@ void main(void) {
     
 #elif defined(MAIN_PIC)
 
-    i2c_queue i2c_q;
+    
     
     i2c_configure_master();
     i2c_configure_master2();
+    unsigned char msg[1];
+    msg[0] = 0x76;
+    i2c_master_send2(1, msg, 0x71);
 //    unsigned char msg[7];
 //    msg[0] = 'o';
 //    msg[1] = 'f';
@@ -433,19 +444,68 @@ void main(void) {
     // A count buffer, to store the count while I2C slave respond
     unsigned char msgCount;
 
-    createQueue(&i2c_q,15);
     TRISAbits.TRISA0 = 0; // Using it for sequence output
-    LATB = 0;
+    LATBbits.LATB0 = 0;
+    LATBbits.LATB1 = 0;
+    LATBbits.LATB2 = 0;
     LATAbits.LA0 = 0;
+    TRISAbits.TRISA2 = 0;
+    TRISAbits.TRISA3 = 0;
 
-    TRISDbits.TRISD4 = 0;
-    LATDbits.LATD4 = 0;
+//    TRISDbits.TRISD4 = 0;
+    TRISDbits.TRISD5 = 0;
+    TRISDbits.TRISD6 = 0;
+    
+//    LATDbits.LATD4 = 0;
+    LATAbits.LA2 = 0;
+    LATAbits.LA3 = 0;
+    LATDbits.LD5 = 0;
+    LATDbits.LD6 = 0;
 
     unsigned char sensorDataBuf[I2CMSGLEN];
     int i;
     for ( i=0; i < I2CMSGLEN; i++) {
         sensorDataBuf[i] = 0x00;
     }
+
+    unsigned char wallSensorBack[10];
+    unsigned char wallSensorFront[10];
+    unsigned char wallSensorAhead[10];
+    unsigned char runningWallAverage[10];
+    
+    int i;
+    for (i=0; i<9; i++) {
+        wallSensorBack[i] = 0x00;
+        wallSensorFront[i] = 0x00;
+        wallSensorAhead[i] = 0x00;
+        runningWallAverage[i] = 0x00;
+    }
+    int wallSensorIndex = 0;
+    int runningIndex = 0;
+    int lastSensor = 0;
+    
+    int lastMedianBack = 0;
+    int lastMedianFront = 0;
+    unsigned char filledSensor = 0;
+    unsigned char sensorDataSem = 0;
+
+
+    // Enable external interrupt for finish line
+    RPOR21 = 13;
+    RPINR1 = 21;
+
+    INTCON3bits.INT1IF = 0; // Set flag zero
+    INTCON3bits.INT1IE = 1; // Enabled
+
+    INTCON3bits.INT1IP = 1; // High priority
+
+    INTCON2bits.INTEDG1 = 1; // Rising edge
+
+    TRISDbits.TRISD7 = 0;
+    LATDbits.LATD7 = 0;
+
+//    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+//    i2c_master_recv(0x0A, RoverMsgMotorForward, 0x4F);
 #endif
 
     /* Junk to force an I2C interrupt in the simulator (if you wanted to)
@@ -488,23 +548,27 @@ void main(void) {
         // I haven't done it here.
         length = ToMainHigh_recvmsg(MSGLEN, &msgtype, (void *) msgbuffer);
         if (length < 0) {
-            LATB = 4; // Sequence 3
+            LATBbits.LATB0 = 0;
+            LATBbits.LATB1 = 0;
+            LATBbits.LATB2 = 1; // Sequence C
             LATAbits.LA0 = 1;
             // no message, check the error code to see if it is concern
             if (length == MSGQUEUE_EMPTY) {
-                LATB = 5; // Sequence 3
-                LATAbits.LA0 = 1;
+                //LATB = 5; // Sequence 1101, D
+                //LATAbits.LA0 = 1;
             }
 
-            if ( i2cStatus() == I2C_SLAVE_SEND ) {
-                #if defined(MAIN_PIC) || defined(ARM_PIC)
-                    LATDbits.LATD4 = 1;
-                #endif
-            }
+//            if ( i2cStatus() == I2C_SLAVE_SEND ) {
+//                #if defined(MAIN_PIC) || defined(ARM_PIC)
+//                    LATDbits.LATD4 = 1;
+//                #endif
+//            }
             
            
         } else {
-            LATB = 3; // Sequence 3
+            LATBbits.LATB0 = 1;
+            LATBbits.LATB1 = 1;
+            LATBbits.LATB2 = 0; // Sequence B
             LATAbits.LA0 = 1;
             switch (msgtype) {
                 case MSGT_TIMER0:
@@ -544,23 +608,14 @@ void main(void) {
 
 #elif defined(MOTOR_PIC)
                 
-                // Reply with random tick values
-                int length = 10;
-                    unsigned char motorTEST[10];
-                    int i =0;
-                    for(i;i<10;i++) {
-                        motorTEST[i] = 0x12;
-                    }
-                unsigned char * tickbuffer = motorTickValue(msgbuffer[0]);
-                start_i2c_slave_reply(length, tickbuffer);
-                LATB = 3;
+ 
                  
 
 #elif defined(MAIN_PIC)
 
 #endif
                     break;
-                }
+                };
                 case MSGT_I2C_DBG:
                 {
                     // Here is where you could handle debugging, if you wanted
@@ -610,7 +665,9 @@ void main(void) {
                 case MSGT_I2C_MASTER_RECV_COMPLETE:
                 {
                     LATAbits.LA0 = 0;
-                    LATB = 6; // Sequence 6
+                    LATBbits.LATB0 = 0;
+                    LATBbits.LATB1 = 1;
+                    LATBbits.LATB2 = 1; // Sequence 6
                     // What type of message we are getting
                     // Allows for us to tell if it is a LOCAL message
                     switch (i2cMstrMsgState) {
@@ -631,55 +688,228 @@ void main(void) {
                                 }
                             }
                             break;
-                        }
+                        };
 
-                        case I2CMST_LOCAL_WALLSENSOR: {                    
+                        case I2CMST_LOCAL_WALLSENSOR: {
+#ifdef MAIN_PIC
                             // Calculate correction response
-                            int length = msgbuffer[0];
+
+                            if ( moving > 0)
+                                moving--;
+                            if ( leftCorrect > 0 )
+                                leftCorrect--;
+                            if ( rightCorrect > 0 )
+                                rightCorrect--;
+
 
                             if ( length > 3 ) {
-                                if ( length%4 == 0) {
-                                    sensorDataBuf[0] += length;
-                                    if ( (length/4)%2 == 1 ) {
-                                        int i;
-                                        for (i=0; i<4; i++) {
-                                            sensorDataBuf[i+1] = msgbuffer[i+1];
-                                        }
-                                    } else if ((length/4)%2 == 0 ) {
-                                        int i;
-                                        for (i=0; i<4; i++) {
-                                            sensorDataBuf[i+5] = msgbuffer[i+5];
-                                        }
-                                    }
-                                }
-                                if ( msgbuffer[4] != 0 && msgbuffer[3] != 0 && abs(msgbuffer[4]-msgbuffer[3]) < 5) {
-                                    int average=msgbuffer[4]+msgbuffer[3];
-//                                for (i=0; i < length; i++) {
-//                                    if (i < 9)
-//                                        average += msgbuffer[i+1];
-//                                }
-                                average = average / 2;
+                      
+                               if ( msgbuffer[4] != 0  && msgbuffer[3] != 0 ) {
+                                    LATAbits.LA3 = !LATAbits.LA3;
 
-                                if ( moving == 0 ) {
-                                    // Start movings
-                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
-                                    i2c_master_recv(0x0A, RoverMsgMotorForward, 0x4F);
-                                    moving = 1;
+
+                                    wallSensorFront[wallSensorIndex] = msgbuffer[3];
+                                    if ( msgbuffer[4] > 0xF0 )
+                                        wallSensorBack[wallSensorIndex] = msgbuffer[4];
+                                    else
+                                        wallSensorBack[wallSensorIndex] = msgbuffer[4];//-sensorOffset;
+                                    wallSensorAhead[wallSensorIndex] = msgbuffer[2];
+
+
+                                    wallSensorIndex++;
+                                    
+                                    if ( wallSensorIndex >= 10 ) {
+                                       // insertionSort(wallSensorFront,10);
+                                       // insertionSort(wallSensorBack,10);
+
+                                        int averageAhead = 0;
+                                        int averageFront = 0;
+                                        int averageBack = 0;
+                                        for (int i =0; i < 10; i++) {
+                                            averageFront += wallSensorFront[i];
+                                            averageBack += wallSensorBack[i];
+                                            averageAhead += wallSensorAhead[i];
+                                        }
+
+                                        averageFront = averageFront/10;
+                                        averageBack = averageBack/10;
+                                        averageAhead = averageAhead/10;
+
+                                        int medianBack = averageBack;//wallSensorBack[4];
+                                        int medianFront = averageFront;//wallSensorFront[4];
+
+                                        sensorDataSem = 1;
+                                        sensorDataBuf[0] = 4;
+                                        sensorDataBuf[2] = averageAhead;
+                                        sensorDataBuf[3] = averageFront;
+                                        sensorDataBuf[4] = averageBack;
+                                        if ( finishLine ) {
+                                            sensorDataBuf[5] = 0x01;
+                                            finishLine = 0;
+                                        }
+                                        else {
+                                            sensorDataBuf[5] = 0x00;
+                                        }
+                                        sensorDataSem = 0;
+                                        
+                                        // Calbrate Sensors
+                                       if ( firstSensorRead == 1 ){
+                                           LATAbits.LA2 = 1;
+                                           sensorOffset = averageFront;
+                                           Write1USART(sensorOffset);
+                                           firstSensorRead = 0;
+                                       }
+                                       else {
+//                                            unsigned char msg[10];
+//                                            msg[0] = 3;
+//                                            msg[1] = 2;
+//                                            msg[2] = 3;
+//                                            msg[3] = 1;
+//                                            ToMainLow_sendmsg(10,MSGT_DISPLAY_LED,msg);
+                                          // Write1USART(averageFront);
+                                          // 1110 1111
+                                           // Running wall correction
+                                           runningWallAverage[runningIndex] = averageFront;
+                                           runningIndex++;
+
+                                           if ( runningIndex >= 10 ) {
+                                                   if ( tempWallCorrection && wallCorrection ) {
+                                                       int difference = 0;
+                                                       for (int i=0; i < 9; i++) {
+                                                           if ( abs(runningWallAverage[i+1] - runningWallAverage[i]) < 20 )
+                                                                difference += runningWallAverage[i+1] - runningWallAverage[i];
+                                                        }
+
+                                                       if ( difference > 10 ) {
+                                                            i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                                            i2c_master_recv(0x0A, RoverMsgMotorRight7, 0x4F);
+                                                            rightCorrect = 50;
+                                                            leftCorrect = 70;
+                                                       }
+                                                       else if ( difference > 4 ) {
+                                                            i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                                            i2c_master_recv(0x0A, RoverMsgMotorRight2, 0x4F);
+                                                            rightCorrect = 50;
+                                                            leftCorrect = 30;
+                                                       }
+
+                                                       else if ( difference < -10 ) {
+                                                            i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                                            i2c_master_recv(0x0A, RoverMsgMotorLeft7, 0x4F);
+                                                            rightCorrect = 70;
+                                                            leftCorrect = 50;
+                                                       }
+                                                       else if ( difference < -4 ) {
+                                                            i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                                            i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
+                                                            rightCorrect = 30;
+                                                            leftCorrect = 50;
+                                                       }
+                                                   }
+
+
+                                               runningIndex=0;
+                                           }
+//                                           while(Busy1USART());
+//                                           Write1USART(averageBack);
+//                                           while(Busy1USART());
+//                                           Write1USART(medianFront);
+//                                           while(Busy1USART());
+//                                           Write1USART(medianBack);
+                                           if ( firstSensorRead == 0 && wallCorrection && tempWallCorrection ) {
+
+                                             //  int average = (medianFront + medianBack) / 2;
+                                               if ( (sensorOffset - averageFront) < -50 ) {
+                                                    // Dont do anything
+                                               }
+                                               else if ( (sensorOffset - averageFront) > 25 && leftCorrect==0) {
+                                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                                    i2c_master_recv(0x0A, RoverMsgMotorLeft7, 0x4F);
+                                                    rightCorrect = 50;
+                                                    leftCorrect = 70;
+                                               }
+                                               else if ( (sensorOffset - averageFront) > 15 && leftCorrect == 0) {
+                                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                                    i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
+                                                    rightCorrect = 30;
+                                                    leftCorrect = 50;
+                                               }
+                                               
+                                               else if ( (sensorOffset - averageFront) < -25 && rightCorrect == 0 ) {
+                                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                                    i2c_master_recv(0x0A, RoverMsgMotorRight7, 0x4F);
+                                                    rightCorrect = 70;
+                                                    leftCorrect = 50;
+                                               }
+
+                                               else if ( (sensorOffset - averageFront) < -15 && rightCorrect == 0 ) {
+                                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+                                                    i2c_master_recv(0x0A, RoverMsgMotorRight2, 0x4F);
+                                                    rightCorrect = 50;
+                                                    leftCorrect = 30;
+                                               }
+
+                                               else {
+//                                                    if ( (medianFront - medianBack) > 4 &&
+//                                                            (lastMedianFront - lastMedianBack) > 4
+//                                                            && leftCorrect == 0 && lastMedianBack && lastMedianFront) {
+//                                                            // Turn Left
+//                                                          i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+//                                                          i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
+//                                                            rightCorrect = 0;
+//                                                            leftCorrect = 15;
+//                                                        } else if ( (medianFront - medianBack) < -2 &&
+//                                                                (lastMedianFront - lastMedianBack) < -2
+//                                                                && rightCorrect == 0 &&
+//                                                                lastMedianBack && lastMedianFront) {
+//                                                            // Turn Right
+//                                                            i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+//                                                           i2c_master_recv(0x0A, RoverMsgMotorRight2, 0x4F);
+//                                                            rightCorrect = 15;
+//                                                            leftCorrect = 0;
+//
+//                                                        }
+                                               }
+
+//
+//                                    if ( medianFront < 60 && medianBack < 60 && leftCorrect == 0) {
+//                                        // Tell motors to move away from the wall
+//                                        i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+//                                        i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
+//                                        rightCorrect = 0;
+//                                        leftCorrect = 15;
+//                                    }
+//                                    else if ( medianFront > 70 && medianBack > 70 && rightCorrect == 0) {
+//                                        // Tell motors to move closer to the wall
+//                                        i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+//                                        i2c_master_recv(0x0A, RoverMsgMotorRight2, 0x4F);
+//                                        rightCorrect = 15;
+//                                        leftCorrect = 0;
+//                                    }
+//                                    else if ( leftCorrect == 0 && rightCorrect == 0 )//( medianFront < 70 && medianBack < 70
+//                                    {
+//                                           // && medianFront > 60 && medianBack > 60) {
+//                                        // Tell motors to move closer to the wall
+//                                        i2cMstrAMsgState = I2CMST_MOTOR_LOCAL;
+//                                        i2c_master_recv(0x0A, RoverMsgMotorInRange, 0x4F);
+//                                    }
+//
+                                   }
+                                           lastMedianFront = medianFront;
+                                           lastMedianBack = medianBack;
+                                       }
+                                       
+                                        filledSensor = 1;
+                                        wallSensorIndex = 0;
+                                    }
+                                
+
                                 }
-                                if ( average < 15 ) {
-                                    // Tell motors to move away from the wall
-                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
-                                    i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
-                                }
-                                else if ( average > 38) {
-                                    // Tell motors to move closer to the wall
-                                    i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
-                                    i2c_master_recv(0x0A, RoverMsgMotorRight2, 0x4F);
-                                }
-                                }
+
                             }
                             break;
-                        }
+#endif
+                        };
                         case I2CMST_MOTOR_LOCAL:
                             break;
                             
@@ -730,10 +960,27 @@ void main(void) {
                         }
                     }
                     LATAbits.LA0 = 0;
-                    LATB = 7; // Sequence 7
+                   // LATB = 7; // Sequence 7
                     break;
-                }
+                };
+                case MSGT_GET_SENSOR_DATA:
+                {
+                    // Request sensor data for parallel calculations
+//                    unsigned char msg[4]= {'n',0xff,0xff,0x00};
+//                    i2c_master_send2(4, msg, 0x09);
+                    
+                    //i2cMstrMsgState = I2CMST_LOCAL_WALLSENSOR;
+                    //i2c_master_recv(0x0A, 0x15, 0x4E);
+                    i2c_master_cmd message;
 
+                    message.msgType = RoverMsgSensorRightAverage;
+                    message.msgCount = 0x00;
+
+                    // Put the message in the queue
+                    putQueue(&i2c_q,message);
+                    
+                    break;
+                };
                 default:
                 {
                     // Your code should handle this error
@@ -757,6 +1004,7 @@ void main(void) {
                     break;
                 };
                 case MSGT_OVERRUN:
+                    break;
                 case MSGT_UART_SEND:
                 {
                     //uart_send_thread()
@@ -765,7 +1013,7 @@ void main(void) {
 #elif defined(SENSOR_PIC)
 
 #elif defined(MAIN_PIC)
-                    LATB = 0; // Sequence 8
+                    //LATB = 0; // Sequence 8
                     LATAbits.LA0 = 1;
                     uart_sendthread(length, msgbuffer,msgCount);
 
@@ -774,9 +1022,9 @@ void main(void) {
                     // Send the msg to the motor control thread
                     motor_encode_lthread(msgbuffer[0]);
 #endif
+                    break;
 
-
-                }
+                };
                 case MSGT_UART_DATA:
                 {
                     uart_lthread(&uthread_data, msgtype, length, msgbuffer);
@@ -801,7 +1049,7 @@ void main(void) {
                         i2c_master_send2(12, msg, 0x71);
                     }
                     break;
-                }
+                };
                 case MSGT_BUF_PUT_DATA:
                 {
 #if defined(ARM_PIC)
@@ -822,30 +1070,41 @@ void main(void) {
 #elif defined(MAIN_PIC)
                        // LATBbits.LATB7 = !LATBbits.LATB7;
                        // LATBbits.LATB6 = !LATBbits.LATB6;
-                        LATAbits.LA0 = 0;
-                        LATB = 3; // Sequence 3
-                        i2c_master_cmd message;
-
-                        message.msgType = msgbuffer[0];
-                        message.msgCount = msgbuffer[1];
-
-                        // Put the message in the queue
-                        putQueue(&i2c_q,message);
+//                        LATAbits.LA0 = 0;
+//                        //LATB = 3; // Sequence 3
+//                        i2c_master_cmd message;
+//
+//                        message.msgType = msgbuffer[0];
+//                        message.msgCount = msgbuffer[1];
+//
+//                        // Put the message in the queue
+//                        putQueue(&i2c_q,message);
  
 #endif
-                }
+                    break;
+                };
                 case MSGT_QUEUE_GET_DATA:
                 {
 #ifdef MAIN_PIC
-                   LATAbits.LA0 = 1;
-                   LATB = 6; // Sequence 4
-                    if ( !isEmpty(&i2c_q) && q_semiphore == 0 && !i2c_master_busy() ) {
+                   LATAbits.LA0 = 0;
+                    LATBbits.LATB0 = 1;
+                    LATBbits.LATB1 = 1;
+                    LATBbits.LATB2 = 1; // Sequence 7
+                   //LATB = 6; // Sequence E
+                    if ( !isEmpty(&i2c_q) && q_semiphore == 0 && i2c_master_busy() == 0 ) {
                        LATAbits.LA0 = 0;
-                       LATB = 4; // Sequence 4
+                       LATBbits.LATB0 = 0;
+                       LATBbits.LATB1 = 0;
+                       LATBbits.LATB2 = 1; // Sequence 4
                        i2c_master_cmd message;
 
                        getQueue(&i2c_q,&message);
-
+                       
+                       if ( message.msgType == RoverMsgSensorRightAverage) {
+                             i2cMstrMsgState = I2CMST_LOCAL_WALLSENSOR;
+                             i2c_master_recv(0x0A, 0x15, 0x4E);
+                            
+                       } else {
                         i2cMstrMsgState = I2CMST_ARM_REQUEST;
 //                        if ( msgbuffer[0] == moveForwardFull )
 //                            movingtest = 1;
@@ -863,19 +1122,45 @@ void main(void) {
                                 message.msgType == RoverMsgSensorRightAverage) {
                              // Immediately send back sensor data in buffer
                              ToMainLow_sendmsg(I2CMSGLEN, MSGT_UART_SEND, sensorDataBuf);
+                             while(sensorDataSem);
+                             LATDbits.LD6 = !LATDbits.LD6;
+                             
                              int i;
                              for(i=0; i<I2CMSGLEN; i++)
                                  sensorDataBuf[i] = 0;
                         }
                             //i2c_master_recv(0x0A, message.msgType, 0x4E);
-                        else
+                        else if ( message.msgType == RoverMsgTurnOffWallTracking) {
+                            wallCorrection = 0; 
+                        }
+                        else if ( message.msgType == RoverMsgTurnOnWallTracking)
+                        {
+                            wallCorrection = 1;
+                        }
+                        else if ( message.msgType == RoverMsgRESET ) {
+                            Reset();
+                        }
+                        else {
+                            if ( message.msgType == RoverMsgMotorLeft90 ) {
+                                tempWallCorrection = 0;
+                                timer1_extender = 0;
+                                runningIndex = 0;
+                            }
+                            else if (message.msgType == RoverMsgMotorRight90 ) {
+                                tempWallCorrection = 0;
+                                timer1_extender = -100;
+                                runningIndex = 0;
+                            }
+                            LATDbits.LD5 = !LATDbits.LD5;
                             i2c_master_recv(0x0A, message.msgType, 0x4F);
+                        }
                         LATAbits.LA0 = 0;
-                        LATB = 5; // Sequence 5
+                        //LATB = 5; // Sequence 5
+                    }
                     }
 #endif
                     break;
-                }
+                };
 
                 default:
                 {

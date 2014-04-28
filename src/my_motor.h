@@ -39,13 +39,19 @@ extern "C" {
     unsigned int ticks_left_total;
     unsigned int ticks_left_C;
     unsigned int ticks_right_C;
+    unsigned int ticks_left_C_Long;
+    unsigned int ticks_right_C_Long;
     unsigned char executingEncode;
+    unsigned char executingEncodeLong;
+    unsigned char executingLeftAdj;
+    unsigned char executingRightAdj;
+    
     void motor_encode_lthread(unsigned char msg);
     void motor_init();
     void RoverForward();
     void RoverStop();
     unsigned char * motorTickValue(unsigned char msgRequest);
-
+    int insertionSort(unsigned char *d, int size);
 #ifdef	__cplusplus
 }
 #endif

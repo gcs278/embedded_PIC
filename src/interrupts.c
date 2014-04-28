@@ -311,6 +311,14 @@ void InterruptHandlerHigh() {
 //    }
 #endif
 
+#if defined (MAIN_PIC)
+    if (INTCON3bits.INT1IF && INTCON3bits.INT1IE ) {
+        LATDbits.LATD7 = !LATDbits.LATD7;
+        finishLine = 1;
+        INTCON3bits.INT1IF = 0;
+    }
+#endif
+
 }
 
 //----------------------------------------------------------------------------

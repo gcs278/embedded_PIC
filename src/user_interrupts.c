@@ -15,7 +15,7 @@
 
 // A function called by the interrupt handler
 // This one does the action I wanted for this program on a timer0 interrupt
-int timer1_extender = 0;
+
 
 void timer0_int_handler() {
     unsigned int val;
@@ -29,13 +29,34 @@ void timer0_int_handler() {
     ticks_right++;
     if ( executingEncode && ticks_right_C > 0)
         ticks_right_C--;
+    
+    if ( executingEncodeLong && ticks_right_C_Long > 0)
+        ticks_right_C_Long--;
 
     if ( ticks_left_C  <= 1 && ticks_right_C <= 1 && executingEncode ) {
         if ( motor_state == RoverMsgMotorForward)
             RoverForward();
+        else if ( motor_state == RoverMsgMotorLeft2 || motor_state == RoverMsgMotorRight2 ) {
+            motor_encode_lthread(RoverMsgMotorForwardCMDelim+10);
+        }
         else
             RoverStop();
          executingEncode = 0;
+    }
+    else if ( ticks_left_C_Long  <= 1 && ticks_right_C_Long <= 1 && executingEncodeLong ) {
+        if ( motor_state == RoverMsgMotorLeft2 ) {
+            motor_encode_lthread(RoverMsgMotorRight2);
+        }
+        else if ( motor_state == RoverMsgMotorRight2 )
+        {
+            motor_encode_lthread(RoverMsgMotorLeft2);
+        }
+        else {
+            RoverStop();
+        }
+        
+         motor_state = RoverMsgMotorStop;
+         executingEncodeLong = 0;
     }
     
 #else
@@ -65,24 +86,51 @@ void timer1_int_handler() {
     // reset the timer
     WriteTimer1(TIMER1_START);
     ticks_left++;
+    
     if ( executingEncode && ticks_left_C > 0)
         ticks_left_C--;
+    if ( executingEncodeLong && ticks_left_C_Long > 0)
+        ticks_left_C_Long--;
+
     ticks_left_total++;
 
     if ( ticks_left_C  <= 1 && ticks_right_C <= 1 && executingEncode ) {
         if ( motor_state == RoverMsgMotorForward)
             RoverForward();
+        
+        else if ( motor_state == RoverMsgMotorLeft2 || motor_state == RoverMsgMotorRight2 ) {
+            motor_encode_lthread(RoverMsgMotorForwardCMDelim+10);
+        }
         else
             RoverStop();
 
          executingEncode = 0;
     }
+    else if ( ticks_right_C_Long  <= 1 && ticks_left_C_Long <= 1 && executingEncodeLong ) {
+        if ( motor_state == RoverMsgMotorLeft2 ) {
+            motor_encode_lthread(RoverMsgMotorRight2);
+        }
+        else if ( motor_state == RoverMsgMotorRight2 )
+        {
+            motor_encode_lthread(RoverMsgMotorLeft2);
+        }
+        else {
+         RoverStop();
+        }
+
+         motor_state = RoverMsgMotorStop;
+         executingEncodeLong = 0;
+    }
     
 #elif defined(MAIN_PIC)
-    // Request sensor data for parallel calculations
-    i2cMstrMsgState = I2CMST_LOCAL_WALLSENSOR;
-    i2c_master_recv(0x0A, 0x15, 0x4E);
-    timer1_extender = 0;
+    if ( !i2c_master_busy() )
+        ToMainHigh_sendmsg(10, MSGT_GET_SENSOR_DATA, (void *) 0);
+    
+    if ( timer1_extender > 100 && tempWallCorrection == 0 ) {
+        tempWallCorrection = 1;
+    }
+    
+    timer1_extender++;
 
     WriteTimer1(0);
 #else

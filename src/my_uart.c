@@ -104,9 +104,22 @@ void uart_recv_state(unsigned char byte) {
 #elif defined (MAIN_PIC)
                 // Wait for first to finish
                 
-                LATB = 1; // Sequence 1
+                LATBbits.LATB0 = 1;
+                LATBbits.LATB1 = 0;
+                LATBbits.LATB2 = 0; // Sequence 1
                 LATAbits.LA0 = 0;
-                ToMainLow_sendmsg(2, MSGT_BUF_PUT_DATA, (void *) uc_ptr->buffer);
+
+                i2c_master_cmd message;
+
+                message.msgType = uc_ptr->buffer[0];
+                message.msgCount = uc_ptr->buffer[1];
+
+
+                //if ( i2c_master_busy() == 0 )
+                    // Put the message in the queue
+                while(i2c_master_busy());
+                putQueue(&i2c_q,message);
+                //ToMainLow_sendmsg(2, MSGT_BUF_PUT_DATA, (void *) uc_ptr->buffer);
 #endif
             }
             else {
@@ -180,7 +193,7 @@ void uart_send_data(unsigned char* data, int size) {
 
     uc_ptr->sendSize = size;
 #else
-    LATB = 6; // Sequence 6
+    //LATB = 6; // Sequence 6
     LATAbits.LA0 = 0;
     // Copy over the data to send to UART buffer
     uc_ptr->sendBuffer[0] = UART_HEADER1;

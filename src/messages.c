@@ -46,6 +46,7 @@ signed char send_msg(msg_queue *qptr, unsigned char length, unsigned char msgtyp
     if (qmsg->full != 0) {
 #if defined(MAIN_PIC) || defined(ARM_PIC)
         LATDbits.LATD4 = 1;
+        Reset();
 #endif
         return (MSGQUEUE_FULL);
     }
@@ -86,6 +87,7 @@ signed char recv_msg(msg_queue *qptr, unsigned char maxlength, unsigned char *ms
         if (qmsg->length > maxlength) {
 #if defined(MAIN_PIC) || defined(ARM_PIC)
         LATDbits.LATD4 = 1;
+        Reset();
 #endif
             return (MSGBUFFER_TOOSMALL);
         }
@@ -268,7 +270,7 @@ void SleepIfOkay() {
 
 void block_on_To_msgqueues() {
     if (!in_main()) {
-        LATBbits.LATB3 = 1;
+       // LATBbits.LATB3 = 1;
         return;
     }
     //LATBbits.LATB3 = 1;

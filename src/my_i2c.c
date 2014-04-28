@@ -12,7 +12,7 @@
 #endif
 #include "my_i2c.h"
 #include "my_adc.h"
-
+#include "my_motor.h"
 int sensor_count = 0;
 static i2c_comm *ic_ptr;
 
@@ -243,7 +243,18 @@ void i2c_int_handler() {
 
 #elif defined(MOTOR_PIC)
         LATB = 2;
-        ToMainHigh_sendmsg(1,MSGT_I2C_DATA, (void *) ic_ptr->buffer);
+        
+        // Reply with random tick values
+        int length = 10;
+            unsigned char motorTEST[10];
+            int i =0;
+            for(i;i<10;i++) {
+                motorTEST[i] = 0x12;
+            }
+        unsigned char * tickbuffer = motorTickValue(ic_ptr->buffer[0]);
+        start_i2c_slave_reply(length, tickbuffer);
+        LATB = 3;
+        //ToMainHigh_sendmsg(1,MSGT_I2C_DATA, (void *) ic_ptr->buffer);
 
         // SEND I2C Message TO UART
         ToMainLow_sendmsg(1, MSGT_UART_SEND, (void *) ic_ptr->buffer);

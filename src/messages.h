@@ -20,7 +20,12 @@
 #define RoverMsgSensorForwardRight 0x14
 #define RoverMsgSensorRightAverage 0x15
 
+#define RoverMsgTurnOnWallTracking 0x0E
+#define RoverMsgTurnOffWallTracking 0x0F
+
 // Motor adjustment commands
+#define RoverMsgMotorInRange 0x17
+
 #define RoverMsgMotorLeft2 0x1A
 #define RoverMsgMotorLeft5 0x1B
 #define RoverMsgMotorLeft7 0x1C
@@ -49,7 +54,7 @@
 
 #define RoverMsgMotorForwardCMDelim 0x30
 
-
+#define RoverMsgRESET 0x29
 
 // The maximum length (in bytes) of a message
 #if defined(MAIN_PIC)
@@ -63,8 +68,8 @@
 // How many UART data bytes are coming over from rover
 #define UARTDATALEN 9
 // The maximum number of messages in a single queue
-#if defined (ARM_PIC)
-#define MSGQUEUELEN 20
+#if defined (ARM_PIC) || defined (MAIN_PIC)
+#define MSGQUEUELEN 40
 #else
 #define MSGQUEUELEN 4
 #endif

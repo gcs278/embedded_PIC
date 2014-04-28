@@ -19,6 +19,7 @@
 #define I2CMST_MOTOR_LOCAL_DEBUG 6
 
 unsigned char i2cMstrMsgState;
+unsigned char i2c_busy = 0;
 
 typedef enum
 {
@@ -51,7 +52,8 @@ typedef struct __i2c_master_comm {
     unsigned char address;
     unsigned char slave_address;
 } i2c_master_comm;
-
+    i2c_queue i2c_q;
+   
 void init_i2c_master(i2c_master_comm *);
 void i2c_master_handler(void);
 void i2c_master_handler2(void);

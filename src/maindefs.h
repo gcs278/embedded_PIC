@@ -55,6 +55,7 @@
 #define MSGT_QUEUE_GET_DATA 56
 #define MSGT_DISPLAY_LED 57
 #define MSGT_MOTOR_ENCODER 58
+#define MSGT_GET_SENSOR_DATA 59
 
 #define UART_STATE_HEADER1 48
 #define UART_STATE_HEADER2 53
@@ -82,5 +83,14 @@
 // #define I2C_MASTER
 // #define I2C_SLAVE
 
+unsigned char wallCorrection = 1;
+unsigned char tempWallCorrection = 1;
+unsigned char firstSensorRead = 1;
+char sensorOffset = 0;
+int timer1_extender = 0;
+
+#ifdef MAIN_PIC
+unsigned char finishLine = 0;
+#endif
 #endif
 

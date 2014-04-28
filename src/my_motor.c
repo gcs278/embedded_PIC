@@ -46,8 +46,13 @@ void motor_init() {
     ticks_right = 0; // Timer 0
     ticks_left_C = 0;
     ticks_right_C = 0;
+    ticks_right_C_Long = 0;
+    ticks_right_C_Long = 0;
     ticks_left_total = 0;
     executingEncode = 0;
+    executingEncodeLong = 0;
+    executingLeftAdj = 0;
+    executingRightAdj = 0;
 }
 
 void motor_encode_lthread(unsigned char msg) {
@@ -58,20 +63,22 @@ void motor_encode_lthread(unsigned char msg) {
 //        ticks_right_C = 0;
         WriteTimer0(TIMER0_START);
         WriteTimer1(TIMER1_START);
-        uart_send_data(forwardHalf,2);
+        uart_send_data(forwardVariable,2);
 
-
+        if ( motor_state != RoverMsgMotorLeft2 && motor_state != RoverMsgMotorRight2 )
+            motor_state = RoverMsgMotorForward;
+        
         if ( msg <= 0xC5 ) {
-            ticks_left_C = 6*(msg-RoverMsgMotorForwardCMDelim+1);
-            ticks_right_C = 6.06*(msg-RoverMsgMotorForwardCMDelim+1);
-            executingEncode = 1;
+            ticks_left_C_Long = 6*(msg-RoverMsgMotorForwardCMDelim+1);
+            ticks_right_C_Long = 6.06*(msg-RoverMsgMotorForwardCMDelim+1);
+            executingEncodeLong = 1;
 //            while( ticks_left_C < 6*(msg-RoverMsgMotorForwardCMDelim+1)
 //                    || ticks_right_C < 6.06*(msg-RoverMsgMotorForwardCMDelim+1) );
         }
         else {
-            ticks_left_C = ( 60*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6*150);
-            ticks_right_C = ( 60.6*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6.06*150);
-            executingEncode = 1;
+            ticks_left_C_Long = ( 60*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6*150);
+            ticks_right_C_Long = ( 60.6*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6.06*150);
+            executingEncodeLong = 1;
 //            while( ticks_left_C < ( 60*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6*150 )
 //                    || ticks_right_C < ( 60.6*(msg-RoverMsgMotorForwardCMDelim+1-150) + 6.06*150) ){
 //            }
@@ -82,44 +89,47 @@ void motor_encode_lthread(unsigned char msg) {
         // Switch on the msg type
         switch (msg) {
 
+            case RoverMsgMotorInRange:
+                if ( executingLeftAdj || executingRightAdj ) {
+                    if ( motor_state == RoverMsgMotorForward )
+                        uart_send_data(forwardVariable, 2);
+                    else
+                        uart_send_data(stop,1);
+
+                    executingLeftAdj = 0;
+                    executingRightAdj = 0;
+                }
+                
+                break;
             case RoverMsgMotorForward:
-                uart_send_data(forwardVariable, 2);
+                if ( !executingEncode )
+                    uart_send_data(forwardVariable, 2);
 
                 motor_state = RoverMsgMotorForward;
                 break;
 
             case RoverMsgMotorStop:
-                uart_send_data(stop, 1);
+                // Only execute when it isn't already executing a turn
+                if ( !executingEncode ) 
+                    uart_send_data(stop, 1);       
+                
+                // This will make turns stop afterwards
                 motor_state = RoverMsgMotorStop;
+                executingLeftAdj = 0;
+                executingRightAdj = 0;
                 break;
 
             case RoverMsgMotorLeft:
                 uart_send_data(left, 2);
                 ticks_left_C = 20;
                 executingEncode = 1;
-                //while (ticks_left_C < 20 ); // 200 is about 90
-//                if ( motor_state == RoverMsgMotorStop )
-//                    uart_send_data(stop,1);
-//                else if ( motor_state == moveForwardFull)
-//                    uart_send_data(forwardHalf, 2);
-//                else
-//                    uart_send_data(stop,1);
-                //motor_state = moveStop;
                 break;
 
             case RoverMsgMotorRight:
                 uart_send_data(right, 2);
                 ticks_left_C = 20;
                 executingEncode = 1;
-               // while (ticks_left_C < 20 ); // 210 is about 90
-//                if ( motor_state == RoverMsgMotorStop )
-//                    uart_send_data(stop,1);
-//                else if ( motor_state == moveForwardFull)
-//                    uart_send_data(forwardHalf, 2);
-//                else
-//                    uart_send_data(stop,1);
 
-                //motor_state = moveStop;
                 break;
 
             case RoverMsgMotorBack:
@@ -132,15 +142,29 @@ void motor_encode_lthread(unsigned char msg) {
                 int diff = 192 - leftWheelSpeed;
                 left2[0] = 192 + diff + 10;
                 uart_send_data(left2, 1);
-                ticks_left_C = 15;
+                ticks_left_C = 12;
                 executingEncode = 1;
-//                while (ticks_left_C < 15 ); // 200 is about 90
-//                if ( motor_state == RoverMsgMotorStop )
-//                    uart_send_data(stop,1);
-//                else if ( motor_state == RoverMsgMotorForward)
-//                    uart_send_data(forwardVariable, 2);
-//                else
-//                    uart_send_data(stop,1);
+
+//                  ticks_left_C = 135;
+//                left2[0] = leftWheelSpeed - 20;
+//                left2[1] = rightWheelSpeed + 40;
+//                uart_send_data(left2,2);
+//                executingEncode = 1;
+//                motor_state = RoverMsgMotorLeft2;
+
+                    
+//                if ( !executingEncode && !executingRightAdj ) {
+//                    // Make the Right wheel go faster
+//                    int diff = rightWheelSpeed - 15;
+//                    unsigned char forwardRight[] = { 0, 0 };
+////                    int diff = 192 - leftWheelSpeed;
+//                    forwardRight[0] = leftWheelSpeed + 5;
+//                    forwardRight[1] = diff;
+//                    //right2[0] = 64 + diff + 10;
+//                    uart_send_data(forwardRight, 2);
+////                    ticks_right_C = 17;
+//                    executingRightAdj = 1;
+//                }
                 break;
             }
 
@@ -149,43 +173,68 @@ void motor_encode_lthread(unsigned char msg) {
                 int diff = 64 - rightWheelSpeed;
                 right2[0] = 64 + diff + 10;
                 uart_send_data(right2, 1);
-                ticks_right_C = 17;
+                ticks_right_C = 15;
                 executingEncode = 1;
 
-//                while (ticks_right_C < 17 ); // 200 is about 90
-//                if ( motor_state == RoverMsgMotorStop )
-//                    uart_send_data(stop,1);
-//                else if ( motor_state == RoverMsgMotorForward)
-//                    uart_send_data(forwardVariable, 2);
-//                else
-//                    uart_send_data(stop,1);
+//                right2[0] = leftWheelSpeed + 40;
+//                right2[1] = rightWheelSpeed - 20;
+//                uart_send_data(right2,2);
+//                ticks_right_C = 150;
+//                executingEncode = 1;
+//                motor_state = RoverMsgMotorRight2;
+
+//                executingRightAdj = 0;
+//                if ( !executingEncode && !executingLeftAdj ) {
+//                    // Make the left wheel go faster
+//                    unsigned char forwardLeft[] = { 0, 0 };
+//                    int diff = leftWheelSpeed - 15;
+////                    int diff = 192 - leftWheelSpeed;
+//                    forwardLeft[0] = diff;
+//                    forwardLeft[1] = rightWheelSpeed + 5;
+//                   // left2[0] = 192 + diff + 10;
+//                    uart_send_data(forwardLeft, 2);
+////                    ticks_left_C = 15;
+//                    executingLeftAdj = 1;
+//                }
                 break;
             }
+
+            case RoverMsgMotorLeft7:
+            {
+                int diff = 192 - leftWheelSpeed;
+                left2[0] = 192 + diff + 10;
+                uart_send_data(left2, 1);
+                ticks_left_C = 35;
+                executingEncode = 1;
+
+                break;
+            }
+            case RoverMsgMotorRight7:
+            {
+                int diff = 64 - rightWheelSpeed;
+                right2[0] = 64 + diff + 10;
+                uart_send_data(right2, 1);
+                ticks_right_C = 40;
+                executingEncode = 1;
+                
+                break;
+            }
+
 
             case RoverMsgMotorLeft90:
                 uart_send_data(left, 2);
                 ticks_left_C = 205;
                 executingEncode = 1;
-//                while (ticks_left_C < 205 ); // 200 is about 90
-//                if ( motor_state == RoverMsgMotorStop )
-//                    uart_send_data(stop,1);
-//                else if ( motor_state == RoverMsgMotorForward)
-//                    uart_send_data(forwardVariable, 2);
-//                else
-//                    uart_send_data(stop,1);
+                executingEncodeLong = 0;
+                motor_state = RoverMsgMotorStop;
                 break;
 
             case RoverMsgMotorRight90:
                 uart_send_data(right, 2);
-                ticks_left_C = 210;
+                ticks_left_C = 218;
                 executingEncode = 1;
-//                while (ticks_left_C < 210 ); // 210 is about 90
-//                if ( motor_state == moveStop )
-//                    uart_send_data(stop,1);
-//                else if ( motor_state == RoverMsgMotorForward)
-//                    uart_send_data(forwardVariable, 2);
-//                else
-//                    uart_send_data(stop,1);
+                executingEncodeLong = 0;
+                motor_state = RoverMsgMotorStop;
                 break;
 
             case RoverMsgMotorSpeedCreepin:
@@ -210,8 +259,8 @@ void motor_encode_lthread(unsigned char msg) {
                 //uart_send_data(forwardVariable, 2);
                 break;
             case RoverMsgMotorSpeedMediumFast:
-                rightWheelSpeed = 25;
-                leftWheelSpeed = 153;
+                rightWheelSpeed = 43;
+                leftWheelSpeed = 171;
                 forwardVariable[0] = leftWheelSpeed;
                 forwardVariable[1] = rightWheelSpeed;
                 //uart_send_data(forwardVariable, 2);
@@ -253,4 +302,14 @@ unsigned char* motorTickValue(unsigned char msgRequest)
         return motorArrayRight;
     }
 
+}
+
+int insertionSort(unsigned char *d, int size){
+        int i, j;
+        for (i = 1; i < size; i++) {
+                int tmp = d[i];
+                for (j = i; j >= 1 && tmp < d[j-1]; j--)
+                        d[j] = d[j-1];
+                d[j] = tmp;
+        }
 }
