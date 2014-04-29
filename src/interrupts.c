@@ -24,6 +24,8 @@
 //       enabled.
 int i = 0;
 int timer2_extender = 0;
+int start_IR_receiver = 0;
+int IR_count = 0;
 
 void enable_interrupts() {
     // Peripheral interrupts can have their priority set to high or low
@@ -168,6 +170,7 @@ void InterruptHandlerHigh() {
 
     // check to see if we have an interrupt on timer 0
     if (INTCONbits.TMR0IF) {
+        start_IR_receiver = 0;
         //LATBbits.LATB7 = !LATBbits.LATB7;
         INTCONbits.TMR0IF = 0; // clear this interrupt flag
         // call whatever handler you want (this is "user" defined)
@@ -177,7 +180,7 @@ void InterruptHandlerHigh() {
         // LATDbits.LATD7 = !LATDbits.LATD7;
 #if defined (MAIN_PIC)
         {
-            
+        
 #if defined (MOTOR_SCRIPT_MS4)
             if ( timer2_extender > 50 ) {
 //                unsigned char msg[5];
@@ -313,9 +316,25 @@ void InterruptHandlerHigh() {
 #endif
 
 #if defined (MAIN_PIC)
-    if (INTCON3bits.INT1IF && INTCON3bits.INT1IE ) {
-        LATDbits.LATD7 = !LATDbits.LATD7;
-        finishLine = 1;
+    if (INTCON3bits.INT1IF && INTCON3bits.INT1IE ) //RD4
+    {
+        if(start_IR_receiver == 0)
+        {
+            start_IR_receiver = 1;
+            IR_count = 0;
+        }
+        else
+        {
+            //LATDbits.LATD7 = !LATDbits.LATD7;
+            //finishLine = 1;
+            IR_count = IR_count + 1;
+            if(IR_count == 4)
+            {
+                LATDbits.LATD7 = !LATDbits.LATD7;
+                finishLine = 1; 
+            }
+        }
+
         INTCON3bits.INT1IF = 0;
     }
 
