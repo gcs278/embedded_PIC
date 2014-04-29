@@ -12,6 +12,7 @@
 #include "my_uart.h"
 #include "my_motor.h"
 #include "my_adc.h"
+#include "my_wall_correction.h"
 #include <time.h>
 #include <stdlib.h>
 //----------------------------------------------------------------------------
@@ -316,6 +317,12 @@ void InterruptHandlerHigh() {
         LATDbits.LATD7 = !LATDbits.LATD7;
         finishLine = 1;
         INTCON3bits.INT1IF = 0;
+    }
+
+    if (INTCON3bits.INT2IF && INTCON3bits.INT2IE ) {
+        // LATDbits.LATD7 = !LATDbits.LATD7;
+        blindSpotSensor = 0;
+        INTCON3bits.INT2IF = 0;
     }
 #endif
 

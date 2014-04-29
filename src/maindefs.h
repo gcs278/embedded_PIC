@@ -86,7 +86,6 @@
 unsigned char wallCorrection = 1;
 unsigned char tempWallCorrection = 1;
 unsigned char firstSensorRead = 1;
-char sensorOffset = 0;
 int timer1_extender = 0;
 
 #ifdef MAIN_PIC
