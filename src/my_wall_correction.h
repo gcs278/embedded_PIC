@@ -14,14 +14,14 @@ extern "C" {
 
 #include "messages.h"
 
-#define SENSORBUFLEN 10
+#define SENSORBUFLEN 5
     unsigned char sensorDataBuf[I2CMSGLEN];
-
 
     unsigned char wallSensorBack[SENSORBUFLEN];
     unsigned char wallSensorFront[SENSORBUFLEN];
     unsigned char wallSensorAhead[SENSORBUFLEN];
     unsigned char runningWallAverage[SENSORBUFLEN];
+    unsigned char wallSensorIR[SENSORBUFLEN];
 
 
     int wallSensorIndex = 0;
@@ -40,8 +40,8 @@ extern "C" {
 
     void wallCorrectionInit();
 
-    void parallelComputation(int averageFront);
-    void boundaryComputation(int averageFront);
+    void parallelComputation(int averageFront, int averageIR);
+    void boundaryComputation(int averageFront, int averageIR);
 
     void correctionMain(unsigned char* msgbuffer);
 

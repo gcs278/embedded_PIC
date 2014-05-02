@@ -34,6 +34,7 @@ extern "C" {
     unsigned char motorArrayRight[motorArraySize];
 
     unsigned char motor_state;
+    unsigned char motor_speed;
     unsigned int ticks_right;
     unsigned int ticks_left;
     unsigned int ticks_left_total;

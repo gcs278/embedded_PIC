@@ -53,6 +53,7 @@ void motor_init() {
     executingEncodeLong = 0;
     executingLeftAdj = 0;
     executingRightAdj = 0;
+    motor_speed = RoverMsgMotorSpeedSlow;
 }
 
 void motor_encode_lthread(unsigned char msg) {
@@ -142,7 +143,10 @@ void motor_encode_lthread(unsigned char msg) {
                 int diff = 192 - leftWheelSpeed;
                 left2[0] = 192 + diff + 10;
                 uart_send_data(left2, 1);
-                ticks_left_C = 12;
+                if ( motor_speed == RoverMsgMotorSpeedMediumFast && motor_speed == RoverMsgMotorSpeedFastBRAH )
+                    ticks_left_C = 6;
+                else
+                    ticks_left_C = 12;
                 executingEncode = 1;
 
 //                  ticks_left_C = 135;
@@ -173,7 +177,10 @@ void motor_encode_lthread(unsigned char msg) {
                 int diff = 64 - rightWheelSpeed;
                 right2[0] = 64 + diff + 10;
                 uart_send_data(right2, 1);
-                ticks_right_C = 15;
+                if ( motor_speed == RoverMsgMotorSpeedMediumFast && motor_speed == RoverMsgMotorSpeedFastBRAH )
+                    ticks_right_C = 7;
+                else
+                    ticks_right_C = 15;
                 executingEncode = 1;
 
 //                right2[0] = leftWheelSpeed + 40;
@@ -204,7 +211,10 @@ void motor_encode_lthread(unsigned char msg) {
                 int diff = 192 - leftWheelSpeed;
                 left2[0] = 192 + diff + 10;
                 uart_send_data(left2, 1);
-                ticks_left_C = 35;
+                if ( motor_speed == RoverMsgMotorSpeedMediumFast || motor_speed == RoverMsgMotorSpeedFastBRAH )
+                    ticks_left_C = 16;
+                else
+                    ticks_left_C = 35;
                 executingEncode = 1;
 
                 break;
@@ -214,7 +224,10 @@ void motor_encode_lthread(unsigned char msg) {
                 int diff = 64 - rightWheelSpeed;
                 right2[0] = 64 + diff + 10;
                 uart_send_data(right2, 1);
-                ticks_right_C = 40;
+                if ( motor_speed == RoverMsgMotorSpeedMediumFast || motor_speed == RoverMsgMotorSpeedFastBRAH )
+                    ticks_right_C = 20;
+                else
+                    ticks_right_C = 40;
                 executingEncode = 1;
                 
                 break;
@@ -238,6 +251,7 @@ void motor_encode_lthread(unsigned char msg) {
                 break;
 
             case RoverMsgMotorSpeedCreepin:
+                motor_speed = RoverMsgMotorSpeedCreepin;
                 rightWheelSpeed = 58;
                 leftWheelSpeed = 186;
                 forwardVariable[0] = leftWheelSpeed;
@@ -245,6 +259,7 @@ void motor_encode_lthread(unsigned char msg) {
                 //uart_send_data(forwardVariable, 2);
                 break;
             case RoverMsgMotorSpeedSlow:
+                motor_speed = RoverMsgMotorSpeedSlow;
                 rightWheelSpeed = 55;
                 leftWheelSpeed = 183;
                 forwardVariable[0] = leftWheelSpeed;
@@ -252,6 +267,7 @@ void motor_encode_lthread(unsigned char msg) {
                 //uart_send_data(forwardVariable, 2);
                 break;
             case RoverMsgMotorSpeedMedium:
+                motor_speed = RoverMsgMotorSpeedMedium;
                 rightWheelSpeed = 52;
                 leftWheelSpeed = 180;
                 forwardVariable[0] = leftWheelSpeed;
@@ -259,6 +275,7 @@ void motor_encode_lthread(unsigned char msg) {
                 //uart_send_data(forwardVariable, 2);
                 break;
             case RoverMsgMotorSpeedMediumFast:
+                motor_speed = RoverMsgMotorSpeedMediumFast;
                 rightWheelSpeed = 43;
                 leftWheelSpeed = 171;
                 forwardVariable[0] = leftWheelSpeed;
@@ -266,8 +283,9 @@ void motor_encode_lthread(unsigned char msg) {
                 //uart_send_data(forwardVariable, 2);
                 break;
             case RoverMsgMotorSpeedFastBRAH:
-                rightWheelSpeed = 1;
-                leftWheelSpeed = 129;
+                motor_speed = RoverMsgMotorSpeedFastBRAH;
+                rightWheelSpeed = 15;
+                leftWheelSpeed = 143;
                 forwardVariable[0] = leftWheelSpeed;
                 forwardVariable[1] = rightWheelSpeed;
                 //uart_send_data(forwardVariable, 2);

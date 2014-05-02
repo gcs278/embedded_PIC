@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 void wallCorrectionInit() {
+#if defined MAIN_PIC
     int i;
     for ( i=0; i < I2CMSGLEN; i++) {
         sensorDataBuf[i] = 0x00;
@@ -14,6 +15,7 @@ void wallCorrectionInit() {
         wallSensorBack[i] = 0x00;
         wallSensorFront[i] = 0x00;
         wallSensorAhead[i] = 0x00;
+        wallSensorIR[i] = 0x00;
         runningWallAverage[i] = 0x00;
     }
 
@@ -27,23 +29,27 @@ void wallCorrectionInit() {
     INTCON3bits.INT2IP = 1; // High priority
 
     INTCON2bits.INTEDG1 = 1; // Rising edge
-
+#endif
 }
 
-void parallelComputation(int averageFront) {
+void parallelComputation(int averageFront, int averageIR) {
     // Running wall correction
     runningWallAverage[runningIndex] = averageFront;
     runningIndex++;
 
-    if ( runningIndex >= 10 ) {
+    if ( runningIndex >= SENSORBUFLEN ) {
            if ( tempWallCorrection && wallCorrection ) {
                int difference = 0;
-               for (int i=0; i < 9; i++) {
-                   if ( abs(runningWallAverage[i+1] - runningWallAverage[i]) < 20 )
+               for (int i=0; i < SENSORBUFLEN-1; i++) {
+                   if ( abs(runningWallAverage[i+1] - runningWallAverage[i]) < 13
+                           && runningWallAverage[i] < 150 && runningWallAverage[i+1] < 150 )
                         difference += runningWallAverage[i+1] - runningWallAverage[i];
                 }
 
-               if ( difference > 8 ) {
+               if ( averageFront > 175 ||  averageIR < 8 ) {
+                   //
+               }
+               else if ( difference > 7 ) {
                     i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
                     i2c_master_recv(0x0A, RoverMsgMotorRight7, 0x4F);
                     rightCorrect = 50;
@@ -56,7 +62,7 @@ void parallelComputation(int averageFront) {
                     leftCorrect = 30;
                }
 
-               else if ( difference < -8 ) {
+               else if ( difference < -7 ) {
                     i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
                     i2c_master_recv(0x0A, RoverMsgMotorLeft7, 0x4F);
                     rightCorrect = 70;
@@ -76,25 +82,13 @@ void parallelComputation(int averageFront) {
 
 }
 
-void boundaryComputation(int averageFront) {
-    
+void boundaryComputation(int averageFront, int averageIR) {
+   
    if ( firstSensorRead == 0 && wallCorrection && tempWallCorrection ) {
 
        // Check for boundary issues
-       if ( (sensorOffset - averageFront) < -50 ) {
+       if ( averageFront > 175 || averageIR < 8 ) {
             // Dont do anything
-       }
-       else if ( (sensorOffset - averageFront) > 25 && leftCorrect==0) {
-            i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
-            i2c_master_recv(0x0A, RoverMsgMotorLeft7, 0x4F);
-            rightCorrect = 50;
-            leftCorrect = 70;
-       }
-       else if ( (sensorOffset - averageFront) > 15 && leftCorrect == 0) {
-            i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
-            i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
-            rightCorrect = 30;
-            leftCorrect = 50;
        }
 
        else if ( (sensorOffset - averageFront) < -25 && rightCorrect == 0 ) {
@@ -111,9 +105,22 @@ void boundaryComputation(int averageFront) {
             leftCorrect = 30;
        }
 
+       else if ( averageIR > 105 && leftCorrect == 0 ) {
+            i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+            i2c_master_recv(0x0A, RoverMsgMotorLeft7, 0x4F);
+            rightCorrect = 50;
+            leftCorrect = 70;
+       }
+       else if ( averageIR > 90 && leftCorrect == 0) {
+            i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
+            i2c_master_recv(0x0A, RoverMsgMotorLeft2, 0x4F);
+            rightCorrect = 30;
+            leftCorrect = 50;
+       }
+
        // Check if we are in our blind spot
-       if ( blindSpotSensor != 0 && blindSpotSensor != 0xFF ) {
-           if ( averageFront - 5 < blindSpotSensor && leftCorrect == 0 ) {
+       if ( blindSpotSensor != 0 && blindSpotSensor != 0xFF && averageFront < 150  ) {
+           if ( averageFront - 10 < blindSpotSensor && leftCorrect == 0 ) {
                 i2cMstrMsgState = I2CMST_MOTOR_LOCAL;
                 i2c_master_recv(0x0A, RoverMsgMotorLeft7, 0x4F);
                 rightCorrect = 50;
@@ -125,6 +132,7 @@ void boundaryComputation(int averageFront) {
 }
 
 void correctionMain(unsigned char* msgbuffer) {
+#if defined MAIN_PIC
     // Decrement delay variables if not 0
     if ( leftCorrect > 0 )
         leftCorrect--;
@@ -140,30 +148,36 @@ void correctionMain(unsigned char* msgbuffer) {
         wallSensorFront[wallSensorIndex] = msgbuffer[3];
         wallSensorBack[wallSensorIndex] = msgbuffer[4];//-sensorOffset;
         wallSensorAhead[wallSensorIndex] = msgbuffer[2];
+        wallSensorIR[wallSensorIndex] = msgbuffer[1];
 
         wallSensorIndex++; // Increment index
 
         // Once all of these arrays are filled up
-        if ( wallSensorIndex >= 10 ) {
+        if ( wallSensorIndex >= SENSORBUFLEN ) {
            // insertionSort(wallSensorFront,10);
            // insertionSort(wallSensorBack,10);
 
             // Calculate the averages
             int averageAhead = 0;
+            int averageIR = 0;
             int averageFront = 0;
             int averageBack = 0;
-            for (int i =0; i < 10; i++) {
+            for (int i =0; i < SENSORBUFLEN; i++) {
                 averageFront += wallSensorFront[i];
                 averageBack += wallSensorBack[i];
                 averageAhead += wallSensorAhead[i];
+                averageIR += wallSensorIR[i];
             }
-            averageFront = averageFront/10;
-            averageBack = averageBack/10;
-            averageAhead = averageAhead/10;
-
+            averageFront = averageFront/SENSORBUFLEN;
+            averageBack = averageBack/SENSORBUFLEN;
+            averageAhead = averageAhead/SENSORBUFLEN;
+            averageIR = averageIR/SENSORBUFLEN;
+            
+            //Write1USART(averageAhead);
             // Give ARM buffer the averages
             sensorDataSem = 1;
             sensorDataBuf[0] = 4;
+            sensorDataBuf[1] = averageIR;
             sensorDataBuf[2] = averageAhead;
             sensorDataBuf[3] = averageFront;
             sensorDataBuf[4] = averageBack;
@@ -193,10 +207,18 @@ void correctionMain(unsigned char* msgbuffer) {
                firstSensorRead = 0;
            }
            else {
-               parallelComputation(averageFront);
+               parallelComputation(averageFront, averageIR);
            }
-
-           boundaryComputation(averageFront);
+//            unsigned char valuesGood = 1;
+//            for (int i =0; i < SENSORBUFLEN-1; i++)
+//            {
+//                if ( abs(wallSensorFront[i+1]-wallSensorFront[i]) > 10 )
+//                    valuesGood = 0;
+//
+//            }
+//            if ( valuesGood )
+            //Write1USART(averageIR);
+             boundaryComputation(averageFront, averageIR);
 //           while(Busy1USART());
 //           Write1USART(averageBack);
 //           while(Busy1USART());
@@ -210,9 +232,11 @@ void correctionMain(unsigned char* msgbuffer) {
 
 
     }
+#endif
 }
 
 void configIR() {
+#if defined MAIN_PIC
     // Enable external interrupt for finish line
     RPOR21 = 13;
     RPINR1 = 21;
@@ -226,4 +250,5 @@ void configIR() {
 
     TRISDbits.TRISD7 = 0;
     LATDbits.LATD7 = 0;
+#endif
 }
