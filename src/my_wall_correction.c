@@ -46,7 +46,7 @@ void parallelComputation(int averageFront, int averageIR) {
                         difference += runningWallAverage[i+1] - runningWallAverage[i];
                 }
 
-               if ( averageFront > 175 ||  averageIR < 8 ) {
+               if ( averageFront > 175 ||  averageIR < 7 ) {
                    //
                }
                else if ( difference > 7 ) {
@@ -87,7 +87,7 @@ void boundaryComputation(int averageFront, int averageIR) {
    if ( firstSensorRead == 0 && wallCorrection && tempWallCorrection ) {
 
        // Check for boundary issues
-       if ( averageFront > 175 || averageIR < 8 ) {
+       if ( averageFront > 175 || averageIR < 7 ) {
             // Dont do anything
        }
 

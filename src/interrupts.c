@@ -27,6 +27,13 @@ int timer2_extender = 0;
 int start_IR_receiver = 0;
 int IR_count = 0;
 
+int timer0_count = 0;
+int display_count = 0;
+int adc_channel = 0;
+
+unsigned char buffer_1[10];
+unsigned char buffer_4[10];
+
 void enable_interrupts() {
     // Peripheral interrupts can have their priority set to high or low
     // enable high-priority interrupts and low-priority interrupts
@@ -261,7 +268,70 @@ void InterruptHandlerHigh() {
         }
 #elif defined(SENSOR_PIC)
 {
-                ConvertADC();
+                         if(timer0_count == 0)
+            {
+                LATDbits.LATD6 = 1;
+
+                LATBbits.LATB7 = 0;
+                LATBbits.LATB6 = 1;
+                LATBbits.LATB5 = 0;
+                LATBbits.LATB4 = 0;
+                timer0_count = timer0_count + 1;
+            }
+            else if (timer0_count == 60 && display_count != 10)
+            {
+                buffer_1[display_count] = ADCArray[1];
+                buffer_4[display_count] = ADCArray[4];
+                timer0_count = timer0_count + 1;
+
+            }
+            else if (timer0_count == 60 && display_count == 10)
+            {
+                LATBbits.LATB7 = 0;
+                LATBbits.LATB6 = 0;
+                LATBbits.LATB5 = 0;
+                LATBbits.LATB4 = 1;
+
+                int value_1 = (buffer_1[0] + buffer_1[1] + buffer_1[2] + buffer_1[3] + buffer_1[4] + buffer_1[5] + buffer_1[6] + buffer_1[7] + buffer_1[8] + buffer_1[9])/10;
+                int value_4 = (buffer_4[0] + buffer_4[1] + buffer_4[2] + buffer_4[3] + buffer_4[4] + buffer_4[5] + buffer_4[6] + buffer_4[7] + buffer_4[8] + buffer_4[9])/10;
+                unsigned char msgbuffer[MSGLEN + 1];
+                msgbuffer[0] = 0x76;
+                msgbuffer[1] = ADCArray[1] >> 4;
+                msgbuffer[2] = ADCArray[1] % 0xF;
+                msgbuffer[3] = ADCArray[4] >> 4;
+                msgbuffer[4] = ADCArray[4] % 0xF;
+//                  msgbuffer[1] = value_1 >> 4;
+//                  msgbuffer[2] = value_1 % 0xF;
+//                  msgbuffer[3] = value_4 >> 4;
+//                  msgbuffer[4] = value_4 % 0xF;
+                uart_send_data(msgbuffer, 5);
+                timer0_count = timer0_count + 1;
+                display_count = 0;
+            }
+            else if (timer0_count == 610)
+            {
+                display_count = display_count + 1;
+                timer0_count = 0;
+            }
+            else if (timer0_count == 10)
+            {
+                LATDbits.LATD6 = 0;
+                timer0_count = timer0_count + 1;
+                readSensor(0);
+                sensor_count = 1;
+            }
+            else
+            {
+                LATDbits.LATD6 = 0;
+
+                LATBbits.LATB7 = 1;
+                LATBbits.LATB6 = 0;
+                LATBbits.LATB5 = 0;
+                LATBbits.LATB4 = 0;
+
+                timer0_count = timer0_count + 1;
+            }
+   
 //                if(motor_index == 10)
 //                    motor_index = 1;
 //                motorArray[motor_index++] = sensor_value++;

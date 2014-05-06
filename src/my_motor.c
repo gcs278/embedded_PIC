@@ -39,7 +39,7 @@ static unsigned char right2[] = { 45 };
 static unsigned char right[] = { 92, 163 };
 static unsigned char back[] = { 77, 204 };
 static unsigned char stop[] = { 0 };
-
+// 71
 void motor_init() {
     motor_state = moveStop;
     ticks_left = 0; // Timer 1
@@ -269,7 +269,7 @@ void motor_encode_lthread(unsigned char msg) {
             case RoverMsgMotorSpeedMedium:
                 motor_speed = RoverMsgMotorSpeedMedium;
                 rightWheelSpeed = 52;
-                leftWheelSpeed = 180;
+                leftWheelSpeed = 179;
                 forwardVariable[0] = leftWheelSpeed;
                 forwardVariable[1] = rightWheelSpeed;
                 //uart_send_data(forwardVariable, 2);
@@ -277,7 +277,7 @@ void motor_encode_lthread(unsigned char msg) {
             case RoverMsgMotorSpeedMediumFast:
                 motor_speed = RoverMsgMotorSpeedMediumFast;
                 rightWheelSpeed = 43;
-                leftWheelSpeed = 171;
+                leftWheelSpeed = 170;
                 forwardVariable[0] = leftWheelSpeed;
                 forwardVariable[1] = rightWheelSpeed;
                 //uart_send_data(forwardVariable, 2);
@@ -285,7 +285,7 @@ void motor_encode_lthread(unsigned char msg) {
             case RoverMsgMotorSpeedFastBRAH:
                 motor_speed = RoverMsgMotorSpeedFastBRAH;
                 rightWheelSpeed = 15;
-                leftWheelSpeed = 143;
+                leftWheelSpeed = 140;
                 forwardVariable[0] = leftWheelSpeed;
                 forwardVariable[1] = rightWheelSpeed;
                 //uart_send_data(forwardVariable, 2);

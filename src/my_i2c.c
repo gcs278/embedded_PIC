@@ -13,7 +13,6 @@
 #include "my_i2c.h"
 #include "my_adc.h"
 #include "my_motor.h"
-int sensor_count = 0;
 static i2c_comm *ic_ptr;
 
 
@@ -263,9 +262,12 @@ void i2c_int_handler() {
         
 #elif defined(SENSOR_PIC)
         int length = 10;
+        int i;
+        unsigned char test[10];
+        for (i=0; i<10; i++)
+            test[i] = 0x01;
         unsigned char * msgbuffer = SensorValues();
         start_i2c_slave_reply(length, msgbuffer);
-
 
 #elif defined(MAIN_PIC)
 

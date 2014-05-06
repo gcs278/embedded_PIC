@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   my_adc.h
  * Author: grantspence
  *
@@ -12,7 +12,7 @@
 extern "C" {
 #endif
     char ADCValue;
-    
+
     int adc_index = 1;
     // ADC buffer, matches size of screen on ARM LCD
     unsigned char ADCArray[10];
@@ -22,12 +22,13 @@ extern "C" {
     int arrayPlaceHolder = 0;
     unsigned char adc_semaphore = 0;
     int messages_lost = 0;
-    
+    int sensor_count = 0;
+
     void setStateResponding(void);
     void setStateReading(void);
     unsigned char * SensorValues();
     void init_ADC();
-
+    void readSensor(int sensor);
 
 #ifdef	__cplusplus
 }

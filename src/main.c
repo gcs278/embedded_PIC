@@ -555,6 +555,67 @@ void main(void) {
                     //roverDataBuf[roverDataBufIndex][0] = 0xFF;
 
 #elif defined(SENSOR_PIC)
+        if(sensor_count == 1)
+        {
+            LATBbits.LATB7 = 0;
+            LATBbits.LATB6 = 0;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB4 = 0;
+        }
+        else if (sensor_count == 2)
+        {
+            LATBbits.LATB7 = 1;
+            LATBbits.LATB6 = 0;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB4 = 0;
+        }
+        else if (sensor_count == 3)
+        {
+            LATBbits.LATB7 = 0;
+            LATBbits.LATB6 = 1;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB4 = 0;
+        }
+        else if (sensor_count == 4)
+        {
+            LATBbits.LATB7 = 1;
+            LATBbits.LATB6 = 1;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB4 = 0;
+        }
+
+        // LATDbits.LATD6 = !LATDbits.LATD6;
+        int pureADCValue = ReadADC();
+        if(pureADCValue > 0xFF)
+            ADCValue = 0xFF;
+        else
+            ADCValue = pureADCValue;
+
+        adc_semaphore = 1;
+        if(adc_index > 9)
+        {
+            //indicate message lost
+            messages_lost = messages_lost + 8;
+            adc_index = 1;
+        }
+        ADCArray[adc_index] = ADCValue;
+        adc_index++;
+        adc_semaphore = 0;
+
+        //if(sensor_count == 1 || sensor_count == 2 || sensor)
+        if(sensor_count == 1 || sensor_count == 2 || sensor_count == 3)
+        {
+            readSensor(sensor_count);
+            sensor_count = sensor_count + 1;
+        }
+        else
+        {
+            sensor_count = 0;
+            LATBbits.LATB7 = 1;
+            LATBbits.LATB6 = 0;
+            LATBbits.LATB5 = 0;
+            LATBbits.LATB4 = 1;
+        }
 
 #elif defined(MOTOR_PIC)
 
@@ -789,12 +850,12 @@ void main(void) {
                         else {
                             if ( message.msgType == RoverMsgMotorLeft90 ) {
                                 tempWallCorrection = 0;
-                                timer1_extender = -50;
+                                timer1_extender = 25;
                                 runningIndex = 0;
                             }
                             else if (message.msgType == RoverMsgMotorRight90 ) {
                                 tempWallCorrection = 0;
-                                timer1_extender = -100;
+                                timer1_extender = -50;
                                 runningIndex = 0;
                             }
                             LATDbits.LD5 = !LATDbits.LD5;
